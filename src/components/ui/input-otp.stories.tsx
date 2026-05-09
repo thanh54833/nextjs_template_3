@@ -34,46 +34,32 @@ export const WithSeparator: StoryObj = {
 };
 
 export const Disabled: StoryObj = {
-  render: () => <InputOTP maxLength={4} disabled />,
-};
-
-export const WithPattern: StoryObj = {
-  render: () => <InputOTP maxLength={4} pattern="\d" placeholder="*" />,
-};
-
-export const FiveDigits: StoryObj = {
-  args: {
-    maxLength: 5,
-  },
-};
-
-export const WithSeparator: Story = {
   render: () => (
-    <InputOTP maxLength={6} containerClassName="gap-2">
+    <InputOTP maxLength={4} disabled>
       <InputOTPGroup>
         <InputOTPSlot index={0} />
         <InputOTPSlot index={1} />
         <InputOTPSlot index={2} />
-      </InputOTPGroup>
-      <InputOTPSeparator />
-      <InputOTPGroup>
         <InputOTPSlot index={3} />
-        <InputOTPSlot index={4} />
-        <InputOTPSlot index={5} />
       </InputOTPGroup>
     </InputOTP>
   ),
 };
 
-export const Disabled: Story = {
-  render: () => <InputOTP maxLength={4} disabled />,
+export const WithPattern: StoryObj = {
+  render: () => (
+    <InputOTP maxLength={4} pattern="\d" placeholder="*">
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+    </InputOTP>
+  ),
 };
 
-export const WithPattern: Story = {
-  render: () => <InputOTP maxLength={4} pattern={/\d/} placeholder="*" />,
-};
-
-export const FiveDigits: Story = {
+export const FiveDigits: StoryObj = {
   args: {
     maxLength: 5,
   },

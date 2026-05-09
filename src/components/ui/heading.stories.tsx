@@ -25,7 +25,12 @@ export const WithInfo: Story = {
     description: 'Detailed analytics for your workspace.',
     infoContent: {
       title: 'Analytics Info',
-      description: 'This page shows detailed analytics about your workspace performance.',
+      sections: [
+        {
+          title: 'Overview',
+          description: 'This page shows detailed analytics about your workspace performance.',
+        },
+      ],
     },
   },
 };
