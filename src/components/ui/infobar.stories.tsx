@@ -156,11 +156,13 @@ function InfobarShowcase() {
 
 /** Default expanded infobar with navigation and settings. */
 export const Default: Story = {
+  args: {},
   render: () => <InfobarShowcase />,
 };
 
 /** Collapsed icon-only mode for compact display. */
 export const Collapsed: Story = {
+  args: {},
   render: () => {
     function CollapsedExample() {
       const { setContent } = useInfobar();
@@ -205,6 +207,7 @@ export const Collapsed: Story = {
 
 /** Fixed mode with no collapse functionality. */
 export const WithoutCollapsible: Story = {
+  args: {},
   render: () => {
     function FixedExample() {
       const { setContent } = useInfobar();
@@ -239,6 +242,7 @@ export const WithoutCollapsible: Story = {
 
 /** Loading state with skeleton placeholders. */
 export const WithSkeletonLoading: Story = {
+  args: {},
   render: () => {
     function SkeletonExample() {
       const { setContent } = useInfobar();

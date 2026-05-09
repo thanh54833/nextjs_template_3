@@ -29,6 +29,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default icon-only info button. */
 export const Default: Story = {
+  args: {},
   render: () => {
     const content: InfobarContent = {
       title: 'Help Information',
@@ -56,6 +57,7 @@ export const Default: Story = {
 
 /** Info button with custom text label. */
 export const WithText: Story = {
+  args: {},
   render: () => {
     const content: InfobarContent = {
       title: 'Keyboard Shortcuts',
@@ -85,6 +87,7 @@ export const WithText: Story = {
 
 /** Ghost variant for subtle styling. */
 export const GhostVariant: Story = {
+  args: {},
   render: () => {
     const content: InfobarContent = {
       title: 'Quick Tips',
@@ -106,6 +109,7 @@ export const GhostVariant: Story = {
 
 /** Outline variant for distinct visual separation. */
 export const OutlineVariant: Story = {
+  args: {},
   render: () => {
     const content: InfobarContent = {
       title: 'Product Updates',
@@ -132,6 +136,7 @@ export const OutlineVariant: Story = {
 
 /** Info button with multiple links in content. */
 export const WithCustomContent: Story = {
+  args: {},
   render: () => {
     const content: InfobarContent = {
       title: 'Table Actions',
