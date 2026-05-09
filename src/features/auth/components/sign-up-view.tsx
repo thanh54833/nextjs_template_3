@@ -61,7 +61,7 @@ export default function SignUpViewPage({ stars }: { stars: number }) {
         <div className='flex w-full max-w-md flex-col items-center justify-center space-y-6'>
           {/* github link  */}
           <Link
-            className={cn('group inline-flex hover:text-yellow-200')}
+            className={cn('group inline-flex hover:text-yellow-200 dark:hover:text-yellow-300')}
             target='_blank'
             href={'https://github.com/kiranism/next-shadcn-dashboard-starter'}
           >

@@ -2,6 +2,7 @@ import PageContainer from '@/components/layout/page-container';
 import { Button } from '@/components/ui/button';
 import {
   Card,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -39,14 +40,14 @@ export default function OverViewPage() {
                 <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>Total Revenue</CardDescription>
                   <div className='text-primary'>
-                    <Icons.dollar />
+                    <Icons.creditCard />
                   </div>
                 </CardHeader>
                 <CardContent>
                   <CardTitle className='text-3xl font-bold tabular-nums'>$1,250</CardTitle>
                 </CardContent>
                 <CardFooter className='flex-col items-start gap-1 text-sm'>
-                  <div className='flex items-center gap-1 font-medium text-emerald-600'>
+                  <div className='flex items-center gap-1 font-medium text-green-600 dark:text-green-500'>
                     <Icons.trendingUp className='size-4' />
                     +12.5%
                   </div>
@@ -57,7 +58,7 @@ export default function OverViewPage() {
                 <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>New Customers</CardDescription>
                   <div className='text-chart-2'>
-                    <Icons.userPlus />
+                    <Icons.user />
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -75,14 +76,14 @@ export default function OverViewPage() {
                 <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>Active Accounts</CardDescription>
                   <div className='text-chart-4'>
-                    <Icons.users />
+                    <Icons.teams />
                   </div>
                 </CardHeader>
                 <CardContent>
                   <CardTitle className='text-3xl font-bold tabular-nums'>45,678</CardTitle>
                 </CardContent>
                 <CardFooter className='flex-col items-start gap-1 text-sm'>
-                  <div className='flex items-center gap-1 font-medium text-emerald-600'>
+                  <div className='flex items-center gap-1 font-medium text-green-600 dark:text-green-500'>
                     <Icons.trendingUp className='size-4' />
                     +12.5%
                   </div>
@@ -100,9 +101,9 @@ export default function OverViewPage() {
                   <CardTitle className='text-3xl font-bold tabular-nums'>4.5%</CardTitle>
                 </CardContent>
                 <CardFooter className='flex-col items-start gap-1 text-sm'>
-                  <div className='flex items-center gap-1 font-medium text-emerald-600'>
+<div className='flex items-center gap-1 font-medium text-green-600 dark:text-green-500'>
                     <Icons.trendingUp className='size-4' />
-                    +4.5%
+                    +12.5%
                   </div>
                   <div className='text-muted-foreground'>vs last month</div>
                 </CardFooter>

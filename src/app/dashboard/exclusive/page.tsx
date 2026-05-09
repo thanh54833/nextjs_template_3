@@ -17,7 +17,7 @@ export default function ExclusivePage() {
         fallback={
           <div className='flex h-full items-center justify-center'>
             <Alert>
-              <Icons.lock className='h-5 w-5 text-yellow-600' />
+              <Icons.lock className='h-5 w-5 text-yellow-600 dark:text-yellow-500' />
               <AlertDescription>
                 <div className='mb-1 text-lg font-semibold'>Pro Plan Required</div>
                 <div className='text-muted-foreground'>
@@ -38,7 +38,7 @@ export default function ExclusivePage() {
         <div className='space-y-6'>
           <div>
             <h1 className='flex items-center gap-2 text-3xl font-bold tracking-tight'>
-              <Icons.badgeCheck className='h-7 w-7 text-green-600' />
+              <Icons.badgeCheck className='h-7 w-7 text-green-600 dark:text-green-500' />
               Exclusive Area
             </h1>
             <p className='text-muted-foreground'>
