@@ -1,0 +1,38 @@
+[     842ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     878ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     888ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     893ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     894ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     894ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     895ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8f448a9cb1568c2f.js:0
+[     901ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rK (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:46765)
+    at rY (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:48133)
+    at https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:141511
+    at sp (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:146678)
+    at sc (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:138018)
+    at https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:132847
+    at u9 (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:132948)
+    at sV (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:159330)
+    at MessagePort.O (https://social-media-dashboard-kit-code.vercel.app/_next/static/chunks/8b72cfc40036c827.js:1:8296)

@@ -6,15 +6,8 @@ import { DEFAULT_THEME } from './theme.config';
 
 const COOKIE_NAME = 'active_theme';
 
-function setThemeCookie(theme: string) {
-  if (typeof window === 'undefined') return;
-
-  document.cookie = `${COOKIE_NAME}=${theme}; path=/; max-age=31536000; SameSite=Lax; ${window.location.protocol === 'https:' ? 'Secure;' : ''}`;
-}
-
 type ThemeContextType = {
   activeTheme: string;
-  setActiveTheme: (theme: string) => void;
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -26,37 +19,20 @@ export function ActiveThemeProvider({
   children: ReactNode;
   initialTheme?: string;
 }) {
-  const themeToUse = initialTheme || DEFAULT_THEME;
-  const [activeTheme, setActiveTheme] = useState<string>(themeToUse);
+  const [activeTheme] = useState<string>(initialTheme || DEFAULT_THEME);
 
   useEffect(() => {
-    // Only update if theme has changed
+    if (typeof window === 'undefined') return;
+
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme !== activeTheme) {
-      setThemeCookie(activeTheme);
-
-      // Remove existing data-theme attribute
-      document.documentElement.removeAttribute('data-theme');
-
-      // Remove any theme classes from body (cleanup)
-      Array.from(document.body.classList)
-        .filter((className) => className.startsWith('theme-'))
-        .forEach((className) => {
-          document.body.classList.remove(className);
-        });
-
-      // Set data-theme on html element
-      if (activeTheme) {
-        document.documentElement.setAttribute('data-theme', activeTheme);
-      }
-    } else {
-      // Still update cookie in case it's missing
-      setThemeCookie(activeTheme);
+      document.cookie = `${COOKIE_NAME}=${activeTheme}; path=/; max-age=31536000; SameSite=Lax; ${window.location.protocol === 'https:' ? 'Secure;' : ''}`;
+      document.documentElement.setAttribute('data-theme', activeTheme);
     }
   }, [activeTheme]);
 
   return (
-    <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
+    <ThemeContext.Provider value={{ activeTheme }}>
       {children}
     </ThemeContext.Provider>
   );

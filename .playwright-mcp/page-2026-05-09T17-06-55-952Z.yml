@@ -1,0 +1,187 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - button "SocialHub Workspace" [ref=e10]:
+            - img [ref=e12]
+            - generic [ref=e14]:
+              - generic [ref=e15]: SocialHub
+              - generic [ref=e16]: Workspace
+            - img [ref=e17]
+      - generic [ref=e19]:
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - link "Dashboard" [ref=e24] [cursor=pointer]:
+              - /url: /
+              - img [ref=e25]
+              - generic [ref=e30]: Dashboard
+          - listitem [ref=e32]:
+            - button "Platforms" [ref=e33]:
+              - img [ref=e34]
+              - generic [ref=e36]: Platforms
+              - img [ref=e37]
+          - listitem [ref=e39]:
+            - link "Content" [ref=e40] [cursor=pointer]:
+              - /url: /content
+              - img [ref=e41]
+              - generic [ref=e44]: Content
+          - listitem [ref=e45]:
+            - link "Calendar" [ref=e46] [cursor=pointer]:
+              - /url: /calendar
+              - img [ref=e47]
+              - generic [ref=e49]: Calendar
+          - listitem [ref=e50]:
+            - link "Media Library" [ref=e51] [cursor=pointer]:
+              - /url: /media
+              - img [ref=e52]
+              - generic [ref=e56]: Media Library
+          - listitem [ref=e57]:
+            - link "Compose" [ref=e58] [cursor=pointer]:
+              - /url: /compose
+              - img [ref=e59]
+              - generic [ref=e62]: Compose
+        - separator [ref=e63]
+        - generic [ref=e64]:
+          - generic [ref=e65]: Analytics
+          - list [ref=e67]:
+            - listitem [ref=e68]:
+              - link "Overview" [ref=e69] [cursor=pointer]:
+                - /url: /analytics
+                - img [ref=e70]
+                - generic [ref=e72]: Overview
+            - listitem [ref=e73]:
+              - link "Audience" [ref=e74] [cursor=pointer]:
+                - /url: /analytics/audience
+                - img [ref=e75]
+                - generic [ref=e80]: Audience
+            - listitem [ref=e81]:
+              - link "Hashtags" [ref=e82] [cursor=pointer]:
+                - /url: /analytics/hashtags
+                - img [ref=e83]
+                - generic [ref=e86]: Hashtags
+            - listitem [ref=e87]:
+              - link "Engagement" [ref=e88] [cursor=pointer]:
+                - /url: /analytics/engagement
+                - img [ref=e89]
+                - generic [ref=e91]: Engagement
+            - listitem [ref=e92]:
+              - link "Best Times" [ref=e93] [cursor=pointer]:
+                - /url: /analytics/best-times
+                - img [ref=e94]
+                - generic [ref=e97]: Best Times
+            - listitem [ref=e98]:
+              - link "Competitors" [ref=e99] [cursor=pointer]:
+                - /url: /analytics/competitors
+                - img [ref=e100]
+                - generic [ref=e103]: Competitors
+            - listitem [ref=e104]:
+              - link "Stories & Reels" [ref=e105] [cursor=pointer]:
+                - /url: /analytics/stories-reels
+                - img [ref=e106]
+                - generic [ref=e108]: Stories & Reels
+            - listitem [ref=e109]:
+              - link "Sentiment" [ref=e110] [cursor=pointer]:
+                - /url: /analytics/sentiment
+                - img [ref=e111]
+                - generic [ref=e113]: Sentiment
+        - separator [ref=e114]
+        - generic [ref=e115]:
+          - generic [ref=e116]: Reports
+          - list [ref=e118]:
+            - listitem [ref=e119]:
+              - link "Templates" [ref=e120] [cursor=pointer]:
+                - /url: /reports
+                - img [ref=e121]
+                - generic [ref=e124]: Templates
+            - listitem [ref=e125]:
+              - link "My Reports" [ref=e126] [cursor=pointer]:
+                - /url: /reports/my-reports
+                - img [ref=e127]
+                - generic [ref=e131]: My Reports
+            - listitem [ref=e132]:
+              - link "Comparison" [ref=e133] [cursor=pointer]:
+                - /url: /reports/comparison
+                - img [ref=e134]
+                - generic [ref=e139]: Comparison
+            - listitem [ref=e140]:
+              - link "Export" [ref=e141] [cursor=pointer]:
+                - /url: /reports/export
+                - img [ref=e142]
+                - generic [ref=e145]: Export
+        - separator [ref=e146]
+        - list [ref=e149]:
+          - listitem [ref=e150]:
+            - link "Inbox" [ref=e151] [cursor=pointer]:
+              - /url: /inbox
+              - img [ref=e152]
+              - generic [ref=e155]: Inbox
+            - generic: "12"
+        - separator [ref=e156]
+        - list [ref=e159]:
+          - listitem [ref=e160]:
+            - link "Settings" [ref=e161] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e162]
+              - generic [ref=e165]: Settings
+          - listitem [ref=e166]:
+            - link "Team" [ref=e167] [cursor=pointer]:
+              - /url: /settings/team
+              - img [ref=e168]
+              - generic [ref=e173]: Team
+      - list [ref=e175]:
+        - listitem [ref=e176]:
+          - button "AM Alex Morgan alex@socialhub.io" [ref=e177]:
+            - generic [ref=e179]: AM
+            - generic [ref=e180]:
+              - generic [ref=e181]: Alex Morgan
+              - generic [ref=e182]: alex@socialhub.io
+            - img [ref=e183]
+    - main [ref=e185]:
+      - generic [ref=e186]:
+        - button "Toggle sidebar" [ref=e187]:
+          - img
+          - generic [ref=e188]: Toggle Sidebar
+        - separator [ref=e189]
+        - navigation "breadcrumb" [ref=e190]:
+          - list [ref=e191]:
+            - listitem [ref=e192]:
+              - link "Dashboard" [ref=e193] [cursor=pointer]:
+                - /url: /
+            - listitem
+            - listitem [ref=e194]:
+              - img [ref=e195]
+            - link "Settings" [ref=e197] [cursor=pointer]:
+              - /url: /settings
+            - listitem
+            - listitem [ref=e198]:
+              - img [ref=e199]
+            - link "Billing" [disabled] [ref=e201]
+        - generic [ref=e202]:
+          - button "Search or navigate (Cmd+K)" [ref=e203]:
+            - img
+            - text: Search...
+            - generic:
+              - generic: ⌘
+              - text: K
+          - link "Notifications (3 unread)" [ref=e204] [cursor=pointer]:
+            - /url: /inbox
+            - generic [ref=e205]:
+              - img
+              - generic [ref=e206]: "3"
+          - link "Compose" [ref=e207] [cursor=pointer]:
+            - /url: /compose
+            - img
+            - text: Compose
+          - button "Toggle theme" [disabled]:
+            - img
+          - separator [ref=e208]
+          - button "User menu" [ref=e209]:
+            - generic [ref=e211]: AM
+      - generic [ref=e212]:
+        - heading "Command Palette" [level=2] [ref=e213]
+        - paragraph [ref=e214]: Search for a command to run...
+      - main [ref=e215]
+  - region "Notifications alt+T"

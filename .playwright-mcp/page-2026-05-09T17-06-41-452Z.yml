@@ -1,0 +1,638 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - button "SocialHub Workspace" [ref=e10]:
+            - img [ref=e12]
+            - generic [ref=e14]:
+              - generic [ref=e15]: SocialHub
+              - generic [ref=e16]: Workspace
+            - img [ref=e17]
+      - generic [ref=e19]:
+        - list [ref=e22]:
+          - listitem [ref=e23]:
+            - link "Dashboard" [ref=e24] [cursor=pointer]:
+              - /url: /
+              - img [ref=e25]
+              - generic [ref=e30]: Dashboard
+          - listitem [ref=e32]:
+            - button "Platforms" [ref=e33]:
+              - img [ref=e34]
+              - generic [ref=e36]: Platforms
+              - img [ref=e37]
+          - listitem [ref=e39]:
+            - link "Content" [ref=e40] [cursor=pointer]:
+              - /url: /content
+              - img [ref=e41]
+              - generic [ref=e44]: Content
+          - listitem [ref=e45]:
+            - link "Calendar" [ref=e46] [cursor=pointer]:
+              - /url: /calendar
+              - img [ref=e47]
+              - generic [ref=e49]: Calendar
+          - listitem [ref=e50]:
+            - link "Media Library" [ref=e51] [cursor=pointer]:
+              - /url: /media
+              - img [ref=e52]
+              - generic [ref=e56]: Media Library
+          - listitem [ref=e57]:
+            - link "Compose" [ref=e58] [cursor=pointer]:
+              - /url: /compose
+              - img [ref=e59]
+              - generic [ref=e62]: Compose
+        - separator [ref=e63]
+        - generic [ref=e64]:
+          - generic [ref=e65]: Analytics
+          - list [ref=e67]:
+            - listitem [ref=e68]:
+              - link "Overview" [ref=e69] [cursor=pointer]:
+                - /url: /analytics
+                - img [ref=e70]
+                - generic [ref=e72]: Overview
+            - listitem [ref=e73]:
+              - link "Audience" [ref=e74] [cursor=pointer]:
+                - /url: /analytics/audience
+                - img [ref=e75]
+                - generic [ref=e80]: Audience
+            - listitem [ref=e81]:
+              - link "Hashtags" [ref=e82] [cursor=pointer]:
+                - /url: /analytics/hashtags
+                - img [ref=e83]
+                - generic [ref=e86]: Hashtags
+            - listitem [ref=e87]:
+              - link "Engagement" [ref=e88] [cursor=pointer]:
+                - /url: /analytics/engagement
+                - img [ref=e89]
+                - generic [ref=e91]: Engagement
+            - listitem [ref=e92]:
+              - link "Best Times" [ref=e93] [cursor=pointer]:
+                - /url: /analytics/best-times
+                - img [ref=e94]
+                - generic [ref=e97]: Best Times
+            - listitem [ref=e98]:
+              - link "Competitors" [ref=e99] [cursor=pointer]:
+                - /url: /analytics/competitors
+                - img [ref=e100]
+                - generic [ref=e103]: Competitors
+            - listitem [ref=e104]:
+              - link "Stories & Reels" [ref=e105] [cursor=pointer]:
+                - /url: /analytics/stories-reels
+                - img [ref=e106]
+                - generic [ref=e108]: Stories & Reels
+            - listitem [ref=e109]:
+              - link "Sentiment" [ref=e110] [cursor=pointer]:
+                - /url: /analytics/sentiment
+                - img [ref=e111]
+                - generic [ref=e113]: Sentiment
+        - separator [ref=e114]
+        - generic [ref=e115]:
+          - generic [ref=e116]: Reports
+          - list [ref=e118]:
+            - listitem [ref=e119]:
+              - link "Templates" [ref=e120] [cursor=pointer]:
+                - /url: /reports
+                - img [ref=e121]
+                - generic [ref=e124]: Templates
+            - listitem [ref=e125]:
+              - link "My Reports" [ref=e126] [cursor=pointer]:
+                - /url: /reports/my-reports
+                - img [ref=e127]
+                - generic [ref=e131]: My Reports
+            - listitem [ref=e132]:
+              - link "Comparison" [ref=e133] [cursor=pointer]:
+                - /url: /reports/comparison
+                - img [ref=e134]
+                - generic [ref=e139]: Comparison
+            - listitem [ref=e140]:
+              - link "Export" [ref=e141] [cursor=pointer]:
+                - /url: /reports/export
+                - img [ref=e142]
+                - generic [ref=e145]: Export
+        - separator [ref=e146]
+        - list [ref=e149]:
+          - listitem [ref=e150]:
+            - link "Inbox" [ref=e151] [cursor=pointer]:
+              - /url: /inbox
+              - img [ref=e152]
+              - generic [ref=e155]: Inbox
+            - generic: "12"
+        - separator [ref=e156]
+        - list [ref=e159]:
+          - listitem [ref=e160]:
+            - link "Settings" [ref=e161] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e162]
+              - generic [ref=e165]: Settings
+          - listitem [ref=e166]:
+            - link "Team" [ref=e167] [cursor=pointer]:
+              - /url: /settings/team
+              - img [ref=e168]
+              - generic [ref=e173]: Team
+      - list [ref=e175]:
+        - listitem [ref=e176]:
+          - button "Alex Morgan Alex Morgan alex@socialhub.io" [ref=e177]:
+            - img "Alex Morgan" [ref=e179]
+            - generic [ref=e180]:
+              - generic [ref=e181]: Alex Morgan
+              - generic [ref=e182]: alex@socialhub.io
+            - img [ref=e183]
+    - main [ref=e185]:
+      - generic [ref=e186]:
+        - button "Toggle sidebar" [ref=e187]:
+          - img
+          - generic [ref=e188]: Toggle Sidebar
+        - separator [ref=e189]
+        - navigation "breadcrumb" [ref=e190]:
+          - list [ref=e191]:
+            - listitem [ref=e192]:
+              - link "Dashboard" [disabled] [ref=e193]
+        - generic [ref=e194]:
+          - button "Search or navigate (Cmd+K)" [ref=e195]:
+            - img
+            - text: Search...
+            - generic:
+              - generic: ⌘
+              - text: K
+          - link "Notifications (3 unread)" [ref=e196] [cursor=pointer]:
+            - /url: /inbox
+            - generic [ref=e197]:
+              - img
+              - generic [ref=e198]: "3"
+          - link "Compose" [ref=e199] [cursor=pointer]:
+            - /url: /compose
+            - img
+            - text: Compose
+          - button "Switch to dark mode" [ref=e200]:
+            - img
+          - separator [ref=e201]
+          - button "User menu" [ref=e202]:
+            - img "Alex Morgan" [ref=e204]
+      - generic [ref=e205]:
+        - heading "Command Palette" [level=2] [ref=e206]
+        - paragraph [ref=e207]: Search for a command to run...
+      - main [ref=e208]:
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - heading "Dashboard" [level=1] [ref=e211]
+            - paragraph [ref=e212]: Welcome back. Here is an overview of your social media performance.
+          - generic [ref=e213]:
+            - generic [ref=e215]:
+              - generic [ref=e216]:
+                - img "Instagram" [ref=e218]
+                - generic [ref=e221]:
+                  - paragraph [ref=e222]: Instagram
+                  - paragraph [ref=e223]: 12K
+              - generic [ref=e224]:
+                - generic [ref=e225]:
+                  - img [ref=e226]
+                  - generic [ref=e229]: +3.2%
+                - generic [ref=e230]: 4.2% eng.
+            - generic [ref=e232]:
+              - generic [ref=e233]:
+                - img "Twitter" [ref=e235]
+                - generic [ref=e237]:
+                  - paragraph [ref=e238]: Twitter
+                  - paragraph [ref=e239]: 8.2K
+              - generic [ref=e240]:
+                - generic [ref=e241]:
+                  - img [ref=e242]
+                  - generic [ref=e245]: +2.6%
+                - generic [ref=e246]: 2.8% eng.
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - img "Facebook" [ref=e251]
+                - generic [ref=e253]:
+                  - paragraph [ref=e254]: Facebook
+                  - paragraph [ref=e255]: 15K
+              - generic [ref=e256]:
+                - generic [ref=e257]:
+                  - img [ref=e258]
+                  - generic [ref=e261]: +2.0%
+                - generic [ref=e262]: 1.9% eng.
+            - generic [ref=e264]:
+              - generic [ref=e265]:
+                - img "LinkedIn" [ref=e267]
+                - generic [ref=e271]:
+                  - paragraph [ref=e272]: LinkedIn
+                  - paragraph [ref=e273]: 6.8K
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - img [ref=e276]
+                  - generic [ref=e279]: +2.6%
+                - generic [ref=e280]: 5.1% eng.
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - img "TikTok" [ref=e285]
+                - generic [ref=e288]:
+                  - paragraph [ref=e289]: TikTok
+                  - paragraph [ref=e290]: 23K
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - img [ref=e293]
+                  - generic [ref=e296]: +5.8%
+                - generic [ref=e297]: 6.8% eng.
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - img "YouTube" [ref=e302]
+                - generic [ref=e305]:
+                  - paragraph [ref=e306]: YouTube
+                  - paragraph [ref=e307]: 4.2K
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - img [ref=e310]
+                  - generic [ref=e313]: +3.2%
+                - generic [ref=e314]: 3.4% eng.
+          - generic [ref=e315]:
+            - generic [ref=e316]:
+              - generic [ref=e317]:
+                - generic [ref=e319]: Follower Growth
+                - img "Follower growth chart" [ref=e321]:
+                  - generic [ref=e323]:
+                    - list [ref=e325]:
+                      - listitem [ref=e326]:
+                        - img "facebook legend icon" [ref=e327]
+                        - text: Facebook
+                      - listitem [ref=e329]:
+                        - img "instagram legend icon" [ref=e330]
+                        - text: Instagram
+                      - listitem [ref=e332]:
+                        - img "linkedin legend icon" [ref=e333]
+                        - text: LinkedIn
+                      - listitem [ref=e335]:
+                        - img "tiktok legend icon" [ref=e336]
+                        - text: TikTok
+                      - listitem [ref=e338]:
+                        - img "twitter legend icon" [ref=e339]
+                        - text: Twitter
+                      - listitem [ref=e341]:
+                        - img "youtube legend icon" [ref=e342]
+                        - text: YouTube
+                    - application [ref=e344]:
+                      - generic [ref=e385]:
+                        - generic [ref=e386]:
+                          - generic [ref=e388]: Feb 10
+                          - generic [ref=e390]: Feb 24
+                          - generic [ref=e392]: Mar 3
+                          - generic [ref=e394]: Mar 17
+                          - generic [ref=e396]: Mar 31
+                          - generic [ref=e398]: Apr 7
+                          - generic [ref=e400]: Apr 14
+                          - generic [ref=e402]: Apr 21
+                          - generic [ref=e404]: May 5
+                        - generic [ref=e405]:
+                          - generic [ref=e407]: "0"
+                          - generic [ref=e409]: 6K
+                          - generic [ref=e411]: 12K
+                          - generic [ref=e413]: 18K
+                          - generic [ref=e415]: 24K
+              - generic [ref=e416]:
+                - generic [ref=e418]:
+                  - img [ref=e419]
+                  - text: Top Performing Posts
+                - list "Top performing posts" [ref=e422]:
+                  - listitem [ref=e423]:
+                    - generic [ref=e425]:
+                      - generic [ref=e427]:
+                        - img "Twitter"
+                        - generic [ref=e428]: Twitter
+                      - paragraph [ref=e429]: We spent $0 on paid ads last quarter and still grew 40%. Her...
+                      - generic "Engagement metrics" [ref=e430]:
+                        - generic "1830 likes" [ref=e431]:
+                          - img [ref=e432]
+                          - generic [ref=e434]: 1.8K
+                        - generic "20 comments" [ref=e435]:
+                          - img [ref=e436]
+                          - generic [ref=e438]: "20"
+                        - generic "344 shares" [ref=e439]:
+                          - img [ref=e440]
+                          - generic [ref=e446]: "344"
+                      - paragraph [ref=e447]: Mar 7, 2026
+                  - listitem [ref=e448]:
+                    - generic [ref=e450]:
+                      - generic [ref=e451]:
+                        - generic [ref=e452]:
+                          - img "Instagram"
+                          - generic [ref=e453]: Instagram
+                        - generic [ref=e454]:
+                          - img "Twitter"
+                          - generic [ref=e455]: Twitter
+                      - paragraph [ref=e456]: Our design system just went open source! 120+ components, fu...
+                      - generic "Engagement metrics" [ref=e457]:
+                        - generic "1878 likes" [ref=e458]:
+                          - img [ref=e459]
+                          - generic [ref=e461]: 1.9K
+                        - generic "21 comments" [ref=e462]:
+                          - img [ref=e463]
+                          - generic [ref=e465]: "21"
+                        - generic "381 shares" [ref=e466]:
+                          - img [ref=e467]
+                          - generic [ref=e473]: "381"
+                      - paragraph [ref=e474]: Mar 10, 2026
+                  - listitem [ref=e475]:
+                    - generic [ref=e476]:
+                      - generic [ref=e477]:
+                        - generic [ref=e478]:
+                          - img "Twitter"
+                          - generic [ref=e479]: Twitter
+                        - generic [ref=e480]:
+                          - img "TikTok"
+                          - generic [ref=e481]: TikTok
+                        - generic [ref=e482]:
+                          - img "YouTube"
+                          - generic [ref=e483]: YouTube
+                      - paragraph [ref=e484]: "Pro tip: Use UTM parameters on every link you share. Without..."
+                      - generic "Engagement metrics" [ref=e485]:
+                        - generic "1902 likes" [ref=e486]:
+                          - img [ref=e487]
+                          - generic [ref=e489]: 1.9K
+                        - generic "98 comments" [ref=e490]:
+                          - img [ref=e491]
+                          - generic [ref=e493]: "98"
+                        - generic "158 shares" [ref=e494]:
+                          - img [ref=e495]
+                          - generic [ref=e501]: "158"
+                      - paragraph [ref=e502]: Feb 14, 2026
+                  - listitem [ref=e503]:
+                    - generic [ref=e505]:
+                      - generic [ref=e507]:
+                        - img "Twitter"
+                        - generic [ref=e508]: Twitter
+                      - paragraph [ref=e509]: "Year in review: 2M+ posts published through TechFlow, 500K+..."
+                      - generic "Engagement metrics" [ref=e510]:
+                        - generic "1573 likes" [ref=e511]:
+                          - img [ref=e512]
+                          - generic [ref=e514]: 1.6K
+                        - generic "106 comments" [ref=e515]:
+                          - img [ref=e516]
+                          - generic [ref=e518]: "106"
+                        - generic "408 shares" [ref=e519]:
+                          - img [ref=e520]
+                          - generic [ref=e526]: "408"
+                      - paragraph [ref=e527]: May 5, 2026
+                  - listitem [ref=e528]:
+                    - generic [ref=e530]:
+                      - generic [ref=e532]:
+                        - img "LinkedIn"
+                        - generic [ref=e533]: LinkedIn
+                      - paragraph [ref=e534]: "Our Q1 numbers are in: 2.4x ARR growth, 140% net revenue ret..."
+                      - generic "Engagement metrics" [ref=e535]:
+                        - generic "1749 likes" [ref=e536]:
+                          - img [ref=e537]
+                          - generic [ref=e539]: 1.7K
+                        - generic "153 comments" [ref=e540]:
+                          - img [ref=e541]
+                          - generic [ref=e543]: "153"
+                        - generic "69 shares" [ref=e544]:
+                          - img [ref=e545]
+                          - generic [ref=e551]: "69"
+                      - paragraph [ref=e552]: Mar 2, 2026
+                  - listitem [ref=e553]:
+                    - generic [ref=e554]:
+                      - generic [ref=e555]:
+                        - generic [ref=e556]:
+                          - img "Facebook"
+                          - generic [ref=e557]: Facebook
+                        - generic [ref=e558]:
+                          - img "TikTok"
+                          - generic [ref=e559]: TikTok
+                        - generic [ref=e560]:
+                          - img "YouTube"
+                          - generic [ref=e561]: YouTube
+                      - paragraph [ref=e562]: "Comparison: TechFlow vs. the competition. We ran a blind tes..."
+                      - generic "Engagement metrics" [ref=e563]:
+                        - generic "1114 likes" [ref=e564]:
+                          - img [ref=e565]
+                          - generic [ref=e567]: 1.1K
+                        - generic "198 comments" [ref=e568]:
+                          - img [ref=e569]
+                          - generic [ref=e571]: "198"
+                        - generic "452 shares" [ref=e572]:
+                          - img [ref=e573]
+                          - generic [ref=e579]: "452"
+                      - paragraph [ref=e580]: Apr 26, 2026
+                  - listitem [ref=e581]:
+                    - generic [ref=e582]:
+                      - generic [ref=e583]:
+                        - generic [ref=e584]:
+                          - img "Facebook"
+                          - generic [ref=e585]: Facebook
+                        - generic [ref=e586]:
+                          - img "Instagram"
+                          - generic [ref=e587]: Instagram
+                        - generic [ref=e588]:
+                          - img "Twitter"
+                          - generic [ref=e589]: Twitter
+                      - paragraph [ref=e590]: The future of social media management is AI-assisted, not AI...
+                      - generic "Engagement metrics" [ref=e591]:
+                        - generic "1309 likes" [ref=e592]:
+                          - img [ref=e593]
+                          - generic [ref=e595]: 1.3K
+                        - generic "99 comments" [ref=e596]:
+                          - img [ref=e597]
+                          - generic [ref=e599]: "99"
+                        - generic "462 shares" [ref=e600]:
+                          - img [ref=e601]
+                          - generic [ref=e607]: "462"
+                      - paragraph [ref=e608]: Apr 27, 2026
+                  - listitem [ref=e609]:
+                    - generic [ref=e611]:
+                      - generic [ref=e612]:
+                        - generic [ref=e613]:
+                          - img "Instagram"
+                          - generic [ref=e614]: Instagram
+                        - generic [ref=e615]:
+                          - img "Twitter"
+                          - generic [ref=e616]: Twitter
+                      - paragraph [ref=e617]: Our annual user conference, FlowCon, is happening in Septemb...
+                      - generic "Engagement metrics" [ref=e618]:
+                        - generic "1298 likes" [ref=e619]:
+                          - img [ref=e620]
+                          - generic [ref=e622]: 1.3K
+                        - generic "122 comments" [ref=e623]:
+                          - img [ref=e624]
+                          - generic [ref=e626]: "122"
+                        - generic "251 shares" [ref=e627]:
+                          - img [ref=e628]
+                          - generic [ref=e634]: "251"
+                      - paragraph [ref=e635]: Apr 20, 2026
+                  - listitem [ref=e636]:
+                    - generic [ref=e638]:
+                      - generic [ref=e639]:
+                        - generic [ref=e640]:
+                          - img "Twitter"
+                          - generic [ref=e641]: Twitter
+                        - generic [ref=e642]:
+                          - img "LinkedIn"
+                          - generic [ref=e643]: LinkedIn
+                      - paragraph [ref=e644]: Announcing our partnership with Canva! Create stunning visua...
+                      - generic "Engagement metrics" [ref=e645]:
+                        - generic "1385 likes" [ref=e646]:
+                          - img [ref=e647]
+                          - generic [ref=e649]: 1.4K
+                        - generic "95 comments" [ref=e650]:
+                          - img [ref=e651]
+                          - generic [ref=e653]: "95"
+                        - generic "134 shares" [ref=e654]:
+                          - img [ref=e655]
+                          - generic [ref=e661]: "134"
+                      - paragraph [ref=e662]: Mar 4, 2026
+                  - listitem [ref=e663]:
+                    - generic [ref=e665]:
+                      - generic [ref=e666]:
+                        - generic [ref=e667]:
+                          - img "YouTube"
+                          - generic [ref=e668]: YouTube
+                        - generic [ref=e669]:
+                          - img "Facebook"
+                          - generic [ref=e670]: Facebook
+                        - generic [ref=e671]:
+                          - img "Twitter"
+                          - generic [ref=e672]: Twitter
+                      - paragraph [ref=e673]: "New feature: Bulk scheduling! Upload a CSV with 100 posts an..."
+                      - generic "Engagement metrics" [ref=e674]:
+                        - generic "944 likes" [ref=e675]:
+                          - img [ref=e676]
+                          - generic [ref=e678]: "944"
+                        - generic "63 comments" [ref=e679]:
+                          - img [ref=e680]
+                          - generic [ref=e682]: "63"
+                        - generic "442 shares" [ref=e683]:
+                          - img [ref=e684]
+                          - generic [ref=e690]: "442"
+                      - paragraph [ref=e691]: Apr 20, 2026
+            - generic [ref=e692]:
+              - generic [ref=e693]:
+                - generic [ref=e695]: Engagement by Platform
+                - img "Engagement" [ref=e697]:
+                  - application [ref=e700]:
+                    - generic [ref=e704]:
+                      - generic [ref=e705]:
+                        - generic [ref=e707]: "0"
+                        - generic [ref=e709]: "400"
+                        - generic [ref=e711]: "800"
+                        - generic [ref=e713]: 1.2K
+                        - generic [ref=e715]: 1.6K
+                      - generic [ref=e716]:
+                        - generic [ref=e718]: Instagram
+                        - generic [ref=e720]: Twitter / X
+                        - generic [ref=e722]: Facebook
+                        - generic [ref=e724]: LinkedIn
+                        - generic [ref=e726]: TikTok
+                        - generic [ref=e728]: YouTube
+              - generic [ref=e729]:
+                - generic [ref=e731]:
+                  - img [ref=e732]
+                  - text: Upcoming Posts
+                - list "Upcoming scheduled posts" [ref=e736]:
+                  - listitem [ref=e737]:
+                    - generic [ref=e739]:
+                      - text: May 14
+                      - text: 11:00 AM
+                    - generic [ref=e740]:
+                      - paragraph [ref=e741]: Our customer success team responded to 2,400 tickets last mo...
+                      - generic [ref=e742]:
+                        - img "TikTok" [ref=e743]
+                        - img "Instagram" [ref=e746]
+                  - listitem [ref=e749]:
+                    - generic [ref=e751]:
+                      - text: May 15
+                      - text: 8:00 AM
+                    - generic [ref=e752]:
+                      - paragraph [ref=e753]: Thank you for 5,000 followers! To celebrate, we're giving aw...
+                      - generic [ref=e754]:
+                        - img "TikTok" [ref=e755]
+                        - img "YouTube" [ref=e758]
+                  - listitem [ref=e761]:
+                    - generic [ref=e763]:
+                      - text: May 16
+                      - text: 9:00 AM
+                    - generic [ref=e764]:
+                      - paragraph [ref=e765]: Just released our 2025 Social Media Benchmark Report. Downlo...
+                      - img "Twitter" [ref=e767]
+                  - listitem [ref=e769]:
+                    - generic [ref=e771]:
+                      - text: May 21
+                      - text: 3:00 PM
+                    - generic [ref=e772]:
+                      - paragraph [ref=e773]: Welcome aboard, @DataDrivenDev! Great to have another awesom...
+                      - generic [ref=e774]:
+                        - img "Twitter" [ref=e775]
+                        - img "Instagram" [ref=e777]
+                        - img "Facebook" [ref=e780]
+                  - listitem [ref=e782]:
+                    - generic [ref=e784]:
+                      - text: May 22
+                      - text: 4:00 PM
+                    - generic [ref=e785]:
+                      - paragraph [ref=e786]: New analytics dashboard dropped. Track cross-platform perfor...
+                      - img "TikTok" [ref=e788]
+          - generic [ref=e791]:
+            - heading "Weekly Summary" [level=2] [ref=e792]
+            - generic [ref=e793]:
+              - generic [ref=e795]:
+                - generic [ref=e796]:
+                  - generic [ref=e797]:
+                    - img [ref=e799]
+                    - paragraph [ref=e802]: Posts Published
+                    - paragraph [ref=e803]: "2"
+                  - img "Sparkline trend" [ref=e805]:
+                    - application [ref=e808]
+                - generic [ref=e814]:
+                  - img [ref=e815]
+                  - generic [ref=e818]: +12.5%
+                  - generic [ref=e819]: vs last period
+              - generic [ref=e821]:
+                - generic [ref=e822]:
+                  - generic [ref=e823]:
+                    - img [ref=e825]
+                    - paragraph [ref=e828]: Total Reach
+                    - paragraph [ref=e829]: 35K
+                  - img "Sparkline trend" [ref=e831]:
+                    - application [ref=e834]
+                - generic [ref=e840]:
+                  - img [ref=e841]
+                  - generic [ref=e844]: +8.3%
+                  - generic [ref=e845]: vs last period
+              - generic [ref=e847]:
+                - generic [ref=e848]:
+                  - generic [ref=e849]:
+                    - img [ref=e851]
+                    - paragraph [ref=e857]: Total Engagement
+                    - paragraph [ref=e858]: 2.6K
+                  - img "Sparkline trend" [ref=e860]:
+                    - application [ref=e863]
+                - generic [ref=e869]:
+                  - img [ref=e870]
+                  - generic [ref=e873]: +15.2%
+                  - generic [ref=e874]: vs last period
+              - generic [ref=e876]:
+                - generic [ref=e877]:
+                  - generic [ref=e878]:
+                    - img [ref=e880]
+                    - paragraph [ref=e883]: New Followers
+                    - paragraph [ref=e884]: 2.4K
+                  - img "Sparkline trend" [ref=e886]:
+                    - application [ref=e889]
+                - generic [ref=e895]:
+                  - img [ref=e896]
+                  - generic [ref=e899]: +6.7%
+                  - generic [ref=e900]: vs last period
+          - navigation "Quick actions" [ref=e901]:
+            - link "Compose Post" [ref=e902] [cursor=pointer]:
+              - /url: /compose
+              - img
+              - text: Compose Post
+            - link "View Calendar" [ref=e903] [cursor=pointer]:
+              - /url: /calendar
+              - img
+              - text: View Calendar
+            - link "Generate Report" [ref=e904] [cursor=pointer]:
+              - /url: /reports
+              - img
+              - text: Generate Report
+  - region "Notifications alt+T"
+  - alert [ref=e905]
+  - generic [ref=e906]: Instagram

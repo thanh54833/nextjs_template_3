@@ -2,7 +2,7 @@
 
 ## Color Strategy
 
-**Restrained with platform accents.** The UI surface uses warm-tinted neutrals only. Social media platform colors serve as semantic accents for platform-specific data — Instagram pink for Instagram metrics, Twitter blue for Twitter data, etc. The accent never exceeds 10% of any surface outside of charts and platform-labeled cards.
+**Committed — teal/green primary with pink secondary.** The UI surface uses teal-tinted neutrals (hue 175). Primary is a deep teal `#006752`, secondary is a vibrant pink `#f791ca`. Social media platform colors serve as semantic accents for platform-specific data.
 
 ### Physical Scene
 
@@ -12,66 +12,66 @@ Social media managers working at their desks during the day, switching between t
 
 ### Light Mode
 
-All values in OKLCH format (Tailwind CSS v4 native).
+All values in OKLCH format (Tailwind CSS v4 native). Extracted from live site `https://social-media-dashboard-kit-code.vercel.app/`.
 
 #### Surface Colors
 
 | Token | OKLCH Value | Approx Hex | Usage |
 |-------|-------------|------------|-------|
-| `--background` | `oklch(0.989 0.003 264.54)` | `#FAFAFA` | Page background |
-| `--foreground` | `oklch(0.145 0.015 264.54)` | `#0F172A` | Primary text |
-| `--card` | `oklch(1.000 0 0)` | `#FFFFFF` | Card backgrounds |
-| `--card-foreground` | `oklch(0.145 0.015 264.54)` | `#0F172A` | Card text |
-| `--popover` | `oklch(1.000 0 0)` | `#FFFFFF` | Popover backgrounds |
-| `--popover-foreground` | `oklch(0.145 0.015 264.54)` | `#0F172A` | Popover text |
+| `--background` | `oklch(0.989 0.002 175)` | `#fefefe` | Page background |
+| `--foreground` | `oklch(0.145 0.02 175)` | `#06120f` | Primary text |
+| `--card` | `oklch(1.000 0 0)` | `#ffffff` | Card backgrounds |
+| `--card-foreground` | `oklch(0.145 0.02 175)` | `#06120f` | Card text |
+| `--popover` | `oklch(1.000 0 0)` | `#ffffff` | Popover backgrounds |
+| `--popover-foreground` | `oklch(0.145 0.02 175)` | `#06120f` | Popover text |
 
 #### Primary & Accent
 
 | Token | OKLCH Value | Approx Hex | Usage |
 |-------|-------------|------------|-------|
-| `--primary` | `oklch(0.388 0.077 264.54)` | `#0F172A` | Primary actions, links, sidebar active |
-| `--primary-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Text on primary |
-| `--secondary` | `oklch(0.726 0.045 264.54)` | `#E2E8F0` | Secondary elements |
-| `--secondary-foreground` | `oklch(0.123 0.016 264.54)` | `#1E293B` | Text on secondary |
-| `--accent` | `oklch(0.933 0.007 264.54)` | `#F1F5F9` | Accent backgrounds |
-| `--accent-foreground` | `oklch(0.265 0.058 264.54)` | `#334155` | Text on accent |
+| `--primary` | `oklch(0.388 0.2 175)` | `#006752` | Primary actions, links, sidebar active |
+| `--primary-foreground` | `oklch(0.977 0.005 175)` | `#f5faf8` | Text on primary |
+| `--secondary` | `oklch(0.726 0.14 346)` | `#f791ca` | Secondary elements, badges |
+| `--secondary-foreground` | `oklch(0.123 0.05 346)` | `#321727` | Text on secondary |
+| `--accent` | `oklch(0.933 0.02 175)` | `#def0ea` | Accent backgrounds |
+| `--accent-foreground` | `oklch(0.265 0.15 175)` | `#004738` | Text on accent |
 
 #### Muted & Semantic
 
 | Token | OKLCH Value | Approx Hex | Usage |
 |-------|-------------|------------|-------|
-| `--muted` | `oklch(0.954 0.002 264.54)` | `#F1F5F9` | Muted backgrounds |
-| `--muted-foreground` | `oklch(0.508 0.010 264.54)` | `#64748B` | Muted text, labels, captions |
-| `--destructive` | `oklch(0.491 0.069 23.03)` | `#DC2626` | Error, delete, destructive actions |
-| `--destructive-foreground` | `oklch(1.000 0 0)` | `#FFFFFF` | Text on destructive |
-| `--border` | `oklch(0.897 0.003 264.54)` | `#E2E8F0` | Borders, dividers |
-| `--input` | `oklch(0.897 0.003 264.54)` | `#E2E8F0` | Input borders |
-| `--ring` | `oklch(0.501 0.066 264.54)` | `#0EA5E9` | Focus rings |
+| `--muted` | `oklch(0.954 0.005 175)` | `#eef3f1` | Muted backgrounds |
+| `--muted-foreground` | `oklch(0.308 0.03 175)` | `#374d47` | Muted text, labels, captions |
+| `--destructive` | `oklch(0.491 0.22 27)` | `#df2225` | Error, delete, destructive actions |
+| `--destructive-foreground` | `oklch(0.977 0.005 175)` | `#f5faf8` | Text on destructive |
+| `--border` | `oklch(0.897 0.01 175)` | `#dbe4e1` | Borders, dividers |
+| `--input` | `oklch(0.897 0.01 175)` | `#dbe4e1` | Input borders |
+| `--ring` | `oklch(0.501 0.18 175)` | `#00866e` | Focus rings |
 
 #### Sidebar
 
 | Token | OKLCH Value | Approx Hex | Usage |
 |-------|-------------|------------|-------|
-| `--sidebar` | `oklch(0.966 0.003 264.54)` | `#F8FAFC` | Sidebar background |
-| `--sidebar-foreground` | `oklch(0.145 0.015 264.54)` | `#0F172A` | Sidebar text |
-| `--sidebar-primary` | `oklch(0.388 0.077 264.54)` | `#0F172A` | Sidebar primary |
-| `--sidebar-primary-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Sidebar primary text |
-| `--sidebar-accent` | `oklch(0.922 0.008 264.54)` | `#E2E8F0` | Sidebar hover/active |
-| `--sidebar-accent-foreground` | `oklch(0.265 0.058 264.54)` | `#334155` | Sidebar accent text |
-| `--sidebar-border` | `oklch(0.897 0.003 264.54)` | `#E2E8F0` | Sidebar borders |
-| `--sidebar-ring` | `oklch(0.501 0.066 264.54)` | `#0EA5E9` | Sidebar focus rings |
+| `--sidebar` | `oklch(0.966 0.008 175)` | `#f0f5f3` | Sidebar background |
+| `--sidebar-foreground` | `oklch(0.145 0.02 175)` | `#06120f` | Sidebar text |
+| `--sidebar-primary` | `oklch(0.388 0.2 175)` | `#006752` | Sidebar primary |
+| `--sidebar-primary-foreground` | `oklch(0.977 0.005 175)` | `#f5faf8` | Sidebar primary text |
+| `--sidebar-accent` | `oklch(0.922 0.025 175)` | `#e5ede9` | Sidebar hover/active |
+| `--sidebar-accent-foreground` | `oklch(0.265 0.15 175)` | `#004738` | Sidebar accent text |
+| `--sidebar-border` | `oklch(0.897 0.01 175)` | `#dbe4e1` | Sidebar borders |
+| `--sidebar-ring` | `oklch(0.501 0.18 175)` | `#00866e` | Sidebar focus rings |
 
 #### Chart Colors
 
 | Token | OKLCH Value | Approx Hex | Usage |
 |-------|-------------|------------|-------|
-| `--chart-1` | `oklch(0.504 0.075 264.54)` | `#0EA5E9` | Sky blue — primary series |
-| `--chart-2` | `oklch(0.691 0.045 264.54)` | `#8B5CF6` | Violet — secondary series |
-| `--chart-3` | `oklch(0.584 0.044 128.20)` | `#F59E0B` | Amber — tertiary series |
-| `--chart-4` | `oklch(0.531 0.012 156.08)` | `#10B981` | Emerald — quaternary series |
-| `--chart-5` | `oklch(0.662 0.013 64.96)` | `#F97316` | Orange — fifth series |
+| `--chart-1` | `oklch(0.504 0.2 175)` | `#00a885` | Teal — primary series |
+| `--chart-2` | `oklch(0.691 0.14 346)` | `#e87bb5` | Pink — secondary series |
+| `--chart-3` | `oklch(0.584 0.2 61)` | `#f59e0b` | Amber — tertiary series |
+| `--chart-4` | `oklch(0.531 0.18 241)` | `#3b82f6` | Blue — quaternary series |
+| `--chart-5` | `oklch(0.662 0.15 111)` | `#22c55e` | Green — fifth series |
 
-#### Social Platform Colors (Hardcoded)
+#### Social Platform Colors
 
 | Platform | Hex | OKLCH Approx | Usage |
 |----------|-----|-------------|-------|
@@ -84,30 +84,47 @@ All values in OKLCH format (Tailwind CSS v4 native).
 
 ### Dark Mode
 
+Extracted from live site. All values in OKLCH format.
+
 | Token | OKLCH Value | Approx Hex | Usage |
 |-------|-------------|------------|-------|
-| `--background` | `oklch(0.145 0.015 264.54)` | `#0F172A` | Page background |
-| `--foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Primary text |
-| `--card` | `oklch(0.205 0.015 264.54)` | `#1E293B` | Card backgrounds |
-| `--card-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Card text |
-| `--primary` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Primary actions |
-| `--primary-foreground` | `oklch(0.145 0.015 264.54)` | `#0F172A` | Text on primary |
-| `--secondary` | `oklch(0.265 0.015 264.54)` | `#334155` | Secondary elements |
-| `--secondary-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Text on secondary |
-| `--muted` | `oklch(0.265 0.015 264.54)` | `#334155` | Muted backgrounds |
-| `--muted-foreground` | `oklch(0.650 0.015 264.54)` | `#94A3B8` | Muted text |
-| `--accent` | `oklch(0.325 0.015 264.54)` | `#475569` | Accent backgrounds |
-| `--accent-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Text on accent |
-| `--destructive` | `oklch(0.690 0.200 23.91)` | `#EF4444` | Destructive actions |
-| `--border` | `oklch(0.265 0.015 264.54)` | `#334155` | Borders |
-| `--input` | `oklch(0.325 0.015 264.54)` | `#475569` | Input borders |
-| `--ring` | `oklch(0.720 0.015 264.54)` | `#CBD5E1` | Focus rings |
-| `--sidebar` | `oklch(0.205 0.015 264.54)` | `#1E293B` | Sidebar background |
-| `--sidebar-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Sidebar text |
-| `--sidebar-accent` | `oklch(0.325 0.015 264.54)` | `#475569` | Sidebar hover |
-| `--sidebar-accent-foreground` | `oklch(0.977 0.002 264.54)` | `#F8FAFC` | Sidebar accent text |
-| `--sidebar-border` | `oklch(0.325 0.015 264.54)` | `#475569` | Sidebar borders |
-| `--sidebar-ring` | `oklch(0.720 0.015 264.54)` | `#CBD5E1` | Sidebar focus rings |
+| `--background` | `oklch(0.039 0.02 175)` | `#04100d` | Page background |
+| `--foreground` | `oklch(0.954 0.005 175)` | `#eef3f1` | Primary text |
+| `--card` | `oklch(0.087 0.025 175)` | `#0b1c18` | Card backgrounds |
+| `--card-foreground` | `oklch(0.954 0.005 175)` | `#eef3f1` | Card text |
+| `--popover` | `oklch(0.087 0.025 175)` | `#0b1c18` | Popover backgrounds |
+| `--popover-foreground` | `oklch(0.954 0.005 175)` | `#eef3f1` | Popover text |
+| `--primary` | `oklch(0.675 0.18 175)` | `#00b99a` | Primary actions |
+| `--primary-foreground` | `oklch(0.032 0.02 175)` | `#030e0b` | Text on primary |
+| `--secondary` | `oklch(0.656 0.14 346)` | `#e27eb7` | Secondary elements |
+| `--secondary-foreground` | `oklch(0.049 0.04 346)` | `#1e0a15` | Text on secondary |
+| `--muted` | `oklch(0.156 0.025 175)` | `#192b26` | Muted backgrounds |
+| `--muted-foreground` | `oklch(0.656 0.03 175)` | `#8ca59d` | Muted text |
+| `--accent` | `oklch(0.218 0.05 175)` | `#103b31` | Accent backgrounds |
+| `--accent-foreground` | `oklch(0.908 0.01 175)` | `#dee7e4` | Text on accent |
+| `--destructive` | `oklch(0.637 0.191 22.216)` | `#ff6568` | Destructive actions |
+| `--destructive-foreground` | `oklch(0.032 0.02 175)` | `#030e0b` | Text on destructive |
+| `--border` | `oklch(1 0 0 / 0.12)` | `#ffffff1f` | Borders |
+| `--input` | `oklch(1 0 0 / 0.15)` | `#ffffff26` | Input borders |
+| `--ring` | `oklch(0.557 0.16 175)` | `#00977c` | Focus rings |
+| `--sidebar` | `oklch(0.065 0.025 175)` | `#071713` | Sidebar background |
+| `--sidebar-foreground` | `oklch(0.954 0.005 175)` | `#eef3f1` | Sidebar text |
+| `--sidebar-primary` | `oklch(0.675 0.18 175)` | `#00b99a` | Sidebar primary |
+| `--sidebar-primary-foreground` | `oklch(0.032 0.02 175)` | `#030e0b` | Sidebar primary text |
+| `--sidebar-accent` | `oklch(0.170 0.05 175)` | `#102f28` | Sidebar hover |
+| `--sidebar-accent-foreground` | `oklch(0.908 0.01 175)` | `#dee7e4` | Sidebar accent text |
+| `--sidebar-border` | `oklch(1 0 0 / 0.12)` | `#ffffff1f` | Sidebar borders |
+| `--sidebar-ring` | `oklch(0.557 0.16 175)` | `#00977c` | Sidebar focus rings |
+
+#### Chart Colors (Dark)
+
+| Token | OKLCH Value | Approx Hex | Usage |
+|-------|-------------|------------|-------|
+| `--chart-1` | `oklch(0.675 0.18 175)` | `#00b99a` | Teal — primary series |
+| `--chart-2` | `oklch(0.656 0.14 346)` | `#e27eb7` | Pink — secondary series |
+| `--chart-3` | `oklch(0.584 0.2 61)` | `#f59e0b` | Amber — tertiary series |
+| `--chart-4` | `oklch(0.589 0.18 241)` | `#4a7ff5` | Blue — quaternary series |
+| `--chart-5` | `oklch(0.662 0.15 111)` | `#22c55e` | Green — fifth series |
 
 ## Typography
 
@@ -116,7 +133,7 @@ All values in OKLCH format (Tailwind CSS v4 native).
 | Token | Value | Usage |
 |-------|-------|-------|
 | `--font-sans` | `Inter, ui-sans-serif, system-ui, sans-serif` | Body text, UI labels, data |
-| `--font-heading` | `DM Sans, ui-sans-serif, system-ui, sans-serif` | Page headings, section titles |
+| `--font-heading` | `DM Sans, Inter, ui-sans-serif, system-ui, sans-serif` | Page headings, section titles |
 | `--font-mono` | `JetBrains Mono, ui-monospace, monospace` | Code, numbers in tables, IDs |
 
 ### Font Scale
@@ -180,7 +197,7 @@ Fixed rem scale (not fluid). Tighter ratio for product UI.
 |-------|-------|-------|
 | `--radius` | `0.625rem` (10px) | Base radius |
 | `--radius-sm` | `calc(var(--radius) - 4px)` = `6px` | Small elements, badges |
-| `--radius-md` | `calc(var(--radius) - 2px)` = `8px` | Buttons, inputs |
+| `--radius-md` | `calc(var(--radius) * 0.8)` = `8px` | Buttons, inputs |
 | `--radius-lg` | `var(--radius)` = `10px` | Cards, panels |
 | `--radius-xl` | `calc(var(--radius) + 4px)` = `14px` | Large cards, pricing cards |
 
@@ -198,15 +215,14 @@ Fixed rem scale (not fluid). Tighter ratio for product UI.
 
 ## Shadows
 
-| Token | Value | Usage |
+No custom shadow CSS variables defined. Uses Tailwind default shadow system.
+
+| Class | Value | Usage |
 |-------|-------|-------|
-| `--shadow-2xs` | `0 1px 2px 0 hsl(0 0% 0% / 0.05)` | Subtle card elevation |
-| `--shadow-xs` | `0 1px 2px 0 hsl(0 0% 0% / 0.09)` | Default card shadow |
-| `--shadow-sm` | `0 1px 2px 0 hsl(0 0% 0% / 0.18), 0 1px 2px -1px hsl(0 0% 0% / 0.18)` | Elevated elements |
-| `--shadow` | `0 1px 2px 0 hsl(0 0% 0% / 0.18), 0 1px 2px -1px hsl(0 0% 0% / 0.18)` | Default shadow |
-| `--shadow-md` | `0 1px 2px 0 hsl(0 0% 0% / 0.18), 0 2px 4px -1px hsl(0 0% 0% / 0.18)` | Dropdowns, popovers |
-| `--shadow-lg` | `0 1px 2px 0 hsl(0 0% 0% / 0.18), 0 4px 6px -1px hsl(0 0% 0% / 0.18)` | Modals, large overlays |
-| `--shadow-xl` | `0 1px 2px 0 hsl(0 0% 0% / 0.18), 0 8px 10px -1px hsl(0 0% 0% / 0.18)` | Full-screen overlays |
+| `shadow-sm` | `0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)` | Subtle card elevation |
+| `shadow-md` | `0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)` | Dropdowns, popovers |
+| `shadow-lg` | `0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)` | Modals, large overlays |
+| `shadow-xl` | `0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)` | Full-screen overlays |
 
 ## Layout
 
@@ -308,7 +324,7 @@ Fixed rem scale (not fluid). Tighter ratio for product UI.
 }
 
 .metric-change.positive {
-  color: oklch(0.531 0.012 156.08); /* Emerald */
+  color: oklch(0.531 0.18 175); /* Teal */
 }
 
 .metric-change.negative {
@@ -425,13 +441,13 @@ Fixed rem scale (not fluid). Tighter ratio for product UI.
 }
 
 .badge-success {
-  background: oklch(0.93 0.01 156.08);
-  color: oklch(0.35 0.02 156.08);
+  background: oklch(0.93 0.01 175);
+  color: oklch(0.35 0.02 175);
 }
 
 .badge-destructive {
-  background: oklch(0.93 0.02 23.03);
-  color: oklch(0.35 0.03 23.03);
+  background: oklch(0.93 0.02 27);
+  color: oklch(0.35 0.03 27);
 }
 ```
 
