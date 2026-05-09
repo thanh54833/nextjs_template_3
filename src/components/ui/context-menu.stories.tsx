@@ -42,6 +42,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default context menu with common actions and shortcuts */
 export const Default: Story = {
+  args: {},
   render: () => {
     return (
       <ContextMenu>
@@ -81,6 +82,7 @@ export const Default: Story = {
 
 /** Context menu with nested submenu */
 export const WithSubmenu: Story = {
+  args: {},
   render: () => {
     return (
       <ContextMenu>
@@ -109,6 +111,7 @@ export const WithSubmenu: Story = {
 
 /** Context menu with checkboxes and radio groups for settings */
 export const WithCheckbox: Story = {
+  args: {},
   render: () => {
     return (
       <ContextMenu>

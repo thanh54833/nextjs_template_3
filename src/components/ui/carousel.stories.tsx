@@ -87,6 +87,7 @@ export const VerticalOrientation: Story = {
 
 /** Carousel without navigation controls for custom navigation. */
 export const WithoutNavigation: Story = {
+  args: {},
   render: () => (
     <Carousel className="w-full max-w-[320px]">
       <CarouselContent>
@@ -102,6 +103,7 @@ export const WithoutNavigation: Story = {
 
 /** Single slide carousel example. */
 export const SingleSlide: Story = {
+  args: {},
   render: () => (
     <Carousel className="w-full max-w-[320px]">
       <CarouselContent>
@@ -117,6 +119,7 @@ export const SingleSlide: Story = {
 
 /** Carousel with custom styling using className overrides. */
 export const CustomClassName: Story = {
+  args: {},
   render: () => (
     <Carousel className="w-full max-w-[400px]">
       <CarouselContent className="gap-4">

@@ -38,6 +38,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default inline command with input and grouped list */
 export const Default: Story = {
+  args: {},
   render: () => {
     return (
       <Command className="w-[350px]">
@@ -72,6 +73,7 @@ export const Default: Story = {
 
 /** Command dialog modal with trigger button */
 export const WithDialog: Story = {
+  args: {},
   render: () => {
     const [open, setOpen] = useState(false);
 

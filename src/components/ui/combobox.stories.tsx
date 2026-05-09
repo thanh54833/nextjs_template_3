@@ -48,6 +48,7 @@ const frameworks = [
 
 /** Default combobox with searchable framework list */
 export const Default: Story = {
+  args: {},
   render: () => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');
@@ -82,6 +83,7 @@ export const Default: Story = {
 
 /** Combobox with items separated into frontend and backend groups */
 export const WithGroups: Story = {
+  args: {},
   render: () => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState('');

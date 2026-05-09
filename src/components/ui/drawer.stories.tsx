@@ -38,6 +38,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default drawer sliding from the bottom */
 export const Default: Story = {
+  args: {},
   render: () => {
     return (
       <Drawer open>
@@ -65,6 +66,7 @@ export const Default: Story = {
 
 /** Drawer with trigger button for interactive open/close */
 export const WithTrigger: Story = {
+  args: {},
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -98,6 +100,7 @@ export const WithTrigger: Story = {
 
 /** Drawer sliding from the top */
 export const TopDirection: Story = {
+  args: {},
   render: () => {
     return (
       <Drawer direction="top" open>
@@ -117,6 +120,7 @@ export const TopDirection: Story = {
 
 /** Drawer sliding from the left */
 export const LeftDirection: Story = {
+  args: {},
   render: () => {
     return (
       <Drawer direction="left" open>

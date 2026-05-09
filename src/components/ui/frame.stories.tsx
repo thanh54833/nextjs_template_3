@@ -35,6 +35,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default frame with title, description, and action buttons. */
 export const Default: Story = {
+  args: {},
   render: () => (
     <Frame className="w-full max-w-lg">
       <FramePanel>
@@ -60,6 +61,7 @@ export const Default: Story = {
 
 /** Multiple stacked panels for list-based content. */
 export const StackedPanels: Story = {
+  args: {},
   render: () => (
     <Frame className="w-full max-w-lg" stackedPanels>
       <FramePanel>
@@ -92,6 +94,7 @@ export const StackedPanels: Story = {
 
 /** Frame with list content and footer action. */
 export const WithList: Story = {
+  args: {},
   render: () => (
     <Frame className="w-full max-w-lg">
       <FramePanel>
@@ -120,6 +123,7 @@ export const WithList: Story = {
 
 /** Frame with form fields for settings pages. */
 export const WithForm: Story = {
+  args: {},
   render: () => (
     <Frame className="w-full max-w-lg">
       <FramePanel>
@@ -150,6 +154,7 @@ export const WithForm: Story = {
 
 /** Card-style frames for dashboard grid layouts. */
 export const CardStyle: Story = {
+  args: {},
   render: () => (
     <div className="flex gap-4">
       <Frame className="flex-1">

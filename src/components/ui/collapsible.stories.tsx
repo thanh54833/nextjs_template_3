@@ -32,6 +32,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  args: {},
   /** Default collapsible that starts in collapsed state */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +59,7 @@ export const Default: Story = {
 };
 
 export const OpenByDefault: Story = {
+  args: {},
   /** Collapsible that starts in open state */
   render: () => {
     const [isOpen, setIsOpen] = useState(true);
@@ -84,6 +86,7 @@ export const OpenByDefault: Story = {
 };
 
 export const Disabled: Story = {
+  args: {},
   /** Collapsible in disabled state */
   render: () => (
     <Collapsible disabled>

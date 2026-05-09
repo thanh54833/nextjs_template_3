@@ -38,6 +38,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default dialog with title, description, and action buttons */
 export const Default: Story = {
+  args: {},
   render: () => {
     return (
       <Dialog open>
@@ -62,6 +63,7 @@ export const Default: Story = {
 
 /** Dialog with trigger button that manages open state */
 export const WithTrigger: Story = {
+  args: {},
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -90,6 +92,7 @@ export const WithTrigger: Story = {
 
 /** Alert-style dialog for destructive actions with red accent */
 export const AlertDialog: Story = {
+  args: {},
   render: () => {
     return (
       <Dialog open>
