@@ -30,6 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default horizontal button group with three buttons. */
 export const Default: Story = {
+  args: {},
   render: () => (
     <ButtonGroup>
       <Button variant="outline">Left</Button>
@@ -41,6 +42,7 @@ export const Default: Story = {
 
 /** Explicit horizontal orientation. */
 export const Horizontal: Story = {
+  args: {},
   render: () => (
     <ButtonGroup orientation="horizontal">
       <Button variant="outline">First</Button>
@@ -52,6 +54,7 @@ export const Horizontal: Story = {
 
 /** Vertical orientation for narrow containers. */
 export const Vertical: Story = {
+  args: {},
   render: () => (
     <ButtonGroup orientation="vertical">
       <Button variant="outline">Top</Button>
@@ -63,6 +66,7 @@ export const Vertical: Story = {
 
 /** Button group with text input for search patterns. */
 export const WithInput: Story = {
+  args: {},
   render: () => (
     <ButtonGroup className="w-[400px]">
       <Button variant="outline">Search</Button>
@@ -73,6 +77,7 @@ export const WithInput: Story = {
 
 /** Button group with select dropdown for filter patterns. */
 export const WithSelect: Story = {
+  args: {},
   render: () => (
     <ButtonGroup className="w-[400px]">
       <Button variant="outline">Filter</Button>
@@ -87,6 +92,7 @@ export const WithSelect: Story = {
 
 /** Button group with text label for formatting toolbars. */
 export const WithTextLabel: Story = {
+  args: {},
   render: () => (
     <ButtonGroup>
       <Button variant="outline">Bold</Button>
@@ -99,6 +105,7 @@ export const WithTextLabel: Story = {
 
 /** Button group with separator for grouped actions. */
 export const WithSeparator: Story = {
+  args: {},
   render: () => (
     <ButtonGroup>
       <Button variant="outline">Cut</Button>
@@ -112,6 +119,7 @@ export const WithSeparator: Story = {
 
 /** Vertical button group with text label. */
 export const WithTextLabelVertical: Story = {
+  args: {},
   render: () => (
     <ButtonGroup orientation="vertical">
       <Button variant="outline">Bold</Button>
@@ -124,6 +132,7 @@ export const WithTextLabelVertical: Story = {
 
 /** Icon-only buttons for compact toolbars. */
 export const IconButtons: Story = {
+  args: {},
   render: () => (
     <ButtonGroup>
       <Button variant="outline" size="icon">
@@ -147,6 +156,7 @@ export const IconButtons: Story = {
 
 /** Mixed content with buttons, text, and input. */
 export const MixedContent: Story = {
+  args: {},
   render: () => (
     <ButtonGroup className="w-[500px]">
       <Button variant="outline">Save</Button>

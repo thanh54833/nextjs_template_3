@@ -28,6 +28,7 @@ type Story = StoryObj<typeof meta>;
 
 /** Default avatar showing an image with fallback initials. */
 export const Default: Story = {
+  args: {},
   render: () => (
     <Avatar>
       <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
@@ -38,6 +39,7 @@ export const Default: Story = {
 
 /** Avatar without an image, showing only the fallback. */
 export const WithoutImage: Story = {
+  args: {},
   render: () => (
     <Avatar>
       <AvatarFallback>JD</AvatarFallback>
@@ -47,6 +49,7 @@ export const WithoutImage: Story = {
 
 /** Avatar with a long name in the fallback. */
 export const LongName: Story = {
+  args: {},
   render: () => (
     <Avatar>
       <AvatarFallback>Alexander The Great</AvatarFallback>
@@ -56,6 +59,7 @@ export const LongName: Story = {
 
 /** Small sized avatar. */
 export const Small: Story = {
+  args: {},
   render: () => (
     <Avatar className='size-6'>
       <AvatarFallback className='text-[10px]'>SM</AvatarFallback>
@@ -65,6 +69,7 @@ export const Small: Story = {
 
 /** Large sized avatar. */
 export const Large: Story = {
+  args: {},
   render: () => (
     <Avatar className='size-16'>
       <AvatarFallback className='text-lg'>LG</AvatarFallback>
