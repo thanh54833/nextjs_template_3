@@ -166,7 +166,7 @@ export function UserFormSheet({ user, open, onOpenChange }: UserFormSheetProps) 
           <Button type='button' variant='outline' onClick={() => onOpenChange(false)}>
             Cancel
           </Button>
-          <Button type='submit' form='user-form-sheet' isLoading={isPending}>
+          <Button type='submit' form='user-form-sheet'>
             <Icons.check /> {isEdit ? 'Update User' : 'Create User'}
           </Button>
         </SheetFooter>

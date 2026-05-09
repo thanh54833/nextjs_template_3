@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Toggle } from './toggle';
+
 /**
  * Toggle component for pressable button states.
  *
  * @see https://ui.shadcn.com/docs/components/toggle
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Toggle } from './toggle';
-
 const meta = {
   component: Toggle,
   tags: ['autodocs'],

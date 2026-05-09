@@ -1,9 +1,3 @@
-/**
- * Dialog component for displaying overlay content that requires user attention or action.
- *
- * @see https://ui.shadcn.com/docs/components/dialog
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -19,6 +13,12 @@ import {
   DialogTrigger
 } from './dialog';
 
+/**
+ * Dialog component for displaying overlay content that requires user attention or action.
+ *
+ * @see https://ui.shadcn.com/docs/components/dialog
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Dialog,
   tags: ['autodocs'],

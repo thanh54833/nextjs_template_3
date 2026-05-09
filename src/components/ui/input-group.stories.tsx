@@ -1,9 +1,3 @@
-/**
- * Input group component for combining inputs with addons, buttons, and text.
- *
- * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
@@ -18,6 +12,12 @@ import {
 import { Input } from './input';
 import { Textarea } from './textarea';
 
+/**
+ * Input group component for combining inputs with addons, buttons, and text.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: InputGroup,
   tags: ['autodocs'],

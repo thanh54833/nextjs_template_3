@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Spinner } from './spinner';
+
 /**
  * Spinner component for indicating loading states.
  *
  * @see https://ui.shadcn.com/docs/components/spinner
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Spinner } from './spinner';
-
 const meta = {
   component: Spinner,
   tags: ['autodocs'],

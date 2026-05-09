@@ -1,9 +1,3 @@
-/**
- * Command component for searchable command palettes and dialogs.
- *
- * @see https://ui.shadcn.com/docs/components/command
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -19,6 +13,12 @@ import {
   CommandSeparator
 } from './command';
 
+/**
+ * Command component for searchable command palettes and dialogs.
+ *
+ * @see https://ui.shadcn.com/docs/components/command
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Command,
   tags: ['autodocs'],

@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Slider } from './slider';
+
 /**
  * Slider component for value selection within a range.
  *
  * @see https://ui.shadcn.com/docs/components/slider
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Slider } from './slider';
-
 const meta = {
   component: Slider,
   tags: ['autodocs'],

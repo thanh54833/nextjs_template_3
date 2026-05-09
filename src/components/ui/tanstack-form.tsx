@@ -92,8 +92,7 @@ function SubmitButton({
           className={className}
           size={size}
           type='submit'
-          disabled={!canSubmit}
-          isLoading={isSubmitting}
+          disabled={!canSubmit || isSubmitting}
           {...props}
         >
           {children}

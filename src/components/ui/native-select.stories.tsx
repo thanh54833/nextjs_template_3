@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { NativeSelect, NativeSelectOption, NativeSelectOptGroup } from './native-select';
+
 /**
  * NativeSelect component using native HTML select element.
  *
  * @see https://ui.shadcn.com/docs/components/select
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { NativeSelect, NativeSelectOption, NativeSelectOptGroup } from './native-select';
-
 const meta = {
   component: NativeSelect,
   tags: ['autodocs'],

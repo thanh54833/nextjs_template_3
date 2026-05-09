@@ -1,9 +1,3 @@
-/**
- * Notification card component with support for actions, status indicators, and timestamps.
- *
- * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import * as React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -14,6 +8,12 @@ import {
   type NotificationCardProps,
 } from './notification-card';
 
+/**
+ * Notification card component with support for actions, status indicators, and timestamps.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: NotificationCard,
   tags: ['autodocs'],

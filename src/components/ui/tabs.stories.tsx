@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
+
 /**
  * A set of tabbed sections that allow users to navigate between different content areas.
  *
  * @see https://ui.shadcn.com/docs/components/tabs
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
-
 const meta = {
   component: Tabs,
   tags: ['autodocs'],

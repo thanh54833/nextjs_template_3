@@ -1,3 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction } from './card';
+import { Button } from './button';
+
 /**
  * Card component for grouping and displaying content in a container.
  *
@@ -13,10 +17,6 @@
  * - `CardContent` - Main content area
  * - `CardFooter` - Footer section for actions
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction } from './card';
-import { Button } from './button';
-
 const meta = {
   component: Card,
   tags: ['autodocs'],

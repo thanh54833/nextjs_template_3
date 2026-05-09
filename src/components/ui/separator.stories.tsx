@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Separator } from './separator';
+
 /**
  * Separator component for dividing content with horizontal or vertical lines.
  *
  * @see https://ui.shadcn.com/docs/components/separator
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Separator } from './separator';
-
 const meta = {
   component: Separator,
   tags: ['autodocs'],

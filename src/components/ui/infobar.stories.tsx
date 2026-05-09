@@ -1,9 +1,3 @@
-/**
- * Expandable sidebar/infobar component with sections, menus, and keyboard shortcuts.
- *
- * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -33,6 +27,12 @@ import {
   type InfobarContent as InfobarContentType,
 } from './infobar';
 
+/**
+ * Expandable sidebar/infobar component with sections, menus, and keyboard shortcuts.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: InfobarProvider,
   tags: ['autodocs'],
@@ -48,7 +48,7 @@ const meta = {
 } as Meta<typeof InfobarProvider>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 const sampleContent: InfobarContentType = {
   title: 'Dashboard Help',
@@ -104,7 +104,7 @@ function InfobarShowcase() {
               </InfobarMenuItem>
               <InfobarMenuItem>
                 <InfobarMenuButton tooltip="Reports">
-                  <Icons.chart />
+                  <Icons.fileTypePdf />
                   <span>Reports</span>
                 </InfobarMenuButton>
               </InfobarMenuItem>

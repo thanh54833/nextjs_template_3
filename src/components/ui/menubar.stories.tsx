@@ -1,9 +1,3 @@
-/**
- * Menubar component for application-style navigation menus.
- *
- * @see https://ui.shadcn.com/docs/components/menubar
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -24,6 +18,12 @@ import {
   MenubarTrigger
 } from './menubar';
 
+/**
+ * Menubar component for application-style navigation menus.
+ *
+ * @see https://ui.shadcn.com/docs/components/menubar
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Menubar,
   tags: ['autodocs'],
@@ -39,7 +39,7 @@ const meta = {
 } as Meta<typeof Menubar>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default menubar with File, Edit, View, and Help menus */
 export const Default: Story = {
@@ -103,9 +103,9 @@ export const Default: Story = {
             <MenubarSeparator />
             <MenubarRadioGroup>
               <MenubarLabel>Theme</MenubarLabel>
-              <MenubarRadioItem checked>Light</MenubarRadioItem>
-              <MenubarRadioItem>Dark</MenubarRadioItem>
-              <MenubarRadioItem>System</MenubarRadioItem>
+<MenubarRadioItem value="light">Light</MenubarRadioItem>
+            <MenubarRadioItem value="dark">Dark</MenubarRadioItem>
+            <MenubarRadioItem value="system">System</MenubarRadioItem>
             </MenubarRadioGroup>
           </MenubarContent>
         </MenubarMenu>

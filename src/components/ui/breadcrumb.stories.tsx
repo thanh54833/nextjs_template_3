@@ -1,9 +1,3 @@
-/**
- * A navigation component that displays the current location within a navigation hierarchy.
- *
- * @see https://ui.shadcn.com/docs/components/breadcrumb
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -16,6 +10,12 @@ import {
   BreadcrumbEllipsis,
 } from './breadcrumb';
 
+/**
+ * A navigation component that displays the current location within a navigation hierarchy.
+ *
+ * @see https://ui.shadcn.com/docs/components/breadcrumb
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Breadcrumb,
   tags: ['autodocs'],

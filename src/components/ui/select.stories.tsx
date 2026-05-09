@@ -1,9 +1,3 @@
-/**
- * Select component for dropdown option selection.
- *
- * @see https://ui.shadcn.com/docs/components/select
- * @see https://storybook.js.org/docs/writing-stories
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -16,6 +10,12 @@ import {
   SelectValue,
 } from './select';
 
+/**
+ * Select component for dropdown option selection.
+ *
+ * @see https://ui.shadcn.com/docs/components/select
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 const meta = {
   component: Select,
   tags: ['autodocs'],

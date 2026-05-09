@@ -1,15 +1,15 @@
-/**
- * A component that allows content to be expanded or collapsed.
- *
- * @see https://ui.shadcn.com/docs/components/collapsible
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './collapsible';
 import { Button } from './button';
 
+/**
+ * A component that allows content to be expanded or collapsed.
+ *
+ * @see https://ui.shadcn.com/docs/components/collapsible
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Collapsible,
   tags: ['autodocs'],

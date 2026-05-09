@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './carousel';
+
 /**
  * Carousel component built on Embla Carousel with prev/next navigation controls.
  *
  * @see https://www.embla-carousel.com/ - Embla Carousel official documentation
  * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './carousel';
-
 const meta = {
   component: Carousel,
   tags: ['autodocs'],

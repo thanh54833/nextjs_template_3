@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarFooter, SidebarTrigger } from './sidebar';
+
 /**
  * A collapsible sidebar component that provides navigation and context for users.
  *
  * @see https://ui.shadcn.com/docs/components/sidebar
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarFooter, SidebarTrigger } from './sidebar';
-
 const meta = {
   component: Sidebar,
   tags: ['autodocs'],

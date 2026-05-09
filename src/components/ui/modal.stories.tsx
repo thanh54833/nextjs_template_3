@@ -1,15 +1,15 @@
-/**
- * Modal dialog component built on Radix UI Dialog primitive.
- *
- * @see https://www.radix-ui.com/primitives - Radix UI primitives documentation
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 import { Button } from './button';
 import { Modal } from './modal';
 
+/**
+ * Modal dialog component built on Radix UI Dialog primitive.
+ *
+ * @see https://www.radix-ui.com/primitives - Radix UI primitives documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: Modal,
   tags: ['autodocs'],

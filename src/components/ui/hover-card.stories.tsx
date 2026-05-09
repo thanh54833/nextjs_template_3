@@ -1,14 +1,14 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from '@/components/ui/button';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './hover-card';
+
 /**
  * HoverCard component for preview content that appears on hover.
  *
  * @see https://ui.shadcn.com/docs/components/hover-card
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button } from '@/components/ui/button';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from './hover-card';
-
 const meta = {
   component: HoverCard,
   tags: ['autodocs'],

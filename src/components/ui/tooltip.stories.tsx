@@ -1,14 +1,14 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
+
 /**
  * Tooltip component for displaying additional information on hover.
  *
  * @see https://ui.shadcn.com/docs/components/tooltip
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
-
 const meta = {
   component: Tooltip,
   tags: ['autodocs'],

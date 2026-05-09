@@ -1,15 +1,15 @@
-/**
- * A calendar component for selecting dates and date ranges.
- *
- * @see https://ui.shadcn.com/docs/components/calendar
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import type { DateRange } from 'react-day-picker';
 
 import { Calendar } from './calendar';
 
+/**
+ * A calendar component for selecting dates and date ranges.
+ *
+ * @see https://ui.shadcn.com/docs/components/calendar
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Calendar,
   tags: ['autodocs'],
@@ -29,7 +29,7 @@ const meta = {
 } as Meta<typeof Calendar>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 export const Default: Story = {
   /** Default calendar with today's date selected */

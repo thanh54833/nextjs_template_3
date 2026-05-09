@@ -1,9 +1,3 @@
-/**
- * Drawer component for sidebar panels that slide in from different directions.
- *
- * @see https://ui.shadcn.com/docs/components/drawer
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -19,6 +13,12 @@ import {
   DrawerTrigger
 } from './drawer';
 
+/**
+ * Drawer component for sidebar panels that slide in from different directions.
+ *
+ * @see https://ui.shadcn.com/docs/components/drawer
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Drawer,
   tags: ['autodocs'],
@@ -34,7 +34,7 @@ const meta = {
 } as Meta<typeof Drawer>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default drawer sliding from the bottom */
 export const Default: Story = {

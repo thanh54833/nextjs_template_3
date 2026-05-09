@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Alert, AlertTitle, AlertDescription } from './alert';
+
 /**
  * Alert component for displaying important messages and notifications.
  *
  * @see https://ui.shadcn.com/docs/components/alert
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Alert, AlertTitle, AlertDescription } from './alert';
-
 const meta = {
   component: Alert,
   tags: ['autodocs'],

@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Input } from './input';
+
 /**
  * Input component for text entry in forms.
  *
  * @see https://ui.shadcn.com/docs/components/input
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Input } from './input';
-
 const meta = {
   component: Input,
   tags: ['autodocs'],

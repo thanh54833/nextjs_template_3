@@ -1,3 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Heading } from './heading';
+
 /**
  * Heading component for page section titles with optional descriptions.
  *

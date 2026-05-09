@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { ToggleGroup, ToggleGroupItem } from './toggle-group';
+
 /**
  * ToggleGroup component for grouped toggle selections.
  *
  * @see https://ui.shadcn.com/docs/components/toggle-group
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { ToggleGroup, ToggleGroupItem } from './toggle-group';
-
 const meta = {
   component: ToggleGroup,
   tags: ['autodocs'],
@@ -21,12 +21,12 @@ const meta = {
 } as Meta<typeof ToggleGroup>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default toggle group with single selection */
 export const Default: Story = {
   render: () => (
-    <ToggleGroup defaultValue="bold">
+    <ToggleGroup defaultValue="bold" type="single">
       <ToggleGroupItem value="bold" aria-label="Bold">
         B
       </ToggleGroupItem>
@@ -77,7 +77,7 @@ export const Single: Story = {
 /** Toggle group with outline variant styling */
 export const Outline: Story = {
   render: () => (
-    <ToggleGroup defaultValue="bold" variant="outline">
+    <ToggleGroup defaultValue="bold" variant="outline" type="single">
       <ToggleGroupItem value="bold" aria-label="Bold">
         B
       </ToggleGroupItem>
@@ -94,7 +94,7 @@ export const Outline: Story = {
 /** Small-sized toggle group */
 export const Small: Story = {
   render: () => (
-    <ToggleGroup defaultValue="bold" size="sm">
+    <ToggleGroup defaultValue="bold" size="sm" type="single">
       <ToggleGroupItem value="bold" aria-label="Bold">
         B
       </ToggleGroupItem>
@@ -111,7 +111,7 @@ export const Small: Story = {
 /** Disabled toggle group that prevents interaction */
 export const Disabled: Story = {
   render: () => (
-    <ToggleGroup disabled defaultValue="bold">
+    <ToggleGroup disabled defaultValue="bold" type="single">
       <ToggleGroupItem value="bold" aria-label="Bold">
         B
       </ToggleGroupItem>

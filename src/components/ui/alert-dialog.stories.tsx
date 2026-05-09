@@ -1,9 +1,3 @@
-/**
- * AlertDialog component for critical actions that require explicit user confirmation.
- *
- * @see https://ui.shadcn.com/docs/components/alert-dialog
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -20,6 +14,12 @@ import {
   AlertDialogTrigger
 } from './alert-dialog';
 
+/**
+ * AlertDialog component for critical actions that require explicit user confirmation.
+ *
+ * @see https://ui.shadcn.com/docs/components/alert-dialog
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: AlertDialog,
   tags: ['autodocs'],

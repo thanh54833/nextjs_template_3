@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Checkbox } from './checkbox';
+
 /**
  * Checkbox component for binary selection in forms.
  *
  * @see https://ui.shadcn.com/docs/components/checkbox
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Checkbox } from './checkbox';
-
 const meta = {
   component: Checkbox,
   tags: ['autodocs'],

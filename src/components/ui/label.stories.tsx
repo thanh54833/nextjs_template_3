@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Label } from './label';
+
 /**
  * Label component for form element identification.
  *
  * @see https://ui.shadcn.com/docs/components/label
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Label } from './label';
-
 const meta = {
   component: Label,
   tags: ['autodocs'],

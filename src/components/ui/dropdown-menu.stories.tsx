@@ -1,9 +1,3 @@
-/**
- * DropdownMenu component for revealing a list of actions or options.
- *
- * @see https://ui.shadcn.com/docs/components/dropdown-menu
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -24,6 +18,12 @@ import {
   DropdownMenuTrigger
 } from './dropdown-menu';
 
+/**
+ * DropdownMenu component for revealing a list of actions or options.
+ *
+ * @see https://ui.shadcn.com/docs/components/dropdown-menu
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: DropdownMenu,
   tags: ['autodocs'],

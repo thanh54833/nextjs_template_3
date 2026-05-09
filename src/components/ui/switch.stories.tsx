@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Switch } from './switch';
+
 /**
  * Switch component for toggle selections.
  *
  * @see https://ui.shadcn.com/docs/components/switch
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Switch } from './switch';
-
 const meta = {
   component: Switch,
   tags: ['autodocs'],

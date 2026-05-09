@@ -1,9 +1,3 @@
-/**
- * React Hook Form integration with shadcn/ui form components.
- *
- * @see https://react-hook-form.com/ - React Hook Form official documentation
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
@@ -21,6 +15,12 @@ import {
   FormMessage,
 } from './form';
 
+/**
+ * React Hook Form integration with shadcn/ui form components.
+ *
+ * @see https://react-hook-form.com/ - React Hook Form official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: Form,
   tags: ['autodocs'],

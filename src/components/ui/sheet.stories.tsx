@@ -1,9 +1,3 @@
-/**
- * Sheet component for slide-out panels similar to mobile navigation drawers.
- *
- * @see https://ui.shadcn.com/docs/components/sheet
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -18,6 +12,12 @@ import {
   SheetTrigger
 } from './sheet';
 
+/**
+ * Sheet component for slide-out panels similar to mobile navigation drawers.
+ *
+ * @see https://ui.shadcn.com/docs/components/sheet
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Sheet,
   tags: ['autodocs'],

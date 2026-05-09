@@ -1,12 +1,7 @@
-/**
- * Frame component for creating panel-based layouts with header, content, and footer.
- *
- * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
+import { Input } from './input';
 import {
   Frame,
   FramePanel,
@@ -16,6 +11,12 @@ import {
   FrameTitle,
 } from './frame';
 
+/**
+ * Frame component for creating panel-based layouts with header, content, and footer.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: Frame,
   tags: ['autodocs'],
@@ -31,7 +32,7 @@ const meta = {
 } as Meta<typeof Frame>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default frame with title, description, and action buttons. */
 export const Default: Story = {

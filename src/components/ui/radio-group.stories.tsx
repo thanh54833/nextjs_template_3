@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { RadioGroup, RadioGroupItem } from './radio-group';
+
 /**
  * RadioGroup component for exclusive option selection.
  *
  * @see https://ui.shadcn.com/docs/components/radio-group
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { RadioGroup, RadioGroupItem } from './radio-group';
-
 const meta = {
   component: RadioGroup,
   tags: ['autodocs'],

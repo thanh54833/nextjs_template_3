@@ -1,9 +1,3 @@
-/**
- * ContextMenu component for right-click action menus.
- *
- * @see https://ui.shadcn.com/docs/components/context-menu
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -23,6 +17,12 @@ import {
   ContextMenuTrigger
 } from './context-menu';
 
+/**
+ * ContextMenu component for right-click action menus.
+ *
+ * @see https://ui.shadcn.com/docs/components/context-menu
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: ContextMenu,
   tags: ['autodocs'],
@@ -38,7 +38,7 @@ const meta = {
 } as Meta<typeof ContextMenu>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default context menu with common actions and shortcuts */
 export const Default: Story = {
@@ -126,9 +126,9 @@ export const WithCheckbox: Story = {
           <ContextMenuSeparator />
           <ContextMenuRadioGroup>
             <ContextMenuLabel>Theme</ContextMenuLabel>
-            <ContextMenuRadioItem checked>Light</ContextMenuRadioItem>
-            <ContextMenuRadioItem>Dark</ContextMenuRadioItem>
-            <ContextMenuRadioItem>System</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="light">Light</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="dark">Dark</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="system">System</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
         </ContextMenuContent>
       </ContextMenu>

@@ -1,9 +1,3 @@
-/**
- * A set of pagination controls for navigating through large sets of content or data.
- *
- * @see https://ui.shadcn.com/docs/components/pagination
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -16,6 +10,12 @@ import {
   PaginationEllipsis,
 } from './pagination';
 
+/**
+ * A set of pagination controls for navigating through large sets of content or data.
+ *
+ * @see https://ui.shadcn.com/docs/components/pagination
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Pagination,
   tags: ['autodocs'],

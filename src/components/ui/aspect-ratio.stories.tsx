@@ -1,3 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { AspectRatio } from './aspect-ratio';
+
 /**
  * AspectRatio component for maintaining proportional dimensions.
  *

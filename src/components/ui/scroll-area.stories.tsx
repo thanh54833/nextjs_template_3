@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { ScrollArea, ScrollBar } from './scroll-area';
+
 /**
  * A scrollable area component that provides a styled scrollbar.
  *
  * @see https://ui.shadcn.com/docs/components/scroll-area
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { ScrollArea, ScrollBar } from './scroll-area';
-
 const meta = {
   component: ScrollArea,
   tags: ['autodocs'],

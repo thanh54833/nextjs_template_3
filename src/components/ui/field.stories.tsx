@@ -1,14 +1,8 @@
-/**
- * Flexible field components with CVA-based variants for building complex forms.
- *
- * @see https://github.com/joebell/plua - Original Field component inspiration
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Checkbox } from './checkbox';
 import { Input } from './input';
-import { RadioGroup } from './radio-group';
+import { RadioGroup, RadioGroupItem } from './radio-group';
 import {
   Field,
   FieldContent,
@@ -24,6 +18,12 @@ import {
 } from './field';
 import { Label } from './label';
 
+/**
+ * Flexible field components with CVA-based variants for building complex forms.
+ *
+ * @see https://github.com/joebell/plua - Original Field component inspiration
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: Field,
   tags: ['autodocs'],
@@ -39,7 +39,7 @@ const meta = {
 } as Meta<typeof Field>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default vertical field layout with two inputs. */
 export const Default: Story = {
@@ -200,19 +200,19 @@ export const RadioGroupField: Story = {
           <RadioGroup defaultValue="pro">
             <Field orientation="horizontal">
               <FieldLabel htmlFor="radio-basic" className="flex-row-reverse">
-                <RadioGroup.Item id="radio-basic" value="basic" />
+                <RadioGroupItem id="radio-basic" value="basic" />
                 Basic Plan
               </FieldLabel>
             </Field>
             <Field orientation="horizontal">
               <FieldLabel htmlFor="radio-pro" className="flex-row-reverse">
-                <RadioGroup.Item id="radio-pro" value="pro" />
+                <RadioGroupItem id="radio-pro" value="pro" />
                 Pro Plan
               </FieldLabel>
             </Field>
             <Field orientation="horizontal">
               <FieldLabel htmlFor="radio-enterprise" className="flex-row-reverse">
-                <RadioGroup.Item id="radio-enterprise" value="enterprise" />
+                <RadioGroupItem id="radio-enterprise" value="enterprise" />
                 Enterprise Plan
               </FieldLabel>
             </Field>

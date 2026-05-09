@@ -1,14 +1,14 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from './popover';
+
 /**
  * Popover component for floating content that appears when triggered.
  *
  * @see https://ui.shadcn.com/docs/components/popover
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button } from '@/components/ui/button';
-import { Popover, PopoverContent, PopoverTrigger } from './popover';
-
 const meta = {
   component: Popover,
   tags: ['autodocs'],

@@ -1,9 +1,3 @@
-/**
- * Combobox component for searchable dropdown selection.
- *
- * @see https://ui.shadcn.com/docs/components/combobox
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -20,6 +14,12 @@ import {
   ComboboxTrigger
 } from './combobox';
 
+/**
+ * Combobox component for searchable dropdown selection.
+ *
+ * @see https://ui.shadcn.com/docs/components/combobox
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Combobox,
   tags: ['autodocs'],
@@ -35,7 +35,7 @@ const meta = {
 } as Meta<typeof Combobox>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 const frameworks = [
   { value: 'nextjs', label: 'Next.js' },
@@ -53,9 +53,9 @@ export const Default: Story = {
     const [value, setValue] = useState('');
 
     return (
-      <Combobox open={open} onOpenChange={setOpen} value={value} onValueChange={setValue}>
+      <Combobox open={open} onOpenChange={setOpen} value={value} onValueChange={(v) => setValue(v || '')}>
         <ComboboxInput placeholder="Search framework..." />
-        <ComboboxTrigger asChild>
+        <ComboboxTrigger>
           <Button variant="outline">Select</Button>
         </ComboboxTrigger>
         <ComboboxContent>
@@ -99,9 +99,9 @@ export const WithGroups: Story = {
     ];
 
     return (
-      <Combobox open={open} onOpenChange={setOpen} value={value} onValueChange={setValue}>
+      <Combobox open={open} onOpenChange={setOpen} value={value} onValueChange={(v) => setValue(v || '')}>
         <ComboboxInput placeholder="Search technology..." />
-        <ComboboxTrigger asChild>
+        <ComboboxTrigger>
           <Button variant="outline">Select</Button>
         </ComboboxTrigger>
         <ComboboxContent>

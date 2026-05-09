@@ -1,3 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './button';
+
 /**
  * Button component for triggering actions and events.
  *

@@ -1,9 +1,3 @@
-/**
- * A navigation menu component that displays a list of links for navigation between pages.
- *
- * @see https://ui.shadcn.com/docs/components/navigation-menu
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -18,6 +12,12 @@ import {
   navigationMenuTriggerStyle,
 } from './navigation-menu';
 
+/**
+ * A navigation menu component that displays a list of links for navigation between pages.
+ *
+ * @see https://ui.shadcn.com/docs/components/navigation-menu
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: NavigationMenu,
   tags: ['autodocs'],

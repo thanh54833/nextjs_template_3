@@ -1,3 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { ChartContainer, ChartTooltipContent, ChartLegendContent } from './chart';
+import { BarChart, Bar, XAxis, YAxis } from 'recharts';
+
 /**
  * Chart container component for wrapping Recharts visualizations.
  *
@@ -13,10 +17,6 @@
  * - `label` - Display name for the data series
  * - `color` - CSS color or CSS variable reference (e.g., 'var(--color-sales)')
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { ChartContainer, ChartTooltipContent, ChartLegendContent } from './chart';
-import { BarChart, Bar, XAxis, YAxis } from 'recharts';
-
 const meta = {
   component: ChartContainer,
   tags: ['autodocs'],

@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from './input-otp';
+
 /**
  * InputOTP component for one-time password entry.
  *
  * @see https://ui.shadcn.com/docs/components/input-otp
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from './input-otp';
-
 const meta = {
   component: InputOTP,
   tags: ['autodocs'],
@@ -21,7 +21,7 @@ const meta = {
 } as Meta<typeof InputOTP>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default OTP input with 4 digits */
 export const Default: Story = {

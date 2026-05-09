@@ -1,9 +1,3 @@
-/**
- * Button group component for combining buttons, inputs, and text in unified layouts.
- *
- * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
@@ -11,6 +5,12 @@ import { Input } from './input';
 import { Select } from './select';
 import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from './button-group';
 
+/**
+ * Button group component for combining buttons, inputs, and text in unified layouts.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: ButtonGroup,
   tags: ['autodocs'],
@@ -26,7 +26,7 @@ const meta = {
 } as Meta<typeof ButtonGroup>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /** Default horizontal button group with three buttons. */
 export const Default: Story = {
@@ -76,7 +76,7 @@ export const WithSelect: Story = {
   render: () => (
     <ButtonGroup className="w-[400px]">
       <Button variant="outline">Filter</Button>
-      <Select className="flex-1">
+      <Select>
         <option>All Items</option>
         <option>Active</option>
         <option>Archived</option>

@@ -38,14 +38,13 @@ const meta = {
 } as Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 /**
  * Default accordion with single selection mode.
  * The first item is open by default and can be collapsed.
  */
 export const Default: Story = {
-  args: {},
   render: () => (
     <Accordion type='single' collapsible defaultValue='item1'>
       <AccordionItem value='item1'>
@@ -85,7 +84,6 @@ export const Default: Story = {
  * Multiple items can be open at the same time.
  */
 export const MultipleOpen: Story = {
-  args: {},
   render: () => (
     <Accordion type='multiple' defaultValue={['item1', 'item2']}>
       <AccordionItem value='item1'>
@@ -115,7 +113,6 @@ export const MultipleOpen: Story = {
  * User must click to expand any section.
  */
 export const AllCollapsed: Story = {
-  args: {},
   render: () => (
     <Accordion type='single' collapsible>
       <AccordionItem value='item1'>

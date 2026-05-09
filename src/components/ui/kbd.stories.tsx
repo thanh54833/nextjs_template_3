@@ -1,3 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Kbd, KbdGroup } from './kbd';
+
 /**
  * Kbd component for displaying keyboard shortcuts and keys.
  *

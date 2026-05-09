@@ -1,9 +1,3 @@
-/**
- * Kanban board component with drag-and-drop support using dnd-kit.
- *
- * @see https://dndkit.com/ - dnd-kit official documentation
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -17,6 +11,12 @@ import {
   KanbanOverlay,
 } from './kanban';
 
+/**
+ * Kanban board component with drag-and-drop support using dnd-kit.
+ *
+ * @see https://dndkit.com/ - dnd-kit official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: Kanban,
   tags: ['autodocs'],
@@ -32,7 +32,7 @@ const meta = {
 } as Meta<typeof Kanban>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 interface Task {
   id: string;
@@ -146,23 +146,21 @@ export const EmptyBoard: Story = {
 
 /** Single column with one task for minimal layouts. */
 export const SingleColumn: Story = {
-  render: () => ({
-    component: (
-      <Kanban
-        value={{ backlog: [{ id: 'task-1', title: 'Single task' }] }}
-        onValueChange={() => {}}
-        getItemValue={(item) => item.id}
-      >
-        <KanbanBoard>
-          <KanbanColumn value="backlog">
-            <KanbanItem value="task-1">
-              <div className="rounded-md border bg-background p-3 text-sm shadow-sm">Single task</div>
-            </KanbanItem>
-          </KanbanColumn>
-        </KanbanBoard>
-      </Kanban>
-    ),
-  }),
+  render: () => (
+    <Kanban
+      value={{ backlog: [{ id: 'task-1', title: 'Single task' }] }}
+      onValueChange={() => {}}
+      getItemValue={(item) => item.id}
+    >
+      <KanbanBoard>
+        <KanbanColumn value="backlog">
+          <KanbanItem value="task-1">
+            <div className="rounded-md border bg-background p-3 text-sm shadow-sm">Single task</div>
+          </KanbanItem>
+        </KanbanColumn>
+      </KanbanBoard>
+    </Kanban>
+  ),
 };
 
 /** Many items in a single column to show scrolling behavior. */

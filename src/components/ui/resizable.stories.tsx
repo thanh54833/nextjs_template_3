@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './resizable';
+
 /**
  * A component that allows users to resize panels by dragging handles.
  *
  * @see https://ui.shadcn.com/docs/components/resizable
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './resizable';
-
 const meta = {
   component: ResizablePanelGroup,
   tags: ['autodocs'],

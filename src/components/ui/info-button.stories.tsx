@@ -1,15 +1,15 @@
-/**
- * Button component that opens the infobar with contextual information.
- *
- * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
 import { InfobarProvider, useInfobar, type InfobarContent } from './infobar';
 import { InfoButton } from './info-button';
 
+/**
+ * Button component that opens the infobar with contextual information.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 const meta = {
   component: InfoButton,
   tags: ['autodocs'],

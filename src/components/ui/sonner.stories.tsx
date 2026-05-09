@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Toaster } from './sonner';
+
 /**
  * Sonner Toaster component for displaying toast notifications.
  *
  * @see https://ui.shadcn.com/docs/components/sonner
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Toaster } from './sonner';
-
 const meta = {
   component: Toaster,
   tags: ['autodocs'],

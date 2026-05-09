@@ -1,3 +1,6 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from './table';
+
 /**
  * Table component for displaying structured data in rows and columns.
  *
@@ -14,9 +17,6 @@
  * - `TableCell` - Data cell
  * - `TableCaption` - Table caption/description
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from './table';
-
 const meta = {
   component: Table,
   tags: ['autodocs'],

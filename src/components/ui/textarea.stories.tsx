@@ -1,13 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Textarea } from './textarea';
+
 /**
  * Textarea component for multi-line text entry.
  *
  * @see https://ui.shadcn.com/docs/components/textarea
  * @see https://storybook.js.org/docs/writing-stories
  */
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Textarea } from './textarea';
-
 const meta = {
   component: Textarea,
   tags: ['autodocs'],

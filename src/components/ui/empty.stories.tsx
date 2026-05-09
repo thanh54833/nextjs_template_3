@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from './empty';
+
 /**
  * Empty state component for displaying when no content is available.
  *
  * @see https://ui.shadcn.com/docs/components/empty
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from './empty';
-
 const meta = {
   component: Empty,
   tags: ['autodocs'],

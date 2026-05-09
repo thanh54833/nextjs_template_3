@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Progress } from './progress';
+
 /**
  * Progress component for displaying task completion and loading states.
  *
  * @see https://ui.shadcn.com/docs/components/progress
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Progress } from './progress';
-
 const meta = {
   component: Progress,
   tags: ['autodocs'],
