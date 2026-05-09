@@ -1,3 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Avatar, AvatarImage, AvatarFallback } from './avatar';
+
 /**
  * Avatar component for displaying user profile images with fallback.
  *

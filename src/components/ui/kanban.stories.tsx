@@ -146,7 +146,6 @@ export const EmptyBoard: Story = {
 
 /** Single column with one task for minimal layouts. */
 export const SingleColumn: Story = {
-  args: {},
   render: () => ({
     component: (
       <Kanban
