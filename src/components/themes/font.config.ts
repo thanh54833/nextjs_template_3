@@ -1,15 +1,24 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, DM_Sans, JetBrains_Mono } from 'next/font/google';
 
 import { cn } from '@/lib/utils';
 
-const fontSans = Geist({
+const fontSans = Inter({
   subsets: ['latin'],
   variable: '--font-sans'
 });
 
-const fontMono = Geist_Mono({
+const fontSerif = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-serif'
+});
+
+const fontMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono'
 });
 
-export const fontVariables = cn(fontSans.variable, fontMono.variable);
+export const fontVariables = cn(
+  fontSans.variable,
+  fontSerif.variable,
+  fontMono.variable
+);

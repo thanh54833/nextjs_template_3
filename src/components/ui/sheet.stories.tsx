@@ -38,8 +38,12 @@ type Story = StoryObj<typeof meta>;
 /** Default sheet sliding from the right */
 export const Default: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Sheet open>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <Button>Open Sheet</Button>
+        </SheetTrigger>
         <SheetContent side="right">
           <SheetHeader>
             <SheetTitle>Sheet Title</SheetTitle>
@@ -51,8 +55,8 @@ export const Default: Story = {
             <p>Sheet content goes here. You can put any content inside.</p>
           </div>
           <SheetFooter>
-            <Button variant="outline">Cancel</Button>
-            <Button>Save</Button>
+            <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+            <Button onClick={() => setOpen(false)}>Save</Button>
           </SheetFooter>
         </SheetContent>
       </Sheet>
@@ -94,8 +98,12 @@ export const WithTrigger: Story = {
 /** Sheet sliding from the top */
 export const TopSide: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Sheet open>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <Button>Open Top Sheet</Button>
+        </SheetTrigger>
         <SheetContent side="top">
           <SheetHeader>
             <SheetTitle>Top Sheet</SheetTitle>
@@ -104,6 +112,9 @@ export const TopSide: Story = {
           <div className="mt-4">
             <p>Sheet content...</p>
           </div>
+          <SheetFooter>
+            <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     );
@@ -113,8 +124,12 @@ export const TopSide: Story = {
 /** Sheet sliding from the bottom */
 export const BottomSide: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Sheet open>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <Button>Open Bottom Sheet</Button>
+        </SheetTrigger>
         <SheetContent side="bottom">
           <SheetHeader>
             <SheetTitle>Bottom Sheet</SheetTitle>
@@ -123,6 +138,9 @@ export const BottomSide: Story = {
           <div className="mt-4">
             <p>Sheet content...</p>
           </div>
+          <SheetFooter>
+            <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     );
@@ -132,8 +150,12 @@ export const BottomSide: Story = {
 /** Sheet sliding from the left */
 export const LeftSide: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Sheet open>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <Button>Open Left Sheet</Button>
+        </SheetTrigger>
         <SheetContent side="left">
           <SheetHeader>
             <SheetTitle>Left Sheet</SheetTitle>
@@ -142,6 +164,9 @@ export const LeftSide: Story = {
           <div className="mt-4">
             <p>Sheet content...</p>
           </div>
+          <SheetFooter>
+            <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     );

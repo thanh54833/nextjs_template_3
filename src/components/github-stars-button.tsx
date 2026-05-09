@@ -58,8 +58,8 @@ function GitHubIcon({
       aria-hidden='true'
       className={cn(
         className,
-        iconStyle === 'github' && 'text-[#0FBF3E]',
-        iconStyle === 'copilot' && 'text-[#8534F3]',
+        iconStyle === 'github' && 'text-primary',
+        iconStyle === 'copilot' && 'text-chart-2',
         iconStyle === 'muted' && 'opacity-50 grayscale'
       )}
       fill='currentColor'

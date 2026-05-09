@@ -36,83 +36,75 @@ export default function OverViewPage() {
           <TabsContent value='overview' className='space-y-4'>
             <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4'>
               <Card className='@container/card'>
-                <CardHeader>
+                <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>Total Revenue</CardDescription>
-                  <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                    $1,250.00
-                  </CardTitle>
-                  <CardAction>
-                    <Badge variant='outline'>
-                      <Icons.trendingUp />
-                      +12.5%
-                    </Badge>
-                  </CardAction>
-                </CardHeader>
-                <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-                  <div className='line-clamp-1 flex gap-2 font-medium'>
-                    Trending up this month <Icons.trendingUp className='size-4' />
+                  <div className='text-primary'>
+                    <Icons.dollar />
                   </div>
-                  <div className='text-muted-foreground'>Visitors for the last 6 months</div>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className='text-3xl font-bold tabular-nums'>$1,250</CardTitle>
+                </CardContent>
+                <CardFooter className='flex-col items-start gap-1 text-sm'>
+                  <div className='flex items-center gap-1 font-medium text-emerald-600'>
+                    <Icons.trendingUp className='size-4' />
+                    +12.5%
+                  </div>
+                  <div className='text-muted-foreground'>vs last month</div>
                 </CardFooter>
               </Card>
               <Card className='@container/card'>
-                <CardHeader>
+                <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>New Customers</CardDescription>
-                  <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                    1,234
-                  </CardTitle>
-                  <CardAction>
-                    <Badge variant='outline'>
-                      <Icons.trendingDown />
-                      -20%
-                    </Badge>
-                  </CardAction>
-                </CardHeader>
-                <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-                  <div className='line-clamp-1 flex gap-2 font-medium'>
-                    Down 20% this period <Icons.trendingDown className='size-4' />
+                  <div className='text-chart-2'>
+                    <Icons.userPlus />
                   </div>
-                  <div className='text-muted-foreground'>Acquisition needs attention</div>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className='text-3xl font-bold tabular-nums'>1,234</CardTitle>
+                </CardContent>
+                <CardFooter className='flex-col items-start gap-1 text-sm'>
+                  <div className='flex items-center gap-1 font-medium text-destructive'>
+                    <Icons.trendingDown className='size-4' />
+                    -20%
+                  </div>
+                  <div className='text-muted-foreground'>vs last month</div>
                 </CardFooter>
               </Card>
               <Card className='@container/card'>
-                <CardHeader>
+                <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>Active Accounts</CardDescription>
-                  <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                    45,678
-                  </CardTitle>
-                  <CardAction>
-                    <Badge variant='outline'>
-                      <Icons.trendingUp />
-                      +12.5%
-                    </Badge>
-                  </CardAction>
-                </CardHeader>
-                <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-                  <div className='line-clamp-1 flex gap-2 font-medium'>
-                    Strong user retention <Icons.trendingUp className='size-4' />
+                  <div className='text-chart-4'>
+                    <Icons.users />
                   </div>
-                  <div className='text-muted-foreground'>Engagement exceed targets</div>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className='text-3xl font-bold tabular-nums'>45,678</CardTitle>
+                </CardContent>
+                <CardFooter className='flex-col items-start gap-1 text-sm'>
+                  <div className='flex items-center gap-1 font-medium text-emerald-600'>
+                    <Icons.trendingUp className='size-4' />
+                    +12.5%
+                  </div>
+                  <div className='text-muted-foreground'>vs last month</div>
                 </CardFooter>
               </Card>
               <Card className='@container/card'>
-                <CardHeader>
+                <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>Growth Rate</CardDescription>
-                  <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                    4.5%
-                  </CardTitle>
-                  <CardAction>
-                    <Badge variant='outline'>
-                      <Icons.trendingUp />
-                      +4.5%
-                    </Badge>
-                  </CardAction>
-                </CardHeader>
-                <CardFooter className='flex-col items-start gap-1.5 text-sm'>
-                  <div className='line-clamp-1 flex gap-2 font-medium'>
-                    Steady performance increase <Icons.trendingUp className='size-4' />
+                  <div className='text-chart-3'>
+                    <Icons.trendingUp />
                   </div>
-                  <div className='text-muted-foreground'>Meets growth projections</div>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className='text-3xl font-bold tabular-nums'>4.5%</CardTitle>
+                </CardContent>
+                <CardFooter className='flex-col items-start gap-1 text-sm'>
+                  <div className='flex items-center gap-1 font-medium text-emerald-600'>
+                    <Icons.trendingUp className='size-4' />
+                    +4.5%
+                  </div>
+                  <div className='text-muted-foreground'>vs last month</div>
                 </CardFooter>
               </Card>
             </div>

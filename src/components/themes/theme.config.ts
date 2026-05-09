@@ -1,8 +1,9 @@
-export const DEFAULT_THEME = 'vercel';
+export const DEFAULT_THEME = 'social-media';
 
 export const THEMES = [
   {
-    name: 'Vercel',
-    value: 'vercel'
+    name: 'Social Media',
+    value: 'social-media',
+    description: 'A social media management dashboard theme with restrained neutrals and platform accent colors'
   }
 ];

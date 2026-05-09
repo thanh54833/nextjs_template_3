@@ -39,8 +39,12 @@ type Story = StoryObj;
 /** Default drawer sliding from the bottom */
 export const Default: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Drawer open>
+      <Drawer open={open} onOpenChange={setOpen}>
+        <DrawerTrigger asChild>
+          <Button>Open Drawer</Button>
+        </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>Drawer Title</DrawerTitle>
@@ -53,9 +57,9 @@ export const Default: Story = {
           </div>
           <DrawerFooter>
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
             </DrawerClose>
-            <Button>Confirm</Button>
+            <Button onClick={() => setOpen(false)}>Confirm</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
@@ -99,8 +103,12 @@ export const WithTrigger: Story = {
 /** Drawer sliding from the top */
 export const TopDirection: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Drawer direction="top" open>
+      <Drawer open={open} onOpenChange={setOpen}>
+        <DrawerTrigger asChild>
+          <Button>Open Top Drawer</Button>
+        </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>Top Drawer</DrawerTitle>
@@ -109,6 +117,11 @@ export const TopDirection: Story = {
           <div className="p-4">
             <p>Drawer content...</p>
           </div>
+          <DrawerFooter>
+            <DrawerClose asChild>
+              <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
+            </DrawerClose>
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     );
@@ -118,8 +131,12 @@ export const TopDirection: Story = {
 /** Drawer sliding from the left */
 export const LeftDirection: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Drawer direction="left" open>
+      <Drawer open={open} onOpenChange={setOpen}>
+        <DrawerTrigger asChild>
+          <Button>Open Left Drawer</Button>
+        </DrawerTrigger>
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>Left Drawer</DrawerTitle>
@@ -128,6 +145,11 @@ export const LeftDirection: Story = {
           <div className="p-4">
             <p>Drawer content...</p>
           </div>
+          <DrawerFooter>
+            <DrawerClose asChild>
+              <Button variant="outline" onClick={() => setOpen(false)}>Close</Button>
+            </DrawerClose>
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     );

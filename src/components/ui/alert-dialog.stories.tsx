@@ -40,8 +40,12 @@ type Story = StoryObj<typeof meta>;
 /** Default alert dialog with destructive action styling */
 export const Default: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <AlertDialog open>
+      <AlertDialog open={open} onOpenChange={setOpen}>
+        <AlertDialogTrigger asChild>
+          <Button variant="destructive">Delete Account</Button>
+        </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
@@ -51,8 +55,8 @@ export const Default: Story = {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+            <AlertDialogCancel onClick={() => setOpen(false)}>Cancel</AlertDialogCancel>
+            <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive/90" onClick={() => setOpen(false)}>
               Continue
             </AlertDialogAction>
           </AlertDialogFooter>

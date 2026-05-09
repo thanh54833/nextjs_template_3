@@ -39,8 +39,12 @@ type Story = StoryObj<typeof meta>;
 /** Default dialog with title, description, and action buttons */
 export const Default: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Dialog open>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button>Open Dialog</Button>
+        </DialogTrigger>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Dialog Title</DialogTitle>
@@ -51,8 +55,8 @@ export const Default: Story = {
           </DialogHeader>
           <p>Dialog content goes here. You can put any React content inside.</p>
           <DialogFooter>
-            <Button variant="outline">Cancel</Button>
-            <Button>Confirm</Button>
+            <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+            <Button onClick={() => setOpen(false)}>Confirm</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -91,8 +95,12 @@ export const WithTrigger: Story = {
 /** Alert-style dialog for destructive actions with red accent */
 export const AlertDialog: Story = {
   render: () => {
+    const [open, setOpen] = useState(false);
     return (
-      <Dialog open>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button variant="destructive">Delete Account</Button>
+        </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Destructive Action</DialogTitle>
@@ -101,7 +109,8 @@ export const AlertDialog: Story = {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="gap-2 sm:gap-0">
-            <Button variant="destructive">Delete Account</Button>
+            <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+            <Button variant="destructive" onClick={() => setOpen(false)}>Delete</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
