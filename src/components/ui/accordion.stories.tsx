@@ -45,6 +45,7 @@ type Story = StoryObj<typeof meta>;
  * The first item is open by default and can be collapsed.
  */
 export const Default: Story = {
+  args: {},
   render: () => (
     <Accordion type='single' collapsible defaultValue='item1'>
       <AccordionItem value='item1'>
