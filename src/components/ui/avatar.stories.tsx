@@ -1,6 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar, AvatarFallback, AvatarImage } from './avatar';
-
+/**
+ * Avatar component for displaying user profile images with fallback.
+ *
+ * @see https://ui.shadcn.com/docs/components/avatar
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   title: 'UI/Avatar',
   component: Avatar,
@@ -11,12 +14,19 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A user avatar component that displays an image with a fallback text fallback when the image fails to load. Includes AvatarImage and AvatarFallback subcomponents.',
+      },
+    },
   },
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default avatar showing an image with fallback initials. */
 export const Default: Story = {
   render: () => (
     <Avatar>
@@ -26,6 +36,7 @@ export const Default: Story = {
   ),
 };
 
+/** Avatar without an image, showing only the fallback. */
 export const WithoutImage: Story = {
   render: () => (
     <Avatar>
@@ -34,6 +45,7 @@ export const WithoutImage: Story = {
   ),
 };
 
+/** Avatar with a long name in the fallback. */
 export const LongName: Story = {
   render: () => (
     <Avatar>
@@ -42,6 +54,7 @@ export const LongName: Story = {
   ),
 };
 
+/** Small sized avatar. */
 export const Small: Story = {
   render: () => (
     <Avatar className='size-6'>
@@ -50,6 +63,7 @@ export const Small: Story = {
   ),
 };
 
+/** Large sized avatar. */
 export const Large: Story = {
   render: () => (
     <Avatar className='size-16'>

@@ -2,17 +2,48 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './accordion';
 
+/**
+ * Accordion component for displaying collapsible content panels.
+ *
+ * @see https://ui.shadcn.com/docs/components/accordion
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: Accordion,
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A vertically stacked set of interactive headings that expand or collapse to reveal their associated sections of content. Built on Radix UI primitives for accessibility.',
+      },
+    },
   },
-} satisfies Meta;
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['single', 'multiple'],
+      description: 'Whether single or multiple items can be open at once',
+    },
+    collapsible: {
+      control: 'boolean',
+      description: 'Whether items can be closed once opened (for type="single")',
+    },
+    defaultValue: {
+      control: 'text',
+      description: 'The default open item value(s)',
+    },
+  },
+} satisfies Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj;
+type Story = StoryObj<typeof meta>;
 
+/**
+ * Default accordion with single selection mode.
+ * The first item is open by default and can be collapsed.
+ */
 export const Default: Story = {
   render: () => (
     <Accordion type='single' collapsible defaultValue='item1'>
@@ -48,9 +79,17 @@ export const Default: Story = {
   ),
 };
 
+/**
+ * Accordion with multiple selection mode enabled.
+ * Multiple items can be open at the same time.
+ */
 export const MultipleOpen: Story = {
-  render: () => (
-    <Accordion type='multiple' defaultValue={['item1', 'item2']}>
+  args: {
+    type: 'multiple',
+    defaultValue: ['item1', 'item2'],
+  },
+  render: (args) => (
+    <Accordion type='multiple' defaultValue={args.defaultValue as string[]}>
       <AccordionItem value='item1'>
         <AccordionTrigger>First Item (open by default)</AccordionTrigger>
         <AccordionContent>
@@ -73,9 +112,17 @@ export const MultipleOpen: Story = {
   ),
 };
 
+/**
+ * All items collapsed by default.
+ * User must click to expand any section.
+ */
 export const AllCollapsed: Story = {
-  render: () => (
-    <Accordion type='single' collapsible>
+  args: {
+    type: 'single',
+    collapsible: true,
+  },
+  render: (args) => (
+    <Accordion type={args.type} collapsible={args.collapsible}>
       <AccordionItem value='item1'>
         <AccordionTrigger>Item One</AccordionTrigger>
         <AccordionContent>

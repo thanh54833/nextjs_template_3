@@ -1,3 +1,9 @@
+/**
+ * Direction provider for RTL/LTR text direction support built on Radix UI.
+ *
+ * @see https://www.radix-ui.com/primitives - Radix UI primitives documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { DirectionProvider, useDirection } from './direction';
@@ -19,6 +25,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Left-to-right direction for most languages (English, French, German). */
 export const LTR: Story = {
   render: () => (
     <DirectionProvider direction="ltr">
@@ -32,6 +39,7 @@ export const LTR: Story = {
   ),
 };
 
+/** Right-to-left direction for Arabic, Hebrew, Persian languages. */
 export const RTL: Story = {
   render: () => (
     <DirectionProvider direction="rtl">
@@ -47,6 +55,7 @@ export const RTL: Story = {
   ),
 };
 
+/** Using useDirection hook to read and apply direction programmatically. */
 export const WithUseDirection: Story = {
   render: () => {
     function DirectionExample() {

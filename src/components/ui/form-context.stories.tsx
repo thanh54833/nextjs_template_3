@@ -1,3 +1,9 @@
+/**
+ * TanStack Form contexts and structural components for building complex forms.
+ *
+ * @see https://tanstack.com/form - TanStack Form official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -28,6 +34,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Overview of form context components and usage patterns. */
 export const Default: Story = {
   render: () => (
     <div className="w-full max-w-md p-4">
@@ -38,6 +45,7 @@ export const Default: Story = {
   ),
 };
 
+/** Form field structure with vertical and horizontal orientations. */
 export const FormFieldStructure: Story = {
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">
@@ -68,6 +76,7 @@ export const FormFieldStructure: Story = {
   ),
 };
 
+/** Form fields with error message display. */
 export const WithFieldErrors: Story = {
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">
@@ -90,6 +99,7 @@ export const WithFieldErrors: Story = {
   ),
 };
 
+/** Form errors component for displaying form-level validation messages. */
 export const FormErrorsDemo: Story = {
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">

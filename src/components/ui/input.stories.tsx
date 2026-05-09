@@ -1,3 +1,9 @@
+/**
+ * Input component for text entry in forms.
+ *
+ * @see https://ui.shadcn.com/docs/components/input
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input } from './input';
@@ -5,17 +11,26 @@ import { Input } from './input';
 const meta = {
   component: Input,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A flexible text input component that supports various types including text, email, password, number, and file. Integrates seamlessly with form labels and validation states.',
+      },
+    },
+  },
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default input with placeholder text */
 export const Default: Story = {
   args: {
     placeholder: 'Enter text...',
   },
 };
 
+/** Input with associated label for form accessibility */
 export const WithLabel: Story = {
   render: () => (
     <div className="grid w-full max-w-sm gap-1.5">
@@ -27,6 +42,7 @@ export const WithLabel: Story = {
   ),
 };
 
+/** Disabled input that prevents user interaction */
 export const Disabled: Story = {
   args: {
     disabled: true,
@@ -34,6 +50,7 @@ export const Disabled: Story = {
   },
 };
 
+/** Input with error state, typically shown with aria-invalid and red border */
 export const WithError: Story = {
   args: {
     'aria-invalid': true,
@@ -42,6 +59,7 @@ export const WithError: Story = {
   },
 };
 
+/** Password input with masked characters */
 export const Password: Story = {
   args: {
     type: 'password',
@@ -49,6 +67,7 @@ export const Password: Story = {
   },
 };
 
+/** Number input for numeric values only */
 export const Number: Story = {
   args: {
     type: 'number',
@@ -56,6 +75,7 @@ export const Number: Story = {
   },
 };
 
+/** File input for file uploads */
 export const File: Story = {
   args: {
     type: 'file',
@@ -63,6 +83,7 @@ export const File: Story = {
   },
 };
 
+/** Small-sized input variant */
 export const Small: Story = {
   args: {
     className: 'h-8 text-sm',

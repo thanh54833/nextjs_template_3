@@ -1,3 +1,9 @@
+/**
+ * Dialog component for displaying overlay content that requires user attention or action.
+ *
+ * @see https://ui.shadcn.com/docs/components/dialog
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -17,13 +23,20 @@ const meta = {
   component: Dialog,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A dialog component that overlays the page to capture user attention. Built on Radix UI primitives for accessibility and animation support.'
+      }
+    }
   }
 } satisfies Meta<typeof Dialog>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default dialog with title, description, and action buttons */
 export const Default: Story = {
   render: () => {
     return (
@@ -47,6 +60,7 @@ export const Default: Story = {
   }
 };
 
+/** Dialog with trigger button that manages open state */
 export const WithTrigger: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
@@ -74,6 +88,7 @@ export const WithTrigger: Story = {
   }
 };
 
+/** Alert-style dialog for destructive actions with red accent */
 export const AlertDialog: Story = {
   render: () => {
     return (

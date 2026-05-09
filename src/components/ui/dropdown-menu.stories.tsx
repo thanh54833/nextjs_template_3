@@ -1,3 +1,9 @@
+/**
+ * DropdownMenu component for revealing a list of actions or options.
+ *
+ * @see https://ui.shadcn.com/docs/components/dropdown-menu
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -22,13 +28,20 @@ const meta = {
   component: DropdownMenu,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A dropdown menu component for revealing actions, options, or navigation. Built on Radix UI primitives with support for checkboxes, radio groups, and nested submenus.'
+      }
+    }
   }
 } satisfies Meta<typeof DropdownMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default dropdown menu with common actions and shortcuts */
 export const Default: Story = {
   render: () => {
     return (
@@ -61,6 +74,7 @@ export const Default: Story = {
   }
 };
 
+/** Dropdown menu with nested submenu */
 export const WithSubmenu: Story = {
   render: () => {
     return (
@@ -89,6 +103,7 @@ export const WithSubmenu: Story = {
   }
 };
 
+/** Dropdown menu with checkbox items for toggling options */
 export const WithCheckbox: Story = {
   render: () => {
     return (
@@ -108,6 +123,7 @@ export const WithCheckbox: Story = {
   }
 };
 
+/** Dropdown menu with radio group for single selection */
 export const WithRadioGroup: Story = {
   render: () => {
     return (
@@ -129,6 +145,7 @@ export const WithRadioGroup: Story = {
   }
 };
 
+/** Dropdown menu with grouped items for organizing related actions */
 export const WithGroup: Story = {
   render: () => {
     return (

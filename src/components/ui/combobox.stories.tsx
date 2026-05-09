@@ -1,3 +1,9 @@
+/**
+ * Combobox component for searchable dropdown selection.
+ *
+ * @see https://ui.shadcn.com/docs/components/combobox
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -18,7 +24,13 @@ const meta = {
   component: Combobox,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A combobox component for building searchable dropdowns. Supports typing to filter, keyboard navigation, and grouped items.'
+      }
+    }
   }
 } satisfies Meta<typeof Combobox>;
 
@@ -34,6 +46,7 @@ const frameworks = [
   { value: 'solid', label: 'Solid' }
 ];
 
+/** Default combobox with searchable framework list */
 export const Default: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
@@ -67,6 +80,7 @@ export const Default: Story = {
   }
 };
 
+/** Combobox with items separated into frontend and backend groups */
 export const WithGroups: Story = {
   render: () => {
     const [open, setOpen] = useState(false);

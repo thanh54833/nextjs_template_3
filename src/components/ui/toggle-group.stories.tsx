@@ -1,3 +1,9 @@
+/**
+ * ToggleGroup component for grouped toggle selections.
+ *
+ * @see https://ui.shadcn.com/docs/components/toggle-group
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ToggleGroup, ToggleGroupItem } from './toggle-group';
@@ -5,11 +11,19 @@ import { ToggleGroup, ToggleGroupItem } from './toggle-group';
 const meta = {
   component: ToggleGroup,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A toggle group component for managing multiple related toggle buttons. Supports single-selection (only one pressed at a time) and multiple-selection modes.',
+      },
+    },
+  },
 } satisfies Meta<typeof ToggleGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default toggle group with single selection */
 export const Default: Story = {
   render: () => (
     <ToggleGroup defaultValue="bold">
@@ -26,6 +40,7 @@ export const Default: Story = {
   ),
 };
 
+/** Toggle group with multiple selection (multiple items can be pressed) */
 export const Multiple: Story = {
   render: () => (
     <ToggleGroup type="multiple" defaultValue={['bold', 'italic']}>
@@ -42,6 +57,7 @@ export const Multiple: Story = {
   ),
 };
 
+/** Toggle group with single selection mode explicitly set */
 export const Single: Story = {
   render: () => (
     <ToggleGroup type="single" defaultValue="center">
@@ -58,6 +74,7 @@ export const Single: Story = {
   ),
 };
 
+/** Toggle group with outline variant styling */
 export const Outline: Story = {
   render: () => (
     <ToggleGroup defaultValue="bold" variant="outline">
@@ -74,6 +91,7 @@ export const Outline: Story = {
   ),
 };
 
+/** Small-sized toggle group */
 export const Small: Story = {
   render: () => (
     <ToggleGroup defaultValue="bold" size="sm">
@@ -90,6 +108,7 @@ export const Small: Story = {
   ),
 };
 
+/** Disabled toggle group that prevents interaction */
 export const Disabled: Story = {
   render: () => (
     <ToggleGroup disabled defaultValue="bold">

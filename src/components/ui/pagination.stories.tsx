@@ -1,3 +1,9 @@
+/**
+ * A set of pagination controls for navigating through large sets of content or data.
+ *
+ * @see https://ui.shadcn.com/docs/components/pagination
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -15,6 +21,12 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A set of pagination controls for navigating through large sets of content or data. Each pagination group is built using the pagination components.',
+      },
+    },
   },
 } satisfies Meta<typeof Pagination>;
 
@@ -22,6 +34,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  /** Default pagination with ellipsis showing intermediate pages */
   render: () => (
     <Pagination>
       <PaginationContent>
@@ -54,6 +67,7 @@ export const Default: Story = {
 };
 
 export const ManyPages: Story = {
+  /** Pagination showing many pages with ellipsis */
   render: () => (
     <Pagination>
       <PaginationContent>
@@ -90,6 +104,7 @@ export const ManyPages: Story = {
 };
 
 export const FirstPage: Story = {
+  /** Pagination on the first page with next button enabled */
   render: () => (
     <Pagination>
       <PaginationContent>
@@ -116,6 +131,7 @@ export const FirstPage: Story = {
 };
 
 export const LastPage: Story = {
+  /** Pagination on the last page with previous button enabled */
   render: () => (
     <Pagination>
       <PaginationContent>

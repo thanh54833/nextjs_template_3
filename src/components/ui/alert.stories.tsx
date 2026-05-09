@@ -1,3 +1,9 @@
+/**
+ * Alert component for displaying important messages and notifications.
+ *
+ * @see https://ui.shadcn.com/docs/components/alert
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert, AlertTitle, AlertDescription } from './alert';
 
@@ -6,12 +12,19 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'Alert is a component used to display important messages and notifications. It supports different variants like `destructive` for error states and can contain `AlertTitle` and `AlertDescription` sub-components.',
+      },
+    },
   },
 } satisfies Meta<typeof Alert>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default alert with informational message */
 export const Default: Story = {
   args: {
     children: (
@@ -23,6 +36,7 @@ export const Default: Story = {
   },
 };
 
+/** Destructive alert variant for error and warning states */
 export const Destructive: Story = {
   args: {
     variant: 'destructive',
@@ -35,6 +49,7 @@ export const Destructive: Story = {
   },
 };
 
+/** Alert with custom icon element */
 export const WithIcon: Story = {
   args: {
     children: (

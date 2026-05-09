@@ -1,3 +1,9 @@
+/**
+ * Notification card component with support for actions, status indicators, and timestamps.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import * as React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -34,10 +40,12 @@ const baseNotification: NotificationCardProps = {
   createdAt: fiveMinutesAgo,
 };
 
+/** Default notification card with unread status. */
 export const Default: Story = {
   args: baseNotification,
 };
 
+/** Unread notification state with visual indicator. */
 export const Unread: Story = {
   args: {
     ...baseNotification,
@@ -45,6 +53,7 @@ export const Unread: Story = {
   },
 };
 
+/** Read notification with muted styling. */
 export const Read: Story = {
   args: {
     ...baseNotification,
@@ -52,6 +61,7 @@ export const Read: Story = {
   },
 };
 
+/** Archived notification for dismissed items. */
 export const Archived: Story = {
   args: {
     ...baseNotification,
@@ -59,6 +69,7 @@ export const Archived: Story = {
   },
 };
 
+/** Notification with action buttons for interaction. */
 export const WithActions: Story = {
   args: {
     ...baseNotification,
@@ -69,6 +80,7 @@ export const WithActions: Story = {
   },
 };
 
+/** Notification with primary action button for promotions. */
 export const WithPrimaryAction: Story = {
   args: {
     ...baseNotification,
@@ -80,6 +92,7 @@ export const WithPrimaryAction: Story = {
   },
 };
 
+/** Notification with danger action for security alerts. */
 export const WithDangerAction: Story = {
   args: {
     ...baseNotification,
@@ -92,6 +105,7 @@ export const WithDangerAction: Story = {
   },
 };
 
+/** Notification with executed action showing completed state. */
 export const WithExecutedAction: Story = {
   args: {
     ...baseNotification,
@@ -103,6 +117,7 @@ export const WithExecutedAction: Story = {
   },
 };
 
+/** Notification with loading action during async operations. */
 export const WithLoadingAction: Story = {
   args: {
     ...baseNotification,
@@ -113,6 +128,7 @@ export const WithLoadingAction: Story = {
   },
 };
 
+/** Notification with multiple action options. */
 export const WithMultipleActions: Story = {
   args: {
     ...baseNotification,
@@ -126,17 +142,18 @@ export const WithMultipleActions: Story = {
   },
 };
 
-const sevenDaysAgo = new Date(Date.now() - 1000 * 60 * 60 * 24 * 7).toISOString();
+/** Older notification demonstrating timestamp formatting. */
 export const OldNotification: Story = {
   args: {
     id: 'old-notification',
     title: 'Weekly Report',
     body: 'Your weekly analytics report is ready to view.',
     status: 'read',
-    createdAt: sevenDaysAgo,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 7).toISOString(),
   },
 };
 
+/** Interactive example with multiple notifications and state management. */
 export const Interactive: Story = {
   render: () => {
     const [notifications, setNotifications] = React.useState([

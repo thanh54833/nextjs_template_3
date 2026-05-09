@@ -1,3 +1,9 @@
+/**
+ * AlertDialog component for critical actions that require explicit user confirmation.
+ *
+ * @see https://ui.shadcn.com/docs/components/alert-dialog
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -18,13 +24,20 @@ const meta = {
   component: AlertDialog,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'An alert dialog component for actions that require explicit user confirmation. Use for destructive or irreversible operations.'
+      }
+    }
   }
 } satisfies Meta<typeof AlertDialog>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default alert dialog with destructive action styling */
 export const Default: Story = {
   render: () => {
     return (
@@ -49,6 +62,7 @@ export const Default: Story = {
   }
 };
 
+/** Alert dialog with trigger button for destructive actions */
 export const WithTrigger: Story = {
   render: () => {
     const [open, setOpen] = useState(false);

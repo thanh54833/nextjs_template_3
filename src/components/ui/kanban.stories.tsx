@@ -1,3 +1,9 @@
+/**
+ * Kanban board component with drag-and-drop support using dnd-kit.
+ *
+ * @see https://dndkit.com/ - dnd-kit official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -113,26 +119,32 @@ const defaultColumns: Record<string, Task[]> = {
   ],
 };
 
+/** Default kanban board with three columns and sample tasks. */
 export const Default: Story = {
   render: () => <StoryBoard columns={defaultColumns} />,
 };
 
+/** Horizontal orientation for wider layouts. */
 export const HorizontalOrientation: Story = {
   render: () => <StoryBoard columns={defaultColumns} orientation="horizontal" />,
 };
 
+/** Vertical orientation for narrower containers. */
 export const VerticalOrientation: Story = {
   render: () => <StoryBoard columns={defaultColumns} orientation="vertical" />,
 };
 
+/** Flat cursor style for simplified drag interactions. */
 export const FlatCursor: Story = {
   render: () => <StoryBoard columns={defaultColumns} flatCursor />,
 };
 
+/** Empty board with no items in any column. */
 export const EmptyBoard: Story = {
   render: () => <StoryBoard columns={{ todo: [], 'in-progress': [], done: [] }} />,
 };
 
+/** Single column with one task for minimal layouts. */
 export const SingleColumn: Story = {
   render: () => ({
     component: (
@@ -153,6 +165,7 @@ export const SingleColumn: Story = {
   }),
 };
 
+/** Many items in a single column to show scrolling behavior. */
 export const ManyItems: Story = {
   render: () => {
     const manyTasks: Record<string, Task[]> = {
@@ -164,6 +177,7 @@ export const ManyItems: Story = {
   },
 };
 
+/** Tasks with descriptions for richer content display. */
 export const WithDescriptions: Story = {
   render: () => {
     const columnsWithDescriptions: Record<string, Task[]> = {

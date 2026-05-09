@@ -1,3 +1,9 @@
+/**
+ * Modal dialog component built on Radix UI Dialog primitive.
+ *
+ * @see https://www.radix-ui.com/primitives - Radix UI primitives documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -20,6 +26,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default modal with title, description, and action buttons. */
 export const Default: Story = {
   render: () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -45,6 +52,7 @@ export const Default: Story = {
   },
 };
 
+/** Modal with form fields for data entry dialogs. */
 export const WithForm: Story = {
   render: () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -87,6 +95,7 @@ export const WithForm: Story = {
   },
 };
 
+/** Destructive action modal with danger styling. */
 export const AlertModal: Story = {
   render: () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -116,6 +125,7 @@ export const AlertModal: Story = {
   },
 };
 
+/** Success confirmation modal for completed actions. */
 export const SuccessModal: Story = {
   render: () => {
     const [isOpen, setIsOpen] = React.useState(false);

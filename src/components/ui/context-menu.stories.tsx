@@ -1,3 +1,9 @@
+/**
+ * ContextMenu component for right-click action menus.
+ *
+ * @see https://ui.shadcn.com/docs/components/context-menu
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -21,13 +27,20 @@ const meta = {
   component: ContextMenu,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A context menu component triggered by right-clicking. Supports items, separators, submenus, checkboxes, and radio groups.'
+      }
+    }
   }
 } satisfies Meta<typeof ContextMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default context menu with common actions and shortcuts */
 export const Default: Story = {
   render: () => {
     return (
@@ -66,6 +79,7 @@ export const Default: Story = {
   }
 };
 
+/** Context menu with nested submenu */
 export const WithSubmenu: Story = {
   render: () => {
     return (
@@ -93,6 +107,7 @@ export const WithSubmenu: Story = {
   }
 };
 
+/** Context menu with checkboxes and radio groups for settings */
 export const WithCheckbox: Story = {
   render: () => {
     return (

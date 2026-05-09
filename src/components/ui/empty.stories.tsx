@@ -1,3 +1,9 @@
+/**
+ * Empty state component for displaying when no content is available.
+ *
+ * @see https://ui.shadcn.com/docs/components/empty
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from './empty';
 
@@ -6,12 +12,19 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'Empty state component for displaying when no content is available. It includes sub-components: `EmptyHeader`, `EmptyTitle`, `EmptyDescription`, `EmptyContent`, and `EmptyMedia` for flexible layouts.',
+      },
+    },
   },
 } satisfies Meta<typeof Empty>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default empty state with title and description */
 export const Default: Story = {
   args: {
     children: (
@@ -25,6 +38,7 @@ export const Default: Story = {
   },
 };
 
+/** Empty state with icon media variant */
 export const WithIcon: Story = {
   args: {
     children: (
@@ -43,6 +57,7 @@ export const WithIcon: Story = {
   },
 };
 
+/** Empty state with action link */
 export const WithAction: Story = {
   args: {
     children: (

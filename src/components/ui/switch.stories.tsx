@@ -1,3 +1,9 @@
+/**
+ * Switch component for toggle selections.
+ *
+ * @see https://ui.shadcn.com/docs/components/switch
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Switch } from './switch';
@@ -5,11 +11,19 @@ import { Switch } from './switch';
 const meta = {
   component: Switch,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A switch component (also known as a toggle) for binary on/off decisions. Often used for enabling or disabling features like notifications or settings.',
+      },
+    },
+  },
 } satisfies Meta<typeof Switch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default switch with label */
 export const Default: Story = {
   render: () => (
     <div className="flex items-center gap-2">
@@ -21,18 +35,21 @@ export const Default: Story = {
   ),
 };
 
+/** Pre-checked switch for pre-enabled options */
 export const Checked: Story = {
   args: {
     checked: true,
   },
 };
 
+/** Disabled switch that prevents interaction */
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
 };
 
+/** Disabled and checked switch */
 export const DisabledChecked: Story = {
   args: {
     disabled: true,

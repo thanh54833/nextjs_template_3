@@ -1,3 +1,9 @@
+/**
+ * HoverCard component for preview content that appears on hover.
+ *
+ * @see https://ui.shadcn.com/docs/components/hover-card
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -7,13 +13,20 @@ const meta = {
   component: HoverCard,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A hover card component for preview content. Similar to tooltips but can contain richer content like user profiles, links, and actions.'
+      }
+    }
   }
 } satisfies Meta<typeof HoverCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default hover card with user profile preview */
 export const Default: Story = {
   render: () => {
     return (
@@ -40,6 +53,7 @@ export const Default: Story = {
   }
 };
 
+/** Hover card with action button and richer content */
 export const WithAction: Story = {
   render: () => {
     return (

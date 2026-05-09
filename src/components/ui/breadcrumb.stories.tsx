@@ -1,3 +1,9 @@
+/**
+ * A navigation component that displays the current location within a navigation hierarchy.
+ *
+ * @see https://ui.shadcn.com/docs/components/breadcrumb
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -15,6 +21,12 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A navigation component that displays the current location within a navigation hierarchy. Breadcrumbs help users understand where they are in the site structure and provide quick navigation to parent pages.',
+      },
+    },
   },
 } satisfies Meta<typeof Breadcrumb>;
 
@@ -22,6 +34,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  /** Default breadcrumb with three items */
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
@@ -42,6 +55,7 @@ export const Default: Story = {
 };
 
 export const WithEllipsis: Story = {
+  /** Breadcrumb with ellipsis for truncated navigation */
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
@@ -62,6 +76,7 @@ export const WithEllipsis: Story = {
 };
 
 export const NestedLevels: Story = {
+  /** Breadcrumb showing deep nested navigation levels */
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>
@@ -86,6 +101,7 @@ export const NestedLevels: Story = {
 };
 
 export const AsChild: Story = {
+  /** Breadcrumb using asChild to render custom link elements */
   render: () => (
     <Breadcrumb>
       <BreadcrumbList>

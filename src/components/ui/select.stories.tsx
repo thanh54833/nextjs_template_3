@@ -1,3 +1,9 @@
+/**
+ * Select component for dropdown option selection.
+ *
+ * @see https://ui.shadcn.com/docs/components/select
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -13,11 +19,19 @@ import {
 const meta = {
   component: Select,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A select dropdown component for choosing one option from a list. Supports grouped options, placeholder text, and disabled state.',
+      },
+    },
+  },
 } satisfies Meta<typeof Select>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default select dropdown */
 export const Default: Story = {
   render: () => (
     <Select defaultValue="option-1">
@@ -33,6 +47,7 @@ export const Default: Story = {
   ),
 };
 
+/** Select with grouped options using SelectGroup */
 export const WithGroups: Story = {
   render: () => (
     <Select defaultValue="apple">
@@ -56,6 +71,7 @@ export const WithGroups: Story = {
   ),
 };
 
+/** Small-sized select trigger */
 export const Small: Story = {
   render: () => (
     <Select defaultValue="option-1">
@@ -70,6 +86,7 @@ export const Small: Story = {
   ),
 };
 
+/** Disabled select that prevents interaction */
 export const Disabled: Story = {
   render: () => (
     <Select disabled>

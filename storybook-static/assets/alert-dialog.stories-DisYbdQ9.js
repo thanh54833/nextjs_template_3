@@ -1,0 +1,49 @@
+import{j as t}from"./jsx-runtime-EKYJJIwR.js";import{r as l}from"./index-CAPI2NOD.js";import{b as $,B as oe}from"./button-B1qRRuul.js";import{c as re}from"./index-Da_hoYQ_.js";import{u as F}from"./index-CJNorLC4.js";import{c as M,R as ae,W as ne,C as le,T as ie,D as se,a as H,b as ce,P as de,O as ge}from"./index-wUS1JGU-.js";import{c as pe}from"./index-CKUxhdB2.js";import{c as s}from"./utils-BQHNewu7.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-D1SQP9Z-.js";import"./index-AnhkqxcL.js";import"./index-BAWfCZ5Z.js";import"./index-CxHADOAi.js";import"./index-Dp8D8Mew.js";import"./index-C-szKJnO.js";import"./index-DvGSVeov.js";import"./index-Qoh0vY4V.js";import"./index-B3CE9KsV.js";import"./index-BCXW28Pz.js";import"./index-DML2O0rb.js";import"./index-yuxTiXDJ.js";var ue=Symbol("radix.slottable");function me(e){const o=({children:r})=>t.jsx(t.Fragment,{children:r});return o.displayName=`${e}.Slottable`,o.__radixId=ue,o}var k="AlertDialog",[Ae]=re(k,[M]),i=M(),B=e=>{const{__scopeAlertDialog:o,...r}=e,a=i(o);return t.jsx(ae,{...a,...r,modal:!0})};B.displayName=k;var De="AlertDialogTrigger",L=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,...a}=e,n=i(r);return t.jsx(ce,{...n,...a,ref:o})});L.displayName=De;var fe="AlertDialogPortal",W=e=>{const{__scopeAlertDialog:o,...r}=e,a=i(o);return t.jsx(de,{...a,...r})};W.displayName=fe;var ve="AlertDialogOverlay",z=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,...a}=e,n=i(r);return t.jsx(ge,{...n,...a,ref:o})});z.displayName=ve;var c="AlertDialogContent",[xe,he]=Ae(c),ye=me("AlertDialogContent"),G=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,children:a,...n}=e,A=i(r),u=l.useRef(null),te=F(o,u),j=l.useRef(null);return t.jsx(ne,{contentName:c,titleName:q,docsSlug:"alert-dialog",children:t.jsx(xe,{scope:r,cancelRef:j,children:t.jsxs(le,{role:"alertdialog",...A,...n,ref:te,onOpenAutoFocus:pe(n.onOpenAutoFocus,d=>{var N;d.preventDefault(),(N=j.current)==null||N.focus({preventScroll:!0})}),onPointerDownOutside:d=>d.preventDefault(),onInteractOutside:d=>d.preventDefault(),children:[t.jsx(ye,{children:a}),t.jsx(je,{contentRef:u})]})})})});G.displayName=c;var q="AlertDialogTitle",V=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,...a}=e,n=i(r);return t.jsx(ie,{...n,...a,ref:o})});V.displayName=q;var Y="AlertDialogDescription",U=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,...a}=e,n=i(r);return t.jsx(se,{...n,...a,ref:o})});U.displayName=Y;var _e="AlertDialogAction",J=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,...a}=e,n=i(r);return t.jsx(H,{...n,...a,ref:o})});J.displayName=_e;var K="AlertDialogCancel",Q=l.forwardRef((e,o)=>{const{__scopeAlertDialog:r,...a}=e,{cancelRef:n}=he(K,r),A=i(r),u=F(o,n);return t.jsx(H,{...A,...a,ref:u})});Q.displayName=K;var je=({contentRef:e})=>{const o=`\`${c}\` requires a description for the component to be accessible for screen reader users.
+
+You can add a description to the \`${c}\` by passing a \`${Y}\` component as a child, which also benefits sighted users by adding visible context to the dialog.
+
+Alternatively, you can use your own component as a description by assigning it an \`id\` and passing the same value to the \`aria-describedby\` prop in \`${c}\`. If the description is confusing or duplicative for sighted users, you can use the \`@radix-ui/react-visually-hidden\` primitive as a wrapper around your description component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/alert-dialog`;return l.useEffect(()=>{var a;document.getElementById((a=e.current)==null?void 0:a.getAttribute("aria-describedby"))||console.warn(o)},[o,e]),null},Ne=B,Ce=L,be=W,Te=z,Oe=G,Se=J,Ee=Q,Re=V,we=U;function m({...e}){return t.jsx(Ne,{"data-slot":"alert-dialog",...e})}function X({...e}){return t.jsx(Ce,{"data-slot":"alert-dialog-trigger",...e})}function Z({...e}){return t.jsx(be,{"data-slot":"alert-dialog-portal",...e})}function ee({className:e,...o}){return t.jsx(Te,{"data-slot":"alert-dialog-overlay",className:s("data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",e),...o})}function D({className:e,...o}){return t.jsxs(Z,{children:[t.jsx(ee,{}),t.jsx(Oe,{"data-slot":"alert-dialog-content",className:s("bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",e),...o})]})}function f({className:e,...o}){return t.jsx("div",{"data-slot":"alert-dialog-header",className:s("flex flex-col gap-2 text-center sm:text-left",e),...o})}function v({className:e,...o}){return t.jsx("div",{"data-slot":"alert-dialog-footer",className:s("flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",e),...o})}function x({className:e,...o}){return t.jsx(Re,{"data-slot":"alert-dialog-title",className:s("text-lg font-semibold",e),...o})}function h({className:e,...o}){return t.jsx(we,{"data-slot":"alert-dialog-description",className:s("text-muted-foreground text-sm",e),...o})}function y({className:e,...o}){return t.jsx(Se,{className:s($(),e),...o})}function _({className:e,...o}){return t.jsx(Ee,{className:s($({variant:"outline"}),e),...o})}m.__docgenInfo={description:"",methods:[],displayName:"AlertDialog"};Z.__docgenInfo={description:"",methods:[],displayName:"AlertDialogPortal"};ee.__docgenInfo={description:"",methods:[],displayName:"AlertDialogOverlay"};X.__docgenInfo={description:"",methods:[],displayName:"AlertDialogTrigger"};D.__docgenInfo={description:"",methods:[],displayName:"AlertDialogContent"};f.__docgenInfo={description:"",methods:[],displayName:"AlertDialogHeader"};v.__docgenInfo={description:"",methods:[],displayName:"AlertDialogFooter"};x.__docgenInfo={description:"",methods:[],displayName:"AlertDialogTitle"};h.__docgenInfo={description:"",methods:[],displayName:"AlertDialogDescription"};y.__docgenInfo={description:"",methods:[],displayName:"AlertDialogAction"};_.__docgenInfo={description:"",methods:[],displayName:"AlertDialogCancel"};const et={component:m,tags:["autodocs"],parameters:{layout:"centered",docs:{description:{component:"An alert dialog component for actions that require explicit user confirmation. Use for destructive or irreversible operations."}}}},g={render:()=>t.jsx(m,{open:!0,children:t.jsxs(D,{children:[t.jsxs(f,{children:[t.jsx(x,{children:"Are you absolutely sure?"}),t.jsx(h,{children:"This action cannot be undone. This will permanently delete your account and remove your data from our servers."})]}),t.jsxs(v,{children:[t.jsx(_,{children:"Cancel"}),t.jsx(y,{className:"bg-destructive text-destructive-foreground hover:bg-destructive/90",children:"Continue"})]})]})})},p={render:()=>{const[e,o]=l.useState(!1);return t.jsxs(m,{open:e,onOpenChange:o,children:[t.jsx(X,{asChild:!0,children:t.jsx(oe,{variant:"destructive",children:"Delete Account"})}),t.jsxs(D,{children:[t.jsxs(f,{children:[t.jsx(x,{children:"Delete Account"}),t.jsx(h,{children:"Are you sure you want to delete your account? This action is permanent and cannot be reversed."})]}),t.jsxs(v,{children:[t.jsx(_,{onClick:()=>o(!1),children:"Cancel"}),t.jsx(y,{onClick:()=>o(!1),children:"Delete"})]})]})]})}};var C,b,T,O,S;g.parameters={...g.parameters,docs:{...(C=g.parameters)==null?void 0:C.docs,source:{originalSource:`{
+  render: () => {
+    return <AlertDialog open>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete your account and remove
+              your data from our servers.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+              Continue
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>;
+  }
+}`,...(T=(b=g.parameters)==null?void 0:b.docs)==null?void 0:T.source},description:{story:"Default alert dialog with destructive action styling",...(S=(O=g.parameters)==null?void 0:O.docs)==null?void 0:S.description}}};var E,R,w,I,P;p.parameters={...p.parameters,docs:{...(E=p.parameters)==null?void 0:E.docs,source:{originalSource:`{
+  render: () => {
+    const [open, setOpen] = useState(false);
+    return <AlertDialog open={open} onOpenChange={setOpen}>
+        <AlertDialogTrigger asChild>
+          <Button variant="destructive">Delete Account</Button>
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete Account</AlertDialogTitle>
+            <AlertDialogDescription>
+              Are you sure you want to delete your account? This action is permanent and cannot be
+              reversed.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={() => setOpen(false)}>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={() => setOpen(false)}>Delete</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>;
+  }
+}`,...(w=(R=p.parameters)==null?void 0:R.docs)==null?void 0:w.source},description:{story:"Alert dialog with trigger button for destructive actions",...(P=(I=p.parameters)==null?void 0:I.docs)==null?void 0:P.description}}};const tt=["Default","WithTrigger"];export{g as Default,p as WithTrigger,tt as __namedExportsOrder,et as default};

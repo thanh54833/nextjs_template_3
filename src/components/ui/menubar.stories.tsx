@@ -1,3 +1,9 @@
+/**
+ * Menubar component for application-style navigation menus.
+ *
+ * @see https://ui.shadcn.com/docs/components/menubar
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -22,13 +28,20 @@ const meta = {
   component: Menubar,
   tags: ['autodocs'],
   parameters: {
-    layout: 'padded'
+    layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A menubar component for application-style navigation. Inspired by desktop application menus with support for nested submenus, checkboxes, and radio groups.'
+      }
+    }
   }
 } satisfies Meta<typeof Menubar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default menubar with File, Edit, View, and Help menus */
 export const Default: Story = {
   render: () => {
     return (

@@ -1,3 +1,9 @@
+/**
+ * A component that allows content to be expanded or collapsed.
+ *
+ * @see https://ui.shadcn.com/docs/components/collapsible
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -9,6 +15,16 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A component that allows content to be expanded or collapsed. Useful for FAQs, content sections, or any UI pattern where hiding/showing content is needed.',
+      },
+    },
+  },
+  argTypes: {
+    open: { control: 'boolean', description: 'Whether the collapsible is open' },
+    disabled: { control: 'boolean', description: 'Whether the collapsible is disabled' },
   },
 } satisfies Meta<typeof Collapsible>;
 
@@ -16,6 +32,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  /** Default collapsible that starts in collapsed state */
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -41,6 +58,7 @@ export const Default: Story = {
 };
 
 export const OpenByDefault: Story = {
+  /** Collapsible that starts in open state */
   render: () => {
     const [isOpen, setIsOpen] = useState(true);
 
@@ -66,6 +84,7 @@ export const OpenByDefault: Story = {
 };
 
 export const Disabled: Story = {
+  /** Collapsible in disabled state */
   render: () => (
     <Collapsible disabled>
       <CollapsibleTrigger asChild>

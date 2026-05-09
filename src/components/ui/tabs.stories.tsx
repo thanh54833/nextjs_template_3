@@ -1,3 +1,9 @@
+/**
+ * A set of tabbed sections that allow users to navigate between different content areas.
+ *
+ * @see https://ui.shadcn.com/docs/components/tabs
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
@@ -7,6 +13,25 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A set of tabbed sections that allow users to navigate between different content areas. Use tabs to organize content into logical groups that can be selected without navigating away from the page.',
+      },
+    },
+  },
+  argTypes: {
+    defaultValue: { control: 'text', description: 'The value of the tab that should be active by default' },
+    orientation: {
+      control: 'select',
+      options: ['horizontal', 'vertical'],
+      description: 'The orientation of the tabs',
+    },
+    activationMode: {
+      control: 'select',
+      options: ['automatic', 'manual'],
+      description: 'How tabs are activated',
+    },
   },
 } satisfies Meta<typeof Tabs>;
 
@@ -14,6 +39,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  /** Default tabs with three tab items and their content */
   render: (args) => (
     <Tabs {...args} defaultValue='tab1'>
       <TabsList>
@@ -35,6 +61,7 @@ export const Default: Story = {
 };
 
 export const DisabledTabs: Story = {
+  /** Tabs with one item disabled */
   render: (args) => (
     <Tabs {...args} defaultValue='tab1'>
       <TabsList>
@@ -58,6 +85,7 @@ export const DisabledTabs: Story = {
 };
 
 export const VerticalTabs: Story = {
+  /** Tabs with vertical orientation */
   render: (args) => (
     <Tabs {...args} defaultValue='tab1' orientation='vertical'>
       <TabsList>

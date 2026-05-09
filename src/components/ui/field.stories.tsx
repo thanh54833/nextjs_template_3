@@ -1,3 +1,9 @@
+/**
+ * Flexible field components with CVA-based variants for building complex forms.
+ *
+ * @see https://github.com/joebell/plua - Original Field component inspiration
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Checkbox } from './checkbox';
@@ -35,6 +41,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default vertical field layout with two inputs. */
 export const Default: Story = {
   render: () => (
     <FieldSet>
@@ -58,6 +65,7 @@ export const Default: Story = {
   ),
 };
 
+/** Horizontal orientation for compact field layouts. */
 export const HorizontalOrientation: Story = {
   render: () => (
     <FieldSet>
@@ -81,6 +89,7 @@ export const HorizontalOrientation: Story = {
   ),
 };
 
+/** Responsive orientation that adapts to container width. */
 export const ResponsiveOrientation: Story = {
   render: () => (
     <FieldSet>
@@ -97,6 +106,7 @@ export const ResponsiveOrientation: Story = {
   ),
 };
 
+/** Field with title subtitle for additional context. */
 export const WithFieldTitle: Story = {
   render: () => (
     <FieldSet>
@@ -114,6 +124,7 @@ export const WithFieldTitle: Story = {
   ),
 };
 
+/** Field with error messages for validation feedback. */
 export const WithErrors: Story = {
   render: () => (
     <FieldSet>
@@ -130,6 +141,7 @@ export const WithErrors: Story = {
   ),
 };
 
+/** Field with separator for grouping alternative options. */
 export const WithSeparator: Story = {
   render: () => (
     <FieldSet>
@@ -154,6 +166,7 @@ export const WithSeparator: Story = {
   ),
 };
 
+/** Checkbox field with horizontal label layout. */
 export const CheckboxField: Story = {
   render: () => (
     <FieldSet>
@@ -177,6 +190,7 @@ export const CheckboxField: Story = {
   ),
 };
 
+/** Radio group field for single selection from options. */
 export const RadioGroupField: Story = {
   render: () => (
     <FieldSet>
@@ -209,6 +223,7 @@ export const RadioGroupField: Story = {
   ),
 };
 
+/** Multiple field groups for organizing complex forms. */
 export const MultipleFieldGroups: Story = {
   render: () => (
     <div className="flex flex-col gap-8">

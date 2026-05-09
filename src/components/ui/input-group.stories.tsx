@@ -1,3 +1,9 @@
+/**
+ * Input group component for combining inputs with addons, buttons, and text.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
@@ -29,6 +35,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Basic input group with a single input field. */
 export const Default: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -37,6 +44,7 @@ export const Default: Story = {
   ),
 };
 
+/** Input with prefix addon for URL schemas. */
 export const WithInlineStartAddon: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -46,6 +54,7 @@ export const WithInlineStartAddon: Story = {
   ),
 };
 
+/** Input with suffix addon for email domains. */
 export const WithInlineEndAddon: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -55,6 +64,7 @@ export const WithInlineEndAddon: Story = {
   ),
 };
 
+/** Input with button addon for search functionality. */
 export const WithButtonAddon: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -66,6 +76,7 @@ export const WithButtonAddon: Story = {
   ),
 };
 
+/** Full search field with icon and clear button. */
 export const SearchField: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -91,6 +102,7 @@ export const SearchField: Story = {
   ),
 };
 
+/** Input with keyboard shortcut indicator. */
 export const WithKbdShortcut: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -104,6 +116,7 @@ export const WithKbdShortcut: Story = {
   ),
 };
 
+/** Block-style start addon positioned above the input. */
 export const BlockStartAddon: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -113,6 +126,7 @@ export const BlockStartAddon: Story = {
   ),
 };
 
+/** Block-style end addon positioned below the input. */
 export const BlockEndAddon: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -122,6 +136,7 @@ export const BlockEndAddon: Story = {
   ),
 };
 
+/** Password field with visibility toggle buttons. */
 export const IconButtonAddons: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -160,6 +175,7 @@ export const IconButtonAddons: Story = {
   ),
 };
 
+/** Textarea with block addon for message composition. */
 export const WithTextarea: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -169,6 +185,7 @@ export const WithTextarea: Story = {
   ),
 };
 
+/** Input with prefix and suffix for currency entry. */
 export const WithPrefixAndSuffix: Story = {
   render: () => (
     <InputGroup className="w-[400px]">
@@ -179,6 +196,7 @@ export const WithPrefixAndSuffix: Story = {
   ),
 };
 
+/** Multiple buttons without input for toolbar patterns. */
 export const MultipleButtons: Story = {
   render: () => (
     <InputGroup className="w-[400px]">

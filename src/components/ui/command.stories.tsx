@@ -1,3 +1,9 @@
+/**
+ * Command component for searchable command palettes and dialogs.
+ *
+ * @see https://ui.shadcn.com/docs/components/command
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -17,13 +23,20 @@ const meta = {
   component: Command,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A command component for building searchable command palettes. Inspired by Spotlight/Alfred-style interfaces with keyboard navigation support.'
+      }
+    }
   }
 } satisfies Meta<typeof Command>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default inline command with input and grouped list */
 export const Default: Story = {
   render: () => {
     return (
@@ -57,6 +70,7 @@ export const Default: Story = {
   }
 };
 
+/** Command dialog modal with trigger button */
 export const WithDialog: Story = {
   render: () => {
     const [open, setOpen] = useState(false);

@@ -1,3 +1,9 @@
+/**
+ * Frame component for creating panel-based layouts with header, content, and footer.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
@@ -27,6 +33,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default frame with title, description, and action buttons. */
 export const Default: Story = {
   render: () => (
     <Frame className="w-full max-w-lg">
@@ -51,6 +58,7 @@ export const Default: Story = {
   ),
 };
 
+/** Multiple stacked panels for list-based content. */
 export const StackedPanels: Story = {
   render: () => (
     <Frame className="w-full max-w-lg" stackedPanels>
@@ -82,6 +90,7 @@ export const StackedPanels: Story = {
   ),
 };
 
+/** Frame with list content and footer action. */
 export const WithList: Story = {
   render: () => (
     <Frame className="w-full max-w-lg">
@@ -109,6 +118,7 @@ export const WithList: Story = {
   ),
 };
 
+/** Frame with form fields for settings pages. */
 export const WithForm: Story = {
   render: () => (
     <Frame className="w-full max-w-lg">
@@ -138,6 +148,7 @@ export const WithForm: Story = {
   ),
 };
 
+/** Card-style frames for dashboard grid layouts. */
 export const CardStyle: Story = {
   render: () => (
     <div className="flex gap-4">

@@ -1,3 +1,9 @@
+/**
+ * React Hook Form integration with shadcn/ui form components.
+ *
+ * @see https://react-hook-form.com/ - React Hook Form official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
@@ -107,14 +113,17 @@ function FormExample() {
   );
 }
 
+/** Basic form with username, email, and bio fields. */
 export const Default: Story = {
   render: () => <FormExample />,
 };
 
+/** Form demonstrating validation on submission. */
 export const WithValidation: Story = {
   render: () => <FormExample />,
 };
 
+/** Form with pre-filled data for edit scenarios. */
 export const WithPrefilledData: Story = {
   render: () => {
     const form = useForm<FormValues>({

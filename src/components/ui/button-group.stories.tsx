@@ -1,3 +1,9 @@
+/**
+ * Button group component for combining buttons, inputs, and text in unified layouts.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
@@ -22,6 +28,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default horizontal button group with three buttons. */
 export const Default: Story = {
   render: () => (
     <ButtonGroup>
@@ -32,6 +39,7 @@ export const Default: Story = {
   ),
 };
 
+/** Explicit horizontal orientation. */
 export const Horizontal: Story = {
   render: () => (
     <ButtonGroup orientation="horizontal">
@@ -42,6 +50,7 @@ export const Horizontal: Story = {
   ),
 };
 
+/** Vertical orientation for narrow containers. */
 export const Vertical: Story = {
   render: () => (
     <ButtonGroup orientation="vertical">
@@ -52,6 +61,7 @@ export const Vertical: Story = {
   ),
 };
 
+/** Button group with text input for search patterns. */
 export const WithInput: Story = {
   render: () => (
     <ButtonGroup className="w-[400px]">
@@ -61,6 +71,7 @@ export const WithInput: Story = {
   ),
 };
 
+/** Button group with select dropdown for filter patterns. */
 export const WithSelect: Story = {
   render: () => (
     <ButtonGroup className="w-[400px]">
@@ -74,6 +85,7 @@ export const WithSelect: Story = {
   ),
 };
 
+/** Button group with text label for formatting toolbars. */
 export const WithTextLabel: Story = {
   render: () => (
     <ButtonGroup>
@@ -85,6 +97,7 @@ export const WithTextLabel: Story = {
   ),
 };
 
+/** Button group with separator for grouped actions. */
 export const WithSeparator: Story = {
   render: () => (
     <ButtonGroup>
@@ -97,6 +110,7 @@ export const WithSeparator: Story = {
   ),
 };
 
+/** Vertical button group with text label. */
 export const WithTextLabelVertical: Story = {
   render: () => (
     <ButtonGroup orientation="vertical">
@@ -108,6 +122,7 @@ export const WithTextLabelVertical: Story = {
   ),
 };
 
+/** Icon-only buttons for compact toolbars. */
 export const IconButtons: Story = {
   render: () => (
     <ButtonGroup>
@@ -130,6 +145,7 @@ export const IconButtons: Story = {
   ),
 };
 
+/** Mixed content with buttons, text, and input. */
 export const MixedContent: Story = {
   render: () => (
     <ButtonGroup className="w-[500px]">

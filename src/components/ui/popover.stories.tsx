@@ -1,3 +1,9 @@
+/**
+ * Popover component for floating content that appears when triggered.
+ *
+ * @see https://ui.shadcn.com/docs/components/popover
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -7,13 +13,20 @@ const meta = {
   component: Popover,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A popover component for displaying floating content anchored to a trigger element. Built on Radix UI for accessibility and smooth animations.'
+      }
+    }
   }
 } satisfies Meta<typeof Popover>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default popover with trigger and content */
 export const Default: Story = {
   render: () => {
     return (
@@ -34,6 +47,7 @@ export const Default: Story = {
   }
 };
 
+/** Popover with a list of clickable links */
 export const WithLink: Story = {
   render: () => {
     return (

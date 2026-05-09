@@ -1,3 +1,9 @@
+/**
+ * A component that allows users to resize panels by dragging handles.
+ *
+ * @see https://ui.shadcn.com/docs/components/resizable
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './resizable';
@@ -7,6 +13,19 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'A component that allows users to resize panels by dragging handles. Useful for creating resizable layouts like dashboards, email clients, or document editors.',
+      },
+    },
+  },
+  argTypes: {
+    direction: {
+      control: 'select',
+      options: ['horizontal', 'vertical'],
+      description: 'Direction of the panel group',
+    },
   },
 } satisfies Meta<typeof ResizablePanelGroup>;
 
@@ -14,6 +33,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  /** Default horizontal resizable panel group with two panels */
   render: () => (
     <div className='h-[500px] w-full'>
       <ResizablePanelGroup direction='horizontal'>
@@ -34,6 +54,7 @@ export const Default: Story = {
 };
 
 export const VerticalLayout: Story = {
+  /** Vertical resizable panel group */
   render: () => (
     <div className='h-[500px] w-full'>
       <ResizablePanelGroup direction='vertical'>
@@ -54,6 +75,7 @@ export const VerticalLayout: Story = {
 };
 
 export const ThreePanels: Story = {
+  /** Horizontal layout with three panels */
   render: () => (
     <div className='h-[500px] w-full'>
       <ResizablePanelGroup direction='horizontal'>
@@ -80,6 +102,7 @@ export const ThreePanels: Story = {
 };
 
 export const WithHandle: Story = {
+  /** Resizable panel with visible handle indicator */
   render: () => (
     <div className='h-[500px] w-full'>
       <ResizablePanelGroup direction='horizontal'>

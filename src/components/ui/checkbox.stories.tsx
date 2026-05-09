@@ -1,3 +1,9 @@
+/**
+ * Checkbox component for binary selection in forms.
+ *
+ * @see https://ui.shadcn.com/docs/components/checkbox
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Checkbox } from './checkbox';
@@ -5,17 +11,26 @@ import { Checkbox } from './checkbox';
 const meta = {
   component: Checkbox,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A checkbox component for selecting or deselecting options. Supports checked, unchecked, and indeterminate states, as well as disabled and error states.',
+      },
+    },
+  },
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default unchecked checkbox */
 export const Default: Story = {
   args: {
     children: 'Accept terms and conditions',
   },
 };
 
+/** Checked checkbox for pre-selected options */
 export const Checked: Story = {
   args: {
     checked: true,
@@ -23,6 +38,7 @@ export const Checked: Story = {
   },
 };
 
+/** Disabled unchecked checkbox */
 export const Disabled: Story = {
   args: {
     disabled: true,
@@ -30,6 +46,7 @@ export const Disabled: Story = {
   },
 };
 
+/** Disabled checked checkbox */
 export const DisabledChecked: Story = {
   args: {
     disabled: true,
@@ -38,6 +55,7 @@ export const DisabledChecked: Story = {
   },
 };
 
+/** Checkbox with error state for validation feedback */
 export const WithError: Story = {
   args: {
     'aria-invalid': true,
@@ -45,6 +63,7 @@ export const WithError: Story = {
   },
 };
 
+/** Standalone checkbox without visible label text */
 export const Standalone: Story = {
   render: () => <Checkbox aria-label="Standalone checkbox" />,
 };

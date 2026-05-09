@@ -1,17 +1,33 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { AspectRatio } from './aspect-ratio';
-
+/**
+ * AspectRatio component for maintaining proportional dimensions.
+ *
+ * @see https://ui.shadcn.com/docs/components/aspect-ratio
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 const meta = {
   component: AspectRatio,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A component that forces its content to maintain a specific aspect ratio. Useful for responsive images, video embeds, and iframe content.',
+      },
+    },
+  },
+  argTypes: {
+    ratio: {
+      control: 'number',
+      description: 'The desired aspect ratio (width/height)',
+    },
   },
 } satisfies Meta<typeof AspectRatio>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default 16:9 widescreen aspect ratio. */
 export const Default: Story = {
   render: () => (
     <div className='w-[300px]'>
@@ -24,6 +40,7 @@ export const Default: Story = {
   ),
 };
 
+/** Square 1:1 aspect ratio. */
 export const Square: Story = {
   render: () => (
     <div className='w-[200px]'>
@@ -36,6 +53,7 @@ export const Square: Story = {
   ),
 };
 
+/** Portrait 3:4 aspect ratio. */
 export const Portrait: Story = {
   render: () => (
     <div className='w-[200px]'>
@@ -48,6 +66,7 @@ export const Portrait: Story = {
   ),
 };
 
+/** Cinematic 21:9 ultra-widescreen aspect ratio. */
 export const Cinematic: Story = {
   render: () => (
     <div className='w-[400px]'>

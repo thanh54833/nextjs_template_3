@@ -1,3 +1,9 @@
+/**
+ * NativeSelect component using native HTML select element.
+ *
+ * @see https://ui.shadcn.com/docs/components/select
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { NativeSelect, NativeSelectOption, NativeSelectOptGroup } from './native-select';
@@ -5,11 +11,19 @@ import { NativeSelect, NativeSelectOption, NativeSelectOptGroup } from './native
 const meta = {
   component: NativeSelect,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A native HTML select element wrapper that provides better browser performance and accessibility. Supports options, optgroups, and all standard select attributes.',
+      },
+    },
+  },
 } satisfies Meta<typeof NativeSelect>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default native select dropdown */
 export const Default: Story = {
   render: () => (
     <NativeSelect>
@@ -20,6 +34,7 @@ export const Default: Story = {
   ),
 };
 
+/** Native select with grouped options using NativeSelectOptGroup */
 export const WithGroups: Story = {
   render: () => (
     <NativeSelect>
@@ -35,10 +50,8 @@ export const WithGroups: Story = {
   ),
 };
 
+/** Small-sized native select */
 export const Small: Story = {
-  args: {
-    size: 'sm',
-  },
   render: () => (
     <NativeSelect size="sm">
       <NativeSelectOption value="option-1">Small Option 1</NativeSelectOption>
@@ -47,10 +60,8 @@ export const Small: Story = {
   ),
 };
 
+/** Disabled native select that prevents interaction */
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
   render: () => (
     <NativeSelect disabled>
       <NativeSelectOption value="option-1">Disabled Option 1</NativeSelectOption>
@@ -59,6 +70,7 @@ export const Disabled: Story = {
   ),
 };
 
+/** Native select with placeholder option */
 export const WithPlaceholder: Story = {
   render: () => (
     <NativeSelect>

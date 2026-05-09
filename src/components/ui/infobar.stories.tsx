@@ -1,3 +1,9 @@
+/**
+ * Expandable sidebar/infobar component with sections, menus, and keyboard shortcuts.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -148,10 +154,12 @@ function InfobarShowcase() {
   );
 }
 
+/** Default expanded infobar with navigation and settings. */
 export const Default: Story = {
   render: () => <InfobarShowcase />,
 };
 
+/** Collapsed icon-only mode for compact display. */
 export const Collapsed: Story = {
   render: () => {
     function CollapsedExample() {
@@ -195,6 +203,7 @@ export const Collapsed: Story = {
   },
 };
 
+/** Fixed mode with no collapse functionality. */
 export const WithoutCollapsible: Story = {
   render: () => {
     function FixedExample() {
@@ -228,6 +237,7 @@ export const WithoutCollapsible: Story = {
   },
 };
 
+/** Loading state with skeleton placeholders. */
 export const WithSkeletonLoading: Story = {
   render: () => {
     function SkeletonExample() {

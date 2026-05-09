@@ -1,3 +1,9 @@
+/**
+ * Label component for form element identification.
+ *
+ * @see https://ui.shadcn.com/docs/components/label
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Label } from './label';
@@ -5,17 +11,26 @@ import { Label } from './label';
 const meta = {
   component: Label,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A label component for identifying form elements like inputs and textareas. Supports association via htmlFor attribute and required field indicators.',
+      },
+    },
+  },
 } satisfies Meta<typeof Label>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default label with text content */
 export const Default: Story = {
   args: {
     children: 'Label text',
   },
 };
 
+/** Label associated with an input element via htmlFor */
 export const WithInput: Story = {
   render: () => (
     <div className="flex flex-col gap-1.5">
@@ -30,11 +45,8 @@ export const WithInput: Story = {
   ),
 };
 
+/** Label with required field indicator */
 export const Required: Story = {
-  args: {
-    children: 'Email',
-    htmlFor: 'email-required',
-  },
   render: () => (
     <div className="flex flex-col gap-1.5">
       <Label htmlFor="email-required">
@@ -50,10 +62,8 @@ export const Required: Story = {
   ),
 };
 
+/** Disabled label with disabled input field */
 export const Disabled: Story = {
-  args: {
-    children: 'Disabled label',
-  },
   render: () => (
     <div className="flex flex-col gap-1.5 group" data-disabled="true">
       <Label>Disabled Label</Label>

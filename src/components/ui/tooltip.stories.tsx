@@ -1,3 +1,9 @@
+/**
+ * Tooltip component for displaying additional information on hover.
+ *
+ * @see https://ui.shadcn.com/docs/components/tooltip
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from '@/components/ui/button';
@@ -7,13 +13,20 @@ const meta = {
   component: Tooltip,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'A tooltip component for revealing content on hover. Positioned intelligently to stay within viewport bounds.'
+      }
+    }
   }
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default tooltip with hover trigger */
 export const Default: Story = {
   render: () => {
     return (
@@ -29,6 +42,7 @@ export const Default: Story = {
   }
 };
 
+/** Tooltip with longer text content */
 export const WithText: Story = {
   render: () => {
     return (
@@ -46,6 +60,7 @@ export const WithText: Story = {
   }
 };
 
+/** Multiple tooltips showing all four positioning directions */
 export const Multiple: Story = {
   render: () => {
     return (

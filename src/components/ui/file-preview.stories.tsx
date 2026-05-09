@@ -1,3 +1,9 @@
+/**
+ * File preview component displaying uploaded files with type-specific icons.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { FilePreview, type UploadedFile } from './file-preview';
@@ -26,6 +32,7 @@ const sampleFiles: UploadedFile[] = [
   { id: '4', name: 'readme.md', type: 'text/markdown' },
 ];
 
+/** Default file preview with various document types. */
 export const Default: Story = {
   args: {
     files: sampleFiles,
@@ -33,6 +40,7 @@ export const Default: Story = {
   },
 };
 
+/** Image file preview with thumbnail display. */
 export const WithImages: Story = {
   args: {
     files: [
@@ -43,6 +51,7 @@ export const WithImages: Story = {
   },
 };
 
+/** Inverted color variant for dark backgrounds. */
 export const InvertedVariant: Story = {
   args: {
     files: sampleFiles,
@@ -51,6 +60,7 @@ export const InvertedVariant: Story = {
   },
 };
 
+/** Files in various upload states (uploading, completed). */
 export const WithUploadingFiles: Story = {
   args: {
     files: [
@@ -62,6 +72,7 @@ export const WithUploadingFiles: Story = {
   },
 };
 
+/** Video file preview with video-specific icon. */
 export const WithVideoFile: Story = {
   args: {
     files: [
@@ -71,6 +82,7 @@ export const WithVideoFile: Story = {
   },
 };
 
+/** Audio file preview with audio-specific icon. */
 export const WithAudioFile: Story = {
   args: {
     files: [
@@ -80,6 +92,7 @@ export const WithAudioFile: Story = {
   },
 };
 
+/** Archive file preview with compressed file icon. */
 export const WithArchiveFile: Story = {
   args: {
     files: [
@@ -89,12 +102,14 @@ export const WithArchiveFile: Story = {
   },
 };
 
+/** Read-only preview without remove functionality. */
 export const WithoutRemoveButton: Story = {
   args: {
     files: sampleFiles,
   },
 };
 
+/** Mixed file types showing type-specific icons. */
 export const MixedFileTypes: Story = {
   args: {
     files: [
@@ -109,6 +124,7 @@ export const MixedFileTypes: Story = {
   },
 };
 
+/** Single image preview with larger display. */
 export const SingleImage: Story = {
   args: {
     files: [

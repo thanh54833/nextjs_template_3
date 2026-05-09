@@ -1,21 +1,37 @@
+/**
+ * InputOTP component for one-time password entry.
+ *
+ * @see https://ui.shadcn.com/docs/components/input-otp
+ * @see https://storybook.js.org/docs/writing-stories
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from './input-otp';
 
-const meta: Meta = {
+const meta = {
   component: InputOTP,
   tags: ['autodocs'],
-};
+  parameters: {
+    docs: {
+      description: {
+        component: 'A one-time password input component for verification codes. Supports customizable length, separators between groups, patterns for validation, and disabled state.',
+      },
+    },
+  },
+} satisfies Meta<typeof InputOTP>;
 
 export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default: StoryObj = {
+/** Default OTP input with 4 digits */
+export const Default: Story = {
   args: {
     maxLength: 4,
   },
 };
 
-export const WithSeparator: StoryObj = {
+/** OTP input with separator between digit groups */
+export const WithSeparator: Story = {
   render: () => (
     <InputOTP maxLength={6} containerClassName="gap-2">
       <InputOTPGroup>
@@ -33,7 +49,8 @@ export const WithSeparator: StoryObj = {
   ),
 };
 
-export const Disabled: StoryObj = {
+/** Disabled OTP input that prevents interaction */
+export const Disabled: Story = {
   render: () => (
     <InputOTP maxLength={4} disabled>
       <InputOTPGroup>
@@ -46,7 +63,8 @@ export const Disabled: StoryObj = {
   ),
 };
 
-export const WithPattern: StoryObj = {
+/** OTP input with pattern for numeric-only validation */
+export const WithPattern: Story = {
   render: () => (
     <InputOTP maxLength={4} pattern="\d" placeholder="*">
       <InputOTPGroup>
@@ -59,7 +77,8 @@ export const WithPattern: StoryObj = {
   ),
 };
 
-export const FiveDigits: StoryObj = {
+/** OTP input with 5 digits */
+export const FiveDigits: Story = {
   args: {
     maxLength: 5,
   },

@@ -1,3 +1,9 @@
+/**
+ * Button component that opens the infobar with contextual information.
+ *
+ * @see https://github.com/Kiranism/next-shadcn-dashboard-starter - Original source
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -21,6 +27,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default icon-only info button. */
 export const Default: Story = {
   render: () => {
     const content: InfobarContent = {
@@ -47,6 +54,7 @@ export const Default: Story = {
   },
 };
 
+/** Info button with custom text label. */
 export const WithText: Story = {
   render: () => {
     const content: InfobarContent = {
@@ -75,6 +83,7 @@ export const WithText: Story = {
   },
 };
 
+/** Ghost variant for subtle styling. */
 export const GhostVariant: Story = {
   render: () => {
     const content: InfobarContent = {
@@ -95,6 +104,7 @@ export const GhostVariant: Story = {
   },
 };
 
+/** Outline variant for distinct visual separation. */
 export const OutlineVariant: Story = {
   render: () => {
     const content: InfobarContent = {
@@ -120,6 +130,7 @@ export const OutlineVariant: Story = {
   },
 };
 
+/** Info button with multiple links in content. */
 export const WithCustomContent: Story = {
   render: () => {
     const content: InfobarContent = {

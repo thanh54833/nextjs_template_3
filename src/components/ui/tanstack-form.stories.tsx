@@ -1,3 +1,9 @@
+/**
+ * TanStack Form integration with shadcn/ui components for type-safe form handling.
+ *
+ * @see https://tanstack.com/form - TanStack Form official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
@@ -18,6 +24,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Overview of TanStack Form configuration and usage. */
 export const Default: Story = {
   render: () => (
     <div className="w-full max-w-md p-4">

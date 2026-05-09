@@ -1,3 +1,9 @@
+/**
+ * Sheet component for slide-out panels similar to mobile navigation drawers.
+ *
+ * @see https://ui.shadcn.com/docs/components/sheet
+ * @see https://storybook.js.org/docs/writing-docs/autodocs
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
@@ -16,13 +22,20 @@ const meta = {
   component: Sheet,
   tags: ['autodocs'],
   parameters: {
-    layout: 'padded'
+    layout: 'padded',
+    docs: {
+      description: {
+        component:
+          'A sheet component for slide-out panels. Supports four sides (top, bottom, left, right) and is often used for mobile navigation, settings panels, and filters.'
+      }
+    }
   }
 } satisfies Meta<typeof Sheet>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/** Default sheet sliding from the right */
 export const Default: Story = {
   render: () => {
     return (
@@ -47,6 +60,7 @@ export const Default: Story = {
   }
 };
 
+/** Sheet with trigger button for interactive open/close */
 export const WithTrigger: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
@@ -77,6 +91,7 @@ export const WithTrigger: Story = {
   }
 };
 
+/** Sheet sliding from the top */
 export const TopSide: Story = {
   render: () => {
     return (
@@ -95,6 +110,7 @@ export const TopSide: Story = {
   }
 };
 
+/** Sheet sliding from the bottom */
 export const BottomSide: Story = {
   render: () => {
     return (
@@ -113,6 +129,7 @@ export const BottomSide: Story = {
   }
 };
 
+/** Sheet sliding from the left */
 export const LeftSide: Story = {
   render: () => {
     return (

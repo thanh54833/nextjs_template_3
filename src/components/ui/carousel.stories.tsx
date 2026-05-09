@@ -1,3 +1,9 @@
+/**
+ * Carousel component built on Embla Carousel with prev/next navigation controls.
+ *
+ * @see https://www.embla-carousel.com/ - Embla Carousel official documentation
+ * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ */
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './carousel';
@@ -25,6 +31,7 @@ const SlideContent = ({ index }: { index: number }) => (
   </div>
 );
 
+/** Default carousel with 4 slides and navigation controls. */
 export const Default: Story = {
   render: () => (
     <Carousel className="w-full max-w-[320px]">
@@ -41,6 +48,7 @@ export const Default: Story = {
   ),
 };
 
+/** Carousel with more items showing scroll behavior. */
 export const WithMultipleItems: Story = {
   render: () => (
     <Carousel className="w-full max-w-[320px]">
@@ -57,6 +65,7 @@ export const WithMultipleItems: Story = {
   ),
 };
 
+/** Vertical orientation carousel for swipe scrolling. */
 export const VerticalOrientation: Story = {
   render: () => (
     <Carousel orientation="vertical" className="w-full max-w-[320px]">
@@ -73,6 +82,7 @@ export const VerticalOrientation: Story = {
   ),
 };
 
+/** Carousel without navigation controls for custom navigation. */
 export const WithoutNavigation: Story = {
   render: () => (
     <Carousel className="w-full max-w-[320px]">
@@ -87,6 +97,7 @@ export const WithoutNavigation: Story = {
   ),
 };
 
+/** Single slide carousel example. */
 export const SingleSlide: Story = {
   render: () => (
     <Carousel className="w-full max-w-[320px]">
@@ -101,6 +112,7 @@ export const SingleSlide: Story = {
   ),
 };
 
+/** Carousel with custom styling using className overrides. */
 export const CustomClassName: Story = {
   render: () => (
     <Carousel className="w-full max-w-[400px]">
