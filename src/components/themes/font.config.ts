@@ -1,5 +1,6 @@
 import {
   Architects_Daughter,
+  Bricolage_Grotesque,
   DM_Sans,
   Fira_Code,
   Geist,
@@ -90,6 +91,12 @@ const fontPlayfairDisplay = Playfair_Display({
   variable: '--font-playfair-display'
 });
 
+const fontBricolageGrotesque = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-bricolage-grotesque'
+});
+
 export const fontVariables = cn(
   fontSans.variable,
   fontMono.variable,
@@ -104,5 +111,6 @@ export const fontVariables = cn(
   fontSpaceMono.variable,
   fontJetBrainsMono.variable,
   fontMerriweather.variable,
-  fontPlayfairDisplay.variable
+  fontPlayfairDisplay.variable,
+  fontBricolageGrotesque.variable
 );
