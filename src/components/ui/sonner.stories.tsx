@@ -19,7 +19,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Toaster>;
+} as Meta<typeof Toaster>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -22,7 +22,7 @@ const meta = {
   argTypes: {
     defaultOpen: { control: 'boolean', description: 'Whether the sidebar is open by default' },
   },
-} satisfies Meta<typeof Sidebar>;
+} as Meta<typeof Sidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -16,7 +16,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Heading>;
+} as Meta<typeof Heading>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

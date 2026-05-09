@@ -29,7 +29,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Kanban>;
+} as Meta<typeof Kanban>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -146,6 +146,7 @@ export const EmptyBoard: Story = {
 
 /** Single column with one task for minimal layouts. */
 export const SingleColumn: Story = {
+  args: {},
   render: () => ({
     component: (
       <Kanban

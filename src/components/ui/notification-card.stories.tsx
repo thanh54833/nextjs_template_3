@@ -26,7 +26,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof NotificationCard>;
+} as Meta<typeof NotificationCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

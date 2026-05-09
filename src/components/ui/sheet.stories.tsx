@@ -30,7 +30,7 @@ const meta = {
       }
     }
   }
-} satisfies Meta<typeof Sheet>;
+} as Meta<typeof Sheet>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

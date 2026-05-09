@@ -26,7 +26,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Select>;
+} as Meta<typeof Select>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

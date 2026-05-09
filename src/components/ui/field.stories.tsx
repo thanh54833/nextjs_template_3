@@ -36,14 +36,13 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Field>;
+} as Meta<typeof Field>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Default vertical field layout with two inputs. */
 export const Default: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldLegend>Personal Information</FieldLegend>
@@ -68,7 +67,6 @@ export const Default: Story = {
 
 /** Horizontal orientation for compact field layouts. */
 export const HorizontalOrientation: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldLegend>Account Details</FieldLegend>
@@ -93,7 +91,6 @@ export const HorizontalOrientation: Story = {
 
 /** Responsive orientation that adapts to container width. */
 export const ResponsiveOrientation: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldLegend>Responsive Example</FieldLegend>
@@ -111,7 +108,6 @@ export const ResponsiveOrientation: Story = {
 
 /** Field with title subtitle for additional context. */
 export const WithFieldTitle: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldGroup>
@@ -130,7 +126,6 @@ export const WithFieldTitle: Story = {
 
 /** Field with error messages for validation feedback. */
 export const WithErrors: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldGroup>
@@ -148,7 +143,6 @@ export const WithErrors: Story = {
 
 /** Field with separator for grouping alternative options. */
 export const WithSeparator: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldGroup>
@@ -174,7 +168,6 @@ export const WithSeparator: Story = {
 
 /** Checkbox field with horizontal label layout. */
 export const CheckboxField: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldLegend>Preferences</FieldLegend>
@@ -199,7 +192,6 @@ export const CheckboxField: Story = {
 
 /** Radio group field for single selection from options. */
 export const RadioGroupField: Story = {
-  args: {},
   render: () => (
     <FieldSet>
       <FieldLegend>Plan Selection</FieldLegend>
@@ -233,7 +225,6 @@ export const RadioGroupField: Story = {
 
 /** Multiple field groups for organizing complex forms. */
 export const MultipleFieldGroups: Story = {
-  args: {},
   render: () => (
     <div className="flex flex-col gap-8">
       <FieldSet>

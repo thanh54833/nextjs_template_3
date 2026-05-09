@@ -28,13 +28,12 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Breadcrumb>;
+} as Meta<typeof Breadcrumb>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
   /** Default breadcrumb with three items */
   render: () => (
     <Breadcrumb>
@@ -56,7 +55,6 @@ export const Default: Story = {
 };
 
 export const WithEllipsis: Story = {
-  args: {},
   /** Breadcrumb with ellipsis for truncated navigation */
   render: () => (
     <Breadcrumb>
@@ -78,7 +76,6 @@ export const WithEllipsis: Story = {
 };
 
 export const NestedLevels: Story = {
-  args: {},
   /** Breadcrumb showing deep nested navigation levels */
   render: () => (
     <Breadcrumb>
@@ -104,7 +101,6 @@ export const NestedLevels: Story = {
 };
 
 export const AsChild: Story = {
-  args: {},
   /** Breadcrumb using asChild to render custom link elements */
   render: () => (
     <Breadcrumb>

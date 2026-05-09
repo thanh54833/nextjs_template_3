@@ -18,7 +18,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Input>;
+} as Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

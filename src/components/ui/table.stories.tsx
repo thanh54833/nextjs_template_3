@@ -29,7 +29,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Table>;
+} as Meta<typeof Table>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

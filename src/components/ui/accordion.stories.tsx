@@ -35,7 +35,7 @@ const meta = {
       description: 'The default open item value(s)',
     },
   },
-} satisfies Meta<typeof Accordion>;
+} as Meta<typeof Accordion>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -45,7 +45,6 @@ type Story = StoryObj<typeof meta>;
  * The first item is open by default and can be collapsed.
  */
 export const Default: Story = {
-  args: {},
   render: () => (
     <Accordion type='single' collapsible defaultValue='item1'>
       <AccordionItem value='item1'>
@@ -85,12 +84,8 @@ export const Default: Story = {
  * Multiple items can be open at the same time.
  */
 export const MultipleOpen: Story = {
-  args: {
-    type: 'multiple',
-    defaultValue: ['item1', 'item2'],
-  },
-  render: (args) => (
-    <Accordion type='multiple' defaultValue={args.defaultValue as string[]}>
+  render: () => (
+    <Accordion type='multiple' defaultValue={['item1', 'item2']}>
       <AccordionItem value='item1'>
         <AccordionTrigger>First Item (open by default)</AccordionTrigger>
         <AccordionContent>
@@ -118,12 +113,8 @@ export const MultipleOpen: Story = {
  * User must click to expand any section.
  */
 export const AllCollapsed: Story = {
-  args: {
-    type: 'single',
-    collapsible: true,
-  },
-  render: (args) => (
-    <Accordion type={args.type} collapsible={args.collapsible}>
+  render: () => (
+    <Accordion type='single' collapsible>
       <AccordionItem value='item1'>
         <AccordionTrigger>Item One</AccordionTrigger>
         <AccordionContent>

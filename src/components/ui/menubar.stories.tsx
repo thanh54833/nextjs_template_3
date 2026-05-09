@@ -36,7 +36,7 @@ const meta = {
       }
     }
   }
-} satisfies Meta<typeof Menubar>;
+} as Meta<typeof Menubar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

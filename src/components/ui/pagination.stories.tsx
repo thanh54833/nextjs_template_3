@@ -28,7 +28,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Pagination>;
+} as Meta<typeof Pagination>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

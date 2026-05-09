@@ -22,14 +22,13 @@ const meta = {
       description: 'The desired aspect ratio (width/height)',
     },
   },
-} satisfies Meta<typeof AspectRatio>;
+} as Meta<typeof AspectRatio>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Default 16:9 widescreen aspect ratio. */
 export const Default: Story = {
-  args: {},
   render: () => (
     <div className='w-[300px]'>
       <AspectRatio ratio={16 / 9} className='bg-muted'>
@@ -43,7 +42,6 @@ export const Default: Story = {
 
 /** Square 1:1 aspect ratio. */
 export const Square: Story = {
-  args: {},
   render: () => (
     <div className='w-[200px]'>
       <AspectRatio ratio={1 / 1} className='bg-muted'>
@@ -57,7 +55,6 @@ export const Square: Story = {
 
 /** Portrait 3:4 aspect ratio. */
 export const Portrait: Story = {
-  args: {},
   render: () => (
     <div className='w-[200px]'>
       <AspectRatio ratio={3 / 4} className='bg-muted'>
@@ -71,7 +68,6 @@ export const Portrait: Story = {
 
 /** Cinematic 21:9 ultra-widescreen aspect ratio. */
 export const Cinematic: Story = {
-  args: {},
   render: () => (
     <div className='w-[400px]'>
       <AspectRatio ratio={21 / 9} className='bg-muted'>

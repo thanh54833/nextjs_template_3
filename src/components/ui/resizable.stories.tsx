@@ -27,7 +27,7 @@ const meta = {
       description: 'Direction of the panel group',
     },
   },
-} satisfies Meta<typeof ResizablePanelGroup>;
+} as Meta<typeof ResizablePanelGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

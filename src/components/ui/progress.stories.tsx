@@ -19,7 +19,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Progress>;
+} as Meta<typeof Progress>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

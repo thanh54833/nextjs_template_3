@@ -23,7 +23,7 @@ const meta = {
       description: 'Visual style variant of the badge',
     },
   },
-} satisfies Meta<typeof Badge>;
+} as Meta<typeof Badge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -33,7 +33,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Form>;
+} as Meta<typeof Form>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -115,19 +115,16 @@ function FormExample() {
 
 /** Basic form with username, email, and bio fields. */
 export const Default: Story = {
-  args: {},
   render: () => <FormExample />,
 };
 
 /** Form demonstrating validation on submission. */
 export const WithValidation: Story = {
-  args: {},
   render: () => <FormExample />,
 };
 
 /** Form with pre-filled data for edit scenarios. */
 export const WithPrefilledData: Story = {
-  args: {},
   render: () => {
     const form = useForm<FormValues>({
       defaultValues: {

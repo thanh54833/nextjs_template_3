@@ -20,7 +20,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Carousel>;
+} as Meta<typeof Carousel>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -33,7 +33,6 @@ const SlideContent = ({ index }: { index: number }) => (
 
 /** Default carousel with 4 slides and navigation controls. */
 export const Default: Story = {
-  args: {},
   render: () => (
     <Carousel className="w-full max-w-[320px]">
       <CarouselContent>
@@ -51,7 +50,6 @@ export const Default: Story = {
 
 /** Carousel with more items showing scroll behavior. */
 export const WithMultipleItems: Story = {
-  args: {},
   render: () => (
     <Carousel className="w-full max-w-[320px]">
       <CarouselContent>
@@ -69,7 +67,6 @@ export const WithMultipleItems: Story = {
 
 /** Vertical orientation carousel for swipe scrolling. */
 export const VerticalOrientation: Story = {
-  args: {},
   render: () => (
     <Carousel orientation="vertical" className="w-full max-w-[320px]">
       <CarouselContent>
@@ -87,7 +84,6 @@ export const VerticalOrientation: Story = {
 
 /** Carousel without navigation controls for custom navigation. */
 export const WithoutNavigation: Story = {
-  args: {},
   render: () => (
     <Carousel className="w-full max-w-[320px]">
       <CarouselContent>
@@ -103,7 +99,6 @@ export const WithoutNavigation: Story = {
 
 /** Single slide carousel example. */
 export const SingleSlide: Story = {
-  args: {},
   render: () => (
     <Carousel className="w-full max-w-[320px]">
       <CarouselContent>
@@ -119,7 +114,6 @@ export const SingleSlide: Story = {
 
 /** Carousel with custom styling using className overrides. */
 export const CustomClassName: Story = {
-  args: {},
   render: () => (
     <Carousel className="w-full max-w-[400px]">
       <CarouselContent className="gap-4">

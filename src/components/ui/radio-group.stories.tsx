@@ -18,7 +18,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof RadioGroup>;
+} as Meta<typeof RadioGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

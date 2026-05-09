@@ -27,7 +27,7 @@ const meta = {
       description: 'Scroll bar orientation',
     },
   },
-} satisfies Meta<typeof ScrollArea>;
+} as Meta<typeof ScrollArea>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

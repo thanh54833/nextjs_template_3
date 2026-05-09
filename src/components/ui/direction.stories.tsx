@@ -20,7 +20,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof DirectionProvider>;
+} as Meta<typeof DirectionProvider>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -18,7 +18,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof ToggleGroup>;
+} as Meta<typeof ToggleGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

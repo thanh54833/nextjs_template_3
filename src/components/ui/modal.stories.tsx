@@ -21,7 +21,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Modal>;
+} as Meta<typeof Modal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

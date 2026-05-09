@@ -33,7 +33,7 @@ const meta = {
       description: 'How tabs are activated',
     },
   },
-} satisfies Meta<typeof Tabs>;
+} as Meta<typeof Tabs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

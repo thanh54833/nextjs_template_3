@@ -18,7 +18,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof NativeSelect>;
+} as Meta<typeof NativeSelect>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

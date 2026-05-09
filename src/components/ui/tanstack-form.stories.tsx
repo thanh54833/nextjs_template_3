@@ -19,7 +19,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<null>;
+} as Meta<typeof null>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

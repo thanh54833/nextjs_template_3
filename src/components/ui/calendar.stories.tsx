@@ -26,13 +26,12 @@ const meta = {
     mode: { control: 'select', options: ['single', 'multiple', 'range'], description: 'Selection mode' },
     showOutsideDays: { control: 'boolean', description: 'Whether to show days from adjacent months' },
   },
-} satisfies Meta<typeof Calendar>;
+} as Meta<typeof Calendar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
   /** Default calendar with today's date selected */
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date());
@@ -41,7 +40,6 @@ export const Default: Story = {
 };
 
 export const WithSelectedDate: Story = {
-  args: {},
   /** Calendar with a specific date pre-selected */
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date(2024, 5, 15));
@@ -50,7 +48,6 @@ export const WithSelectedDate: Story = {
 };
 
 export const WithRange: Story = {
-  args: {},
   /** Calendar in range selection mode */
   render: () => {
     const [range, setRange] = useState<DateRange | undefined>({
@@ -62,7 +59,6 @@ export const WithRange: Story = {
 };
 
 export const Disabled: Story = {
-  args: {},
   /** Calendar with weekends disabled */
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date());
@@ -78,7 +74,6 @@ export const Disabled: Story = {
 };
 
 export const HiddenOutsideDays: Story = {
-  args: {},
   /** Calendar with outside days hidden */
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date());

@@ -4,6 +4,9 @@
  * @see https://ui.shadcn.com/docs/components/separator
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
+import type { Meta, StoryObj } from '@storybook/react';
+import { Separator } from './separator';
+
 const meta = {
   component: Separator,
   tags: ['autodocs'],
@@ -23,7 +26,7 @@ const meta = {
       description: 'Direction of the separator line',
     },
   },
-} satisfies Meta<typeof Separator>;
+} as Meta<typeof Separator>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

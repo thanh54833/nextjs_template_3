@@ -4,6 +4,9 @@
  * @see https://ui.shadcn.com/docs/components/skeleton
  * @see https://storybook.js.org/docs/writing-docs/autodocs
  */
+import type { Meta, StoryObj } from '@storybook/react';
+import { Skeleton } from './skeleton';
+
 const meta = {
   component: Skeleton,
   tags: ['autodocs'],
@@ -16,7 +19,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Skeleton>;
+} as Meta<typeof Skeleton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

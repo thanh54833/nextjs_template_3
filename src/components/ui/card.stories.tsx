@@ -29,7 +29,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Card>;
+} as Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

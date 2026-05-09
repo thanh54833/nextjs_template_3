@@ -32,14 +32,13 @@ const meta = {
       }
     }
   }
-} satisfies Meta<typeof AlertDialog>;
+} as Meta<typeof AlertDialog>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Default alert dialog with destructive action styling */
 export const Default: Story = {
-  args: {},
   render: () => {
     return (
       <AlertDialog open>
@@ -65,7 +64,6 @@ export const Default: Story = {
 
 /** Alert dialog with trigger button for destructive actions */
 export const WithTrigger: Story = {
-  args: {},
   render: () => {
     const [open, setOpen] = useState(false);
     return (

@@ -29,14 +29,13 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof useFormContext>;
+} as Meta<typeof useFormContext>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Overview of form context components and usage patterns. */
 export const Default: Story = {
-  args: {},
   render: () => (
     <div className="w-full max-w-md p-4">
       <p className="text-muted-foreground">
@@ -48,7 +47,6 @@ export const Default: Story = {
 
 /** Form field structure with vertical and horizontal orientations. */
 export const FormFieldStructure: Story = {
-  args: {},
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">
       <FormFieldSet>
@@ -80,7 +78,6 @@ export const FormFieldStructure: Story = {
 
 /** Form fields with error message display. */
 export const WithFieldErrors: Story = {
-  args: {},
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">
       <FormFieldSet>
@@ -104,7 +101,6 @@ export const WithFieldErrors: Story = {
 
 /** Form errors component for displaying form-level validation messages. */
 export const FormErrorsDemo: Story = {
-  args: {},
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">
       <p className="text-sm text-muted-foreground">

@@ -18,7 +18,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Switch>;
+} as Meta<typeof Switch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

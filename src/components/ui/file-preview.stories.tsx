@@ -20,7 +20,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof FilePreview>;
+} as Meta<typeof FilePreview>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

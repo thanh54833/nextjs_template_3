@@ -29,7 +29,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof ChartContainer>;
+} as Meta<typeof ChartContainer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

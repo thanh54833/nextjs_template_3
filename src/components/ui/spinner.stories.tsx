@@ -19,15 +19,13 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Spinner>;
+} as Meta<typeof Spinner>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Default spinner with medium size */
-export const Default: Story = {
-  args: {},
-};
+export const Default: Story = {};
 
 /** Small size spinner */
 export const Small: Story = {

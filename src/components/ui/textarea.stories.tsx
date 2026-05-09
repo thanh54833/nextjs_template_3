@@ -18,7 +18,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Textarea>;
+} as Meta<typeof Textarea>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

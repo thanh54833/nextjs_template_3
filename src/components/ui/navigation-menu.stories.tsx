@@ -33,7 +33,7 @@ const meta = {
   argTypes: {
     viewport: { control: 'boolean', description: 'Whether to show the viewport indicator' },
   },
-} satisfies Meta<typeof NavigationMenu>;
+} as Meta<typeof NavigationMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

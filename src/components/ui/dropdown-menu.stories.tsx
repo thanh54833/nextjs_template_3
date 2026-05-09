@@ -36,14 +36,13 @@ const meta = {
       }
     }
   }
-} satisfies Meta<typeof DropdownMenu>;
+} as Meta<typeof DropdownMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Default dropdown menu with common actions and shortcuts */
 export const Default: Story = {
-  args: {},
   render: () => {
     return (
       <DropdownMenu>
@@ -77,7 +76,6 @@ export const Default: Story = {
 
 /** Dropdown menu with nested submenu */
 export const WithSubmenu: Story = {
-  args: {},
   render: () => {
     return (
       <DropdownMenu>
@@ -107,7 +105,6 @@ export const WithSubmenu: Story = {
 
 /** Dropdown menu with checkbox items for toggling options */
 export const WithCheckbox: Story = {
-  args: {},
   render: () => {
     return (
       <DropdownMenu>
@@ -128,7 +125,6 @@ export const WithCheckbox: Story = {
 
 /** Dropdown menu with radio group for single selection */
 export const WithRadioGroup: Story = {
-  args: {},
   render: () => {
     return (
       <DropdownMenu>
@@ -151,7 +147,6 @@ export const WithRadioGroup: Story = {
 
 /** Dropdown menu with grouped items for organizing related actions */
 export const WithGroup: Story = {
-  args: {},
   render: () => {
     return (
       <DropdownMenu>

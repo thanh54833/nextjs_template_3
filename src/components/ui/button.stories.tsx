@@ -28,7 +28,7 @@ const meta = {
       description: 'Size of the button',
     },
   },
-} satisfies Meta<typeof Button>;
+} as Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -21,14 +21,13 @@ const meta = {
       }
     }
   }
-} satisfies Meta<typeof HoverCard>;
+} as Meta<typeof HoverCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /** Default hover card with user profile preview */
 export const Default: Story = {
-  args: {},
   render: () => {
     return (
       <HoverCard open>
@@ -56,7 +55,6 @@ export const Default: Story = {
 
 /** Hover card with action button and richer content */
 export const WithAction: Story = {
-  args: {},
   render: () => {
     return (
       <HoverCard open>
