@@ -1,0 +1,1 @@
+import{r as o}from"./index-CAPI2NOD.js";import{j as n}from"./jsx-runtime-EKYJJIwR.js";var e=o.createContext(void 0),c=r=>{const{dir:t,children:i}=r;return n.jsx(e.Provider,{value:t,children:i})};function u(r){const t=o.useContext(e);return r||t||"ltr"}export{c as D,u};

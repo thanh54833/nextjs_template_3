@@ -5,14 +5,10 @@ import { Button } from './button';
 import { Input } from './input';
 import {
   useFormContext,
-  FieldSet as FormFieldSet,
-  Field as FormField,
-  FieldError as FormFieldError,
+  FormFieldSet,
+  FormField,
+  FormFieldError,
   FormErrors,
-  FieldContent,
-  FieldLabel,
-  FieldDescription,
-  FieldSeparator,
 } from './form-context';
 
 const meta = {
@@ -46,43 +42,26 @@ export const FormFieldStructure: Story = {
   render: () => (
     <div className="w-full max-w-md space-y-6 p-4">
       <FormFieldSet>
-        <FieldSeparator>
-          <span className="text-xs text-muted-foreground">Personal Information</span>
-        </FieldSeparator>
-
         <FormField orientation="vertical">
-          <FieldLabel htmlFor="name">Full Name</FieldLabel>
-          <FieldContent>
-            <Input id="name" placeholder="John Doe" />
-          </FieldContent>
-          <FieldDescription>Enter your full legal name as it appears on your ID.</FieldDescription>
+          <label htmlFor="name" className="text-sm font-medium">Full Name</label>
+          <Input id="name" placeholder="John Doe" />
         </FormField>
 
         <FormField orientation="vertical">
-          <FieldLabel htmlFor="email">Email Address</FieldLabel>
-          <FieldContent>
-            <Input id="email" type="email" placeholder="john@example.com" />
-          </FieldContent>
+          <label htmlFor="email" className="text-sm font-medium">Email Address</label>
+          <Input id="email" type="email" placeholder="john@example.com" />
         </FormField>
       </FormFieldSet>
 
       <FormFieldSet>
-        <FieldSeparator>
-          <span className="text-xs text-muted-foreground">Account Details</span>
-        </FieldSeparator>
-
         <FormField orientation="horizontal">
-          <FieldLabel htmlFor="username">Username</FieldLabel>
-          <FieldContent>
-            <Input id="username" placeholder="johndoe" />
-          </FieldContent>
+          <label htmlFor="username" className="text-sm font-medium">Username</label>
+          <Input id="username" placeholder="johndoe" />
         </FormField>
 
         <FormField orientation="horizontal">
-          <FieldLabel htmlFor="password">Password</FieldLabel>
-          <FieldContent>
-            <Input id="password" type="password" placeholder="••••••••" />
-          </FieldContent>
+          <label htmlFor="password" className="text-sm font-medium">Password</label>
+          <Input id="password" type="password" placeholder="••••••••" />
         </FormField>
       </FormFieldSet>
     </div>
@@ -94,20 +73,16 @@ export const WithFieldErrors: Story = {
     <div className="w-full max-w-md space-y-6 p-4">
       <FormFieldSet>
         <FormField orientation="vertical">
-          <FieldLabel htmlFor="email-error">Email</FieldLabel>
-          <FieldContent>
-            <Input id="email-error" defaultValue="invalid-email" />
-          </FieldContent>
+          <label htmlFor="email-error" className="text-sm font-medium">Email</label>
+          <Input id="email-error" defaultValue="invalid-email" />
           <FormFieldError errors={['Invalid email format']} />
         </FormField>
       </FormFieldSet>
 
       <FormFieldSet>
         <FormField orientation="vertical">
-          <FieldLabel htmlFor="password-error">Password</FieldLabel>
-          <FieldContent>
-            <Input id="password-error" type="password" defaultValue="123" />
-          </FieldContent>
+          <label htmlFor="password-error" className="text-sm font-medium">Password</label>
+          <Input id="password-error" type="password" defaultValue="123" />
           <FormFieldError errors={['Password must be at least 8 characters', 'Must contain a number']} />
         </FormField>
       </FormFieldSet>
@@ -125,46 +100,11 @@ export const FormErrorsDemo: Story = {
         <FormErrors className="mb-4" />
         <FormFieldSet>
           <FormField orientation="vertical">
-            <FieldLabel htmlFor="field1">Field 1</FieldLabel>
-            <FieldContent>
-              <Input id="field1" placeholder="Enter value..." />
-            </FieldContent>
+            <label htmlFor="field1" className="text-sm font-medium">Field 1</label>
+            <Input id="field1" placeholder="Enter value..." />
           </FormField>
         </FormFieldSet>
       </div>
-    </div>
-  ),
-};
-
-export const ResponsiveFields: Story = {
-  render: () => (
-    <div className="w-full max-w-md space-y-6 p-4">
-      <FormFieldSet>
-        <FieldSeparator>
-          <span className="text-xs text-muted-foreground">Responsive Layout</span>
-        </FieldSeparator>
-
-        <FormField orientation="vertical">
-          <FieldLabel htmlFor="responsive-1">First Field</FieldLabel>
-          <FieldContent>
-            <Input id="responsive-1" />
-          </FieldContent>
-        </FormField>
-
-        <FormField orientation="vertical">
-          <FieldLabel htmlFor="responsive-2">Second Field</FieldLabel>
-          <FieldContent>
-            <Input id="responsive-2" />
-          </FieldContent>
-        </FormField>
-
-        <FormField orientation="vertical">
-          <FieldLabel htmlFor="responsive-3">Third Field</FieldLabel>
-          <FieldContent>
-            <Input id="responsive-3" />
-          </FieldContent>
-        </FormField>
-      </FormFieldSet>
     </div>
   ),
 };

@@ -1,13 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
-import { z } from 'zod';
-
-import { Button } from './button';
-import { Input } from './input';
-import { tanstackFormHooks } from './form-context';
 
 const meta = {
-  component: tanstackFormHooks,
+  component: null,
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
@@ -18,12 +13,10 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof tanstackFormHooks>;
+} satisfies Meta<null>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const { useAppForm, withForm } = tanstackFormHooks;
 
 export const Default: Story = {
   render: () => (

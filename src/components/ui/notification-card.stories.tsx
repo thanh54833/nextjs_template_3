@@ -1,3 +1,4 @@
+import * as React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './button';
@@ -83,7 +84,7 @@ export const WithDangerAction: Story = {
   args: {
     ...baseNotification,
     title: 'Account Security Alert',
-    body: 'We detected a sign-in from a new device. If this wasn't you, please secure your account.',
+    body: "We detected a sign-in from a new device. If this wasn't you, please secure your account.",
     actions: [
       { id: 'secure', label: 'Secure Account', type: 'api_call', style: 'danger' },
       { id: 'ignore', label: 'It Was Me', type: 'modal', style: 'default' },
@@ -177,5 +178,3 @@ export const Interactive: Story = {
     );
   },
 };
-
-import * as React from 'react';
