@@ -1,0 +1,111 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './button';
+
+const meta = {
+  component: Button,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+} satisfies Meta<typeof Button>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    children: 'Button',
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'Secondary',
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    children: 'Destructive',
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    children: 'Outline',
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    children: 'Ghost',
+  },
+};
+
+export const Link: Story = {
+  args: {
+    variant: 'link',
+    children: 'Link',
+  },
+};
+
+export const XSmall: Story = {
+  args: {
+    size: 'xs',
+    children: 'Extra Small',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: 'sm',
+    children: 'Small',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'lg',
+    children: 'Large',
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    size: 'icon',
+    children: '🔔',
+  },
+};
+
+export const IconXSmall: Story = {
+  args: {
+    size: 'icon-xs',
+    children: '×',
+  },
+};
+
+export const IconSmall: Story = {
+  args: {
+    size: 'icon-sm',
+    children: '★',
+  },
+};
+
+export const IconLarge: Story = {
+  args: {
+    size: 'icon-lg',
+    children: '👍',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    children: 'Disabled',
+  },
+};
+
