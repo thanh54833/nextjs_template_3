@@ -104,7 +104,7 @@ export function Messenger() {
   if (!activeConversation) return null;
 
   return (
-    <div className='border-border bg-background relative grid h-[calc(100dvh-5.5rem)] w-full grid-rows-[auto,1fr] gap-3 overflow-hidden rounded-2xl border p-3 sm:gap-4 sm:p-4 lg:[grid-template-columns:30%_1fr] lg:grid-rows-[1fr] lg:gap-4 lg:rounded-3xl lg:p-5'>
+    <div className='border-border bg-background relative grid h-[calc(100dvh-5.5rem)] w-full grid-rows-[auto,1fr] gap-2 overflow-hidden rounded-xl border p-2 sm:gap-3 sm:p-3 lg:[grid-template-columns:30%_1fr] lg:grid-rows-[1fr] lg:gap-3 lg:rounded-2xl lg:p-4'>
       <ConversationSelect
         conversations={conversations}
         selectedId={selectedConversationId}

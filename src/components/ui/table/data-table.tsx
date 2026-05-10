@@ -20,7 +20,7 @@ interface DataTableProps<TData> extends React.ComponentProps<'div'> {
 
 export function DataTable<TData>({ table, actionBar, children }: DataTableProps<TData>) {
   return (
-    <div className='flex flex-1 flex-col space-y-4'>
+    <div className='flex flex-1 flex-col space-y-2'>
       {children}
       <div className='relative flex flex-1'>
         <div className='absolute inset-0 flex overflow-hidden rounded-lg border'>

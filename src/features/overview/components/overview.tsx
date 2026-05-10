@@ -21,21 +21,21 @@ export default function OverViewPage() {
   return (
     <PageContainer>
       <div className='flex flex-1 flex-col space-y-2'>
-        <div className='flex items-center justify-between space-y-2'>
-          <h2 className='text-2xl font-bold tracking-tight'>Hi, Welcome back 👋</h2>
+        <div className='flex items-center justify-between space-y-1'>
+          <h2 className='text-xl font-bold tracking-tight'>Hi, Welcome back 👋</h2>
           <div className='hidden items-center space-x-2 md:flex'>
             <Button>Download</Button>
           </div>
         </div>
-        <Tabs defaultValue='overview' className='space-y-4'>
+        <Tabs defaultValue='overview' className='space-y-2'>
           <TabsList>
             <TabsTrigger value='overview'>Overview</TabsTrigger>
             <TabsTrigger value='analytics' disabled>
               Analytics
             </TabsTrigger>
           </TabsList>
-          <TabsContent value='overview' className='space-y-4'>
-            <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4'>
+          <TabsContent value='overview' className='space-y-2'>
+            <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-3 px-3 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-4 @xl/main:grid-cols-2 @5xl/main:grid-cols-4'>
               <Card className='@container/card'>
                 <CardHeader className='flex flex-row items-start justify-between pb-2'>
                   <CardDescription>Total Revenue</CardDescription>
@@ -109,7 +109,7 @@ export default function OverViewPage() {
                 </CardFooter>
               </Card>
             </div>
-            <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7'>
+            <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-7'>
               <div className='col-span-4'>
                 <BarGraph />
               </div>

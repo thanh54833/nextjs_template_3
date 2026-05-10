@@ -79,8 +79,8 @@ export function ProductGrid() {
   const hasProducts = data.products.length > 0;
 
   return (
-    <div className='flex gap-5'>
-      <div className='hidden lg:block lg:self-start lg:sticky lg:top-4'>
+    <div className='flex gap-2'>
+      <div className='hidden lg:block lg:self-start lg:sticky lg:top-2'>
         <ProductFilters
           collapsed={filtersCollapsed}
           onToggleCollapse={() => setFiltersCollapsed(!filtersCollapsed)}
@@ -99,7 +99,7 @@ export function ProductGrid() {
       </Sheet>
 
 <div className='flex-1'>
-        <div className='flex flex-wrap items-center gap-4'>
+        <div className='flex flex-wrap items-center gap-2'>
           <div className='flex gap-1 rounded-lg border bg-muted p-1'>
             {(['all', 'active', 'non-active'] as const).map((tab) => (
               <button
@@ -118,13 +118,13 @@ export function ProductGrid() {
 
           {/* CENTER: Search input — dominant, takes available space */}
           <div className='relative min-w-[200px] flex-1'>
-            <Icons.search className='absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
+            <Icons.search className='absolute left-2 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground' />
             <Input
               placeholder='Search product...'
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              className='h-9 pl-9 text-sm'
+              className='h-8 pl-8 text-xs'
             />
           </div>
 
@@ -176,7 +176,7 @@ export function ProductGrid() {
           </div>
         )}
 
-        <div className='mt-3'>
+        <div className='mt-2'>
           <ActiveFilterChips />
         </div>
 
@@ -193,7 +193,7 @@ export function ProductGrid() {
         )}
 
         {hasProducts && viewMode === 'grid' && (
-          <div className='mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+          <div className='mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
             {data.products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -201,7 +201,7 @@ export function ProductGrid() {
         )}
 
         {hasProducts && viewMode === 'list' && (
-          <div className='mt-4 space-y-2'>
+          <div className='mt-2 space-y-1.5'>
             {data.products.map((product) => (
               <ProductListRow key={product.id} product={product} />
             ))}
@@ -209,7 +209,7 @@ export function ProductGrid() {
         )}
 
         {hasProducts && (
-          <div className='mt-6 flex items-center justify-between border-t pt-4'>
+          <div className='mt-3 flex items-center justify-between border-t pt-2'>
             <div className='flex items-center gap-2 text-xs text-muted-foreground'>
               <Select
                 value={String(params.perPage)}

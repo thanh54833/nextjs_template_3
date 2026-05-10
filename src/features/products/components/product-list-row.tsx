@@ -38,10 +38,10 @@ export function ProductListRow({ product }: ProductListRowProps) {
   return (
     <>
       <div
-        className='group flex items-center gap-4 rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50 cursor-pointer'
+        className='group flex items-center gap-3 rounded-md border bg-card p-2 transition-colors hover:bg-accent/50 cursor-pointer'
         onClick={() => setDetailSheetOpen(true)}
       >
-        <div className='relative h-16 w-16 shrink-0 overflow-hidden rounded-md bg-muted'>
+        <div className='relative h-14 w-14 shrink-0 overflow-hidden rounded-md bg-muted'>
           {product.product_image_cover ? (
             <Image
               src={product.product_image_cover}
@@ -63,7 +63,7 @@ export function ProductListRow({ product }: ProductListRowProps) {
         </div>
 
         <div className='min-w-0 flex-1'>
-          <div className='flex items-start justify-between gap-4'>
+          <div className='flex items-start justify-between gap-3'>
             <div className='min-w-0'>
               <h3 className='text-sm font-medium text-foreground break-words'>
                 {product.ecom_product_name}
@@ -86,8 +86,8 @@ export function ProductListRow({ product }: ProductListRowProps) {
             </div>
           </div>
 
-          <div className='mt-1.5 flex items-center gap-3'>
-            <div className='flex items-center gap-2'>
+          <div className='mt-1 flex items-center gap-2'>
+            <div className='flex items-center gap-1.5'>
               <span className='text-sm font-semibold text-foreground'>
                 {formatPrice(product.sale_price_vat)}
               </span>

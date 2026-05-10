@@ -31,18 +31,18 @@ export default function IconsViewPage() {
         </Link>
       }
     >
-      <div className='space-y-4'>
+      <div className='space-y-2'>
         <Input
           placeholder='Search icons...'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className='max-w-sm'
         />
-        <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8'>
+        <div className='grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8'>
           {iconEntries.map(([name, IconComponent]) => (
             <div
               key={name}
-              className='hover:bg-accent flex flex-col items-center gap-2 rounded-lg border p-4 text-center transition-colors'
+              className='hover:bg-accent flex flex-col items-center gap-1.5 rounded-md border p-3 text-center transition-colors'
             >
               <IconComponent className='h-6 w-6' />
               <span className='text-muted-foreground text-xs break-all'>{name}</span>
@@ -50,7 +50,7 @@ export default function IconsViewPage() {
           ))}
         </div>
         {iconEntries.length === 0 && (
-          <p className='text-muted-foreground py-8 text-center'>
+          <p className='text-muted-foreground py-6 text-center'>
             No icons found matching &quot;{search}&quot;
           </p>
         )}

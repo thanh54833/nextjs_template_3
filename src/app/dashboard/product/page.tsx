@@ -1,12 +1,8 @@
 import PageContainer from '@/components/layout/page-container';
-import { buttonVariants } from '@/components/ui/button';
 import ProductListingPage from '@/features/products/components/product-listing';
 import { searchParamsCache } from '@/lib/searchparams';
-import { cn } from '@/lib/utils';
 import { Icons } from '@/components/icons';
-import Link from 'next/link';
 import { SearchParams } from 'nuqs/server';
-import { productInfoContent } from '@/config/infoconfig';
 
 export const metadata = {
   title: 'Dashboard: Products'
@@ -23,12 +19,12 @@ export default async function Page(props: pageProps) {
   return (
     <PageContainer
       pageTitle='Product list page'
-      pageDescription='Show information'
-      infoContent={productInfoContent}
       pageHeaderAction={
-        <Link href='/dashboard/product/new' className={cn(buttonVariants(), 'text-xs md:text-sm')}>
-          <Icons.add className='mr-2 h-4 w-4' /> Add New
-        </Link>
+        <div className='flex items-center gap-1.5 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground'>
+          <Icons.calendar className='h-3.5 w-3.5 shrink-0' />
+          <span>Last updated: Feb 28, 2024</span>
+          <Icons.refresh className='h-3.5 w-3.5 shrink-0' />
+        </div>
       }
     >
       <ProductListingPage />

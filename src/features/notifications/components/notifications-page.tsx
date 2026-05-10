@@ -27,8 +27,8 @@ export default function NotificationsPage() {
   const renderList = (items: typeof notifications) => {
     if (items.length === 0) {
       return (
-        <div className='flex flex-col items-center justify-center py-16'>
-          <Icons.notification className='text-muted-foreground/40 mb-3 h-10 w-10' />
+        <div className='flex flex-col items-center justify-center py-8'>
+          <Icons.notification className='text-muted-foreground/40 mb-2 h-8 w-8' />
           <p className='text-muted-foreground text-sm'>No notifications</p>
         </div>
       );
@@ -77,13 +77,13 @@ export default function NotificationsPage() {
           <TabsTrigger value='unread'>Unread ({unreadNotifications.length})</TabsTrigger>
           <TabsTrigger value='read'>Read ({readNotifications.length})</TabsTrigger>
         </TabsList>
-        <TabsContent value='all' className='mt-4'>
+        <TabsContent value='all' className='mt-2'>
           {renderList(notifications)}
         </TabsContent>
-        <TabsContent value='unread' className='mt-4'>
+        <TabsContent value='unread' className='mt-2'>
           {renderList(unreadNotifications)}
         </TabsContent>
-        <TabsContent value='read' className='mt-4'>
+        <TabsContent value='read' className='mt-2'>
           {renderList(readNotifications)}
         </TabsContent>
       </Tabs>

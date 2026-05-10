@@ -16,6 +16,9 @@ dev:
 
 o:
 	opencode
+
+c:
+	claude --dangerously-skip-permissions $(PROMPT)
 	 
 kill:
 	pkill -f "storybook" || true

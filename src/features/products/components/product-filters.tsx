@@ -28,7 +28,7 @@ function FilterSection({ title, children, onClear, defaultExpanded = true }: Fil
   const [expanded, setExpanded] = useState(defaultExpanded);
 
   return (
-    <div className='space-y-3'>
+            <div className='space-y-2'>
       <div className='flex items-center justify-between'>
         <button
           type='button'
@@ -168,7 +168,7 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
         </button>
       ) : (
         <>
-          <div className='flex items-center justify-between border-b px-4 py-3'>
+          <div className='flex items-center justify-between border-b px-3 py-2'>
             <div className='flex items-center gap-2'>
               <h3 className='text-sm font-semibold text-foreground'>Filters</h3>
               {activeFilterCount > 0 && (
@@ -201,16 +201,16 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
             </div>
           </div>
       <ScrollArea className='h-[calc(100vh-8rem)]'>
-        <div className='space-y-5 p-4'>
+        <div className='space-y-3 p-3'>
           <FilterSection
             title='Category'
             onClear={selectedCategoriesList.length > 0 ? clearCategories : undefined}
           >
-            <div className='space-y-2.5'>
+            <div className='space-y-2'>
               {categoryOptions.map((cat) => (
                 <label
                   key={cat.value}
-                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'
+                  className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'
                 >
                   <Checkbox
                     checked={selectedCategoriesList.includes(cat.value)}
@@ -229,11 +229,11 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
             title='Brand'
             onClear={selectedManufacturersList.length > 0 ? clearManufacturers : undefined}
           >
-            <div className='space-y-2.5'>
+            <div className='space-y-2'>
               {brandOptions.map((brand) => (
                 <label
                   key={brand.value}
-                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'
+                  className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'
                 >
                   <Checkbox
                     checked={selectedManufacturersList.includes(brand.value)}
@@ -252,7 +252,7 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
             title='Price Range'
             onClear={priceMin !== null || priceMax !== null ? clearPrice : undefined}
           >
-            <div className='space-y-3'>
+    <div className='space-y-2'>
               <div className='flex gap-2'>
                 <div className='flex-1'>
                   <Label className='mb-1.5 block text-xs text-muted-foreground'>From</Label>
@@ -300,8 +300,8 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
           <Separator />
 
           <FilterSection title='Features'>
-            <div className='space-y-2.5'>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
+            <div className='space-y-2'>
+              <label className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={hasDiscount === true}
                   onCheckedChange={(checked) => setHasDiscount(checked ? true : null)}
@@ -309,7 +309,7 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
                 />
                 Has Discount
               </label>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={isFreeShip === true}
                   onCheckedChange={(checked) => setIsFreeShip(checked ? true : null)}
@@ -317,7 +317,7 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
                 />
                 Free Shipping
               </label>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={isSuperFastDelivery === true}
                   onCheckedChange={(checked) => setIsSuperFastDelivery(checked ? true : null)}
@@ -325,7 +325,7 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
                 />
                 Super Fast Delivery
               </label>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={isSelling === true}
                   onCheckedChange={(checked) => setIsSelling(checked ? true : null)}
@@ -346,7 +346,7 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
               {stockStatusOptions.map((option) => (
                 <label
                   key={option.value}
-                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'
+                  className='flex items-center gap-1.5 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'
                 >
                   <Checkbox
                     checked={stockStatus === option.value}

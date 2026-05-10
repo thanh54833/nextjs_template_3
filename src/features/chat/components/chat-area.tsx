@@ -63,13 +63,13 @@ export function ChatArea({
           animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
           transition={{ duration: 0.32, ease: 'easeOut' }}
-          className='border-border bg-background flex min-h-0 flex-col gap-3 overflow-hidden rounded-2xl border p-3 sm:gap-4 sm:p-4 lg:col-start-2 lg:col-end-3 lg:rounded-3xl'
+          className='border-border bg-background flex min-h-0 flex-col gap-2 overflow-hidden rounded-xl border p-2 sm:gap-3 sm:p-3 lg:col-start-2 lg:col-end-3 lg:rounded-2xl'
         >
           <ChatHeader conversation={conversation} />
 
           <div
             ref={messagesContainerRef}
-            className='[&::-webkit-scrollbar-thumb]:bg-muted relative min-h-0 flex-1 space-y-3 overflow-y-auto pr-2 sm:space-y-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full'
+            className='[&::-webkit-scrollbar-thumb]:bg-muted relative min-h-0 flex-1 space-y-2 overflow-y-auto pr-2 sm:space-y-2.5 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full'
             aria-live='off'
             aria-label={'Message thread with ' + conversation.name}
           >

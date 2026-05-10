@@ -32,7 +32,7 @@ export function ConversationList({ conversations, selectedId, onSelect }: Conver
   }, [conversations, search]);
 
   return (
-    <div className='border-border bg-background hidden h-full flex-col gap-4 overflow-hidden rounded-2xl border p-3 lg:col-start-1 lg:col-end-2 lg:flex lg:rounded-3xl lg:p-4'>
+    <div className='border-border bg-background hidden h-full flex-col gap-3 overflow-hidden rounded-xl border p-2 lg:col-start-1 lg:col-end-2 lg:flex lg:rounded-2xl lg:p-3'>
       <div className='flex items-center justify-between gap-3'>
         <div>
           <p className='text-foreground text-sm font-semibold'>Messenger</p>
@@ -68,7 +68,7 @@ export function ConversationList({ conversations, selectedId, onSelect }: Conver
       </div>
 
       <div
-        className='flex-1 space-y-2 overflow-y-auto pr-1'
+        className='flex-1 space-y-1.5 overflow-y-auto pr-1'
         aria-label='Conversation list'
         role='list'
       >
@@ -85,7 +85,7 @@ export function ConversationList({ conversations, selectedId, onSelect }: Conver
               onClick={() => onSelect(conversation.id)}
               aria-current={isActive ? 'true' : undefined}
               className={cn(
-                'focus-visible:ring-primary/50 group focus-visible:ring-offset-background relative flex w-full items-start gap-3 rounded-2xl border border-transparent p-3 text-left transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+                'focus-visible:ring-primary/50 group focus-visible:ring-offset-background relative flex w-full items-start gap-2 rounded-xl border border-transparent p-2 text-left transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
                 isActive
                   ? 'border-primary/40 bg-primary/10'
                   : 'bg-background/70 hover:border-border/40 hover:bg-muted/40'

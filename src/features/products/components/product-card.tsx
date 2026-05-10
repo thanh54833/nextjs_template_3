@@ -38,12 +38,12 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <>
       <div
-        className='group relative rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50 cursor-pointer'
+        className='group relative rounded-md border bg-card p-2 transition-colors hover:bg-accent/50 cursor-pointer'
         onClick={() => setDetailSheetOpen(true)}
       >
         <DropdownMenu>
           <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
-            <button className='absolute right-2 top-2 z-10 rounded p-1 opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100'>
+            <button className='absolute right-1.5 top-1.5 z-10 rounded p-0.5 opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100'>
               <Icons.ellipsis className='h-4 w-4 text-muted-foreground' />
             </button>
           </DropdownMenuTrigger>
@@ -72,7 +72,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <div className='relative mb-3 aspect-square overflow-hidden rounded-md bg-muted'>
+        <div className='relative mb-2 aspect-square overflow-hidden rounded-md bg-muted'>
           {product.product_image_cover ? (
             <Image
               src={product.product_image_cover}
@@ -104,7 +104,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        <div className='space-y-1.5'>
+        <div className='space-y-1'>
           <h3 className='line-clamp-1 text-sm font-medium text-foreground'>
             {product.ecom_product_name}
           </h3>
@@ -127,7 +127,7 @@ export function ProductCard({ product }: ProductCardProps) {
               • {product.sold_quantity.toLocaleString()} đã bán
             </span>
           </div>
-          <div className='flex flex-wrap gap-1 pt-1'>
+          <div className='flex flex-wrap gap-0.5 pt-0.5'>
             {product.is_free_ship && (
               <Badge variant='outline' className='text-[10px]'>
                 <Icons.package className='mr-1 h-3 w-3' />

@@ -36,7 +36,7 @@ export function DataTableSkeleton({
   );
 
   return (
-    <div className={cn('flex flex-1 flex-col space-y-4', className)} {...props}>
+    <div className={cn('flex flex-1 flex-col space-y-2', className)} {...props}>
       <div className='flex w-full items-center justify-between gap-2 overflow-auto p-1'>
         <div className='flex flex-1 items-center gap-2'>
           {filterCount > 0
@@ -87,17 +87,17 @@ export function DataTableSkeleton({
         </Table>
       </div>
       {withPagination ? (
-        <div className='flex w-full items-center justify-between gap-4 overflow-auto p-1 sm:gap-8'>
+        <div className='flex w-full items-center justify-between gap-2 overflow-auto p-1 sm:gap-4 lg:gap-6'>
           <Skeleton className='h-7 w-40 shrink-0' />
           <div className='flex items-center gap-4 sm:gap-6 lg:gap-8'>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-1.5'>
               <Skeleton className='h-7 w-24' />
               <Skeleton className='h-7 w-[4.5rem]' />
             </div>
             <div className='flex items-center justify-center text-sm font-medium'>
               <Skeleton className='h-7 w-20' />
             </div>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-1.5'>
               <Skeleton className='hidden size-7 lg:block' />
               <Skeleton className='size-7' />
               <Skeleton className='size-7' />
