@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean } from 'nuqs';
 import { Icons } from '@/components/icons';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -15,20 +16,36 @@ interface FilterSectionProps {
   title: string;
   children: React.ReactNode;
   onClear?: () => void;
+  defaultExpanded?: boolean;
 }
 
-function FilterSection({ title, children, onClear }: FilterSectionProps) {
+function FilterSection({ title, children, onClear, defaultExpanded = true }: FilterSectionProps) {
+  const [expanded, setExpanded] = useState(true);
+
   return (
     <div className='space-y-3'>
       <div className='flex items-center justify-between'>
-        <h4 className='text-sm font-medium text-foreground'>{title}</h4>
-        {onClear && (
-          <button onClick={onClear} className='rounded p-0.5 hover:bg-muted'>
-            <Icons.close className='h-3.5 w-3.5 text-muted-foreground' />
-          </button>
-        )}
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className='flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary'
+        >
+          <Icons.chevronDown
+            className={cn(
+              'h-4 w-4 text-muted-foreground transition-transform duration-200',
+              !expanded && '-rotate-90'
+            )}
+          />
+          {title}
+        </button>
+        <div className='flex items-center gap-1'>
+          {onClear && (
+            <button onClick={onClear} className='rounded p-0.5 hover:bg-muted'>
+              <Icons.close className='h-3.5 w-3.5 text-muted-foreground' />
+            </button>
+          )}
+        </div>
       </div>
-      {children}
+      {expanded && children}
     </div>
   );
 }
