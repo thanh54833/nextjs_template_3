@@ -17,6 +17,8 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from '@/components/ui/empty';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const columnIds = ['name', 'category', 'price', 'description'];
 
@@ -31,6 +33,7 @@ export function ProductGrid() {
 
   const [activeTab, setActiveTab] = useState<'all' | 'active' | 'non-active'>('all');
   const [searchValue, setSearchValue] = useState(params.name || '');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const filters = {
     page: params.page,
@@ -40,7 +43,7 @@ export function ProductGrid() {
     ...(params.sort.length > 0 && { sort: JSON.stringify(params.sort) })
   };
 
-  const { data } = useSuspenseQuery(productsQueryOptions(filters));
+  const { data, isFetching } = useSuspenseQuery(productsQueryOptions(filters));
   const pageCount = Math.ceil(data.total_products / params.perPage);
 
   const handleSearch = () => {
@@ -53,9 +56,24 @@ export function ProductGrid() {
     }
   };
 
+  const hasProducts = data.products.length > 0;
+
   return (
     <div className='flex gap-4'>
-      <ProductFilters />
+      <div className='hidden lg:block'>
+        <ProductFilters />
+      </div>
+
+      <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+        <SheetTrigger asChild>
+          <div className='lg:hidden'>
+            <ProductFilters />
+          </div>
+        </SheetTrigger>
+        <SheetContent side='left' className='w-80 p-0'>
+          <ProductFilters />
+        </SheetContent>
+      </Sheet>
 
       <div className='flex-1 space-y-4'>
         <div className='flex flex-wrap items-center gap-3'>
@@ -86,97 +104,118 @@ export function ProductGrid() {
             />
           </div>
 
-          <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs'>
-            <Icons.adjustments className='h-3.5 w-3.5' />
-            Filter
-          </Button>
-
-          <Button size='sm' className='h-8 gap-1.5 text-xs bg-foreground text-background hover:bg-foreground/90'>
-            <Icons.add className='h-3.5 w-3.5' />
-            New Product
-          </Button>
+          <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+            <SheetTrigger asChild>
+              <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs lg:hidden'>
+                <Icons.adjustments className='h-3.5 w-3.5' />
+                Filter
+              </Button>
+            </SheetTrigger>
+          </Sheet>
         </div>
 
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-          {data.products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center gap-2 text-xs text-muted-foreground'>
-            <span>Show</span>
-            <Select
-              value={String(params.perPage)}
-              onValueChange={(value) => setParams({ perPage: parseInt(value), page: 1 })}
-            >
-              <SelectTrigger className='h-7 w-16 text-xs'>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value='8'>8</SelectItem>
-                <SelectItem value='12'>12</SelectItem>
-                <SelectItem value='20'>20</SelectItem>
-              </SelectContent>
-            </Select>
-            <span>Per Page</span>
+        {isFetching && (
+          <div className='flex items-center justify-center py-8'>
+            <Icons.spinner className='h-6 w-6 animate-spin text-muted-foreground' />
           </div>
+        )}
 
-          <div className='flex items-center gap-1'>
-            <Button
-              variant='outline'
-              size='sm'
-              className='h-7 w-7 p-0'
-              disabled={params.page <= 1}
-              onClick={() => setParams({ page: params.page - 1 })}
-            >
-              <Icons.chevronLeft className='h-3.5 w-3.5' />
-            </Button>
+        {!hasProducts && !isFetching && (
+          <Empty className='py-12'>
+            <EmptyHeader>
+              <EmptyMedia variant='icon'>
+                <Icons.search className='h-6 w-6 text-muted-foreground' />
+              </EmptyMedia>
+              <EmptyTitle>No products found</EmptyTitle>
+              <EmptyDescription>Try adjusting your search or filter criteria</EmptyDescription>
+            </EmptyHeader>
+          </Empty>
+        )}
 
-            {Array.from({ length: Math.min(5, pageCount) }, (_, i) => {
-              const pageNum = i + 1;
-              return (
-                <Button
-                  key={pageNum}
-                  variant={params.page === pageNum ? 'default' : 'outline'}
-                  size='sm'
-                  className={`h-7 w-7 p-0 text-xs ${
-                    params.page === pageNum
-                      ? 'bg-foreground text-background hover:bg-foreground/90'
-                      : ''
-                  }`}
-                  onClick={() => setParams({ page: pageNum })}
-                >
-                  {pageNum}
-                </Button>
-              );
-            })}
-
-            {pageCount > 5 && (
-              <>
-                <span className='px-1 text-xs text-muted-foreground'>...</span>
-                <Button
-                  variant='outline'
-                  size='sm'
-                  className='h-7 w-7 p-0 text-xs'
-                  onClick={() => setParams({ page: pageCount })}
-                >
-                  {pageCount}
-                </Button>
-              </>
-            )}
-
-            <Button
-              variant='outline'
-              size='sm'
-              className='h-7 w-7 p-0'
-              disabled={params.page >= pageCount}
-              onClick={() => setParams({ page: params.page + 1 })}
-            >
-              <Icons.chevronRight className='h-3.5 w-3.5' />
-            </Button>
+        {hasProducts && (
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            {data.products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
-        </div>
+        )}
+
+        {hasProducts && (
+          <div className='flex items-center justify-between'>
+            <div className='flex items-center gap-2 text-xs text-muted-foreground'>
+              <span>Show</span>
+              <Select
+                value={String(params.perPage)}
+                onValueChange={(value) => setParams({ perPage: parseInt(value), page: 1 })}
+              >
+                <SelectTrigger className='h-7 w-16 text-xs'>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='8'>8</SelectItem>
+                  <SelectItem value='12'>12</SelectItem>
+                  <SelectItem value='20'>20</SelectItem>
+                </SelectContent>
+              </Select>
+              <span>Per Page</span>
+            </div>
+
+            <div className='flex items-center gap-1'>
+              <Button
+                variant='outline'
+                size='sm'
+                className='h-7 w-7 p-0'
+                disabled={params.page <= 1}
+                onClick={() => setParams({ page: params.page - 1 })}
+              >
+                <Icons.chevronLeft className='h-3.5 w-3.5' />
+              </Button>
+
+              {Array.from({ length: Math.min(5, pageCount) }, (_, i) => {
+                const pageNum = i + 1;
+                return (
+                  <Button
+                    key={pageNum}
+                    variant={params.page === pageNum ? 'default' : 'outline'}
+                    size='sm'
+                    className={`h-7 w-7 p-0 text-xs ${
+                      params.page === pageNum
+                        ? 'bg-foreground text-background hover:bg-foreground/90'
+                        : ''
+                    }`}
+                    onClick={() => setParams({ page: pageNum })}
+                  >
+                    {pageNum}
+                  </Button>
+                );
+              })}
+
+              {pageCount > 5 && (
+                <>
+                  <span className='px-1 text-xs text-muted-foreground'>...</span>
+                  <Button
+                    variant='outline'
+                    size='sm'
+                    className='h-7 w-7 p-0 text-xs'
+                    onClick={() => setParams({ page: pageCount })}
+                  >
+                    {pageCount}
+                  </Button>
+                </>
+              )}
+
+              <Button
+                variant='outline'
+                size='sm'
+                className='h-7 w-7 p-0'
+                disabled={params.page >= pageCount}
+                onClick={() => setParams({ page: params.page + 1 })}
+              >
+                <Icons.chevronRight className='h-3.5 w-3.5' />
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
