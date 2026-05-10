@@ -19,7 +19,12 @@ import {
   AlertDialogHeader,
   AlertDialogTitle
 } from '@/components/ui/alert-dialog';
+import { Badge } from '@/components/ui/badge';
 import type { Product } from '../api/types';
+
+function formatPrice(price: number): string {
+  return new Intl.NumberFormat('vi-VN').format(price) + 'đ';
+}
 
 interface ProductCardProps {
   product: Product;
@@ -33,9 +38,15 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className='group relative rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50'>
         <div className='mb-2 flex items-center justify-between'>
           <div className='flex gap-1'>
-            <span className='h-1.5 w-1.5 rounded-full bg-destructive' />
-            <span className='h-1.5 w-1.5 rounded-full bg-muted-foreground/40' />
-            <span className='h-1.5 w-1.5 rounded-full bg-muted-foreground/40' />
+            {product.is_have_discount && (
+              <span className='h-1.5 w-1.5 rounded-full bg-red-500' />
+            )}
+            {product.is_combo && (
+              <span className='h-1.5 w-1.5 rounded-full bg-blue-500' />
+            )}
+            {product.is_free_ship && (
+              <span className='h-1.5 w-1.5 rounded-full bg-green-500' />
+            )}
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -64,21 +75,69 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className='relative mb-3 aspect-square overflow-hidden rounded-md bg-muted'>
           <Image
-            src={product.photo_url}
-            alt={product.name}
+            src={product.product_image_cover}
+            alt={product.ecom_product_name}
             fill
             sizes='200px'
             className='object-cover transition-transform group-hover:scale-105'
           />
+          {product.is_have_discount && product.discount_percent > 0 && (
+            <Badge className='absolute left-1 top-1 bg-red-500 text-white text-[10px]'>
+              -{product.discount_percent.toFixed(0)}%
+            </Badge>
+          )}
+          {product.is_combo && (
+            <Badge className='absolute left-1 top-1 bg-blue-500 text-white text-[10px]'>
+              Combo
+            </Badge>
+          )}
+          {product.is_outstock && (
+            <div className='absolute inset-0 flex items-center justify-center bg-black/50'>
+              <span className='text-sm font-medium text-white'>Hết hàng</span>
+            </div>
+          )}
         </div>
 
         <div className='space-y-1'>
-          <h3 className='line-clamp-1 text-sm font-medium text-foreground'>{product.name}</h3>
-          <p className='text-sm font-semibold text-foreground'>${product.price.toFixed(2)}</p>
+          <h3 className='line-clamp-1 text-sm font-medium text-foreground'>
+            {product.ecom_product_name}
+          </h3>
+          <div className='flex items-center gap-2'>
+            <p className='text-sm font-semibold text-foreground'>
+              {formatPrice(product.sale_price_vat)}
+            </p>
+            {product.is_have_discount && product.price > product.sale_price_vat && (
+              <p className='text-xs text-muted-foreground line-through'>
+                {formatPrice(product.price)}
+              </p>
+            )}
+          </div>
           <div className='flex items-center gap-1'>
             <Icons.star className='h-3.5 w-3.5 fill-amber-400 text-amber-400' />
-            <span className='text-xs font-medium text-muted-foreground'>4.6</span>
+            <span className='text-xs font-medium text-muted-foreground'>
+              {product.rating_star.toFixed(1)}
+            </span>
+            <span className='text-xs text-muted-foreground'>
+              • {product.sold_quantity.toLocaleString()} đã bán
+            </span>
           </div>
+          <div className='flex flex-wrap gap-1 pt-1'>
+            {product.is_free_ship && (
+              <Badge variant='outline' className='text-[10px]'>
+                <Icons.package className='mr-1 h-3 w-3' />
+                Free ship
+              </Badge>
+            )}
+            {product.is_super_fast_delivery && (
+              <Badge variant='outline' className='text-[10px]'>
+                <Icons.clock className='mr-1 h-3 w-3' />
+                Giao nhanh
+              </Badge>
+            )}
+          </div>
+          <p className='line-clamp-1 text-xs text-muted-foreground'>
+            {product.com_category_name}
+          </p>
         </div>
       </div>
 
@@ -87,7 +146,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <AlertDialogHeader>
             <AlertDialogTitle>Delete product</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete &quot;{product.name}&quot;? This action cannot be undone.
+              Are you sure you want to delete &quot;{product.ecom_product_name}&quot;? This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

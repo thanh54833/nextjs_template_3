@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import { useQueryState, parseAsString, parseAsArrayOf } from 'nuqs';
+import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean } from 'nuqs';
 import { Icons } from '@/components/icons';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
@@ -9,29 +8,8 @@ import { Slider } from '@/components/ui/slider';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
-
-const TYPE_OPTIONS = ['Clothing', 'Shoes', 'Bags', 'Accessories', 'Jewelry'];
-
-const BRAND_OPTIONS = [
-  { name: 'Gucci', count: 12 },
-  { name: 'Dolce & Gabbana', count: 8 },
-  { name: 'Chanel', count: 12 },
-  { name: 'Louis Vuitton', count: 12 },
-  { name: 'Versace', count: 12 },
-  { name: 'Adidas', count: 12 }
-];
-
-const COLOR_OPTIONS = [
-  { value: 'red', bg: 'bg-red-500' },
-  { value: 'orange', bg: 'bg-orange-500' },
-  { value: 'yellow', bg: 'bg-yellow-500' },
-  { value: 'green', bg: 'bg-green-500' },
-  { value: 'blue', bg: 'bg-blue-500' },
-  { value: 'purple', bg: 'bg-purple-500' },
-  { value: 'black', bg: 'bg-gray-900' },
-  { value: 'white', bg: 'bg-white border border-gray-300' },
-  { value: 'emerald', bg: 'bg-emerald-500' }
-];
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
 
 interface FilterSectionProps {
   title: string;
@@ -56,35 +34,67 @@ function FilterSection({ title, children, onClear }: FilterSectionProps) {
 }
 
 export function ProductFilters() {
-  const [selectedTypes, setSelectedTypes] = useQueryState('types', parseAsArrayOf(parseAsString).withDefault([]));
-  const [selectedBrands, setSelectedBrands] = useQueryState('brands', parseAsArrayOf(parseAsString).withDefault([]));
-  const [priceRange, setPriceRange] = useState([0, 500]);
-  const [selectedColors, setSelectedColors] = useQueryState('colors', parseAsArrayOf(parseAsString).withDefault([]));
+  const [selectedCategories, setSelectedCategories] = useQueryState('categories');
+  const [selectedManufacturers, setSelectedManufacturers] = useQueryState('manufacturers');
+  const [priceMin, setPriceMin] = useQueryState('priceMin', parseAsInteger);
+  const [priceMax, setPriceMax] = useQueryState('priceMax', parseAsInteger);
+  const [hasDiscount, setHasDiscount] = useQueryState('hasDiscount', parseAsBoolean);
+  const [isFreeShip, setIsFreeShip] = useQueryState('isFreeShip', parseAsBoolean);
+  const [isSuperFastDelivery, setIsSuperFastDelivery] = useQueryState('isSuperFastDelivery', parseAsBoolean);
+  const [isSelling, setIsSelling] = useQueryState('isSelling', parseAsBoolean);
+  const [stockStatus, setStockStatus] = useQueryState('stockStatus');
+  const [sortBy, setSortBy] = useQueryState('sortBy');
 
-  const toggleType = (type: string) => {
-    setSelectedTypes((prev) =>
-      prev?.includes(type) ? prev.filter((t) => t !== type) : [...(prev || []), type]
-    );
+  const selectedCategoriesList = selectedCategories
+    ? selectedCategories.split(',').filter(Boolean)
+    : [];
+  const selectedManufacturersList = selectedManufacturers
+    ? selectedManufacturers.split(',').filter(Boolean)
+    : [];
+
+  const toggleCategory = (categoryId: string) => {
+    const current = selectedCategoriesList;
+    if (current.includes(categoryId)) {
+      const newList = current.filter((c) => c !== categoryId);
+      setSelectedCategories(newList.length > 0 ? newList.join(',') : null);
+    } else {
+      setSelectedCategories([...current, categoryId].join(','));
+    }
   };
 
-  const toggleBrand = (brand: string) => {
-    setSelectedBrands((prev) =>
-      prev?.includes(brand) ? prev.filter((b) => b !== brand) : [...(prev || []), brand]
-    );
+  const toggleManufacturer = (manufacturerId: string) => {
+    const current = selectedManufacturersList;
+    if (current.includes(manufacturerId)) {
+      const newList = current.filter((m) => m !== manufacturerId);
+      setSelectedManufacturers(newList.length > 0 ? newList.join(',') : null);
+    } else {
+      setSelectedManufacturers([...current, manufacturerId].join(','));
+    }
   };
 
-  const toggleColor = (color: string) => {
-    setSelectedColors((prev) =>
-      prev?.includes(color) ? prev.filter((c) => c !== color) : [...(prev || []), color]
-    );
+  const clearCategories = () => setSelectedCategories(null);
+  const clearManufacturers = () => setSelectedManufacturers(null);
+  const clearPrice = () => {
+    setPriceMin(null);
+    setPriceMax(null);
   };
-
-  const clearTypes = () => setSelectedTypes(null);
-  const clearBrands = () => setSelectedBrands(null);
-  const clearColors = () => setSelectedColors(null);
+  const clearDiscount = () => setHasDiscount(null);
+  const clearFreeShip = () => setIsFreeShip(null);
+  const clearFastDelivery = () => setIsSuperFastDelivery(null);
+  const clearSelling = () => setIsSelling(null);
+  const clearStock = () => setStockStatus(null);
+  const clearSort = () => setSortBy(null);
 
   const hasActiveFilters =
-    selectedTypes.length > 0 || selectedBrands.length > 0 || selectedColors.length > 0;
+    selectedCategoriesList.length > 0 ||
+    selectedManufacturersList.length > 0 ||
+    priceMin !== null ||
+    priceMax !== null ||
+    hasDiscount === true ||
+    isFreeShip === true ||
+    isSuperFastDelivery === true ||
+    isSelling === true ||
+    stockStatus !== null;
 
   return (
     <div className='w-64 shrink-0 rounded-lg border bg-card'>
@@ -93,7 +103,14 @@ export function ProductFilters() {
           <h3 className='text-sm font-semibold text-foreground'>Filters</h3>
           {hasActiveFilters && (
             <span className='flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-[10px] font-medium text-primary-foreground'>
-              {selectedTypes.length + selectedBrands.length + selectedColors.length}
+              {selectedCategoriesList.length +
+                selectedManufacturersList.length +
+                (priceMin !== null || priceMax !== null ? 1 : 0) +
+                (hasDiscount === true ? 1 : 0) +
+                (isFreeShip === true ? 1 : 0) +
+                (isSuperFastDelivery === true ? 1 : 0) +
+                (isSelling === true ? 1 : 0) +
+                (stockStatus !== null ? 1 : 0)}
             </span>
           )}
         </div>
@@ -103,10 +120,15 @@ export function ProductFilters() {
             size='sm'
             className='h-6 px-2 text-xs text-muted-foreground hover:text-foreground'
             onClick={() => {
-              clearTypes();
-              clearBrands();
-              clearColors();
-              setPriceRange([0, 500]);
+              clearCategories();
+              clearManufacturers();
+              clearPrice();
+              clearDiscount();
+              clearFreeShip();
+              clearFastDelivery();
+              clearSelling();
+              clearStock();
+              clearSort();
             }}
           >
             Clear all
@@ -115,68 +137,100 @@ export function ProductFilters() {
       </div>
       <ScrollArea className='h-[calc(100vh-200px)]'>
         <div className='space-y-5 p-4'>
-          <FilterSection title='Type' onClear={selectedTypes.length > 0 ? clearTypes : undefined}>
-            <div className='grid grid-cols-2 gap-2'>
-              {TYPE_OPTIONS.map((type) => (
-                <label key={type} className='flex items-center gap-2 text-xs text-muted-foreground'>
-                  <Checkbox
-                    checked={selectedTypes.includes(type)}
-                    onCheckedChange={() => toggleType(type)}
-                    className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
-                  />
-                  {type}
-                </label>
-              ))}
-            </div>
-          </FilterSection>
-
-          <Separator />
-
-          <FilterSection title='Brands' onClear={selectedBrands.length > 0 ? clearBrands : undefined}>
+          <FilterSection
+            title='Category'
+            onClear={selectedCategoriesList.length > 0 ? clearCategories : undefined}
+          >
             <div className='space-y-2'>
-              {BRAND_OPTIONS.map((brand) => (
-                <label key={brand.name} className='flex items-center gap-2 text-xs text-muted-foreground'>
-                  <Checkbox
-                    checked={selectedBrands.includes(brand.name)}
-                    onCheckedChange={() => toggleBrand(brand.name)}
-                    className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
-                  />
-                  {brand.name} ({brand.count})
-                </label>
-              ))}
+              {['842:Sữa nước', '865:Quà tặng', '725:Vitamin và Sức khỏe', '998:Chăm sóc da & Vệ sinh', '1021:Quần Áo Trẻ Em '].map((cat) => {
+                const [id, name] = cat.split(':');
+                return (
+                  <label
+                    key={id}
+                    className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'
+                  >
+                    <Checkbox
+                      checked={selectedCategoriesList.includes(id)}
+                      onCheckedChange={() => toggleCategory(id)}
+                      className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
+                    />
+                    {name}
+                  </label>
+                );
+              })}
             </div>
           </FilterSection>
 
           <Separator />
 
-          <FilterSection title='Price'>
+          <FilterSection
+            title='Brand'
+            onClear={selectedManufacturersList.length > 0 ? clearManufacturers : undefined}
+          >
+            <div className='space-y-2'>
+              {['954:Fruto Nyanya', '1443:Gumazing', '945:Animo', '692:Fysoline', '708:Quà tặng không bán'].map(
+                (brand) => {
+                  const [id, name] = brand.split(':');
+                  return (
+                    <label
+                      key={id}
+                      className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'
+                    >
+                      <Checkbox
+                        checked={selectedManufacturersList.includes(id)}
+                        onCheckedChange={() => toggleManufacturer(id)}
+                        className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
+                      />
+                      {name}
+                    </label>
+                  );
+                }
+              )}
+            </div>
+          </FilterSection>
+
+          <Separator />
+
+          <FilterSection title='Price Range' onClear={priceMin !== null || priceMax !== null ? clearPrice : undefined}>
             <div className='space-y-3'>
               <div className='flex gap-2'>
                 <div className='flex-1'>
-                  <label className='mb-1 block text-xs text-muted-foreground'>From</label>
+                  <Label className='mb-1 block text-xs text-muted-foreground'>From</Label>
                   <Input
                     type='text'
-                    value={`$${priceRange[0]}`}
+                    value={priceMin !== null ? `${priceMin.toLocaleString()}đ` : ''}
+                    onChange={(e) => {
+                      const val = e.target.value.replace(/\D/g, '');
+                      setPriceMin(val ? parseInt(val) : null);
+                    }}
                     className='h-8 text-xs'
-                    readOnly
+                    placeholder='0đ'
                   />
                 </div>
                 <div className='flex-1'>
-                  <label className='mb-1 block text-xs text-muted-foreground'>To</label>
+                  <Label className='mb-1 block text-xs text-muted-foreground'>To</Label>
                   <Input
                     type='text'
-                    value={`$${priceRange[1]}`}
+                    value={priceMax !== null ? `${priceMax.toLocaleString()}đ` : ''}
+                    onChange={(e) => {
+                      const val = e.target.value.replace(/\D/g, '');
+                      setPriceMax(val ? parseInt(val) : null);
+                    }}
                     className='h-8 text-xs'
-                    readOnly
+                    placeholder='500,000đ'
                   />
                 </div>
               </div>
               <div className='px-1'>
                 <Slider
-                  value={priceRange}
-                  onValueChange={setPriceRange}
-                  max={500}
-                  step={10}
+                  value={[priceMin || 0, priceMax || 500000]}
+                  onValueChange={([min, max]) => {
+                    setPriceMin(min || null);
+                    setPriceMax(max || null);
+                  }}
+                  min={0}
+                  max={500000}
+                  step={10000}
                   className='my-2'
                 />
               </div>
@@ -185,32 +239,91 @@ export function ProductFilters() {
 
           <Separator />
 
-          <FilterSection title='Colors Options' onClear={selectedColors.length > 0 ? clearColors : undefined}>
-            <div className='flex flex-wrap gap-2'>
-              {COLOR_OPTIONS.map((color) => (
-                <button
-                  key={color.value}
-                  onClick={() => toggleColor(color.value)}
-                  className={`h-5 w-5 rounded-full ${color.bg} ring-1 ring-black/10 transition-all hover:scale-110 ${
-                    selectedColors.includes(color.value) ? 'ring-2 ring-primary ring-offset-1' : ''
-                  }`}
+          <FilterSection title='Features'>
+            <div className='space-y-2'>
+              <label className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'>
+                <Checkbox
+                  checked={hasDiscount === true}
+                  onCheckedChange={(checked) => setHasDiscount(checked ? true : null)}
+                  className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
                 />
+                Has Discount
+              </label>
+              <label className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'>
+                <Checkbox
+                  checked={isFreeShip === true}
+                  onCheckedChange={(checked) => setIsFreeShip(checked ? true : null)}
+                  className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
+                />
+                Free Shipping
+              </label>
+              <label className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'>
+                <Checkbox
+                  checked={isSuperFastDelivery === true}
+                  onCheckedChange={(checked) => setIsSuperFastDelivery(checked ? true : null)}
+                  className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
+                />
+                Super Fast Delivery
+              </label>
+              <label className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'>
+                <Checkbox
+                  checked={isSelling === true}
+                  onCheckedChange={(checked) => setIsSelling(checked ? true : null)}
+                  className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
+                />
+                Currently Selling
+              </label>
+            </div>
+          </FilterSection>
+
+          <Separator />
+
+          <FilterSection title='Stock Status' onClear={stockStatus !== null ? clearStock : undefined}>
+            <div className='space-y-2'>
+              {[
+                { value: 'all', label: 'All Products' },
+                { value: 'in_stock', label: 'In Stock' },
+                { value: 'out_stock', label: 'Out of Stock' }
+              ].map((option) => (
+                <label
+                  key={option.value}
+                  className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'
+                >
+                  <Checkbox
+                    checked={stockStatus === option.value}
+                    onCheckedChange={() =>
+                      setStockStatus(option.value === 'all' ? null : option.value)
+                    }
+                    className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
+                  />
+                  {option.label}
+                </label>
               ))}
             </div>
           </FilterSection>
 
           <Separator />
 
-          <FilterSection title='Availability'>
-            <div className='grid grid-cols-2 gap-2'>
-              {TYPE_OPTIONS.slice(0, 3).map((type) => (
-                <label key={type} className='flex items-center gap-2 text-xs text-muted-foreground'>
+          <FilterSection title='Sort By' onClear={sortBy !== null ? clearSort : undefined}>
+            <div className='space-y-2'>
+              {[
+                { value: 'sold_quantity:desc', label: 'Best Selling' },
+                { value: 'created_date:desc', label: 'Newest First' },
+                { value: 'created_date:asc', label: 'Oldest First' },
+                { value: 'price:asc', label: 'Price: Low to High' },
+                { value: 'price:desc', label: 'Price: High to Low' },
+                { value: 'rating_star:desc', label: 'Highest Rated' }
+              ].map((option) => (
+                <label
+                  key={option.value}
+                  className='flex items-center gap-2 text-xs text-muted-foreground cursor-pointer'
+                >
                   <Checkbox
-                    checked={selectedTypes.includes(type)}
-                    onCheckedChange={() => toggleType(type)}
+                    checked={sortBy === option.value}
+                    onCheckedChange={() => setSortBy(option.value)}
                     className='h-3.5 w-3.5 data-[state=checked]:bg-primary'
                   />
-                  {type}
+                  {option.label}
                 </label>
               ))}
             </div>

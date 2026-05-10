@@ -40,7 +40,7 @@ export function CellAction({ data }: CellActionProps) {
       <AlertModal
         isOpen={open}
         onClose={() => setOpen(false)}
-        onConfirm={() => deleteMutation.mutate(data.id)}
+        onConfirm={() => deleteMutation.mutate(Number(data.id))}
         loading={deleteMutation.isPending}
       />
       <DropdownMenu modal={false}>

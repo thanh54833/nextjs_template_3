@@ -47,9 +47,9 @@ export default function ProductForm({
   const form = useAppForm({
     defaultValues: {
       image: undefined,
-      name: initialData?.name ?? '',
-      category: initialData?.category ?? '',
-      price: initialData?.price,
+      name: initialData?.ecom_product_name ?? '',
+      category: initialData?.com_category_name ?? '',
+      price: initialData?.sale_price_vat,
       description: initialData?.description ?? ''
     } as ProductFormValues,
     validators: {
@@ -64,7 +64,7 @@ export default function ProductForm({
       };
 
       if (isEdit) {
-        updateMutation.mutate({ id: initialData.id, values: payload });
+        updateMutation.mutate({ id: Number(initialData.id), values: payload });
       } else {
         createMutation.mutate(payload);
       }

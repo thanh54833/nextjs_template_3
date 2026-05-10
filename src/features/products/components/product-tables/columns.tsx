@@ -10,29 +10,29 @@ import { CATEGORY_OPTIONS } from './options';
 
 export const columns: ColumnDef<Product>[] = [
   {
-    accessorKey: 'photo_url',
+    accessorKey: 'product_image_cover',
     header: 'IMAGE',
     cell: ({ row }) => {
       return (
-        <div className='relative aspect-square'>
+        <div className='relative aspect-square w-20'>
           <Image
-            src={row.getValue('photo_url')}
-            alt={row.getValue('name')}
+            src={row.getValue('product_image_cover')}
+            alt={row.original.ecom_product_name}
             fill
             sizes='80px'
-            className='rounded-lg'
+            className='rounded-lg object-cover'
           />
         </div>
       );
     }
   },
   {
-    id: 'name',
-    accessorKey: 'name',
+    id: 'ecom_product_name',
+    accessorKey: 'ecom_product_name',
     header: ({ column }: { column: Column<Product, unknown> }) => (
       <DataTableColumnHeader column={column} title='Name' />
     ),
-    cell: ({ cell }) => <div>{cell.getValue<Product['name']>()}</div>,
+    cell: ({ cell }) => <div>{cell.getValue<string>()}</div>,
     meta: {
       label: 'Name',
       placeholder: 'Search products...',
@@ -42,14 +42,14 @@ export const columns: ColumnDef<Product>[] = [
     enableColumnFilter: true
   },
   {
-    id: 'category',
-    accessorKey: 'category',
+    id: 'com_category_name',
+    accessorKey: 'com_category_name',
     enableSorting: false,
     header: ({ column }: { column: Column<Product, unknown> }) => (
       <DataTableColumnHeader column={column} title='Category' />
     ),
     cell: ({ cell }) => {
-      const status = cell.getValue<Product['category']>();
+      const status = cell.getValue<string>();
       const Icon = status === 'active' ? Icons.circleCheck : Icons.xCircle;
 
       return (
@@ -67,7 +67,7 @@ export const columns: ColumnDef<Product>[] = [
     }
   },
   {
-    accessorKey: 'price',
+    accessorKey: 'sale_price_vat',
     header: 'PRICE'
   },
   {

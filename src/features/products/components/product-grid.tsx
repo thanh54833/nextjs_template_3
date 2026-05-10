@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { parseAsInteger, parseAsString, useQueryStates } from 'nuqs';
-import { getSortingStateParser } from '@/lib/parsers';
+import { parseAsInteger, parseAsString, parseAsBoolean, useQueryStates } from 'nuqs';
 import { productsQueryOptions } from '../api/queries';
 import { ProductCard } from './product-card';
 import { ProductFilters } from './product-filters';
@@ -20,15 +19,21 @@ import {
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from '@/components/ui/empty';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
-const columnIds = ['name', 'category', 'price', 'description'];
-
 export function ProductGrid() {
   const [params, setParams] = useQueryStates({
     page: parseAsInteger.withDefault(1),
-    perPage: parseAsInteger.withDefault(8),
+    perPage: parseAsInteger.withDefault(12),
     name: parseAsString,
-    category: parseAsString,
-    sort: getSortingStateParser(columnIds).withDefault([])
+    categories: parseAsString,
+    manufacturers: parseAsString,
+    priceMin: parseAsInteger,
+    priceMax: parseAsInteger,
+    hasDiscount: parseAsBoolean,
+    isFreeShip: parseAsBoolean,
+    isSuperFastDelivery: parseAsBoolean,
+    isSelling: parseAsBoolean,
+    stockStatus: parseAsString,
+    sortBy: parseAsString
   });
 
   const [activeTab, setActiveTab] = useState<'all' | 'active' | 'non-active'>('all');
@@ -39,8 +44,19 @@ export function ProductGrid() {
     page: params.page,
     limit: params.perPage,
     ...(params.name && { search: params.name }),
-    ...(params.category && { categories: params.category }),
-    ...(params.sort.length > 0 && { sort: JSON.stringify(params.sort) })
+    ...(params.categories && { categories: params.categories }),
+    ...(params.manufacturers && { manufacturers: params.manufacturers }),
+    ...(params.priceMin !== null && { priceMin: params.priceMin }),
+    ...(params.priceMax !== null && { priceMax: params.priceMax }),
+    ...(params.hasDiscount === true && { hasDiscount: true }),
+    ...(params.isFreeShip === true && { isFreeShip: true }),
+    ...(params.isSuperFastDelivery === true && { isSuperFastDelivery: true }),
+    ...(params.isSelling === true && { isSelling: true }),
+    ...(params.stockStatus && { stockStatus: params.stockStatus as 'all' | 'in_stock' | 'out_stock' }),
+    ...(params.sortBy && {
+      sortBy: params.sortBy.split(':')[0] as 'sold_quantity' | 'created_date' | 'price' | 'rating_star',
+      sortOrder: params.sortBy.split(':')[1] as 'asc' | 'desc'
+    })
   };
 
   const { data, isFetching } = useSuspenseQuery(productsQueryOptions(filters));
@@ -96,7 +112,7 @@ export function ProductGrid() {
           <div className='relative flex-1 min-w-[200px]'>
             <Icons.search className='absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
             <Input
-              placeholder='Search product'
+              placeholder='Search product...'
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -109,6 +125,9 @@ export function ProductGrid() {
               <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs lg:hidden'>
                 <Icons.adjustments className='h-3.5 w-3.5' />
                 Filter
+                {data.total_products > 0 && (
+                  <span className='ml-1 text-muted-foreground'>({data.total_products})</span>
+                )}
               </Button>
             </SheetTrigger>
           </Sheet>
@@ -154,7 +173,8 @@ export function ProductGrid() {
                 <SelectContent>
                   <SelectItem value='8'>8</SelectItem>
                   <SelectItem value='12'>12</SelectItem>
-                  <SelectItem value='20'>20</SelectItem>
+                  <SelectItem value='24'>24</SelectItem>
+                  <SelectItem value='48'>48</SelectItem>
                 </SelectContent>
               </Select>
               <span>Per Page</span>

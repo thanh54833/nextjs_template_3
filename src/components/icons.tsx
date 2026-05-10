@@ -193,6 +193,7 @@ export const Icons = {
   sparkles: IconSparkles,
   badgeCheck: IconRosetteDiscountCheck,
   lock: IconLock,
+  package: IconPackage,
 
   // Data / Charts
   trendingDown: IconTrendingDown,
