@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { useQueryState, parseAsString, parseAsInteger, parseAsBoolean } from 'nuqs';
+import { useQueryState, parseAsInteger, parseAsBoolean } from 'nuqs';
 import { Icons } from '@/components/icons';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
@@ -210,12 +210,12 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
               {categoryOptions.map((cat) => (
                 <label
                   key={cat.value}
-                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'
+                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'
                 >
                   <Checkbox
                     checked={selectedCategoriesList.includes(cat.value)}
                     onCheckedChange={() => toggleCategory(cat.value)}
-                    className='h-3.5 w-3.5 shrink-0'
+                    className='h-4 w-4 shrink-0'
                   />
                   <span className='truncate'>{cat.label}</span>
                 </label>
@@ -233,12 +233,12 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
               {brandOptions.map((brand) => (
                 <label
                   key={brand.value}
-                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'
+                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'
                 >
                   <Checkbox
                     checked={selectedManufacturersList.includes(brand.value)}
                     onCheckedChange={() => toggleManufacturer(brand.value)}
-                    className='h-3.5 w-3.5 shrink-0'
+                    className='h-4 w-4 shrink-0'
                   />
                   <span className='truncate'>{brand.label}</span>
                 </label>
@@ -301,35 +301,35 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
 
           <FilterSection title='Features'>
             <div className='space-y-2.5'>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={hasDiscount === true}
                   onCheckedChange={(checked) => setHasDiscount(checked ? true : null)}
-                  className='h-3.5 w-3.5 shrink-0'
+                  className='h-4 w-4 shrink-0'
                 />
                 Has Discount
               </label>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={isFreeShip === true}
                   onCheckedChange={(checked) => setIsFreeShip(checked ? true : null)}
-                  className='h-3.5 w-3.5 shrink-0'
+                  className='h-4 w-4 shrink-0'
                 />
                 Free Shipping
               </label>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={isSuperFastDelivery === true}
                   onCheckedChange={(checked) => setIsSuperFastDelivery(checked ? true : null)}
-                  className='h-3.5 w-3.5 shrink-0'
+                  className='h-4 w-4 shrink-0'
                 />
                 Super Fast Delivery
               </label>
-              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'>
+              <label className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'>
                 <Checkbox
                   checked={isSelling === true}
                   onCheckedChange={(checked) => setIsSelling(checked ? true : null)}
-                  className='h-3.5 w-3.5 shrink-0'
+                  className='h-4 w-4 shrink-0'
                 />
                 Currently Selling
               </label>
@@ -346,14 +346,14 @@ export function ProductFilters({ collapsed, onToggleCollapse }: ProductFiltersPr
               {stockStatusOptions.map((option) => (
                 <label
                   key={option.value}
-                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-0.5 hover:bg-muted/50 transition-colors'
+                  className='flex items-center gap-2 text-sm text-foreground cursor-pointer rounded px-1 -mx-1 py-1 hover:bg-muted/50 transition-colors'
                 >
                   <Checkbox
                     checked={stockStatus === option.value}
                     onCheckedChange={() =>
                       setStockStatus(stockStatus === option.value ? null : option.value)
                     }
-                    className='h-3.5 w-3.5 shrink-0'
+                    className='h-4 w-4 shrink-0'
                   />
                   {option.label}
                 </label>

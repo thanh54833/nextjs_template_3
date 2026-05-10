@@ -97,7 +97,7 @@ export function ProductListRow({ product }: ProductListRowProps) {
                 </span>
               )}
               {product.is_have_discount && product.discount_percent > 0 && (
-                <Badge className='bg-red-500 text-white text-[10px] px-1.5 py-0'>
+                <Badge className='bg-destructive text-destructive-foreground text-[10px] px-1.5 py-0'>
                   -{product.discount_percent.toFixed(0)}%
                 </Badge>
               )}

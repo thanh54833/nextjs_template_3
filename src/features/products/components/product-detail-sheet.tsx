@@ -86,20 +86,20 @@ export function ProductDetailSheet({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side='right' className='flex w-full flex-col sm:max-w-[480px]'>
+      <SheetContent side='right' className='flex w-full flex-col sm:max-w-[480px] inset-y-2 right-2 h-[calc(100vh-1rem)] rounded-xl border shadow-xl'>
         <SheetHeader className='space-y-0 pb-0'>
           <SheetTitle className='text-left text-xl leading-tight'>
             {product.ecom_product_name}
           </SheetTitle>
         </SheetHeader>
 
-        <div className='flex gap-1 rounded-lg border bg-muted p-1 mt-4'>
+        <div className='flex w-fit gap-1 rounded-lg border bg-muted p-1 mt-4'>
           <button
             type='button'
             onClick={() => {
               if (isEditing) handleCancelClick();
             }}
-            className={`flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
               !isEditing
                 ? 'bg-background text-foreground shadow-sm'
                 : 'text-muted-foreground hover:text-foreground'
@@ -110,7 +110,7 @@ export function ProductDetailSheet({
           <button
             type='button'
             onClick={handleEditClick}
-            className={`flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
               isEditing
                 ? 'bg-background text-foreground shadow-sm'
                 : 'text-muted-foreground hover:text-foreground'

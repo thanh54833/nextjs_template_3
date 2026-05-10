@@ -79,7 +79,7 @@ export function ProductGrid() {
   const hasProducts = data.products.length > 0;
 
   return (
-    <div className='flex gap-4'>
+    <div className='flex gap-5'>
       <div className='hidden lg:block lg:self-start lg:sticky lg:top-4'>
         <ProductFilters
           collapsed={filtersCollapsed}

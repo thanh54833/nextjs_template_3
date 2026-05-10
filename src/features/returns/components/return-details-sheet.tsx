@@ -4,9 +4,7 @@ import { useState } from 'react';
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
-  SheetDescription,
   SheetFooter,
   SheetClose
 } from '@/components/ui/sheet';
@@ -83,35 +81,34 @@ export function ReturnDetailsSheet({
     <>
       <Sheet open={open} onOpenChange={onOpenChange}>
         <SheetContent className='flex flex-col gap-0 p-0 sm:max-w-2xl'>
-          <div className='flex items-center justify-between border-b px-6 py-4'>
-            <div className='flex items-center gap-3'>
-              <SheetTitle className='text-lg'>Return Details</SheetTitle>
-              <span className='text-muted-foreground text-sm'>
-                Return {currentIndex + 1} out of {totalCount}
-              </span>
-            </div>
+          <div className='flex items-center justify-between border-b px-6 py-3'>
+            <SheetTitle className='text-base font-semibold'>Return Details</SheetTitle>
             <div className='flex items-center gap-1'>
+              <span className='text-muted-foreground mr-2 text-xs tabular-nums'>
+                Return {currentIndex + 1} of {totalCount}
+              </span>
               <Button
                 variant='ghost'
                 size='icon'
-                className='h-8 w-8'
+                className='h-7 w-7'
                 disabled={currentIndex === 0}
                 onClick={() => onNavigate?.('prev')}
               >
-                <Icons.chevronLeft className='h-4 w-4' />
+                <Icons.chevronLeft className='h-3.5 w-3.5' />
               </Button>
               <Button
                 variant='ghost'
                 size='icon'
-                className='h-8 w-8'
+                className='h-7 w-7'
                 disabled={currentIndex === totalCount - 1}
                 onClick={() => onNavigate?.('next')}
               >
-                <Icons.chevronRight className='h-4 w-4' />
+                <Icons.chevronRight className='h-3.5 w-3.5' />
               </Button>
+              <div className='bg-border mx-1 h-4 w-px' />
               <SheetClose asChild>
-                <Button variant='ghost' size='icon' className='h-8 w-8'>
-                  <Icons.close className='h-4 w-4' />
+                <Button variant='ghost' size='icon' className='h-7 w-7'>
+                  <Icons.close className='h-3.5 w-3.5' />
                 </Button>
               </SheetClose>
             </div>
@@ -133,7 +130,7 @@ export function ReturnDetailsSheet({
               </div>
 
               <div className='mb-6'>
-                <h4 className='mb-3 text-sm font-semibold'>Product</h4>
+                <h4 className='mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground'>Product</h4>
                 <div className='flex items-start gap-3 rounded-lg border bg-card p-3'>
                   <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-muted'>
                     <Icons.package className='h-5 w-5 text-muted-foreground' />
@@ -151,19 +148,17 @@ export function ReturnDetailsSheet({
               </div>
 
               <div className='mb-6'>
-                <h4 className='mb-3 text-sm font-semibold'>Return Reason</h4>
-                <div className='rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 dark:border-amber-900 dark:bg-amber-950'>
-                  <p className='text-amber-900 text-sm dark:text-amber-200'>
-                    {returnData.returnReason}
-                  </p>
+                <h4 className='mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground'>Return Reason</h4>
+                <div className='rounded-lg border px-4 py-3'>
+                  <p className='text-foreground text-sm'>{returnData.returnReason}</p>
                 </div>
               </div>
 
               {returnData.returnProofImages.length > 0 && (
                 <div className='mb-6'>
-                  <h4 className='mb-3 text-sm font-semibold'>Return Proof</h4>
+                  <h4 className='mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground'>Return Proof</h4>
                   <div className='flex gap-3'>
-                    {returnData.returnProofImages.map((img, i) => (
+                    {returnData.returnProofImages.map((_img, i) => (
                       <div
                         key={i}
                         className='flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-lg border bg-muted'
@@ -177,7 +172,7 @@ export function ReturnDetailsSheet({
 
               <div>
                 <div className='mb-3 flex items-center justify-between'>
-                  <h4 className='text-sm font-semibold'>Timeline</h4>
+                  <h4 className='text-xs font-semibold uppercase tracking-wider text-muted-foreground'>Timeline</h4>
                   <button
                     onClick={() => setShowComments(!showComments)}
                     className='flex items-center gap-1.5 text-xs font-medium text-primary hover:underline'
@@ -250,9 +245,9 @@ export function ReturnDetailsSheet({
               </div>
             </div>
 
-            <div className='w-72 shrink-0 overflow-y-auto border-l bg-muted/30 px-5 py-6'>
-              <div className='mb-6'>
-                <h4 className='mb-3 text-sm font-semibold'>Order Details</h4>
+            <div className='w-72 shrink-0 overflow-y-auto border-l bg-muted/20 px-5 py-5'>
+              <div className='mb-5'>
+                <h4 className='text-muted-foreground mb-3 text-xs font-medium uppercase tracking-wider'>Order Details</h4>
                 <dl className='space-y-2.5 text-sm'>
                   <div className='flex justify-between'>
                     <dt className='text-muted-foreground'>Order ID</dt>
@@ -288,8 +283,8 @@ export function ReturnDetailsSheet({
 
               <Separator className='my-4' />
 
-              <div className='mb-6'>
-                <h4 className='mb-3 text-sm font-semibold'>Customer Details</h4>
+              <div className='mb-5'>
+                <h4 className='text-muted-foreground mb-3 text-xs font-medium uppercase tracking-wider'>Customer Details</h4>
                 <div className='mb-3 flex items-center gap-3'>
                   <Avatar className='h-10 w-10'>
                     <AvatarImage src={returnData.customerAvatar} />
@@ -318,7 +313,7 @@ export function ReturnDetailsSheet({
               <Separator className='my-4' />
 
               <div>
-                <h4 className='mb-3 text-sm font-semibold'>Notes</h4>
+                <h4 className='text-muted-foreground mb-3 text-xs font-medium uppercase tracking-wider'>Notes</h4>
                 <Textarea
                   placeholder='Leave a note'
                   className='min-h-[80px] resize-none text-sm'
@@ -339,12 +334,12 @@ export function ReturnDetailsSheet({
             </div>
           </div>
 
-          <SheetFooter className='flex-row items-center justify-between border-t px-6 py-4'>
-            <a href='#' className='text-muted-foreground text-xs hover:text-foreground hover:underline'>
+          <SheetFooter className='flex-row items-center justify-between border-t px-6 py-3'>
+            <a href='#' className='text-muted-foreground text-xs transition-colors hover:text-foreground hover:underline'>
               Learn more about Return Order
             </a>
             <div className='flex items-center gap-2'>
-              <Button variant='outline' size='sm'>
+              <Button variant='outline' size='sm' className='text-destructive hover:border-destructive/50 hover:text-destructive'>
                 Reject
               </Button>
               <Button

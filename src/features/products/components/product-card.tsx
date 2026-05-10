@@ -41,41 +41,36 @@ export function ProductCard({ product }: ProductCardProps) {
         className='group relative rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50 cursor-pointer'
         onClick={() => setDetailSheetOpen(true)}
       >
-        <div className='mb-2 flex items-center justify-end'>
-          {product.is_outstock && (
-            <span className='text-xs font-medium text-destructive'>Hết hàng</span>
-          )}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
-              <button className='rounded p-1 opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100'>
-                <Icons.ellipsis className='h-4 w-4 text-muted-foreground' />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align='end'>
-              <DropdownMenuItem onSelect={(e) => {
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
+            <button className='absolute right-2 top-2 z-10 rounded p-1 opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100'>
+              <Icons.ellipsis className='h-4 w-4 text-muted-foreground' />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align='end'>
+            <DropdownMenuItem onSelect={(e) => {
+              e.preventDefault();
+              setDetailSheetOpen(true);
+            }}>
+              <Icons.eyeOff className='mr-2 h-4 w-4' />
+              View Details
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Icons.edit className='mr-2 h-4 w-4' />
+              Edit
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              className='text-destructive'
+              onSelect={(e) => {
                 e.preventDefault();
-                setDetailSheetOpen(true);
-              }}>
-                <Icons.eyeOff className='mr-2 h-4 w-4' />
-                View Details
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Icons.edit className='mr-2 h-4 w-4' />
-                Edit
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                className='text-destructive'
-                onSelect={(e) => {
-                  e.preventDefault();
-                  setDeleteDialogOpen(true);
-                }}
-              >
-                <Icons.trash className='mr-2 h-4 w-4' />
-                Delete
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+                setDeleteDialogOpen(true);
+              }}
+            >
+              <Icons.trash className='mr-2 h-4 w-4' />
+              Delete
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <div className='relative mb-3 aspect-square overflow-hidden rounded-md bg-muted'>
           {product.product_image_cover ? (
@@ -84,7 +79,7 @@ export function ProductCard({ product }: ProductCardProps) {
               alt={product.ecom_product_name}
               fill
               sizes='200px'
-              className='object-cover transition-transform group-hover:scale-105'
+              className='object-cover transition-transform duration-300 group-hover:scale-105'
             />
           ) : (
             <div className='absolute inset-0 flex flex-col items-center justify-center gap-1 bg-muted'>
@@ -93,12 +88,12 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
           {product.is_have_discount && product.discount_percent > 0 && (
-            <Badge className='absolute left-1 top-1 bg-red-500 text-white text-[10px]'>
+            <Badge className='absolute left-1.5 top-1.5 bg-destructive text-destructive-foreground text-[10px]'>
               -{product.discount_percent.toFixed(0)}%
             </Badge>
           )}
           {product.is_combo && (
-            <Badge className='absolute left-1 top-1 bg-blue-500 text-white text-[10px]'>
+            <Badge className='absolute left-1.5 top-1.5 bg-secondary text-secondary-foreground text-[10px]'>
               Combo
             </Badge>
           )}
@@ -109,7 +104,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        <div className='space-y-1'>
+        <div className='space-y-1.5'>
           <h3 className='line-clamp-1 text-sm font-medium text-foreground'>
             {product.ecom_product_name}
           </h3>
