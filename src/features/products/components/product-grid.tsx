@@ -141,14 +141,14 @@ export function ProductGrid() {
         )}
 
         {hasProducts && (
-          <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-between border-t pt-4'>
             <div className='flex items-center gap-2 text-xs text-muted-foreground'>
               <span>Show</span>
               <Select
                 value={String(params.perPage)}
                 onValueChange={(value) => setParams({ perPage: parseInt(value), page: 1 })}
               >
-                <SelectTrigger className='h-7 w-16 text-xs'>
+                <SelectTrigger className='h-8 w-16 text-xs'>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -164,11 +164,11 @@ export function ProductGrid() {
               <Button
                 variant='outline'
                 size='sm'
-                className='h-7 w-7 p-0'
+                className='h-8 w-8 p-0'
                 disabled={params.page <= 1}
                 onClick={() => setParams({ page: params.page - 1 })}
               >
-                <Icons.chevronLeft className='h-3.5 w-3.5' />
+                <Icons.chevronLeft className='h-4 w-4' />
               </Button>
 
               {Array.from({ length: Math.min(5, pageCount) }, (_, i) => {
@@ -178,7 +178,7 @@ export function ProductGrid() {
                     key={pageNum}
                     variant={params.page === pageNum ? 'default' : 'outline'}
                     size='sm'
-                    className={`h-7 w-7 p-0 text-xs ${
+                    className={`h-8 w-8 p-0 text-xs ${
                       params.page === pageNum
                         ? 'bg-foreground text-background hover:bg-foreground/90'
                         : ''
@@ -196,7 +196,7 @@ export function ProductGrid() {
                   <Button
                     variant='outline'
                     size='sm'
-                    className='h-7 w-7 p-0 text-xs'
+                    className='h-8 w-8 p-0 text-xs'
                     onClick={() => setParams({ page: pageCount })}
                   >
                     {pageCount}
@@ -207,11 +207,11 @@ export function ProductGrid() {
               <Button
                 variant='outline'
                 size='sm'
-                className='h-7 w-7 p-0'
+                className='h-8 w-8 p-0'
                 disabled={params.page >= pageCount}
                 onClick={() => setParams({ page: params.page + 1 })}
               >
-                <Icons.chevronRight className='h-3.5 w-3.5' />
+                <Icons.chevronRight className='h-4 w-4' />
               </Button>
             </div>
           </div>
