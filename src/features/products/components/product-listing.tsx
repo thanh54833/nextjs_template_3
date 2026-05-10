@@ -2,7 +2,7 @@ import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import { getQueryClient } from '@/lib/query-client';
 import { searchParamsCache } from '@/lib/searchparams';
 import { productsQueryOptions } from '../api/queries';
-import { ProductTable } from './product-tables';
+import { ProductGrid } from './product-grid';
 
 export default function ProductListingPage() {
   const page = searchParamsCache.get('page');
@@ -25,7 +25,7 @@ export default function ProductListingPage() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <ProductTable />
+      <ProductGrid />
     </HydrationBoundary>
   );
 }
