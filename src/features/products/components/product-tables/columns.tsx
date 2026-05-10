@@ -13,15 +13,22 @@ export const columns: ColumnDef<Product>[] = [
     accessorKey: 'product_image_cover',
     header: 'IMAGE',
     cell: ({ row }) => {
+      const src = row.getValue<string>('product_image_cover');
       return (
         <div className='relative aspect-square w-20'>
-          <Image
-            src={row.getValue('product_image_cover')}
-            alt={row.original.ecom_product_name}
-            fill
-            sizes='80px'
-            className='rounded-lg object-cover'
-          />
+          {src ? (
+            <Image
+              src={src}
+              alt={row.original.ecom_product_name}
+              fill
+              sizes='80px'
+              className='rounded-lg object-cover'
+            />
+          ) : (
+            <div className='flex h-full items-center justify-center rounded-lg bg-muted'>
+              <span className='text-xs text-muted-foreground'>-</span>
+            </div>
+          )}
         </div>
       );
     }

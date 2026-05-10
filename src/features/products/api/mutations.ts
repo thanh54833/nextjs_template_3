@@ -20,7 +20,7 @@ export const updateProductMutation = mutationOptions({
 });
 
 export const deleteProductMutation = mutationOptions({
-  mutationFn: (id: string | number) => deleteProduct(id),
+  mutationFn: (id: number | string) => deleteProduct(id),
   onSuccess: () => {
     getQueryClient().invalidateQueries({ queryKey: productKeys.all });
   }

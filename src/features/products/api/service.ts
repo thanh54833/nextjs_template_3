@@ -22,6 +22,6 @@ export async function updateProduct(id: number, data: ProductMutationPayload) {
   return { success: true, message: 'Product updated (mock)' };
 }
 
-export async function deleteProduct(id: number) {
+export async function deleteProduct(id: string | number) {
   return { success: true, message: 'Product deleted (mock)' };
 }

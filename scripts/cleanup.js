@@ -16,277 +16,6 @@ const ROOT = process.cwd();
 // ─── Templates (inline) ────────────────────────────────────────────
 
 const TEMPLATES = {
-  clerk: {
-    'src/app/page.tsx': `import { redirect } from 'next/navigation';
-
-export default async function Page() {
-  redirect('/dashboard/overview');
-}
-`,
-    'src/app/dashboard/page.tsx': `import { redirect } from 'next/navigation';
-
-export default async function Dashboard() {
-  redirect('/dashboard/overview');
-}
-`,
-    'src/components/layout/providers.tsx': `'use client';
-import React from 'react';
-import { ActiveThemeProvider } from '../themes/active-theme';
-import QueryProvider from './query-provider';
-
-export default function Providers({
-  activeThemeValue,
-  children
-}: {
-  activeThemeValue: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <>
-      <ActiveThemeProvider initialTheme={activeThemeValue}>
-        <QueryProvider>{children}</QueryProvider>
-      </ActiveThemeProvider>
-    </>
-  );
-}
-`,
-    'src/components/layout/app-sidebar.tsx': `'use client';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarRail
-} from '@/components/ui/sidebar';
-import { navGroups } from '@/config/nav-config';
-import { useMediaQuery } from '@/hooks/use-media-query';
-import { useFilteredNavGroups } from '@/hooks/use-nav';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import * as React from 'react';
-import { Icons } from '../icons';
-
-export default function AppSidebar() {
-  const pathname = usePathname();
-  const { isOpen } = useMediaQuery();
-  const filteredGroups = useFilteredNavGroups(navGroups);
-
-  React.useEffect(() => {
-    // Side effects based on sidebar state changes
-  }, [isOpen]);
-
-  return (
-    <Sidebar collapsible='icon'>
-      <SidebarHeader />
-      <SidebarContent className='overflow-x-hidden'>
-        {filteredGroups.map((group) => (
-          <SidebarGroup key={group.label || 'ungrouped'} className='py-0'>
-            {group.label && <SidebarGroupLabel>{group.label}</SidebarGroupLabel>}
-            <SidebarMenu>
-              {group.items.map((item) => {
-                const Icon = item.icon ? Icons[item.icon] : Icons.logo;
-                return item?.items && item?.items?.length > 0 ? (
-                  <Collapsible
-                    key={item.title}
-                    asChild
-                    defaultOpen={item.isActive}
-                    className='group/collapsible'
-                  >
-                    <SidebarMenuItem>
-                      <CollapsibleTrigger asChild>
-                        <SidebarMenuButton tooltip={item.title} isActive={pathname === item.url}>
-                          {item.icon && <Icon />}
-                          <span>{item.title}</span>
-                          <Icons.chevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
-                        </SidebarMenuButton>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent>
-                        <SidebarMenuSub>
-                          {item.items?.map((subItem) => (
-                            <SidebarMenuSubItem key={subItem.title}>
-                              <SidebarMenuSubButton asChild isActive={pathname === subItem.url}>
-                                <Link href={subItem.url}>
-                                  <span>{subItem.title}</span>
-                                </Link>
-                              </SidebarMenuSubButton>
-                            </SidebarMenuSubItem>
-                          ))}
-                        </SidebarMenuSub>
-                      </CollapsibleContent>
-                    </SidebarMenuItem>
-                  </Collapsible>
-                ) : (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      asChild
-                      tooltip={item.title}
-                      isActive={pathname === item.url}
-                    >
-                      <Link href={item.url}>
-                        <Icon />
-                        <span>{item.title}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
-            </SidebarMenu>
-          </SidebarGroup>
-        ))}
-      </SidebarContent>
-      <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuButton
-                  size='lg'
-                  className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
-                >
-                  <span className='truncate'>Account</span>
-                  <Icons.chevronsDown className='ml-auto size-4' />
-                </SidebarMenuButton>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                className='w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg'
-                side='bottom'
-                align='end'
-                sideOffset={4}
-              >
-                <DropdownMenuLabel className='p-0 font-normal'>
-                  <div className='text-muted-foreground px-1 py-1.5 text-sm'>
-                    Sign in to manage your account
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <Icons.notification className='mr-2 h-4 w-4' />
-                  Notifications
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
-      <SidebarRail />
-    </Sidebar>
-  );
-}
-`,
-    'src/components/layout/user-nav.tsx': `'use client';
-
-export function UserNav() {
-  return null;
-}
-`,
-    'src/hooks/use-nav.ts': `'use client';
-
-import type { NavItem, NavGroup } from '@/types';
-
-export function useFilteredNavItems(items: NavItem[]) {
-  return items;
-}
-
-export function useFilteredNavGroups(groups: NavGroup[]) {
-  return groups;
-}
-`,
-    'src/config/infoconfig.ts': `import type { InfobarContent } from '@/components/ui/infobar';
-
-export const productInfoContent: InfobarContent = {
-  title: 'Product Management',
-  sections: [
-    {
-      title: 'Overview',
-      description:
-        'The Products page allows you to manage your product catalog. You can view all products in a table format with server-side functionality including sorting, filtering, pagination, and search capabilities. Use the "Add New" button to create new products.',
-      links: [
-        {
-          title: 'Product Management Guide',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Adding Products',
-      description:
-        'To add a new product, click the "Add New" button in the page header. You will be taken to a form where you can enter product details including name, description, price, category, and upload product images.',
-      links: [
-        {
-          title: 'Adding Products Documentation',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Editing Products',
-      description:
-        'You can edit existing products by clicking on a product row in the table. This will open the product edit form where you can modify any product information. Changes are saved automatically when you submit the form.',
-      links: [
-        {
-          title: 'Editing Products Guide',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Deleting Products',
-      description:
-        'Products can be deleted from the product listing table. Click the delete action for the product you want to remove. You will be asked to confirm the deletion before the product is permanently removed from your catalog.',
-      links: [
-        {
-          title: 'Product Deletion Policy',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Table Features',
-      description:
-        'The product table includes several powerful features to help you manage large product catalogs efficiently. You can sort columns by clicking on column headers, filter products using the filter controls, navigate through pages using pagination, and quickly find products using the search functionality.',
-      links: [
-        {
-          title: 'Table Features Documentation',
-          url: '#'
-        },
-        {
-          title: 'Sorting and Filtering Guide',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Product Fields',
-      description:
-        'Each product can have the following fields: Name (required), Description (optional text), Price (numeric value), Category (for organizing products), and Image Upload (for product photos). All fields can be edited when creating or updating a product.',
-      links: [
-        {
-          title: 'Product Fields Specification',
-          url: '#'
-        }
-      ]
-    }
-  ]
-};
-`
-  },
   sentry: {
     'next.config.ts': `import type { NextConfig } from 'next';
 
@@ -301,12 +30,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'img.clerk.com',
-        port: ''
-      },
-      {
-        protocol: 'https',
-        hostname: 'clerk.com',
+        hostname: 'images.unsplash.com',
         port: ''
       }
     ]
@@ -407,60 +131,6 @@ export default function StatsError({ error, reset }: StatsErrorProps) {
 // ─── Feature Configuration ──────────────────────────────────────────
 
 const FEATURES = {
-  clerk: {
-    name: 'Clerk (Authentication, Organizations, Billing)',
-    folders: [
-      'src/app/auth',
-      'src/app/dashboard/workspaces',
-      'src/app/dashboard/billing',
-      'src/app/dashboard/profile',
-      'src/app/dashboard/exclusive',
-      'src/features/auth',
-      'src/features/profile'
-    ],
-    files: [
-      'docs/clerk_setup.md',
-      'src/components/org-switcher.tsx',
-      'src/components/user-avatar-profile.tsx'
-    ],
-    dependencies: ['@clerk/nextjs', '@clerk/themes'],
-    envVars: [
-      'NEXTAUTH_SECRET',
-      'NEXTAUTH_URL',
-      'NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY',
-      'CLERK_SECRET_KEY',
-      'NEXT_PUBLIC_CLERK_SIGN_IN_URL',
-      'NEXT_PUBLIC_CLERK_SIGN_UP_URL',
-      'NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL',
-      'NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL',
-      'WEBHOOK_SECRET'
-    ],
-    cleanNextConfig: true,
-    navItemsToRemove: [
-      '/dashboard/workspaces',
-      '/dashboard/workspaces/team',
-      '/dashboard/billing',
-      '/dashboard/profile',
-      '/dashboard/exclusive'
-    ],
-    templates: TEMPLATES.clerk,
-    replacements: {
-      'src/proxy.ts': `import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export function proxy(_req: NextRequest) {
-  return NextResponse.next();
-}
-
-export const config = {
-  matcher: [
-    '/((?!_next|[^?]*\\\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    '/(api|trpc)(.*)'
-  ]
-};
-`
-    }
-  },
   kanban: {
     name: 'Kanban (Drag & Drop task board)',
     folders: ['src/app/dashboard/kanban', 'src/features/kanban'],
@@ -611,11 +281,9 @@ class FeatureCleanup {
       this.writeReplacements(feature);
       this.cleanDependencies(feature);
       this.cleanEnvVars(feature);
-      if (feature.cleanNextConfig) this.cleanNextConfig();
       if (feature.navItemsToRemove?.length) {
         allNavItemsToRemove.push(...feature.navItemsToRemove);
       }
-      this.cleanDocReferences(feature);
     }
 
     if (allNavItemsToRemove.length > 0) {
@@ -741,29 +409,6 @@ class FeatureCleanup {
     }
   }
 
-  cleanNextConfig() {
-    const configPath = path.join(ROOT, 'next.config.ts');
-    if (!fs.existsSync(configPath)) return;
-
-    let content = fs.readFileSync(configPath, 'utf8');
-    const before = content;
-    // Remove Clerk image hostname entries (handles both comma-first and comma-after patterns)
-    content = content.replace(
-      /,?\s*\{\s*protocol:\s*['"]https['"],\s*hostname:\s*['"]img\.clerk\.com['"][^}]*\},?/g,
-      ''
-    );
-    content = content.replace(
-      /,?\s*\{\s*protocol:\s*['"]https['"],\s*hostname:\s*['"]clerk\.com['"][^}]*\},?/g,
-      ''
-    );
-    // Clean up any trailing comma before closing bracket
-    content = content.replace(/,(\s*\])/g, '$1');
-    if (content !== before) {
-      if (!this.dryRun) fs.writeFileSync(configPath, content, 'utf8');
-      this.log('✅ Cleaned next.config.ts (removed Clerk image hostnames)');
-    }
-  }
-
   cleanNavConfig(navItemsToRemove) {
     const navPath = path.join(ROOT, 'src/config/nav-config.ts');
     if (!fs.existsSync(navPath)) return;
@@ -870,31 +515,6 @@ class FeatureCleanup {
     if (content !== before) {
       if (!this.dryRun) fs.writeFileSync(sidebarPath, content, 'utf8');
       this.log('✅ Cleaned app-sidebar.tsx (removed Notifications menu item)');
-    }
-  }
-
-  cleanDocReferences(feature) {
-    if (!feature.name.toLowerCase().includes('clerk')) return;
-
-    const docFiles = [
-      path.join(ROOT, 'README.md'),
-      path.join(ROOT, 'docs/nav-rbac.md'),
-      path.join(ROOT, 'src/config/infoconfig.ts')
-    ];
-
-    for (const filePath of docFiles) {
-      if (!fs.existsSync(filePath)) continue;
-      let content = fs.readFileSync(filePath, 'utf8');
-      const before = content;
-      content = content.replace(/\n*# Clerk Setup Guide[\s\S]*?(?=\n#|\n##|$)/gi, '\n');
-      content = content.replace(/Clerk['\s]/gi, 'Auth ');
-      content = content.replace(/clerk\.com[^\s]*/gi, '');
-      if (content !== before) {
-        if (!this.dryRun) {
-          fs.writeFileSync(filePath, content.replace(/\n\s*\n\s*\n/g, '\n\n'), 'utf8');
-        }
-        this.log(`✅ Cleaned doc references: ${path.relative(ROOT, filePath)}`);
-      }
     }
   }
 

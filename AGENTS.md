@@ -12,7 +12,7 @@ This file provides essential information for AI coding agents working on this pr
 - **Language**: TypeScript 5.7
 - **Styling**: Tailwind CSS v4
 - **UI Components**: shadcn/ui (New York style)
-- **Authentication**: Clerk (with Organizations/Billing support)
+- **Authentication**: Configurable (placeholder for your auth provider)
 - **Error Tracking**: Sentry
 - **Charts**: Recharts
 - **Containerization**: Docker (Node.js & Bun Dockerfiles)
@@ -53,9 +53,7 @@ The project follows a feature-based folder structure designed for scalability in
 
 ### Authentication & Authorization
 
-- Clerk for authentication and user management
-- Clerk Organizations for multi-tenant workspaces
-- Clerk Billing for subscription management (B2B)
+- Configurable auth provider (placeholder - integrate your preferred solution)
 - Client-side RBAC for navigation visibility
 
 ### Data & APIs
@@ -151,7 +149,6 @@ The project follows a feature-based folder structure designed for scalability in
     └── themes/            # Individual theme files
 
 /docs                      # Documentation
-│   ├── clerk_setup.md     # Clerk configuration guide
 │   ├── nav-rbac.md        # Navigation RBAC documentation
 │   └── themes.md          # Theme customization guide
 
@@ -200,19 +197,6 @@ bun run prepare      # Install Husky hooks
 
 Copy `env.example.txt` to `.env.local` and configure:
 
-### Required for Authentication (Clerk)
-
-```env
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_...
-CLERK_SECRET_KEY=sk_...
-
-# Redirect URLs
-NEXT_PUBLIC_CLERK_SIGN_IN_URL="/auth/sign-in"
-NEXT_PUBLIC_CLERK_SIGN_UP_URL="/auth/sign-up"
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL="/dashboard/overview"
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL="/dashboard/overview"
-```
-
 ### Optional for Error Tracking (Sentry)
 
 ```env
@@ -222,8 +206,6 @@ NEXT_PUBLIC_SENTRY_PROJECT=your-project
 SENTRY_AUTH_TOKEN=sntrys_...
 NEXT_PUBLIC_SENTRY_DISABLED="false"  # Set to "true" to disable in dev
 ```
-
-**Note**: Clerk supports "keyless mode" - the app works without API keys for initial development.
 
 ---
 
@@ -335,47 +317,7 @@ export const navGroups: NavGroup[] = [
 
 ### Client-Side Filtering
 
-The `useFilteredNavItems()` hook in `src/hooks/use-nav.ts` filters navigation client-side using Clerk's `useOrganization()` and `useUser()` hooks. This is for UX only - actual security checks must happen server-side.
-
----
-
-## Authentication Patterns
-
-### Protected Routes
-
-Dashboard routes use Clerk's middleware pattern. Pages that require organization:
-
-```tsx
-import { auth } from '@clerk/nextjs';
-import { redirect } from 'next/navigation';
-
-export default async function Page() {
-  const { orgId } = await auth();
-  if (!orgId) redirect('/dashboard/workspaces');
-  // ...
-}
-```
-
-### Plan/Feature Protection
-
-Use Clerk's `<Protect>` component for client-side:
-
-```tsx
-import { Protect } from '@clerk/nextjs';
-
-<Protect plan='pro' fallback={<UpgradePrompt />}>
-  <PremiumContent />
-</Protect>;
-```
-
-Use `has()` function for server-side checks:
-
-```tsx
-import { auth } from '@clerk/nextjs';
-
-const { has } = await auth();
-const hasFeature = has({ feature: 'premium_access' });
-```
+The `useFilteredNavItems()` hook in `src/hooks/use-nav.ts` filters navigation client-side. This is for UX only - actual security checks must happen server-side.
 
 ---
 
@@ -553,8 +495,6 @@ Recommended test locations:
 
 Ensure these are set in your deployment platform:
 
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
-- `CLERK_SECRET_KEY`
 - All `NEXT_PUBLIC_*` variables for client-side access
 - `SENTRY_*` variables if using error tracking
 
@@ -570,7 +510,7 @@ Both use `output: 'standalone'` in `next.config.ts`. Pass `NEXT_PUBLIC_*` vars a
 ### Build Considerations
 
 - Output: `standalone` (optimized for Docker/self-hosting)
-- Images: Configured for `api.slingacademy.com`, `img.clerk.com`, `clerk.com`
+- Images: Configured for `api.slingacademy.com`, `images.unsplash.com`
 - Sentry source maps uploaded automatically in CI
 
 ---
@@ -584,7 +524,6 @@ A single `scripts/cleanup.js` file handles removal of optional features:
 node scripts/cleanup.js --interactive
 
 # Remove specific features
-node scripts/cleanup.js clerk           # Remove auth/org/billing
 node scripts/cleanup.js kanban          # Remove kanban board
 node scripts/cleanup.js chat            # Remove messaging UI
 node scripts/cleanup.js notifications   # Remove notification center
@@ -707,16 +646,6 @@ See "Theming System" section above or `docs/themes.md`.
 
 **Build fails with Tailwind errors**
 
-- Ensure using Tailwind CSS v4 syntax (`@import 'tailwindcss'`)
-- Check `postcss.config.js` uses `@tailwindcss/postcss`
-
-**Clerk keyless mode popup**
-
-- Normal in development without API keys
-- Click popup to claim application or set env variables
-
-**Theme not applying**
-
 - Check theme name matches in CSS `[data-theme]` and `theme.config.ts`
 - Verify theme CSS is imported in `theme.css`
 
@@ -727,10 +656,219 @@ See "Theming System" section above or `docs/themes.md`.
 
 ---
 
+## React Best Practices (Vercel Engineering)
+
+### Eliminating Waterfalls (CRITICAL)
+
+- **Defer await until needed** - Move await into branches where actually used
+- **Parallel independent operations** - `Promise.all()` for independent fetches
+- **Start promises early, await late** - In API routes, start all promises immediately
+- **Strategic Suspense boundaries** - Show wrapper UI faster while data streams in
+
+```typescript
+// ❌ Waterfall: config waits for auth
+const session = await auth();
+const config = await fetchConfig();
+
+// ✅ Parallel: both start immediately
+const sessionPromise = auth();
+const configPromise = fetchConfig();
+const [session, config] = await Promise.all([sessionPromise, configPromise]);
+```
+
+### Bundle Size Optimization (CRITICAL)
+
+- **Avoid barrel imports** - Import directly from source files
+- **Dynamic imports for heavy components** - `next/dynamic` for Monaco, charts
+- **Defer third-party libraries** - Load analytics/logging after hydration
+- **Preload on hover/focus** - `void import('./heavy-module')` on intent
+
+### Server-Side Performance (HIGH)
+
+- **Authenticate server actions** - Always verify auth inside `"use server"` functions
+- **Minimize RSC serialization** - Only pass fields client actually uses
+- **Hoist static I/O** - Load fonts/logos at module level, not per request
+- **Use `after()` for non-blocking** - Schedule logging/analytics after response
+- **`React.cache()` for per-request dedup** - Wrap DB queries, auth checks
+
+### Re-render Optimization (MEDIUM)
+
+- **Derived state during render** - Don't store computable values in state
+- **Don't define components inside components** - Creates new type every render, causes remount
+- **Functional setState** - `setItems(prev => [...prev, new])` for stable callbacks
+- **Lazy state initialization** - `useState(() => expensiveInit())` for heavy values
+- **Split combined hooks** - Independent computations in separate `useMemo`
+- **Narrow effect dependencies** - Use primitives, not objects
+- **Use `useRef` for transient values** - Mouse position, intervals, flags
+
+### Rendering Performance (MEDIUM)
+
+- **Animate SVG wrapper** - Wrap SVG in `<div>` and animate the div (hardware acceleration)
+- **`content-visibility: auto`** - Defer off-screen rendering for long lists
+- **Hoist static JSX** - Extract static elements outside components
+- **Explicit conditional rendering** - Use `count > 0 ? <Badge /> : null` not `count && <Badge />`
+- **`useTransition` over manual loading** - Built-in `isPending` state
+
+---
+
+## React Composition Patterns (Vercel)
+
+### Avoid Boolean Prop Proliferation
+
+Don't add `isEditing`, `isThread`, `showFooter` booleans. Each doubles possible states.
+
+```typescript
+// ❌ Boolean props create exponential complexity
+<Composer isThread isEditing={false} showAttachments />
+
+// ✅ Explicit variants
+<ThreadComposer channelId="abc" />
+<EditMessageComposer messageId="xyz" />
+```
+
+### Compound Components with Shared Context
+
+```typescript
+// Provider injects state/actions/meta
+<Composer.Provider state={state} actions={actions} meta={meta}>
+  <Composer.Frame>
+    <Composer.Input />
+    <Composer.Footer>
+      <Composer.Submit />
+    </Composer.Footer>
+  </Composer.Frame>
+</Composer.Provider>
+```
+
+### Lift State into Providers
+
+State in providers, not trapped in components. Sibling components outside main UI can access state.
+
+### React 19 APIs
+
+- **No `forwardRef`** - `ref` is now a regular prop
+- **`use()` instead of `useContext()`** - Can be called conditionally
+
+---
+
+## Next.js Best Practices
+
+### RSC Boundaries
+
+- **Server components by default** - Only add `'use client'` for browser APIs/hooks
+- **Async client components are invalid** - Client components cannot be async
+- **Non-serializable props** - Functions, Dates, Maps cannot be passed RSC → client
+
+### Async Patterns (Next.js 15+)
+
+- **`params` and `searchParams` are now Promises** - Must await
+- **`cookies()` and `headers()` are now async** - Must await
+- **`useSearchParams` and `usePathname` require Suspense boundaries**
+
+```typescript
+// Next.js 15+ async params
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const { id } = await props.params;
+  // ...
+}
+```
+
+### Route Handlers
+
+- **`route.ts` for REST APIs** - Export `GET`, `POST`, etc.
+- **No GET handler with `page.tsx`** - Conflicts in same route segment
+- **Server Actions vs Route Handlers** - Server Actions for mutations, Route Handlers for external API consumption
+
+### Metadata
+
+- **Static metadata** - `export const metadata = { title: '...' }`
+- **Dynamic metadata** - `export async function generateMetadata({ params }) { ... }`
+- **OG images** - `generateOGImage` with `next/og`
+
+### Image Optimization
+
+- **Always use `next/image`** - Not `<img>`
+- **Remote patterns** - Configure in `next.config.ts`
+- **Priority loading** - `priority` for LCP images
+
+### Font Optimization
+
+- **`next/font`** - Self-hosted, zero layout shift
+- **Google Fonts** - Automatic optimization
+- **Tailwind integration** - Configure in `tailwind.config`
+
+---
+
+## Web Design Guidelines
+
+### Accessibility
+
+- **Semantic HTML** - Use `<button>`, `<nav>`, `<main>` not `<div>` with onClick
+- **ARIA attributes** - `aria-label`, `aria-expanded`, `aria-hidden` where needed
+- **Keyboard navigation** - All interactive elements must be keyboard accessible
+- **Color contrast** - Minimum 4.5:1 for normal text, 3:1 for large text
+- **Focus management** - Visible focus indicators, logical tab order
+
+### Responsive Design
+
+- **Mobile-first** - Design for small screens, enhance for larger
+- **Touch targets** - Minimum 44x44px for interactive elements
+- **Viewport meta** - `<meta name="viewport" content="width=device-width, initial-scale=1">`
+
+### Performance
+
+- **Image optimization** - Use `next/image` with proper sizing
+- **Font loading** - `next/font` with `display: swap`
+- **Code splitting** - `next/dynamic` for heavy components
+- **Bundle analysis** - Regular checks with `@next/bundle-analyzer`
+
+---
+
+## Impeccable Design System
+
+### Context Files
+
+- **PRODUCT.md** - Users, brand, tone, anti-references, strategic principles
+- **DESIGN.md** - Colors, typography, elevation, components
+
+### Color Strategy
+
+- **OKLCH color space** - Reduce chroma as lightness approaches 0 or 100
+- **Never use `#000` or `#fff`** - Tint neutrals toward brand hue
+- **Four commitment levels**: Restrained (1 accent ≤10%), Committed (30-60%), Full palette (3-4 roles), Drenched (surface IS color)
+
+### Typography
+
+- **Cap body line length** - 65-75ch maximum
+- **Hierarchy through scale** - ≥1.25 ratio between steps
+- **Distinctive fonts** - Avoid Inter, Roboto, Arial; choose characterful alternatives
+
+### Layout
+
+- **Vary spacing for rhythm** - Same padding everywhere is monotony
+- **Cards are the lazy answer** - Use only when truly best affordance
+- **No nested cards** - Always wrong
+
+### Motion
+
+- **Don't animate CSS layout properties** - Use transform/opacity
+- **Ease out** - exponential curves (ease-out-quart/quint/expo)
+- **No bounce, no elastic**
+
+### Absolute Bans
+
+- **Side-stripe borders** - `border-left` > 1px as accent
+- **Gradient text** - `background-clip: text` with gradient
+- **Glassmorphism as default** - Rare and purposeful only
+- **Hero-metric template** - Big number, small label, gradient accent
+- **Identical card grids** - Same icon + heading + text repeated
+- **Modal as first thought** - Exhaust inline/progressive alternatives first
+
+---
+
 ## External Documentation
 
 - [Next.js App Router](https://nextjs.org/docs/app)
-- [Clerk Next.js SDK](https://clerk.com/docs/references/nextjs)
 - [shadcn/ui](https://ui.shadcn.com/docs)
 - [Tailwind CSS v4](https://tailwindcss.com/docs)
 - [TanStack Table](https://tanstack.com/table/latest)

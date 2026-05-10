@@ -74,13 +74,19 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className='relative mb-3 aspect-square overflow-hidden rounded-md bg-muted'>
-          <Image
-            src={product.product_image_cover}
-            alt={product.ecom_product_name}
-            fill
-            sizes='200px'
-            className='object-cover transition-transform group-hover:scale-105'
-          />
+          {product.product_image_cover ? (
+            <Image
+              src={product.product_image_cover}
+              alt={product.ecom_product_name}
+              fill
+              sizes='200px'
+              className='object-cover transition-transform group-hover:scale-105'
+            />
+          ) : (
+            <div className='absolute inset-0 flex items-center justify-center bg-muted'>
+              <span className='text-xs text-muted-foreground'>No image</span>
+            </div>
+          )}
           {product.is_have_discount && product.discount_percent > 0 && (
             <Badge className='absolute left-1 top-1 bg-red-500 text-white text-[10px]'>
               -{product.discount_percent.toFixed(0)}%

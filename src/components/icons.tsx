@@ -56,6 +56,7 @@ import {
   IconMinus,
   IconMoon,
   IconMusic,
+  IconPackage,
   IconPalette,
   IconPaperclip,
   IconPhone,

@@ -4,7 +4,7 @@
 
 This document explains the fully client-side RBAC (Role-Based Access Control) system for navigation items.
 
-**Key Insight**: Navigation visibility is UX only, not security. We can check everything client-side using Clerk's hooks!
+**Key Insight**: Navigation visibility is UX only, not security. We can check everything client-side!
 
 ## Architecture
 
@@ -16,7 +16,6 @@ This document explains the fully client-side RBAC (Role-Based Access Control) sy
 ### Why Client-Side?
 
 - **Navigation visibility is UX only** - Users can't bypass security by seeing/hiding nav items
-- **Clerk provides all data client-side** - `useOrganization()` gives us `membership.permissions` and `membership.role`
 - **Zero server calls** - Instant filtering, no loading states, no UI flashing
 - **Better performance** - No network latency, no async complexity
 
@@ -26,9 +25,9 @@ This document explains the fully client-side RBAC (Role-Based Access Control) sy
 
 ### All Checks Are Synchronous
 
-✅ **requireOrg**: Client-side check using `useOrganization()`  
-✅ **permission**: Client-side check using `membership.permissions` array  
-✅ **role**: Client-side check using `membership.role`  
+✅ **requireOrg**: Client-side check  
+✅ **permission**: Client-side check  
+✅ **role**: Client-side check  
 ⚠️ **plan/feature**: Requires server-side check (see below)
 
 ### Zero Server Calls
@@ -76,7 +75,7 @@ function MyComponent() {
 
 ### Plan/Feature Checks
 
-Plans and features require Clerk's `has()` function which is server-side only. Options:
+Plans and features require server-side `has()` function. Options:
 
 1. **Store in organization metadata** (recommended for navigation):
 
