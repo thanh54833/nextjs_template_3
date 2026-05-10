@@ -15,7 +15,7 @@ export function ConversationSelect({
   onSelect
 }: ConversationSelectProps) {
   return (
-    <div className='border-border/40 bg-background/75 flex flex-col gap-3 rounded-2xl border p-3 backdrop-blur sm:gap-4 sm:rounded-3xl sm:p-4 lg:hidden'>
+    <div className='border-border bg-background flex flex-col gap-3 rounded-2xl border p-3 sm:gap-4 sm:rounded-3xl sm:p-4 lg:hidden'>
       <div className='flex items-center justify-between gap-2 sm:gap-3'>
         <div>
           <p className='text-foreground text-xs font-semibold sm:text-sm'>Messenger</p>
