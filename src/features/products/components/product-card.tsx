@@ -41,18 +41,10 @@ export function ProductCard({ product }: ProductCardProps) {
         className='group relative rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50 cursor-pointer'
         onClick={() => setDetailSheetOpen(true)}
       >
-        <div className='mb-2 flex items-center justify-between'>
-          <div className='flex gap-1'>
-            {product.is_have_discount && (
-              <span className='h-1.5 w-1.5 rounded-full bg-red-500' />
-            )}
-            {product.is_combo && (
-              <span className='h-1.5 w-1.5 rounded-full bg-blue-500' />
-            )}
-            {product.is_free_ship && (
-              <span className='h-1.5 w-1.5 rounded-full bg-green-500' />
-            )}
-          </div>
+        <div className='mb-2 flex items-center justify-end'>
+          {product.is_outstock && (
+            <span className='text-xs font-medium text-destructive'>Hết hàng</span>
+          )}
           <DropdownMenu>
             <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
               <button className='rounded p-1 opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100'>
@@ -95,7 +87,8 @@ export function ProductCard({ product }: ProductCardProps) {
               className='object-cover transition-transform group-hover:scale-105'
             />
           ) : (
-            <div className='absolute inset-0 flex items-center justify-center bg-muted'>
+            <div className='absolute inset-0 flex flex-col items-center justify-center gap-1 bg-muted'>
+              <Icons.image className='h-8 w-8 opacity-50' />
               <span className='text-xs text-muted-foreground'>No image</span>
             </div>
           )}

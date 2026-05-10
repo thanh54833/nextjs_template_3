@@ -42,6 +42,7 @@ import {
   IconFileZip,
   IconFolder,
   IconGripVertical,
+  IconHash,
   IconHelpCircle,
   IconInfoCircle,
   IconItalic,
@@ -49,11 +50,13 @@ import {
   IconLayoutGrid,
   IconLayoutKanban,
   IconLayoutSidebar,
+  IconLink,
   IconList,
   IconLoader2,
   IconLock,
   IconLogin,
   IconLogout,
+  IconMail,
   IconMessage,
   IconMinus,
   IconMoon,
@@ -73,6 +76,7 @@ import {
   IconSettings,
   IconShare,
   IconSlash,
+  IconMoodSmile,
   IconSparkles,
   IconStack2,
   IconStar,
@@ -154,6 +158,8 @@ export const Icons = {
   video: IconVideo,
   send: IconSend,
   paperclip: IconPaperclip,
+  mail: IconMail,
+  messageSquare: IconMessage,
 
   // Files
   page: IconFile,
@@ -164,6 +170,7 @@ export const Icons = {
   fileZip: IconFileZip,
   media: IconPhoto,
   music: IconMusic,
+  image: IconPhoto,
 
   // Actions
   add: IconPlus,
@@ -211,6 +218,9 @@ export const Icons = {
   italic: IconItalic,
   underline: IconUnderline,
   text: IconTypography,
+  link: IconLink,
+  hash: IconHash,
+  smile: IconMoodSmile,
 
   // Toast
   toastSuccess: IconCircleCheck,

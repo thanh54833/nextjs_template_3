@@ -98,8 +98,8 @@ export function ProductGrid() {
         </SheetContent>
       </Sheet>
 
-      <div className='flex-1 space-y-4'>
-        <div className='flex flex-wrap items-center gap-3'>
+<div className='flex-1'>
+        <div className='flex flex-wrap items-center gap-4'>
           <div className='flex gap-1 rounded-lg border bg-muted p-1'>
             {(['all', 'active', 'non-active'] as const).map((tab) => (
               <button
@@ -116,55 +116,58 @@ export function ProductGrid() {
             ))}
           </div>
 
-          <div className='relative flex-1 min-w-[200px]'>
+          {/* CENTER: Search input — dominant, takes available space */}
+          <div className='relative min-w-[200px] flex-1'>
             <Icons.search className='absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground' />
             <Input
               placeholder='Search product...'
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              className='h-8 pl-9 text-xs'
+              className='h-9 pl-9 text-sm'
             />
           </div>
 
-          <div className='flex gap-1 rounded-lg border bg-muted p-1'>
-            <button
-              type='button'
-              onClick={() => setViewMode('grid')}
-              className={`rounded-md p-1.5 transition-colors ${
-                viewMode === 'grid'
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-              aria-label='Grid view'
-            >
-              <Icons.layoutGrid className='h-4 w-4' />
-            </button>
-            <button
-              type='button'
-              onClick={() => setViewMode('list')}
-              className={`rounded-md p-1.5 transition-colors ${
-                viewMode === 'list'
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-              aria-label='List view'
-            >
-              <Icons.list className='h-4 w-4' />
-            </button>
-          </div>
+          <div className='flex gap-2'>
+            <div className='flex gap-1 rounded-lg border bg-muted p-1'>
+              <button
+                type='button'
+                onClick={() => setViewMode('grid')}
+                className={`rounded-md p-1.5 transition-colors ${
+                  viewMode === 'grid'
+                    ? 'bg-background text-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+                aria-label='Grid view'
+              >
+                <Icons.layoutGrid className='h-4 w-4' />
+              </button>
+              <button
+                type='button'
+                onClick={() => setViewMode('list')}
+                className={`rounded-md p-1.5 transition-colors ${
+                  viewMode === 'list'
+                    ? 'bg-background text-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+                aria-label='List view'
+              >
+                <Icons.list className='h-4 w-4' />
+              </button>
+            </div>
 
-          <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
-            <SheetTrigger asChild>
-              <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs lg:hidden'>
-                <Icons.adjustments className='h-3.5 w-3.5' />
-                Filter
-                {data.total_products > 0 && (
-                  <span className='ml-1 text-muted-foreground'>({data.total_products})</span>
-                )}
-              </Button>
-            </SheetTrigger>
-          </Sheet>
+            <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+              <SheetTrigger asChild>
+                <Button variant='outline' size='sm' className='h-9 gap-1.5 text-sm lg:hidden'>
+                  <Icons.adjustments className='h-3.5 w-3.5' />
+                  Filter
+                  {data.total_products > 0 && (
+                    <span className='ml-1 text-muted-foreground'>({data.total_products})</span>
+                  )}
+                </Button>
+              </SheetTrigger>
+            </Sheet>
+          </div>
         </div>
 
         {isFetching && (
@@ -173,7 +176,9 @@ export function ProductGrid() {
           </div>
         )}
 
-        <ActiveFilterChips />
+        <div className='mt-3'>
+          <ActiveFilterChips />
+        </div>
 
         {!hasProducts && !isFetching && (
           <Empty className='py-12'>
@@ -188,7 +193,7 @@ export function ProductGrid() {
         )}
 
         {hasProducts && viewMode === 'grid' && (
-          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+          <div className='mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
             {data.products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -196,7 +201,7 @@ export function ProductGrid() {
         )}
 
         {hasProducts && viewMode === 'list' && (
-          <div className='space-y-2'>
+          <div className='mt-4 space-y-2'>
             {data.products.map((product) => (
               <ProductListRow key={product.id} product={product} />
             ))}
@@ -204,9 +209,8 @@ export function ProductGrid() {
         )}
 
         {hasProducts && (
-          <div className='flex items-center justify-between border-t pt-4'>
+          <div className='mt-6 flex items-center justify-between border-t pt-4'>
             <div className='flex items-center gap-2 text-xs text-muted-foreground'>
-              <span>Show</span>
               <Select
                 value={String(params.perPage)}
                 onValueChange={(value) => setParams({ perPage: parseInt(value), page: 1 })}
@@ -221,7 +225,7 @@ export function ProductGrid() {
                   <SelectItem value='48'>48</SelectItem>
                 </SelectContent>
               </Select>
-              <span>Per Page</span>
+              <span className='text-xs text-muted-foreground'>per page</span>
             </div>
 
             <div className='flex items-center gap-1'>
@@ -244,7 +248,7 @@ export function ProductGrid() {
                     size='sm'
                     className={`h-8 w-8 p-0 text-xs ${
                       params.page === pageNum
-                        ? 'bg-foreground text-background hover:bg-foreground/90'
+                        ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                         : ''
                     }`}
                     onClick={() => setParams({ page: pageNum })}

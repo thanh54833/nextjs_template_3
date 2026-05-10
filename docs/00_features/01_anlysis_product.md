@@ -107,7 +107,7 @@ product-grid.tsx → ProductFilters (sidebar)
                     ↓
               NOT USED BY API ❌  ← Filters don't affect API calls
 
-product-grid.tsx → useSuspenseQuery
+product-grid.tsx → useSuspenseQuery>
                     ↓
               filters object (page, limit, search, categories, sort)
                     ↓

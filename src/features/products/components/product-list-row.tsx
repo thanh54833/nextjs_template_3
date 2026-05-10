@@ -65,7 +65,7 @@ export function ProductListRow({ product }: ProductListRowProps) {
         <div className='min-w-0 flex-1'>
           <div className='flex items-start justify-between gap-4'>
             <div className='min-w-0'>
-              <h3 className='truncate text-sm font-medium text-foreground'>
+              <h3 className='text-sm font-medium text-foreground break-words'>
                 {product.ecom_product_name}
               </h3>
               <p className='text-xs text-muted-foreground'>

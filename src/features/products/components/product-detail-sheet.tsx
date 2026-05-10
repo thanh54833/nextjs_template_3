@@ -87,44 +87,40 @@ export function ProductDetailSheet({
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side='right' className='flex w-full flex-col sm:max-w-[480px]'>
-        <SheetHeader className='flex-row items-center justify-between space-y-0 pb-4'>
-          <div className='flex-1'>
-            {isEditing ? (
-              <Input
-                value={displayProduct.ecom_product_name}
-                onChange={(e) => handleInputChange('ecom_product_name', e.target.value)}
-                className='text-xl font-semibold'
-              />
-            ) : (
-              <SheetTitle className='text-left text-xl leading-tight'>
-                {product.ecom_product_name}
-              </SheetTitle>
-            )}
-          </div>
-          <div className='flex items-center gap-2'>
-            {!isEditing ? (
-              <Button variant='outline' size='sm' onClick={handleEditClick}>
-                <Icons.edit className='mr-2 h-4 w-4' />
-                Edit
-              </Button>
-            ) : (
-              <>
-                <Button variant='outline' size='sm' onClick={handleCancelClick}>
-                  Cancel
-                </Button>
-                <Button
-                  size='sm'
-                  onClick={handleSaveClick}
-                  disabled={updateMutation.isPending}
-                >
-                  {updateMutation.isPending ? 'Saving...' : 'Save'}
-                </Button>
-              </>
-            )}
-          </div>
+        <SheetHeader className='space-y-0 pb-0'>
+          <SheetTitle className='text-left text-xl leading-tight'>
+            {product.ecom_product_name}
+          </SheetTitle>
         </SheetHeader>
 
-        <div className='flex-1 overflow-auto space-y-6'>
+        <div className='flex gap-1 rounded-lg border bg-muted p-1 mt-4'>
+          <button
+            type='button'
+            onClick={() => {
+              if (isEditing) handleCancelClick();
+            }}
+            className={`flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+              !isEditing
+                ? 'bg-background text-foreground shadow-sm'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Read
+          </button>
+          <button
+            type='button'
+            onClick={handleEditClick}
+            className={`flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+              isEditing
+                ? 'bg-background text-foreground shadow-sm'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Edit
+          </button>
+        </div>
+
+        <div className='flex-1 overflow-auto space-y-6 mt-4'>
           {/* Category & Brand */}
           <div className='grid grid-cols-2 gap-4'>
             <div className='space-y-1'>
@@ -326,9 +322,10 @@ export function ProductDetailSheet({
                 placeholder='Enter product description'
               />
             ) : (
-              <p className='text-sm text-muted-foreground'>
-                {product.description || 'No description available'}
-              </p>
+              <div
+                className='text-sm text-muted-foreground prose prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5'
+                dangerouslySetInnerHTML={{ __html: product.description || '<p>No description available</p>' }}
+              />
             )}
           </div>
 
@@ -369,6 +366,25 @@ export function ProductDetailSheet({
             </>
           )}
         </div>
+
+        {isEditing && (
+          <div className='flex items-center gap-2 border-t pt-4 mt-4'>
+            <Button
+              variant='outline'
+              className='flex-1'
+              onClick={handleCancelClick}
+            >
+              Cancel
+            </Button>
+            <Button
+              className='flex-1'
+              onClick={handleSaveClick}
+              disabled={updateMutation.isPending}
+            >
+              {updateMutation.isPending ? 'Saving...' : 'Save'}
+            </Button>
+          </div>
+        )}
       </SheetContent>
     </Sheet>
   );
