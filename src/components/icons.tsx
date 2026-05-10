@@ -46,8 +46,10 @@ import {
   IconInfoCircle,
   IconItalic,
   IconLayoutDashboard,
+  IconLayoutGrid,
   IconLayoutKanban,
   IconLayoutSidebar,
+  IconList,
   IconLoader2,
   IconLock,
   IconLogin,
@@ -126,8 +128,10 @@ export const Icons = {
 
   // Layout
   dashboard: IconLayoutDashboard,
+  layoutGrid: IconLayoutGrid,
   kanban: IconLayoutKanban,
   panelLeft: IconLayoutSidebar,
+  list: IconList,
 
   // User
   user: IconUser,

@@ -1,0 +1,26 @@
+[     551ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[    3443ms] [WARNING] Image with src "https://cdn1.concung.com/2021/10/52563-76453-large_mobile/sua-dem-ngu-coc-fruto-nyanya-200ml.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[   16027ms] [LOG] [Client Instrumentation Hook] Slow execution detected: 32ms (Note: Code download overhead is not included in this measurement) @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:702
+[   16030ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[   16266ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[   17024ms] [WARNING] Image with src "https://cdn1.concung.com/2021/10/52563-76453-large_mobile/sua-dem-ngu-coc-fruto-nyanya-200ml.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  187448ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  187629ms] [LOG] [Fast Refresh] done in 285ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  190641ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  191471ms] [LOG] [Fast Refresh] done in 942ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  203535ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  203858ms] [LOG] [Fast Refresh] done in 433ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  216402ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  237374ms] [LOG] [Fast Refresh] done in 21069ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  285112ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  287362ms] [LOG] [Fast Refresh] done in 1407ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  287977ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  291893ms] [LOG] [Fast Refresh] done in 4017ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  312157ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  312686ms] [LOG] [Fast Refresh] done in 163ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  318648ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  319059ms] [LOG] [Fast Refresh] done in 367ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  319366ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073
+[  319625ms] [LOG] [Fast Refresh] done in 360ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_038ce8_._.js:1073

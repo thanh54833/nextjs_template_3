@@ -1,0 +1,597 @@
+- generic [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - button [ref=e9]:
+            - img [ref=e11]
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]: Overview
+          - list [ref=e16]:
+            - listitem [ref=e17]:
+              - link "Dashboard" [ref=e18] [cursor=pointer]:
+                - /url: /dashboard/overview
+                - img [ref=e19]
+                - generic: Dashboard
+            - listitem [ref=e24]:
+              - link "Workspaces" [ref=e25] [cursor=pointer]:
+                - /url: /dashboard/workspaces
+                - img [ref=e26]
+                - generic: Workspaces
+            - listitem [ref=e28]:
+              - link "Teams" [ref=e29] [cursor=pointer]:
+                - /url: /dashboard/workspaces/team
+                - img [ref=e30]
+                - generic: Teams
+            - listitem [ref=e35]:
+              - link "Product" [ref=e36] [cursor=pointer]:
+                - /url: /dashboard/product
+                - img [ref=e37]
+                - generic: Product
+            - listitem [ref=e41]:
+              - link "Users" [ref=e42] [cursor=pointer]:
+                - /url: /dashboard/users
+                - img [ref=e43]
+                - generic: Users
+            - listitem [ref=e48]:
+              - link "Kanban" [ref=e49] [cursor=pointer]:
+                - /url: /dashboard/kanban
+                - img [ref=e50]
+                - generic: Kanban
+            - listitem [ref=e53]:
+              - link "Chat" [ref=e54] [cursor=pointer]:
+                - /url: /dashboard/chat
+                - img [ref=e55]
+                - generic: Chat
+        - generic [ref=e57]:
+          - generic [ref=e58]: Elements
+          - list [ref=e59]:
+            - listitem [ref=e60]:
+              - button "Forms" [expanded] [ref=e61]:
+                - img [ref=e62]
+                - generic [ref=e65]: Forms
+                - img [ref=e66]
+            - listitem [ref=e68]:
+              - link "React Query" [ref=e69] [cursor=pointer]:
+                - /url: /dashboard/react-query
+                - img [ref=e70]
+                - generic: React Query
+            - listitem [ref=e74]:
+              - link "Icons" [ref=e75] [cursor=pointer]:
+                - /url: /dashboard/elements/icons
+                - img [ref=e76]
+                - generic: Icons
+        - list [ref=e82]:
+          - listitem [ref=e83]:
+            - button "Pro" [expanded] [ref=e84]:
+              - img [ref=e85]
+              - generic [ref=e87]: Pro
+              - img [ref=e88]
+          - listitem [ref=e90]:
+            - button "Account" [expanded] [ref=e91]:
+              - img [ref=e92]
+              - generic [ref=e96]: Account
+              - img [ref=e97]
+      - list [ref=e100]:
+        - listitem [ref=e101]:
+          - button "Settings" [ref=e102]:
+            - img [ref=e103]
+            - generic [ref=e106]: Settings
+      - button "Toggle Sidebar" [ref=e107]
+    - main [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - button "Toggle sidebar" [ref=e111]:
+            - img
+            - generic [ref=e112]: Toggle Sidebar
+          - navigation "breadcrumb" [ref=e113]:
+            - list [ref=e114]:
+              - listitem [ref=e115]:
+                - link "Dashboard" [ref=e116] [cursor=pointer]:
+                  - /url: /dashboard
+              - listitem [ref=e117]:
+                - img [ref=e118]
+              - link "Product" [disabled] [ref=e120]
+        - generic [ref=e121]:
+          - link [ref=e122] [cursor=pointer]:
+            - /url: https://github.com/Kiranism/next-shadcn-dashboard-starter
+            - img
+          - button "Search... ⌘ K" [ref=e125]:
+            - img
+            - text: Search...
+            - generic:
+              - generic: ⌘
+              - text: K
+          - button "Toggle theme" [ref=e127]:
+            - img
+            - generic [ref=e128]: Toggle theme
+          - button "3 Notifications" [ref=e129]:
+            - img
+            - generic [ref=e130]: "3"
+            - generic [ref=e131]: Notifications
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - heading "Product list page" [level=2] [ref=e137]
+                - button "Show information" [ref=e139]:
+                  - img
+                  - generic [ref=e140]: Show information
+              - paragraph [ref=e141]: Show information
+            - link "Add New" [ref=e143] [cursor=pointer]:
+              - /url: /dashboard/product/new
+              - img
+              - text: Add New
+          - generic [ref=e144]:
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - heading "Filters" [level=3] [ref=e149]
+                - button "Collapse filters" [ref=e151]:
+                  - img [ref=e152]
+              - generic [ref=e157]:
+                - generic [ref=e158]:
+                  - button "Category" [ref=e160]:
+                    - img [ref=e161]
+                    - text: Category
+                  - generic [ref=e163]:
+                    - generic [ref=e164] [cursor=pointer]:
+                      - checkbox "Sữa nước" [ref=e165]
+                      - generic [ref=e166]: Sữa nước
+                    - generic [ref=e167] [cursor=pointer]:
+                      - checkbox "Quà tặng" [ref=e168]
+                      - generic [ref=e169]: Quà tặng
+                    - generic [ref=e170] [cursor=pointer]:
+                      - checkbox "Vitamin và Sức khỏe" [ref=e171]
+                      - generic [ref=e172]: Vitamin và Sức khỏe
+                    - generic [ref=e173] [cursor=pointer]:
+                      - checkbox "Chăm sóc da & Vệ sinh" [ref=e174]
+                      - generic [ref=e175]: Chăm sóc da & Vệ sinh
+                    - generic [ref=e176] [cursor=pointer]:
+                      - checkbox "Quần Áo Trẻ Em" [ref=e177]
+                      - generic [ref=e178]: Quần Áo Trẻ Em
+                - generic [ref=e179]:
+                  - button "Brand" [ref=e181]:
+                    - img [ref=e182]
+                    - text: Brand
+                  - generic [ref=e184]:
+                    - generic [ref=e185] [cursor=pointer]:
+                      - checkbox "Fruto Nyanya" [ref=e186]
+                      - generic [ref=e187]: Fruto Nyanya
+                    - generic [ref=e188] [cursor=pointer]:
+                      - checkbox "Gumazing" [ref=e189]
+                      - generic [ref=e190]: Gumazing
+                    - generic [ref=e191] [cursor=pointer]:
+                      - checkbox "Animo" [ref=e192]
+                      - generic [ref=e193]: Animo
+                    - generic [ref=e194] [cursor=pointer]:
+                      - checkbox "Fysoline" [ref=e195]
+                      - generic [ref=e196]: Fysoline
+                    - generic [ref=e197] [cursor=pointer]:
+                      - checkbox "Quà tặng không bán" [ref=e198]
+                      - generic [ref=e199]: Quà tặng không bán
+                - generic [ref=e200]:
+                  - button "Price Range" [ref=e202]:
+                    - img [ref=e203]
+                    - text: Price Range
+                  - generic [ref=e205]:
+                    - generic [ref=e206]:
+                      - generic [ref=e207]:
+                        - generic [ref=e208]: From
+                        - textbox "0" [ref=e209]
+                      - generic [ref=e210]:
+                        - generic [ref=e211]: To
+                        - textbox "500,000" [ref=e212]
+                    - generic [ref=e214]:
+                      - slider "Minimum" [ref=e585]
+                      - slider "Maximum" [ref=e587]
+                - generic [ref=e217]:
+                  - button "Features" [ref=e219]:
+                    - img [ref=e220]
+                    - text: Features
+                  - generic [ref=e222]:
+                    - generic [ref=e223] [cursor=pointer]:
+                      - checkbox "Has Discount" [ref=e224]
+                      - text: Has Discount
+                    - generic [ref=e225] [cursor=pointer]:
+                      - checkbox "Free Shipping" [ref=e226]
+                      - text: Free Shipping
+                    - generic [ref=e227] [cursor=pointer]:
+                      - checkbox "Super Fast Delivery" [ref=e228]
+                      - text: Super Fast Delivery
+                    - generic [ref=e229] [cursor=pointer]:
+                      - checkbox "Currently Selling" [ref=e230]
+                      - text: Currently Selling
+                - generic [ref=e231]:
+                  - button "Stock Status" [ref=e233]:
+                    - img [ref=e234]
+                    - text: Stock Status
+                  - generic [ref=e236]:
+                    - generic [ref=e237] [cursor=pointer]:
+                      - checkbox "In Stock" [ref=e238]
+                      - text: In Stock
+                    - generic [ref=e239] [cursor=pointer]:
+                      - checkbox "Out of Stock" [ref=e240]
+                      - text: Out of Stock
+                - generic [ref=e241]:
+                  - button "Sort By" [ref=e243]:
+                    - img [ref=e244]
+                    - text: Sort By
+                  - generic [ref=e246]:
+                    - button "Best Selling" [ref=e247]:
+                      - generic [ref=e248]: Best Selling
+                    - button "Newest First" [ref=e249]:
+                      - generic [ref=e250]: Newest First
+                    - button "Oldest First" [ref=e251]:
+                      - generic [ref=e252]: Oldest First
+                    - 'button "Price: Low to High" [ref=e253]':
+                      - generic [ref=e254]: "Price: Low to High"
+                    - 'button "Price: High to Low" [ref=e255]':
+                      - generic [ref=e256]: "Price: High to Low"
+                    - button "Highest Rated" [ref=e257]:
+                      - generic [ref=e258]: Highest Rated
+            - generic [ref=e259]:
+              - generic [ref=e260]:
+                - generic [ref=e261]:
+                  - button "All" [ref=e262]
+                  - button "Active" [ref=e263]
+                  - button "Non Active" [ref=e264]
+                - generic [ref=e265]:
+                  - button "Grid view" [ref=e266]:
+                    - img [ref=e267]
+                  - button "List view" [active] [ref=e272]:
+                    - img [ref=e273]
+                - generic [ref=e274]:
+                  - img [ref=e275]
+                  - textbox "Search product..." [ref=e278]
+              - generic [ref=e702]:
+                - generic [ref=e703] [cursor=pointer]:
+                  - img "Sữa đêm ngũ cốc Fruto Nyanya (200ml)" [ref=e705]
+                  - generic [ref=e706]:
+                    - generic [ref=e707]:
+                      - generic [ref=e708]:
+                        - heading "Sữa đêm ngũ cốc Fruto Nyanya (200ml)" [level=3] [ref=e709]
+                        - paragraph [ref=e710]: Sữa nước
+                      - generic [ref=e711]:
+                        - generic [ref=e712]:
+                          - img [ref=e713]
+                          - generic [ref=e715]: "5.0"
+                        - generic [ref=e716]: 134,878 đã bán
+                    - generic [ref=e717]:
+                      - generic [ref=e719]: 36.000đ
+                      - generic [ref=e721]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e722]:
+                    - img [ref=e723]
+                - generic [ref=e727] [cursor=pointer]:
+                  - img "QT Molfix_Thùng đựng đồ chơi" [ref=e729]
+                  - generic [ref=e730]:
+                    - generic [ref=e731]:
+                      - generic [ref=e732]:
+                        - heading "QT Molfix_Thùng đựng đồ chơi" [level=3] [ref=e733]
+                        - paragraph [ref=e734]: Quà tặng
+                      - generic [ref=e735]:
+                        - generic [ref=e736]:
+                          - img [ref=e737]
+                          - generic [ref=e739]: "5.0"
+                        - generic [ref=e740]: 436 đã bán
+                    - generic [ref=e741]:
+                      - generic [ref=e743]: 0đ
+                      - generic [ref=e745]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e746]:
+                    - img [ref=e747]
+                - generic [ref=e751] [cursor=pointer]:
+                  - img "Khăn ướt Nature's Way" [ref=e753]
+                  - generic [ref=e754]:
+                    - generic [ref=e755]:
+                      - generic [ref=e756]:
+                        - heading "Khăn ướt Nature's Way" [level=3] [ref=e757]
+                        - paragraph [ref=e758]: Quà tặng
+                      - generic [ref=e759]:
+                        - generic [ref=e760]:
+                          - img [ref=e761]
+                          - generic [ref=e763]: "5.0"
+                        - generic [ref=e764]: 44,594 đã bán
+                    - generic [ref=e765]:
+                      - generic [ref=e767]: 0đ
+                      - generic [ref=e769]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e770]:
+                    - img [ref=e771]
+                - generic [ref=e775] [cursor=pointer]:
+                  - img "Combo 1 Thực phẩm bảo vệ sức khoẻ Gumazing D3K2 Pro Oral Spray 25ml và 1 TPBS Gumazing Vitamin C + Zinc Gummies" [ref=e777]
+                  - generic [ref=e778]:
+                    - generic [ref=e779]:
+                      - generic [ref=e780]:
+                        - heading "Combo 1 Thực phẩm bảo vệ sức khoẻ Gumazing D3K2 Pro Oral Spray 25ml và 1 TPBS Gumazing Vitamin C + Zinc Gummies" [level=3] [ref=e781]
+                        - paragraph [ref=e782]: Vitamin và Sức khỏe
+                      - generic [ref=e783]:
+                        - generic [ref=e784]:
+                          - img [ref=e785]
+                          - generic [ref=e787]: "5.0"
+                        - generic [ref=e788]: 20,761 đã bán
+                    - generic [ref=e789]:
+                      - generic [ref=e790]:
+                        - generic [ref=e791]: 305.000đ
+                        - generic [ref=e792]: 610.000đ
+                        - generic [ref=e793]: "-50%"
+                      - generic [ref=e794]:
+                        - generic [ref=e795]:
+                          - img
+                          - text: Free ship
+                        - generic [ref=e796]:
+                          - img
+                          - text: Giao nhanh
+                        - generic [ref=e797]: Combo
+                  - button [ref=e798]:
+                    - img [ref=e799]
+                - generic [ref=e803] [cursor=pointer]:
+                  - img "Nước muối đẳng trương Fysoline(New)" [ref=e805]
+                  - generic [ref=e806]:
+                    - generic [ref=e807]:
+                      - generic [ref=e808]:
+                        - heading "Nước muối đẳng trương Fysoline(New)" [level=3] [ref=e809]
+                        - paragraph [ref=e810]: Chăm sóc da & Vệ sinh
+                      - generic [ref=e811]:
+                        - generic [ref=e812]:
+                          - img [ref=e813]
+                          - generic [ref=e815]: "5.0"
+                        - generic [ref=e816]: 33,602 đã bán
+                    - generic [ref=e817]:
+                      - generic [ref=e819]: 166.000đ
+                      - generic [ref=e821]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e822]:
+                    - img [ref=e823]
+                - generic [ref=e827] [cursor=pointer]:
+                  - img "Bộ bé trai ngắn Animo Easy HN0924024 (1-4Y,Kem)" [ref=e829]
+                  - generic [ref=e830]:
+                    - generic [ref=e831]:
+                      - generic [ref=e832]:
+                        - heading "Bộ bé trai ngắn Animo Easy HN0924024 (1-4Y,Kem)" [level=3] [ref=e833]
+                        - paragraph [ref=e834]: Quần Áo Trẻ Em
+                      - generic [ref=e835]:
+                        - generic [ref=e836]:
+                          - img [ref=e837]
+                          - generic [ref=e839]: "5.0"
+                        - generic [ref=e840]: 955 đã bán
+                    - generic [ref=e841]:
+                      - generic [ref=e842]:
+                        - generic [ref=e843]: 129.000đ
+                        - generic [ref=e844]: "-8%"
+                      - generic [ref=e846]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e847]:
+                    - img [ref=e848]
+                - generic [ref=e852] [cursor=pointer]:
+                  - img [ref=e855]
+                  - generic [ref=e859]:
+                    - generic [ref=e860]:
+                      - generic [ref=e861]:
+                        - heading "Sữa non tươi Vitadairy 180mL (lốc 3 hộp)" [level=3] [ref=e862]
+                        - paragraph [ref=e863]: Sữa nước
+                      - generic [ref=e864]:
+                        - generic [ref=e865]:
+                          - img [ref=e866]
+                          - generic [ref=e868]: "5.0"
+                        - generic [ref=e869]: 5 đã bán
+                    - generic [ref=e870]:
+                      - generic [ref=e872]: 39.000đ
+                      - generic [ref=e874]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e875]:
+                    - img [ref=e876]
+                - generic [ref=e880] [cursor=pointer]:
+                  - img [ref=e883]
+                  - generic [ref=e887]:
+                    - generic [ref=e888]:
+                      - generic [ref=e889]:
+                        - heading "Bộ bé trai ngắn Animo Easy HN0924024 (3Y,Kem)" [level=3] [ref=e890]
+                        - paragraph [ref=e891]: Quần Áo Trẻ Em
+                      - generic [ref=e892]:
+                        - generic [ref=e893]:
+                          - img [ref=e894]
+                          - generic [ref=e896]: "5.0"
+                        - generic [ref=e897]: 890 đã bán
+                    - generic [ref=e898]:
+                      - generic [ref=e899]:
+                        - generic [ref=e900]: 129.000đ
+                        - generic [ref=e901]: "-8%"
+                      - generic [ref=e903]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e904]:
+                    - img [ref=e905]
+                - generic [ref=e909] [cursor=pointer]:
+                  - img "Bộ đồ chơi vớt cá nhà tắm cho bé RFD308061" [ref=e911]
+                  - generic [ref=e912]:
+                    - generic [ref=e913]:
+                      - generic [ref=e914]:
+                        - heading "Bộ đồ chơi vớt cá nhà tắm cho bé RFD308061" [level=3] [ref=e915]
+                        - paragraph [ref=e916]: Đồ chơi TOYCITY
+                      - generic [ref=e917]:
+                        - generic [ref=e918]:
+                          - img [ref=e919]
+                          - generic [ref=e921]: "5.0"
+                        - generic [ref=e922]: 3,785 đã bán
+                    - generic [ref=e923]:
+                      - generic [ref=e925]: 39.500đ
+                      - generic [ref=e927]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e928]:
+                    - img [ref=e929]
+                - generic [ref=e933] [cursor=pointer]:
+                  - img [ref=e936]
+                  - generic [ref=e940]:
+                    - generic [ref=e941]:
+                      - generic [ref=e942]:
+                        - heading "Bộ bé gái ngắn BST Búp bê nhảy múa Animo KN922060 (6-9M,Trắng phối xanh)" [level=3] [ref=e943]
+                        - paragraph [ref=e944]: Quần Áo Trẻ Em
+                      - generic [ref=e945]:
+                        - generic [ref=e946]:
+                          - img [ref=e947]
+                          - generic [ref=e949]: "5.0"
+                        - generic [ref=e950]: 974 đã bán
+                    - generic [ref=e951]:
+                      - generic [ref=e953]: 99.500đ
+                      - generic [ref=e955]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e956]:
+                    - img [ref=e957]
+                - generic [ref=e961] [cursor=pointer]:
+                  - img [ref=e964]
+                  - generic [ref=e968]:
+                    - generic [ref=e969]:
+                      - generic [ref=e970]:
+                        - heading "Bộ bé gái ngắn BST Búp bê nhảy múa Animo KN922060 (9-12M,Trắng phối xanh)" [level=3] [ref=e971]
+                        - paragraph [ref=e972]: Quần Áo Trẻ Em
+                      - generic [ref=e973]:
+                        - generic [ref=e974]:
+                          - img [ref=e975]
+                          - generic [ref=e977]: "5.0"
+                        - generic [ref=e978]: 948 đã bán
+                    - generic [ref=e979]:
+                      - generic [ref=e981]: 99.500đ
+                      - generic [ref=e983]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e984]:
+                    - img [ref=e985]
+                - generic [ref=e989] [cursor=pointer]:
+                  - img "Bộ bé trai ngắn Animo Easy HN0924026 (1-4Y,Kem phối cam)" [ref=e991]
+                  - generic [ref=e992]:
+                    - generic [ref=e993]:
+                      - generic [ref=e994]:
+                        - heading "Bộ bé trai ngắn Animo Easy HN0924026 (1-4Y,Kem phối cam)" [level=3] [ref=e995]
+                        - paragraph [ref=e996]: Quần Áo Trẻ Em
+                      - generic [ref=e997]:
+                        - generic [ref=e998]:
+                          - img [ref=e999]
+                          - generic [ref=e1001]: "5.0"
+                        - generic [ref=e1002]: 839 đã bán
+                    - generic [ref=e1003]:
+                      - generic [ref=e1004]:
+                        - generic [ref=e1005]: 129.000đ
+                        - generic [ref=e1006]: "-8%"
+                      - generic [ref=e1008]:
+                        - img
+                        - text: Giao nhanh
+                  - button [ref=e1009]:
+                    - img [ref=e1010]
+              - generic [ref=e553]:
+                - generic [ref=e554]:
+                  - generic [ref=e555]: Show
+                  - combobox [ref=e556]:
+                    - generic: "12"
+                    - img
+                  - generic [ref=e558]: Per Page
+                - generic [ref=e559]:
+                  - button [disabled]:
+                    - img
+                  - button "1" [ref=e560]
+                  - button "2" [ref=e561]
+                  - button "3" [ref=e562]
+                  - button "4" [ref=e563]
+                  - button "5" [ref=e564]
+                  - generic [ref=e565]: ...
+                  - button "9" [ref=e566]
+                  - button [ref=e567]:
+                    - img
+        - generic:
+          - generic:
+            - generic:
+              - generic [ref=e568]:
+                - generic:
+                  - heading "Product Management" [level=2]
+                - button "Close info panel" [ref=e570]:
+                  - img
+              - generic [ref=e572]:
+                - generic:
+                  - heading "Overview" [level=3]
+                  - paragraph: The Products page allows you to manage your product catalog. You can view all products in a table format with server-side functionality including sorting, filtering, pagination, and search capabilities. Use the "Add New" button to create new products.
+                  - generic:
+                    - heading "Learn more" [level=4]
+                    - list:
+                      - listitem:
+                        - link "Product Management Guide":
+                          - /url: "#"
+                          - generic [ref=e588] [cursor=pointer]: Product Management Guide
+                          - img
+                - generic:
+                  - heading "Adding Products" [level=3]
+                  - paragraph: To add a new product, click the "Add New" button in the page header. You will be taken to a form where you can enter product details including name, description, price, category, and upload product images.
+                  - generic:
+                    - heading "Learn more" [level=4]
+                    - list:
+                      - listitem:
+                        - link "Adding Products Documentation":
+                          - /url: "#"
+                          - generic [ref=e590] [cursor=pointer]: Adding Products Documentation
+                          - img
+                - generic:
+                  - heading "Editing Products" [level=3]
+                  - paragraph: You can edit existing products by clicking on a product row in the table. This will open the product edit form where you can modify any product information. Changes are saved automatically when you submit the form.
+                  - generic:
+                    - heading "Learn more" [level=4]
+                    - list:
+                      - listitem:
+                        - link "Editing Products Guide":
+                          - /url: "#"
+                          - generic [ref=e592] [cursor=pointer]: Editing Products Guide
+                          - img
+                - generic:
+                  - heading "Deleting Products" [level=3]
+                  - paragraph: Products can be deleted from the product listing table. Click the delete action for the product you want to remove. You will be asked to confirm the deletion before the product is permanently removed from your catalog.
+                  - generic:
+                    - heading "Learn more" [level=4]
+                    - list:
+                      - listitem:
+                        - link "Product Deletion Policy":
+                          - /url: "#"
+                          - generic [ref=e594] [cursor=pointer]: Product Deletion Policy
+                          - img
+                - generic:
+                  - heading "Table Features" [level=3]
+                  - paragraph: The product table includes several powerful features to help you manage large product catalogs efficiently. You can sort columns by clicking on column headers, filter products using the filter controls, navigate through pages using pagination, and quickly find products using the search functionality.
+                  - generic:
+                    - heading "Learn more" [level=4]
+                    - list:
+                      - listitem:
+                        - link "Table Features Documentation":
+                          - /url: "#"
+                          - generic [ref=e596] [cursor=pointer]: Table Features Documentation
+                          - img
+                      - listitem:
+                        - link "Sorting and Filtering Guide":
+                          - /url: "#"
+                          - generic [ref=e598] [cursor=pointer]: Sorting and Filtering Guide
+                          - img
+                - generic:
+                  - heading "Product Fields" [level=3]
+                  - paragraph: "Each product can have the following fields: Name (required), Description (optional text), Price (numeric value), Category (for organizing products), and Image Upload (for product photos). All fields can be edited when creating or updating a product."
+                  - generic:
+                    - heading "Learn more" [level=4]
+                    - list:
+                      - listitem:
+                        - link "Product Fields Specification":
+                          - /url: "#"
+                          - generic [ref=e600] [cursor=pointer]: Product Fields Specification
+                          - img
+  - generic [ref=e602]:
+    - img [ref=e604]
+    - button "Open Tanstack query devtools" [ref=e652] [cursor=pointer]:
+      - img [ref=e653]
+  - button "Open Next.js Dev Tools" [ref=e580] [cursor=pointer]:
+    - img [ref=e581]
+  - alert [ref=e701]

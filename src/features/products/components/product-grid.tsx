@@ -5,6 +5,7 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { parseAsInteger, parseAsString, parseAsBoolean, useQueryStates } from 'nuqs';
 import { productsQueryOptions } from '../api/queries';
 import { ProductCard } from './product-card';
+import { ProductListRow } from './product-list-row';
 import { ProductFilters } from './product-filters';
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,7 @@ import {
 } from '@/components/ui/select';
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from '@/components/ui/empty';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { ActiveFilterChips } from './active-filter-chips';
 
 export function ProductGrid() {
   const [params, setParams] = useQueryStates({
@@ -39,6 +41,8 @@ export function ProductGrid() {
   const [activeTab, setActiveTab] = useState<'all' | 'active' | 'non-active'>('all');
   const [searchValue, setSearchValue] = useState(params.name || '');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [filtersCollapsed, setFiltersCollapsed] = useState(false);
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const filters = {
     page: params.page,
@@ -76,8 +80,11 @@ export function ProductGrid() {
 
   return (
     <div className='flex gap-4'>
-      <div className='hidden lg:block'>
-        <ProductFilters />
+      <div className='hidden lg:block lg:self-start lg:sticky lg:top-4'>
+        <ProductFilters
+          collapsed={filtersCollapsed}
+          onToggleCollapse={() => setFiltersCollapsed(!filtersCollapsed)}
+        />
       </div>
 
       <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
@@ -120,6 +127,33 @@ export function ProductGrid() {
             />
           </div>
 
+          <div className='flex gap-1 rounded-lg border bg-muted p-1'>
+            <button
+              type='button'
+              onClick={() => setViewMode('grid')}
+              className={`rounded-md p-1.5 transition-colors ${
+                viewMode === 'grid'
+                  ? 'bg-background text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+              aria-label='Grid view'
+            >
+              <Icons.layoutGrid className='h-4 w-4' />
+            </button>
+            <button
+              type='button'
+              onClick={() => setViewMode('list')}
+              className={`rounded-md p-1.5 transition-colors ${
+                viewMode === 'list'
+                  ? 'bg-background text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+              aria-label='List view'
+            >
+              <Icons.list className='h-4 w-4' />
+            </button>
+          </div>
+
           <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
             <SheetTrigger asChild>
               <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs lg:hidden'>
@@ -139,6 +173,8 @@ export function ProductGrid() {
           </div>
         )}
 
+        <ActiveFilterChips />
+
         {!hasProducts && !isFetching && (
           <Empty className='py-12'>
             <EmptyHeader>
@@ -151,10 +187,18 @@ export function ProductGrid() {
           </Empty>
         )}
 
-        {hasProducts && (
+        {hasProducts && viewMode === 'grid' && (
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
             {data.products.map((product) => (
               <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+
+        {hasProducts && viewMode === 'list' && (
+          <div className='space-y-2'>
+            {data.products.map((product) => (
+              <ProductListRow key={product.id} product={product} />
             ))}
           </div>
         )}

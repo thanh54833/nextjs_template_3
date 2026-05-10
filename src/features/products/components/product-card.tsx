@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Badge } from '@/components/ui/badge';
 import type { Product } from '../api/types';
+import { ProductDetailSheet } from './product-detail-sheet';
 
 function formatPrice(price: number): string {
   return new Intl.NumberFormat('vi-VN').format(price) + 'đ';
@@ -32,10 +33,14 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [detailSheetOpen, setDetailSheetOpen] = useState(false);
 
   return (
     <>
-      <div className='group relative rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50'>
+      <div
+        className='group relative rounded-lg border bg-card p-3 transition-colors hover:bg-accent/50 cursor-pointer'
+        onClick={() => setDetailSheetOpen(true)}
+      >
         <div className='mb-2 flex items-center justify-between'>
           <div className='flex gap-1'>
             {product.is_have_discount && (
@@ -49,12 +54,19 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
               <button className='rounded p-1 opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100'>
                 <Icons.ellipsis className='h-4 w-4 text-muted-foreground' />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align='end'>
+              <DropdownMenuItem onSelect={(e) => {
+                e.preventDefault();
+                setDetailSheetOpen(true);
+              }}>
+                <Icons.eyeOff className='mr-2 h-4 w-4' />
+                View Details
+              </DropdownMenuItem>
               <DropdownMenuItem>
                 <Icons.edit className='mr-2 h-4 w-4' />
                 Edit
@@ -163,6 +175,12 @@ export function ProductCard({ product }: ProductCardProps) {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      <ProductDetailSheet
+        product={product}
+        open={detailSheetOpen}
+        onOpenChange={setDetailSheetOpen}
+      />
     </>
   );
 }
