@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './badge';
+import { Icons } from '@/components/icons';
 
 /**
  * Badge component for highlighting information and statuses.
@@ -60,4 +61,41 @@ export const Outline: Story = {
     variant: 'outline',
     children: 'Outline',
   },
+};
+
+/** Badge with an icon prefix, common in status indicators */
+export const WithIcon: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="default"><Icons.circleCheck className="size-3" />Published</Badge>
+      <Badge variant="secondary"><Icons.clock className="size-3" />Scheduled</Badge>
+      <Badge variant="outline"><Icons.edit className="size-3" />Draft</Badge>
+      <Badge variant="destructive"><Icons.circleX className="size-3" />Failed</Badge>
+    </div>
+  ),
+};
+
+/** Badges as post status labels in a social media context */
+export const PostStatuses: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="default">Live</Badge>
+      <Badge variant="secondary">Scheduled</Badge>
+      <Badge variant="outline">Draft</Badge>
+      <Badge variant="destructive">Error</Badge>
+    </div>
+  ),
+};
+
+/** Badge inside a card header, the most common layout context */
+export const InCardHeader: Story = {
+  render: () => (
+    <div className="flex items-center justify-between rounded-lg border p-4">
+      <div>
+        <p className="text-sm font-semibold">Instagram Post</p>
+        <p className="text-xs text-muted-foreground mt-0.5">Scheduled for 9:00 AM</p>
+      </div>
+      <Badge variant="secondary">Scheduled</Badge>
+    </div>
+  ),
 };

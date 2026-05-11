@@ -81,3 +81,23 @@ export const SimpleCard: Story = {
     children: <CardContent>Simple card content</CardContent>,
   },
 };
+
+/** CardTitle with semantic heading element for screen reader navigation */
+export const WithHeading: Story = {
+  args: {
+    children: (
+      <>
+        <CardHeader>
+          <CardTitle as="h3">Engagement Overview</CardTitle>
+          <CardDescription>Instagram performance for the past 7 days.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">
+            Pass <code>as="h2"</code> or <code>as="h3"</code> to make CardTitle a semantic heading.
+            Default is <code>div</code> for backwards compatibility.
+          </p>
+        </CardContent>
+      </>
+    ),
+  },
+};

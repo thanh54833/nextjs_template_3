@@ -3,6 +3,10 @@ import { useState } from 'react';
 import type { DateRange } from 'react-day-picker';
 
 import { Calendar } from './calendar';
+import { Popover, PopoverContent, PopoverTrigger } from './popover';
+import { Button } from './button';
+import { format } from 'date-fns';
+import { Icons } from '@/components/icons';
 
 /**
  * A calendar component for selecting dates and date ranges.
@@ -78,5 +82,26 @@ export const HiddenOutsideDays: Story = {
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date());
     return <Calendar mode='single' selected={date} onSelect={setDate} showOutsideDays={false} />;
+  },
+};
+
+export const WithPopover: Story = {
+  render: () => {
+    const [date, setDate] = useState<Date | undefined>(new Date());
+    return (
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="outline" className="w-full justify-between font-normal">
+            <span className={date ? 'text-foreground' : 'text-muted-foreground'}>
+              {date ? format(date, 'PPP') : 'Pick a date'}
+            </span>
+            <Icons.calendar className="size-4 opacity-50" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent align='start' className='w-auto p-0'>
+          <Calendar mode='single' selected={date} onSelect={setDate} />
+        </PopoverContent>
+      </Popover>
+    );
   },
 };

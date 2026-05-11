@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert, AlertTitle, AlertDescription } from './alert';
+import { Icons } from '@/components/icons';
 
 /**
  * Alert component for displaying important messages and notifications.
@@ -49,18 +50,62 @@ export const Destructive: Story = {
   },
 };
 
-/** Alert with custom icon element */
+/** Alert with icon for informational warnings */
 export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
-        </svg>
+        <Icons.alertCircle aria-hidden />
         <AlertTitle>Warning</AlertTitle>
         <AlertDescription>This action could have unintended consequences.</AlertDescription>
+      </>
+    ),
+  },
+};
+
+/** Success state — confirms a completed action */
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    children: (
+      <>
+        <Icons.circleCheck aria-hidden />
+        <AlertTitle>Post published</AlertTitle>
+        <AlertDescription>
+          Your Instagram post went live successfully. Reach is updating now.
+        </AlertDescription>
+      </>
+    ),
+  },
+};
+
+/** Warning state — caution before a risky or time-sensitive action */
+export const Warning: Story = {
+  args: {
+    variant: 'warning',
+    children: (
+      <>
+        <Icons.warning aria-hidden />
+        <AlertTitle>Scheduled in less than 15 minutes</AlertTitle>
+        <AlertDescription>
+          This post is scheduled for 9:45 AM. Changes made now may not propagate in time.
+        </AlertDescription>
+      </>
+    ),
+  },
+};
+
+/** Info state — non-critical context or system notice */
+export const Info: Story = {
+  args: {
+    variant: 'info',
+    children: (
+      <>
+        <Icons.info aria-hidden />
+        <AlertTitle>Twitter API rate limit at 80%</AlertTitle>
+        <AlertDescription>
+          Scheduled posts will continue normally. Analytics refresh will slow after 5 PM.
+        </AlertDescription>
       </>
     ),
   },

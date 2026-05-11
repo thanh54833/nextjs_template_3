@@ -85,6 +85,7 @@ export const NotificationCard: FC<NotificationCardProps> = ({
         isUnread ? 'bg-muted' : 'bg-muted/40',
         className
       )}
+      aria-label={isUnread ? `${title} — unread` : title}
     >
       <div className='px-4 py-3.5'>
         <div className='flex items-start justify-between gap-3'>
@@ -100,7 +101,12 @@ export const NotificationCard: FC<NotificationCardProps> = ({
               >
                 {title}
               </h3>
-              {isUnread && <div className='h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-500' />}
+              {isUnread && (
+                <>
+                  <div className='h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-500' aria-hidden='true' />
+                  <span className='sr-only'>Unread</span>
+                </>
+              )}
             </div>
 
             {/* Description */}
@@ -121,7 +127,8 @@ export const NotificationCard: FC<NotificationCardProps> = ({
               onClick={() => onMarkAsRead(id)}
               className={cn(
                 'rounded-lg p-1.5 transition-colors',
-                'text-muted-foreground hover:bg-accent hover:text-foreground'
+                'text-muted-foreground hover:bg-accent hover:text-foreground',
+                'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50'
               )}
               aria-label='Mark as read'
             >
@@ -153,7 +160,8 @@ export const NotificationCard: FC<NotificationCardProps> = ({
                           ? 'bg-destructive/10 text-destructive hover:bg-destructive/20'
                           : 'bg-accent text-muted-foreground hover:bg-accent hover:text-foreground',
                       showLoading && 'opacity-50',
-                      isExecuted && 'cursor-not-allowed opacity-60'
+                      isExecuted && 'cursor-not-allowed opacity-60',
+                      'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50'
                     )}
                   >
                     {showLoading ? (

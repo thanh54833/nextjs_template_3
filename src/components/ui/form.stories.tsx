@@ -1,188 +1,160 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import * as React from 'react';
-import { useForm } from 'react-hook-form';
+import { userEvent, within } from '@storybook/test';
 import { z } from 'zod';
 
-import { Button } from './button';
-import { Input } from './input';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from './form';
+import { useAppForm } from './tanstack-form';
 
 /**
- * React Hook Form integration with shadcn/ui form components.
+ * TanStack Form integration — the project-standard form system.
+ * Use useAppForm + form.AppField for all forms in this codebase.
  *
- * @see https://react-hook-form.com/ - React Hook Form official documentation
- * @see https://storybook.js.org/docs/writing-stories - Storybook documentation
+ * @see docs/forms.md
  */
 const meta = {
-  component: Form,
+  title: 'UI/Form',
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
     docs: {
       description: {
         component:
-          'React Hook Form integration with shadcn/ui components. Provides form state management, validation, and accessible form fields.',
+          'Project-standard form system using TanStack Form with Zod validation. Use useAppForm for all forms — not react-hook-form directly.',
       },
     },
   },
-} as Meta<typeof Form>;
+} as Meta;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const formSchema = z.object({
-  username: z.string().min(2, 'Username must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email'),
-  bio: z.string().max(160, 'Bio must be less than 160 characters').optional(),
+// ---------------------------------------------------------------------------
+// Story 1: Default — simple login form
+// ---------------------------------------------------------------------------
+
+const loginSchema = z.object({
+  email: z.email('Enter a valid email'),
+  password: z.string().min(8, 'Password must be at least 8 characters'),
 });
+type LoginValues = z.infer<typeof loginSchema>;
 
-type FormValues = z.infer<typeof formSchema>;
-
-function FormExample() {
-  const form = useForm<FormValues>({
-    defaultValues: {
-      username: '',
-      email: '',
-      bio: '',
+function LoginFormExample() {
+  const form = useAppForm({
+    defaultValues: { email: '', password: '' } as LoginValues,
+    validators: { onChange: loginSchema },
+    onSubmit: async ({ value }) => {
+      await new Promise((r) => setTimeout(r, 800));
+      console.info('Submitted:', value);
     },
   });
-
-  function onSubmit(data: FormValues) {
-    console.info('Form submitted:', data);
-  }
-
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-[400px]">
-        <FormField
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="johndoe" {...field} />
-              </FormControl>
-              <FormDescription>Your public display name.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="john@example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          name="bio"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Bio</FormLabel>
-              <FormControl>
-                <Input placeholder="Tell us about yourself..." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <div className="flex gap-4">
-          <Button type="submit">Submit</Button>
-          <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
-          </Button>
-        </div>
-      </form>
-    </Form>
+    <div className="max-w-sm">
+      <form.Form>
+        <form.AppField name="email">
+          {(field) => <field.TextField label="Email" type="email" placeholder="you@socialdash.io" />}
+        </form.AppField>
+        <form.AppField name="password">
+          {(field) => <field.TextField label="Password" type="password" placeholder="Min 8 characters" />}
+        </form.AppField>
+        <form.SubmitButton>Sign in</form.SubmitButton>
+      </form.Form>
+    </div>
   );
 }
 
-/** Basic form with username, email, and bio fields. */
+/** Basic form with Zod validation — submit with empty fields to see errors. */
 export const Default: Story = {
-  render: () => <FormExample />,
+  render: () => <LoginFormExample />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const submitBtn = canvas.getByRole('button', { name: /sign in/i });
+    await userEvent.click(submitBtn);
+  },
 };
 
-/** Form demonstrating validation on submission. */
-export const WithValidation: Story = {
-  render: () => <FormExample />,
-};
+// ---------------------------------------------------------------------------
+// Story 2: WithPrefilledData — profile edit form pre-populated with values
+// ---------------------------------------------------------------------------
 
-/** Form with pre-filled data for edit scenarios. */
+const profileSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.email('Enter a valid email'),
+  bio: z.string().max(160, 'Bio max 160 characters').optional(),
+});
+type ProfileValues = z.infer<typeof profileSchema>;
+
+function ProfileFormExample() {
+  const form = useAppForm({
+    defaultValues: {
+      name: 'Alex Johnson',
+      email: 'alex@socialdash.io',
+      bio: 'Social media manager, 5 years experience with B2C brands.',
+    } as ProfileValues,
+    validators: { onChange: profileSchema },
+    onSubmit: async ({ value }) => {
+      await new Promise((r) => setTimeout(r, 800));
+      console.info('Saved:', value);
+    },
+  });
+  return (
+    <div className="max-w-sm">
+      <form.Form>
+        <form.AppField name="name">
+          {(field) => <field.TextField label="Display name" />}
+        </form.AppField>
+        <form.AppField name="email">
+          {(field) => <field.TextField label="Email" type="email" />}
+        </form.AppField>
+        <form.AppField name="bio">
+          {(field) => <field.TextField label="Bio" description="Max 160 characters" />}
+        </form.AppField>
+        <form.SubmitButton>Save changes</form.SubmitButton>
+      </form.Form>
+    </div>
+  );
+}
+
+/** Profile edit form pre-populated with data. */
 export const WithPrefilledData: Story = {
-  render: () => {
-    const form = useForm<FormValues>({
-      defaultValues: {
-        username: 'johndoe',
-        email: 'john@example.com',
-        bio: 'Full-stack developer from San Francisco.',
-      },
-    });
+  render: () => <ProfileFormExample />,
+};
 
-    function onSubmit(data: FormValues) {
-      console.info('Form submitted:', data);
-    }
+// ---------------------------------------------------------------------------
+// Story 3: ValidationErrors — form pre-seeded with invalid values
+// ---------------------------------------------------------------------------
 
-    return (
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 w-[400px]">
-          <FormField
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+function ValidationExample() {
+  const form = useAppForm({
+    defaultValues: { email: 'not-an-email', password: '123' } as LoginValues,
+    validators: { onChange: loginSchema },
+    onSubmit: async ({ value }) => {
+      console.info('Submitted:', value);
+    },
+  });
+  return (
+    <div className="max-w-sm space-y-4">
+      <form.Form>
+        <form.AppField name="email">
+          {(field) => <field.TextField label="Email" type="email" />}
+        </form.AppField>
+        <form.AppField name="password">
+          {(field) => <field.TextField label="Password" type="password" />}
+        </form.AppField>
+        <form.SubmitButton>Submit</form.SubmitButton>
+      </form.Form>
+      <p className="text-xs text-muted-foreground px-2">
+        Form pre-seeded with invalid values. Type in either field to trigger validation.
+      </p>
+    </div>
+  );
+}
 
-          <FormField
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input type="email" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            name="bio"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Bio</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button type="submit">Submit</Button>
-        </form>
-      </Form>
-    );
+/** Form with invalid pre-seeded values. Type in a field to trigger inline validation errors. */
+export const ValidationErrors: Story = {
+  render: () => <ValidationExample />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const emailInput = canvas.getByLabelText(/email/i);
+    await userEvent.clear(emailInput);
+    await userEvent.type(emailInput, 'still-invalid');
   },
 };

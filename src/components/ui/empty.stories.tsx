@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from './empty';
+import { Button } from './button';
+import { Icons } from '@/components/icons';
 
 /**
  * Empty state component for displaying when no content is available.
@@ -44,9 +46,7 @@ export const WithIcon: Story = {
     children: (
       <>
         <EmptyMedia variant="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
+          <Icons.messageSquare aria-hidden />
         </EmptyMedia>
         <EmptyHeader>
           <EmptyTitle>No conversations</EmptyTitle>
@@ -57,17 +57,48 @@ export const WithIcon: Story = {
   },
 };
 
-/** Empty state with action link */
+/** Empty state with a primary action button */
 export const WithAction: Story = {
   args: {
     children: (
       <>
         <EmptyHeader>
-          <EmptyTitle>No data</EmptyTitle>
+          <EmptyTitle>No posts scheduled</EmptyTitle>
           <EmptyDescription>
-            <a href="#">Add your first item</a> to get started.
+            You have no posts scheduled for this week. Start planning your content.
           </EmptyDescription>
         </EmptyHeader>
+        <EmptyContent>
+          <Button>
+            <Icons.add />
+            Schedule a post
+          </Button>
+        </EmptyContent>
+      </>
+    ),
+  },
+};
+
+/** Scheduled posts empty state — the most common empty state in this product */
+export const ScheduledPostsEmpty: Story = {
+  args: {
+    children: (
+      <>
+        <EmptyMedia variant="icon">
+          <Icons.calendar aria-hidden />
+        </EmptyMedia>
+        <EmptyHeader>
+          <EmptyTitle>No posts this week</EmptyTitle>
+          <EmptyDescription>
+            Your content calendar is clear. Schedule posts to start building your pipeline.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <Button>
+            <Icons.add />
+            Schedule a post
+          </Button>
+        </EmptyContent>
       </>
     ),
   },

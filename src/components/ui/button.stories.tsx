@@ -108,36 +108,40 @@ export const Large: Story = {
   },
 };
 
-/** Icon-only button with default icon size. */
+/** Icon-only button, default size — always include aria-label */
 export const Icon: Story = {
-  args: {
-    size: 'icon',
-    children: '🔔',
-  },
+  render: () => (
+    <Button size="icon" aria-label="Notifications">
+      <Icons.notification />
+    </Button>
+  ),
 };
 
-/** Icon-only button with extra small size. */
+/** Icon-only button, extra-small — used in inline table actions */
 export const IconXSmall: Story = {
-  args: {
-    size: 'icon-xs',
-    children: '×',
-  },
+  render: () => (
+    <Button size="icon-xs" variant="ghost" aria-label="Dismiss">
+      <Icons.close />
+    </Button>
+  ),
 };
 
-/** Icon-only button with small size. */
+/** Icon-only button, small size */
 export const IconSmall: Story = {
-  args: {
-    size: 'icon-sm',
-    children: '★',
-  },
+  render: () => (
+    <Button size="icon-sm" variant="outline" aria-label="Edit">
+      <Icons.edit />
+    </Button>
+  ),
 };
 
-/** Icon-only button with large size. */
+/** Icon-only button, large size */
 export const IconLarge: Story = {
-  args: {
-    size: 'icon-lg',
-    children: '👍',
-  },
+  render: () => (
+    <Button size="icon-lg" aria-label="Settings">
+      <Icons.settings />
+    </Button>
+  ),
 };
 
 /** Disabled button that cannot be clicked. */
@@ -148,22 +152,41 @@ export const Disabled: Story = {
   },
 };
 
-/** Button status states: loading, success, error with left icon. */
-export const BtnStatus: Story = {
+/** Button in loading state with spinner icon. */
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+    children: 'Loading',
+  },
+};
+
+/** Button showing success state with check icon. */
+export const Success: Story = {
   render: () => (
-    <div className='flex gap-4'>
-      <Button isLoading>
-        <Icons.spinner className='mr-2 h-4 w-4 animate-spin' />
-        Loading
-      </Button>
-      <Button variant='default'>
-        <Icons.check className='mr-2 h-4 w-4' />
-        Success
-      </Button>
-      <Button variant='destructive'>
-        <Icons.close className='mr-2 h-4 w-4' />
-        Error
-      </Button>
+    <Button variant='default'>
+      <Icons.check />
+      Success
+    </Button>
+  ),
+};
+
+/** Button showing error state with close icon. */
+export const Error: Story = {
+  render: () => (
+    <Button variant='destructive'>
+      <Icons.close />
+      Error
+    </Button>
+  ),
+};
+
+/** Button with leading icon, the most common pattern in this product */
+export const WithLeadingIcon: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-2">
+      <Button><Icons.add />New Post</Button>
+      <Button variant="outline"><Icons.search />Search</Button>
+      <Button variant="destructive"><Icons.trash />Delete</Button>
     </div>
   ),
 };

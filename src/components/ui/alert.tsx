@@ -10,7 +10,13 @@ const alertVariants = cva(
       variant: {
         default: 'bg-card text-card-foreground',
         destructive:
-          'text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90'
+          'text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90',
+        success:
+          'bg-card border-[oklch(0.75_0.12_175)] text-[oklch(0.35_0.1_175)] [&>svg]:text-[oklch(0.45_0.15_175)] *:data-[slot=alert-description]:text-[oklch(0.45_0.1_175)]',
+        warning:
+          'bg-card border-[oklch(0.82_0.12_85)] text-[oklch(0.40_0.1_85)] [&>svg]:text-[oklch(0.55_0.15_85)] *:data-[slot=alert-description]:text-[oklch(0.50_0.1_85)]',
+        info:
+          'bg-card border-[oklch(0.70_0.09_210)] text-[oklch(0.35_0.08_210)] [&>svg]:text-[oklch(0.50_0.12_210)] *:data-[slot=alert-description]:text-[oklch(0.45_0.08_210)]'
       }
     },
     defaultVariants: {
@@ -34,9 +40,13 @@ function Alert({
   );
 }
 
-function AlertTitle({ className, ...props }: React.ComponentProps<'div'>) {
+function AlertTitle({
+  className,
+  as: Comp = 'div',
+  ...props
+}: React.ComponentProps<'div'> & { as?: React.ElementType }) {
   return (
-    <div
+    <Comp
       data-slot='alert-title'
       className={cn('col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight', className)}
       {...props}

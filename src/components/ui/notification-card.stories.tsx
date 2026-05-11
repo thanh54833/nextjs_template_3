@@ -1,10 +1,8 @@
 import * as React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './button';
 import {
   NotificationCard,
-  type NotificationAction,
   type NotificationCardProps,
 } from './notification-card';
 
@@ -102,6 +100,64 @@ export const WithDangerAction: Story = {
       { id: 'secure', label: 'Secure Account', type: 'api_call', style: 'danger' },
       { id: 'ignore', label: 'It Was Me', type: 'modal', style: 'default' },
     ],
+  },
+};
+
+/** Security alert with client-side confirmation before the destructive action fires */
+export const WithDangerActionConfirm: Story = {
+  render: () => {
+    const [confirmed, setConfirmed] = React.useState(false);
+    const [pending, setPending] = React.useState<string | null>(null);
+
+    const handleAction = (_notificationId: string, actionId: string) => {
+      if (actionId === 'secure' && !confirmed) {
+        setPending(actionId);
+        return;
+      }
+      console.log('Action fired:', actionId);
+      setConfirmed(true);
+      setPending(null);
+    };
+
+    return (
+      <div className="space-y-3 max-w-sm">
+        <NotificationCard
+          id="security-1"
+          title="Account Security Alert"
+          body="We detected a sign-in from a new device in London, UK. If this wasn't you, please secure your account immediately."
+          status="unread"
+          createdAt={new Date(Date.now() - 1000 * 60 * 2).toISOString()}
+          actions={[
+            { id: 'secure', label: 'Secure Account', type: 'api_call', style: 'danger' },
+            { id: 'ignore', label: 'It Was Me', type: 'modal', style: 'default' },
+          ]}
+          onAction={handleAction}
+        />
+        {pending && !confirmed && (
+          <div className="rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm">
+            <p className="font-medium text-destructive mb-2">Confirm: Secure your account?</p>
+            <p className="text-muted-foreground text-xs mb-3">This will log out all other sessions and send a security email.</p>
+            <div className="flex gap-2">
+              <button
+                className="rounded-md bg-destructive px-3 py-1.5 text-xs font-medium text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                onClick={() => { setConfirmed(true); setPending(null); }}
+              >
+                Yes, secure it
+              </button>
+              <button
+                className="rounded-md border px-3 py-1.5 text-xs font-medium focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                onClick={() => setPending(null)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
+        {confirmed && (
+          <p className="text-xs text-muted-foreground px-1">Account secured. All other sessions logged out.</p>
+        )}
+      </div>
+    );
   },
 };
 

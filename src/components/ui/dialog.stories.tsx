@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { userEvent, within } from '@storybook/test';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { Input } from './input';
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -38,6 +39,11 @@ type Story = StoryObj<typeof meta>;
 
 /** Default dialog with title, description, and action buttons */
 export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole('button', { name: /open dialog/i });
+    await userEvent.click(trigger);
+  },
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -64,27 +70,35 @@ export const Default: Story = {
   }
 };
 
-/** Dialog with trigger button that manages open state */
-export const WithTrigger: Story = {
+/** Dialog containing a form, the most common real-world pattern */
+export const FormDialog: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button>Open Dialog</Button>
+          <Button variant="outline">Edit Profile</Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Are you sure?</DialogTitle>
+            <DialogTitle>Edit Profile</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. Please confirm to proceed.
+              Update your display name and email. Changes take effect immediately.
             </DialogDescription>
           </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid gap-1.5">
+              <label htmlFor="name" className="text-sm font-medium">Name</label>
+              <Input id="name" defaultValue="Alex Johnson" />
+            </div>
+            <div className="grid gap-1.5">
+              <label htmlFor="email" className="text-sm font-medium">Email</label>
+              <Input id="email" type="email" defaultValue="alex@socialdash.io" />
+            </div>
+          </div>
           <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
-            </DialogClose>
-            <Button onClick={() => setOpen(false)}>Confirm</Button>
+            <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
+            <Button onClick={() => setOpen(false)}>Save changes</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -94,6 +108,11 @@ export const WithTrigger: Story = {
 
 /** Alert-style dialog for destructive actions with red accent */
 export const AlertDialog: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole('button', { name: /delete account/i });
+    await userEvent.click(trigger);
+  },
   render: () => {
     const [open, setOpen] = useState(false);
     return (
@@ -103,9 +122,9 @@ export const AlertDialog: Story = {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Destructive Action</DialogTitle>
+            <DialogTitle>Delete report?</DialogTitle>
             <DialogDescription className="text-destructive">
-              This will permanently delete your account and remove all associated data.
+              This will permanently delete the Q3 Engagement Report and all its data. This cannot be undone.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="gap-2 sm:gap-0">

@@ -4,7 +4,14 @@
       "Bash(xargs cat)",
       "Skill(impeccable)",
       "Bash(npx tsc *)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(sed -n '65,75p' /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/src/components/ui/form.stories.tsx)",
+      "Bash(sed -n '150,165p' /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/src/components/ui/form.stories.tsx)",
+      "Bash(echo \"EXIT_CODE: $?\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(npx @playwright/mcp --version)",
+      "Bash(claude mcp *)"
     ]
   }
 }
