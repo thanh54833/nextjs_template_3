@@ -18,3 +18,4 @@ This is a Next.js 16 + shadcn/ui admin dashboard starter kit.
 - **Forms** — use `useAppForm` + `useFormFields<T>()` from `@/components/ui/tanstack-form`
 - **Page headers** — use `PageContainer` props (`pageTitle`, `pageDescription`, `pageHeaderAction`), never import `<Heading>` manually
 - **Formatting** — single quotes, JSX single quotes, no trailing comma, 2-space indent
+    
