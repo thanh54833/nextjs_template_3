@@ -624,30 +624,12 @@ export function ProductDetailSheet({
             </div>
           </div>
 
-          {/* Scrollable body */}
+{/* Scrollable body */}
           <div className='flex-1 overflow-y-auto'>
             <div className='space-y-0'>
-
-              {/* ── 1. Media ─────────────────────────────────────────────── */}
-              <div className='px-5 pt-5 pb-4'>
-                <div className='flex h-44 gap-2'>
-                  {/* Cover image */}
-                  <div
-                    className={`relative flex-[3] overflow-hidden rounded-xl bg-muted ${
-                      isEditing ? 'cursor-pointer' : coverUrl ? 'cursor-zoom-in' : ''
-                    }`}
-                    onClick={() => {
-                      if (isEditing) coverInputRef.current?.click();
-                      else if (coverUrl) setPreviewImage(coverUrl);
-                    }}
-                  >
-                    {coverUrl ? (
-                      <img src={coverUrl} alt={dp.ecom_product_name} className='h-full w-full object-cover' />
-                    ) : (
-                      <div className='flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground/40'>
-                        <Icons.image className='h-8 w-8' />
-                        {isEditing && <span className='text-xs'>Tải ảnh bìa</span>}
-                      </div>
+              {/* Content cleared */}
+            </div>
+          </div>
                     )}
                     <div className={`absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/40 transition-opacity ${coverUrl || isEditing ? 'opacity-0 hover:opacity-100' : 'opacity-0'}`}>
                       {isEditing

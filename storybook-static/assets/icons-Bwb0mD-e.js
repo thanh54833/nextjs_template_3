@@ -1,0 +1,491 @@
+import{r as o}from"./index-Br2IOmUs.js";/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */var x={outline:{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:2,strokeLinecap:"round",strokeLinejoin:"round"},filled:{xmlns:"http://www.w3.org/2000/svg",width:24,height:24,viewBox:"0 0 24 24",fill:"currentColor",stroke:"none"}};/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const e=(_,u,I,N)=>{const n=o.forwardRef(({color:$="currentColor",size:s=24,stroke:C=2,title:c,className:m,children:a,...f},w)=>o.createElement("svg",{ref:w,...x[_],width:s,height:s,className:["tabler-icon",`tabler-icon-${u}`,m].join(" "),strokeWidth:C,stroke:$,...f},[c&&o.createElement("title",{key:"svg-title"},c),...N.map(([L,b])=>o.createElement(L,b)),...Array.isArray(a)?a:[a]]));return n.displayName=`${I}`,n};/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const S=[["path",{d:"M12 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-0"}],["path",{d:"M4 6l8 0",key:"svg-1"}],["path",{d:"M16 6l4 0",key:"svg-2"}],["path",{d:"M6 12a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-3"}],["path",{d:"M4 12l2 0",key:"svg-4"}],["path",{d:"M10 12l10 0",key:"svg-5"}],["path",{d:"M15 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0",key:"svg-6"}],["path",{d:"M4 18l11 0",key:"svg-7"}],["path",{d:"M19 18l1 0",key:"svg-8"}]],T=e("outline","adjustments-horizontal","AdjustmentsHorizontal",S);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const D=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0",key:"svg-0"}],["path",{d:"M12 8v4",key:"svg-1"}],["path",{d:"M12 16h.01",key:"svg-2"}]],U=e("outline","alert-circle","AlertCircle",D);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const P=[["path",{d:"M12 9v4",key:"svg-0"}],["path",{d:"M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0",key:"svg-1"}],["path",{d:"M12 16h.01",key:"svg-2"}]],l=e("outline","alert-triangle","AlertTriangle",P);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const R=[["path",{d:"M5 12l14 0",key:"svg-0"}],["path",{d:"M13 18l6 -6",key:"svg-1"}],["path",{d:"M13 6l6 6",key:"svg-2"}]],B=e("outline","arrow-right","ArrowRight",R);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const E=[["path",{d:"M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6",key:"svg-0"}],["path",{d:"M9 17v1a3 3 0 0 0 6 0v-1",key:"svg-1"}]],F=e("outline","bell","Bell",E);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const z=[["path",{d:"M7 5h6a3.5 3.5 0 0 1 0 7h-6l0 -7",key:"svg-0"}],["path",{d:"M13 12h1a3.5 3.5 0 0 1 0 7h-7v-7",key:"svg-1"}]],A=e("outline","bold","Bold",z);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const X=[["path",{d:"M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5",key:"svg-0"}],["path",{d:"M12 12l8 -4.5",key:"svg-1"}],["path",{d:"M12 12l0 9",key:"svg-2"}],["path",{d:"M12 12l-8 -4.5",key:"svg-3"}]],V=e("outline","box","Box",X);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const j=[["path",{d:"M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5",key:"svg-0"}]],G=e("outline","brand-github","BrandGithub",j);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const H=[["path",{d:"M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013l0 .001",key:"svg-0"}]],O=e("outline","brand-twitter","BrandTwitter",H);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const W=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}],["path",{d:"M12 3l0 18",key:"svg-1"}],["path",{d:"M12 9l4.65 -4.65",key:"svg-2"}],["path",{d:"M12 14.3l7.37 -7.37",key:"svg-3"}],["path",{d:"M12 19.6l8.85 -8.85",key:"svg-4"}]],Z=e("outline","brightness","Brightness",W);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const q=[["path",{d:"M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12",key:"svg-0"}],["path",{d:"M16 3v4",key:"svg-1"}],["path",{d:"M8 3v4",key:"svg-2"}],["path",{d:"M4 11h16",key:"svg-3"}],["path",{d:"M11 15h1",key:"svg-4"}],["path",{d:"M12 15v3",key:"svg-5"}]],K=e("outline","calendar","Calendar",q);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const J=[["path",{d:"M5 12l5 5l10 -10",key:"svg-0"}]],Q=e("outline","check","Check",J);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Y=[["path",{d:"M7 12l5 5l10 -10",key:"svg-0"}],["path",{d:"M2 12l5 5m5 -5l5 -5",key:"svg-1"}]],e1=e("outline","checks","Checks",Y);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const o1=[["path",{d:"M6 9l6 6l6 -6",key:"svg-0"}]],a1=e("outline","chevron-down","ChevronDown",o1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const t1=[["path",{d:"M15 6l-6 6l6 6",key:"svg-0"}]],n1=e("outline","chevron-left","ChevronLeft",t1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const s1=[["path",{d:"M9 6l6 6l-6 6",key:"svg-0"}]],c1=e("outline","chevron-right","ChevronRight",s1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const l1=[["path",{d:"M6 15l6 -6l6 6",key:"svg-0"}]],h1=e("outline","chevron-up","ChevronUp",l1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d1=[["path",{d:"M7 7l5 5l5 -5",key:"svg-0"}],["path",{d:"M7 13l5 5l5 -5",key:"svg-1"}]],v1=e("outline","chevrons-down","ChevronsDown",d1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const i1=[["path",{d:"M11 7l-5 5l5 5",key:"svg-0"}],["path",{d:"M17 7l-5 5l5 5",key:"svg-1"}]],p1=e("outline","chevrons-left","ChevronsLeft",i1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const g1=[["path",{d:"M7 7l5 5l-5 5",key:"svg-0"}],["path",{d:"M13 7l5 5l-5 5",key:"svg-1"}]],k1=e("outline","chevrons-right","ChevronsRight",g1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y1=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}],["path",{d:"M9 12l2 2l4 -4",key:"svg-1"}]],h=e("outline","circle-check","CircleCheck",y1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const M1=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0",key:"svg-0"}],["path",{d:"M9 12h6",key:"svg-1"}],["path",{d:"M12 9v6",key:"svg-2"}]],r1=e("outline","circle-plus","CirclePlus",M1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const _1=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}],["path",{d:"M10 10l4 4m0 -4l-4 4",key:"svg-1"}]],t=e("outline","circle-x","CircleX",_1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const u1=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}]],I1=e("outline","circle","Circle",u1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const N1=[["path",{d:"M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2",key:"svg-0"}],["path",{d:"M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2",key:"svg-1"}],["path",{d:"M9 12h6",key:"svg-2"}],["path",{d:"M9 16h6",key:"svg-3"}]],$1=e("outline","clipboard-text","ClipboardText",N1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const C1=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0",key:"svg-0"}],["path",{d:"M12 7v5l3 3",key:"svg-1"}]],m1=e("outline","clock","Clock",C1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const f1=[["path",{d:"M7 8l-4 4l4 4",key:"svg-0"}],["path",{d:"M17 8l4 4l-4 4",key:"svg-1"}],["path",{d:"M14 4l-4 16",key:"svg-2"}]],w1=e("outline","code","Code",f1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const L1=[["path",{d:"M7 9a2 2 0 1 1 2 -2v10a2 2 0 1 1 -2 -2h10a2 2 0 1 1 -2 2v-10a2 2 0 1 1 2 2h-10",key:"svg-0"}]],b1=e("outline","command","Command",L1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const x1=[["path",{d:"M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8",key:"svg-0"}],["path",{d:"M3 10l18 0",key:"svg-1"}],["path",{d:"M7 15l.01 0",key:"svg-2"}],["path",{d:"M11 15l2 0",key:"svg-3"}]],d=e("outline","credit-card","CreditCard",x1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const S1=[["path",{d:"M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4l4 -6",key:"svg-0"}]],T1=e("outline","crown","Crown",S1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const D1=[["path",{d:"M3 19l18 0",key:"svg-0"}],["path",{d:"M5 7a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -8",key:"svg-1"}]],U1=e("outline","device-laptop","DeviceLaptop",D1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const P1=[["path",{d:"M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-0"}],["path",{d:"M11 19a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-1"}],["path",{d:"M11 5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-2"}]],R1=e("outline","dots-vertical","DotsVertical",P1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const B1=[["path",{d:"M4 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-0"}],["path",{d:"M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-1"}],["path",{d:"M18 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-2"}]],v=e("outline","dots","Dots",B1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const E1=[["path",{d:"M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1",key:"svg-0"}],["path",{d:"M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415",key:"svg-1"}],["path",{d:"M16 5l3 3",key:"svg-2"}]],F1=e("outline","edit","Edit",E1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const z1=[["path",{d:"M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6",key:"svg-0"}],["path",{d:"M11 13l9 -9",key:"svg-1"}],["path",{d:"M15 4h5v5",key:"svg-2"}]],A1=e("outline","external-link","ExternalLink",z1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const X1=[["path",{d:"M10.585 10.587a2 2 0 0 0 2.829 2.828",key:"svg-0"}],["path",{d:"M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87",key:"svg-1"}],["path",{d:"M3 3l18 18",key:"svg-2"}]],V1=e("outline","eye-off","EyeOff",X1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const j1=[["path",{d:"M14 3v4a1 1 0 0 0 1 1h4",key:"svg-0"}],["path",{d:"M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2",key:"svg-1"}],["path",{d:"M9 9l1 0",key:"svg-2"}],["path",{d:"M9 13l6 0",key:"svg-3"}],["path",{d:"M9 17l6 0",key:"svg-4"}]],G1=e("outline","file-text","FileText",j1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const H1=[["path",{d:"M14 3v4a1 1 0 0 0 1 1h4",key:"svg-0"}],["path",{d:"M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4",key:"svg-1"}],["path",{d:"M5 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1",key:"svg-2"}],["path",{d:"M20 16.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0",key:"svg-3"}],["path",{d:"M12.5 15a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1 -3 0v-3a1.5 1.5 0 0 1 1.5 -1.5",key:"svg-4"}]],O1=e("outline","file-type-doc","FileTypeDoc",H1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const W1=[["path",{d:"M14 3v4a1 1 0 0 0 1 1h4",key:"svg-0"}],["path",{d:"M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4",key:"svg-1"}],["path",{d:"M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6",key:"svg-2"}],["path",{d:"M17 18h2",key:"svg-3"}],["path",{d:"M20 15h-3v6",key:"svg-4"}],["path",{d:"M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1",key:"svg-5"}]],Z1=e("outline","file-type-pdf","FileTypePdf",W1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const q1=[["path",{d:"M14 3v4a1 1 0 0 0 1 1h4",key:"svg-0"}],["path",{d:"M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4",key:"svg-1"}],["path",{d:"M4 15l4 6",key:"svg-2"}],["path",{d:"M4 21l4 -6",key:"svg-3"}],["path",{d:"M17 20.25c0 .414 .336 .75 .75 .75h1.25a1 1 0 0 0 1 -1v-1a1 1 0 0 0 -1 -1h-1a1 1 0 0 1 -1 -1v-1a1 1 0 0 1 1 -1h1.25a.75 .75 0 0 1 .75 .75",key:"svg-4"}],["path",{d:"M11 15v6h3",key:"svg-5"}]],K1=e("outline","file-type-xls","FileTypeXls",q1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const J1=[["path",{d:"M6 20.735a2 2 0 0 1 -1 -1.735v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-1",key:"svg-0"}],["path",{d:"M11 17a2 2 0 0 1 2 2v2a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-2a2 2 0 0 1 2 -2",key:"svg-1"}],["path",{d:"M11 5l-1 0",key:"svg-2"}],["path",{d:"M13 7l-1 0",key:"svg-3"}],["path",{d:"M11 9l-1 0",key:"svg-4"}],["path",{d:"M13 11l-1 0",key:"svg-5"}],["path",{d:"M11 13l-1 0",key:"svg-6"}],["path",{d:"M13 15l-1 0",key:"svg-7"}]],Q1=e("outline","file-zip","FileZip",J1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Y1=[["path",{d:"M14 3v4a1 1 0 0 0 1 1h4",key:"svg-0"}],["path",{d:"M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2",key:"svg-1"}]],e0=e("outline","file","File",Y1);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const o0=[["path",{d:"M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2",key:"svg-0"}]],a0=e("outline","folder","Folder",o0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const t0=[["path",{d:"M8 5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-0"}],["path",{d:"M8 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-1"}],["path",{d:"M8 19a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-2"}],["path",{d:"M14 5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-3"}],["path",{d:"M14 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-4"}],["path",{d:"M14 19a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-5"}]],n0=e("outline","grip-vertical","GripVertical",t0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const s0=[["path",{d:"M5 9l14 0",key:"svg-0"}],["path",{d:"M5 15l14 0",key:"svg-1"}],["path",{d:"M11 4l-4 16",key:"svg-2"}],["path",{d:"M17 4l-4 16",key:"svg-3"}]],c0=e("outline","hash","Hash",s0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const l0=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0",key:"svg-0"}],["path",{d:"M12 16v.01",key:"svg-1"}],["path",{d:"M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483",key:"svg-2"}]],h0=e("outline","help-circle","HelpCircle",l0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d0=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0",key:"svg-0"}],["path",{d:"M12 9h.01",key:"svg-1"}],["path",{d:"M11 12h1v4h1",key:"svg-2"}]],i=e("outline","info-circle","InfoCircle",d0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const v0=[["path",{d:"M11 5l6 0",key:"svg-0"}],["path",{d:"M7 19l6 0",key:"svg-1"}],["path",{d:"M14 5l-4 14",key:"svg-2"}]],i0=e("outline","italic","Italic",v0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const p0=[["path",{d:"M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1",key:"svg-0"}],["path",{d:"M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1",key:"svg-1"}],["path",{d:"M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1",key:"svg-2"}],["path",{d:"M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1",key:"svg-3"}]],g0=e("outline","layout-dashboard","LayoutDashboard",p0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const k0=[["path",{d:"M4 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4",key:"svg-0"}],["path",{d:"M14 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4",key:"svg-1"}],["path",{d:"M4 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4",key:"svg-2"}],["path",{d:"M14 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4",key:"svg-3"}]],y0=e("outline","layout-grid","LayoutGrid",k0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const M0=[["path",{d:"M4 4l6 0",key:"svg-0"}],["path",{d:"M14 4l6 0",key:"svg-1"}],["path",{d:"M4 10a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2l0 -8",key:"svg-2"}],["path",{d:"M14 10a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2l0 -2",key:"svg-3"}]],r0=e("outline","layout-kanban","LayoutKanban",M0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const _0=[["path",{d:"M4 6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12",key:"svg-0"}],["path",{d:"M9 4l0 16",key:"svg-1"}]],u0=e("outline","layout-sidebar","LayoutSidebar",_0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const I0=[["path",{d:"M9 15l6 -6",key:"svg-0"}],["path",{d:"M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464",key:"svg-1"}],["path",{d:"M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463",key:"svg-2"}]],N0=e("outline","link","Link",I0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const $0=[["path",{d:"M9 6l11 0",key:"svg-0"}],["path",{d:"M9 12l11 0",key:"svg-1"}],["path",{d:"M9 18l11 0",key:"svg-2"}],["path",{d:"M5 6l0 .01",key:"svg-3"}],["path",{d:"M5 12l0 .01",key:"svg-4"}],["path",{d:"M5 18l0 .01",key:"svg-5"}]],C0=e("outline","list","List",$0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m0=[["path",{d:"M12 3a9 9 0 1 0 9 9",key:"svg-0"}]],p=e("outline","loader-2","Loader2",m0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const f0=[["path",{d:"M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6",key:"svg-0"}],["path",{d:"M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0",key:"svg-1"}],["path",{d:"M8 11v-4a4 4 0 1 1 8 0v4",key:"svg-2"}]],w0=e("outline","lock","Lock",f0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const L0=[["path",{d:"M15 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2",key:"svg-0"}],["path",{d:"M21 12h-13l3 -3",key:"svg-1"}],["path",{d:"M11 15l-3 -3",key:"svg-2"}]],b0=e("outline","login","Login",L0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const x0=[["path",{d:"M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2",key:"svg-0"}],["path",{d:"M9 12h12l-3 -3",key:"svg-1"}],["path",{d:"M18 15l3 -3",key:"svg-2"}]],S0=e("outline","logout","Logout",x0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const T0=[["path",{d:"M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10",key:"svg-0"}],["path",{d:"M3 7l9 6l9 -6",key:"svg-1"}]],D0=e("outline","mail","Mail",T0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const U0=[["path",{d:"M8 9h8",key:"svg-0"}],["path",{d:"M8 13h6",key:"svg-1"}],["path",{d:"M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12",key:"svg-2"}]],g=e("outline","message","Message",U0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const P0=[["path",{d:"M5 12l14 0",key:"svg-0"}]],R0=e("outline","minus","Minus",P0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const B0=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}],["path",{d:"M9 10l.01 0",key:"svg-1"}],["path",{d:"M15 10l.01 0",key:"svg-2"}],["path",{d:"M9.5 15a3.5 3.5 0 0 0 5 0",key:"svg-3"}]],E0=e("outline","mood-smile","MoodSmile",B0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const F0=[["path",{d:"M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008",key:"svg-0"}]],z0=e("outline","moon","Moon",F0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const A0=[["path",{d:"M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0",key:"svg-0"}],["path",{d:"M13 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0",key:"svg-1"}],["path",{d:"M9 17v-13h10v13",key:"svg-2"}],["path",{d:"M9 8h10",key:"svg-3"}]],X0=e("outline","music","Music",A0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const V0=[["path",{d:"M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5",key:"svg-0"}],["path",{d:"M12 12l8 -4.5",key:"svg-1"}],["path",{d:"M12 12l0 9",key:"svg-2"}],["path",{d:"M12 12l-8 -4.5",key:"svg-3"}],["path",{d:"M16 5.25l-8 4.5",key:"svg-4"}]],j0=e("outline","package","Package",V0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const G0=[["path",{d:"M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25",key:"svg-0"}],["path",{d:"M7.5 10.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-1"}],["path",{d:"M11.5 7.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-2"}],["path",{d:"M15.5 10.5a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",key:"svg-3"}]],H0=e("outline","palette","Palette",G0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const O0=[["path",{d:"M15 7l-6.5 6.5a1.5 1.5 0 0 0 3 3l6.5 -6.5a3 3 0 0 0 -6 -6l-6.5 6.5a4.5 4.5 0 0 0 9 9l6.5 -6.5",key:"svg-0"}]],W0=e("outline","paperclip","Paperclip",O0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Z0=[["path",{d:"M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2",key:"svg-0"}]],q0=e("outline","phone","Phone",Z0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const K0=[["path",{d:"M15 8h.01",key:"svg-0"}],["path",{d:"M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12",key:"svg-1"}],["path",{d:"M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5",key:"svg-2"}],["path",{d:"M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3",key:"svg-3"}]],k=e("outline","photo","Photo",K0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const J0=[["path",{d:"M12 21.5c-3.04 0 -5.952 -.714 -8.5 -1.983l8.5 -16.517l8.5 16.517a19.09 19.09 0 0 1 -8.5 1.983",key:"svg-0"}],["path",{d:"M5.38 15.866a14.94 14.94 0 0 0 6.815 1.634a14.944 14.944 0 0 0 6.502 -1.479",key:"svg-1"}],["path",{d:"M13 11.01v-.01",key:"svg-2"}],["path",{d:"M11 14v-.01",key:"svg-3"}]],Q0=e("outline","pizza","Pizza",J0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const Y0=[["path",{d:"M12 5l0 14",key:"svg-0"}],["path",{d:"M5 12l14 0",key:"svg-1"}]],e2=e("outline","plus","Plus",Y0);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const o2=[["path",{d:"M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4",key:"svg-0"}],["path",{d:"M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4",key:"svg-1"}]],a2=e("outline","refresh","Refresh",o2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const t2=[["path",{d:"M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1",key:"svg-0"}],["path",{d:"M9 12l2 2l4 -4",key:"svg-1"}]],n2=e("outline","rosette-discount-check","RosetteDiscountCheck",t2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const s2=[["path",{d:"M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0",key:"svg-0"}],["path",{d:"M21 21l-6 -6",key:"svg-1"}]],c2=e("outline","search","Search",s2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const l2=[["path",{d:"M8 9l4 -4l4 4",key:"svg-0"}],["path",{d:"M16 15l-4 4l-4 -4",key:"svg-1"}]],h2=e("outline","selector","Selector",l2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d2=[["path",{d:"M10 14l11 -11",key:"svg-0"}],["path",{d:"M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5",key:"svg-1"}]],v2=e("outline","send","Send",d2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const i2=[["path",{d:"M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065",key:"svg-0"}],["path",{d:"M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0",key:"svg-1"}]],p2=e("outline","settings","Settings",i2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const g2=[["path",{d:"M3 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0",key:"svg-0"}],["path",{d:"M15 6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0",key:"svg-1"}],["path",{d:"M15 18a3 3 0 1 0 6 0a3 3 0 1 0 -6 0",key:"svg-2"}],["path",{d:"M8.7 10.7l6.6 -3.4",key:"svg-3"}],["path",{d:"M8.7 13.3l6.6 3.4",key:"svg-4"}]],k2=e("outline","share","Share",g2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y2=[["path",{d:"M17 5l-10 14",key:"svg-0"}]],M2=e("outline","slash","Slash",y2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const r2=[["path",{d:"M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6",key:"svg-0"}]],_2=e("outline","sparkles","Sparkles",r2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const u2=[["path",{d:"M12 4l-8 4l8 4l8 -4l-8 -4",key:"svg-0"}],["path",{d:"M4 12l8 4l8 -4",key:"svg-1"}],["path",{d:"M4 16l8 4l8 -4",key:"svg-2"}]],I2=e("outline","stack-2","Stack2",u2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const N2=[["path",{d:"M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245",key:"svg-0"}]],y=e("outline","star","Star",N2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const $2=[["path",{d:"M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0",key:"svg-0"}],["path",{d:"M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7",key:"svg-1"}]],C2=e("outline","sun","Sun",$2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const m2=[["path",{d:"M4 7l16 0",key:"svg-0"}],["path",{d:"M10 11l0 6",key:"svg-1"}],["path",{d:"M14 11l0 6",key:"svg-2"}],["path",{d:"M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12",key:"svg-3"}],["path",{d:"M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3",key:"svg-4"}]],f2=e("outline","trash","Trash",m2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const w2=[["path",{d:"M3 7l6 6l4 -4l8 8",key:"svg-0"}],["path",{d:"M21 10l0 7l-7 0",key:"svg-1"}]],L2=e("outline","trending-down","TrendingDown",w2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const b2=[["path",{d:"M3 17l6 -6l4 4l8 -8",key:"svg-0"}],["path",{d:"M14 7l7 0l0 7",key:"svg-1"}]],x2=e("outline","trending-up","TrendingUp",b2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const S2=[["path",{d:"M4 20l3 0",key:"svg-0"}],["path",{d:"M14 20l7 0",key:"svg-1"}],["path",{d:"M6.9 15l6.9 0",key:"svg-2"}],["path",{d:"M10.2 6.3l5.8 13.7",key:"svg-3"}],["path",{d:"M5 20l6 -16l2 0l7 16",key:"svg-4"}]],T2=e("outline","typography","Typography",S2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const D2=[["path",{d:"M7 5v5a5 5 0 0 0 10 0v-5",key:"svg-0"}],["path",{d:"M5 19h14",key:"svg-1"}]],U2=e("outline","underline","Underline",D2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const P2=[["path",{d:"M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2",key:"svg-0"}],["path",{d:"M7 9l5 -5l5 5",key:"svg-1"}],["path",{d:"M12 4l0 12",key:"svg-2"}]],R2=e("outline","upload","Upload",P2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const B2=[["path",{d:"M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0",key:"svg-0"}],["path",{d:"M9 10a3 3 0 1 0 6 0a3 3 0 1 0 -6 0",key:"svg-1"}],["path",{d:"M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855",key:"svg-2"}]],M=e("outline","user-circle","UserCircle",B2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const E2=[["path",{d:"M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0",key:"svg-0"}],["path",{d:"M6 21v-2a4 4 0 0 1 4 -4h3.5",key:"svg-1"}],["path",{d:"M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39",key:"svg-2"}]],F2=e("outline","user-edit","UserEdit",E2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const z2=[["path",{d:"M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0",key:"svg-0"}],["path",{d:"M6 21v-2a4 4 0 0 1 4 -4h3.5",key:"svg-1"}],["path",{d:"M22 22l-5 -5",key:"svg-2"}],["path",{d:"M17 22l5 -5",key:"svg-3"}]],A2=e("outline","user-x","UserX",z2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const X2=[["path",{d:"M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0",key:"svg-0"}],["path",{d:"M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2",key:"svg-1"}]],r=e("outline","user","User",X2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const V2=[["path",{d:"M5 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0",key:"svg-0"}],["path",{d:"M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2",key:"svg-1"}],["path",{d:"M16 3.13a4 4 0 0 1 0 7.75",key:"svg-2"}],["path",{d:"M21 21v-2a4 4 0 0 0 -3 -3.85",key:"svg-3"}]],j2=e("outline","users","Users",V2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const G2=[["path",{d:"M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4",key:"svg-0"}],["path",{d:"M3 8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -8",key:"svg-1"}]],H2=e("outline","video","Video",G2);/**
+ * @license @tabler/icons-react v3.40.0 - MIT
+ *
+ * This source code is licensed under the MIT license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const O2=[["path",{d:"M18 6l-12 12",key:"svg-0"}],["path",{d:"M6 6l12 12",key:"svg-1"}]],W2=e("outline","x","X",O2),q2={alertCircle:U,warning:l,arrowRight:B,check:Q,checks:e1,circleCheck:h,close:W2,clock:m1,code:w1,dots:v,ellipsis:R1,externalLink:A1,help:h0,info:i,spinner:p,search:c2,settings:p2,trash:f2,refresh:a2,chevronDown:a1,chevronLeft:n1,chevronRight:c1,chevronUp:h1,chevronsDown:v1,chevronsLeft:p1,chevronsRight:k1,chevronsUpDown:h2,dashboard:g0,layoutGrid:y0,kanban:r0,panelLeft:u0,list:C0,user:r,user2:M,account:M,profile:r,employee:A2,userPen:F2,teams:j2,github:G,twitter:O,logo:b1,chat:g,notification:F,phone:q0,video:H2,send:v2,paperclip:W0,mail:D0,messageSquare:g,page:e0,post:G1,fileTypePdf:Z1,fileTypeDoc:O1,fileTypeXls:K1,fileZip:Q1,media:k,music:X0,image:k,add:e2,edit:F1,upload:R2,share:k2,login:b0,logout:S0,gripVertical:n0,circle:I1,circleX:t,plusCircle:r1,xCircle:t,minus:R0,sun:C2,moon:z0,brightness:Z,laptop:U1,palette:H0,billing:d,creditCard:d,product:V,pro:T1,exclusive:y,star:y,sparkles:_2,badgeCheck:n2,lock:w0,package:j0,trendingDown:L2,trendingUp:x2,eyeOff:V1,adjustments:T,bold:A,italic:i0,underline:U2,text:T2,link:N0,hash:c0,smile:E0,toastSuccess:h,toastInfo:i,toastWarning:l,toastError:t,toastLoading:p,pizza:Q0,workspace:a0,forms:$1,slash:M2,calendar:K,galleryVerticalEnd:I2,moreHorizontal:v};export{q2 as I};

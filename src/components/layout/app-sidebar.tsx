@@ -22,7 +22,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 import { Icons } from '../icons';
-import { OrgSwitcher } from '../org-switcher';
+import { OrgSwitcher } from '@/components/ui/org-switcher';
 
 export default function AppSidebar() {
   const pathname = usePathname();
