@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './button';
+import { Icons } from '@/components/icons';
 
 /**
  * Button component for triggering actions and events.
@@ -145,4 +146,24 @@ export const Disabled: Story = {
     disabled: true,
     children: 'Disabled',
   },
+};
+
+/** Button status states: loading, success, error with left icon. */
+export const BtnStatus: Story = {
+  render: () => (
+    <div className='flex gap-4'>
+      <Button isLoading>
+        <Icons.spinner className='mr-2 h-4 w-4 animate-spin' />
+        Loading
+      </Button>
+      <Button variant='default'>
+        <Icons.check className='mr-2 h-4 w-4' />
+        Success
+      </Button>
+      <Button variant='destructive'>
+        <Icons.close className='mr-2 h-4 w-4' />
+        Error
+      </Button>
+    </div>
+  ),
 };

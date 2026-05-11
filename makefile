@@ -9,7 +9,7 @@ p_c:
 	done
 
 s:
-	npm run storybook
+	bun run storybook
 
 dev:
 	 npm run dev

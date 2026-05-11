@@ -1,0 +1,11 @@
+import{j as t}from"./jsx-runtime-u17CrQMm.js";import{r as i}from"./index-DYby6Z_P.js";import{I as p}from"./icons-CJO6dUP8.js";import{B as d}from"./button-Ch-BQGzE.js";import{u as f}from"./infobar-BPn8QQBJ.js";import{c as v}from"./utils-BQHNewu7.js";function g({content:e,className:s,variant:l="ghost",size:u="icon",...r}){const{setContent:n,setOpen:o}=f(),a=i.useRef(e);a.current=e,i.useEffect(()=>{n(a.current)},[]);const m=c=>{n(e),o(!0),r.onClick?.(c)};return t.jsxs(d,{variant:l,size:u,className:v("shrink-0",s),onClick:m,"aria-label":"Show information",...r,children:[t.jsx(p.info,{className:"h-4 w-4"}),t.jsx("span",{className:"sr-only",children:"Show information"})]})}g.__docgenInfo={description:"",methods:[],displayName:"InfoButton",props:{content:{required:!0,tsType:{name:"signature",type:"object",raw:`{
+  title: string;
+  sections: DescriptiveSection[];
+}`,signature:{properties:[{key:"title",value:{name:"string",required:!0}},{key:"sections",value:{name:"Array",elements:[{name:"signature",type:"object",raw:`{
+  title: string;
+  description: string;
+  links?: HelpfulLink[];
+}`,signature:{properties:[{key:"title",value:{name:"string",required:!0}},{key:"description",value:{name:"string",required:!0}},{key:"links",value:{name:"Array",elements:[{name:"signature",type:"object",raw:`{
+  title: string;
+  url: string;
+}`,signature:{properties:[{key:"title",value:{name:"string",required:!0}},{key:"url",value:{name:"string",required:!0}}]}}],raw:"HelpfulLink[]",required:!1}}]}}],raw:"DescriptiveSection[]",required:!0}}]}},description:""},variant:{required:!1,tsType:{name:"union",raw:"'default' | 'ghost' | 'outline' | 'secondary' | 'destructive' | 'link'",elements:[{name:"literal",value:"'default'"},{name:"literal",value:"'ghost'"},{name:"literal",value:"'outline'"},{name:"literal",value:"'secondary'"},{name:"literal",value:"'destructive'"},{name:"literal",value:"'link'"}]},description:"",defaultValue:{value:"'ghost'",computed:!1}},size:{required:!1,tsType:{name:"union",raw:"'default' | 'sm' | 'lg' | 'icon'",elements:[{name:"literal",value:"'default'"},{name:"literal",value:"'sm'"},{name:"literal",value:"'lg'"},{name:"literal",value:"'icon'"}]},description:"",defaultValue:{value:"'icon'",computed:!1}}},composes:["Omit"]};export{g as I};

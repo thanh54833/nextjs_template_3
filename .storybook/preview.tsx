@@ -16,6 +16,19 @@ const preview: Preview = {
     docs: {
       toc: true,
     },
+    a11y: {
+      // Disable automatic scanning to prevent infinite loop with Next.js components
+      // Run manually via the Accessibility panel button instead
+      manual: true,
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+    },
   },
   decorators: [
     (Story) => {

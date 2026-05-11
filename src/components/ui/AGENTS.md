@@ -109,7 +109,93 @@ import { Icons } from '@/components/icons';
 - **NEVER** use manual loading state - use `isLoading` prop
 - **NEVER** import icons from tabler - use `Icons` registry
 
+## STORYBOOK PATTERNS
+
+### Story File Structure
+
+Every component with a story follows this pattern:
+
+```tsx
+// component-name.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { ComponentName } from './component-name';
+
+const meta = {
+  component: ComponentName,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered', // or 'fullscreen' for layout components
+  },
+  argTypes: {
+    // Define controls for interactive props
+  },
+} satisfies Meta<typeof ComponentName>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    // Default props
+  },
+};
+```
+
+### Components Requiring Context Providers
+
+Components that need providers (Sidebar, Dialog, DropdownMenu, etc.) MUST wrap stories in decorators:
+
+```tsx
+// For Sidebar components
+import { SidebarProvider } from './sidebar';
+
+const meta = {
+  component: SidebarComponent,
+  decorators: [
+    (Story) => (
+      <SidebarProvider>
+        <Story />
+      </SidebarProvider>
+    ),
+  ],
+};
+```
+
+### Next.js API Mocks
+
+Components importing `next/image` or `next/navigation` work in Storybook via mocks in `.storybook/main.ts`:
+- `next/image` → `/src/__mocks__/next-image.tsx`
+- `next/navigation` → `/src/__mocks__/next-navigation.ts`
+
+**Do NOT add manual mocks in stories** - the Vite alias handles this.
+
+### Autodocs Rules
+
+- Use `tags: ['autodocs']` in meta for automatic documentation
+- Add JSDoc comments above each story export for description
+- Components requiring providers can still use autodocs
+
+### Common Build Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `Cannot find module 'next/image'` | Missing mock | Verify `.storybook/main.ts` has alias |
+| `Cannot find module 'vite'` | Missing dependency | `bun add -d vite@7` (v8 has native binding issues) |
+| `rolldown binding error` | Vite 8 native bindings | Downgrade to Vite 7 |
+| Accessibility scan loop | Auto a11y scanning | Set `a11y: { manual: true }` in preview |
+| `Duplicate declaration` | Radix import collision | Use alias: `import { X as XPrimitive } from 'radix-ui'` |
+
+### Story Organization
+
+- One story file per component: `component-name.stories.tsx`
+- Group variants as separate exports (Default, Secondary, Disabled, etc.)
+- Use `render` function for complex multi-component stories
+- Keep stories in same directory as component
+
 ## RELATED
 
 - Root AGENTS.md: Icon system, page headers, button loading
 - `src/features/*/components/*-tables/columns.tsx`: Column definitions
+- `.storybook/main.ts`: Vite config, Next.js mocks
+- `.storybook/preview.tsx`: Global decorators, a11y config
+- `src/__mocks__/`: Next.js API mocks for Storybook

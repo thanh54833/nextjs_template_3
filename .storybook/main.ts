@@ -23,6 +23,8 @@ const config: StorybookConfig = {
         alias: {
           ...config.resolve?.alias,
           '@': '/src',
+          'next/image': '/src/__mocks__/next-image.tsx',
+          'next/navigation': '/src/__mocks__/next-navigation.ts',
         },
       },
     };
