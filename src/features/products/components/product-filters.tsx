@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
 import { categoryOptions, brandOptions, sortOptions, stockStatusOptions } from '../constants/product-options';
-
+>
 const PRICE_MIN = 0;
 const PRICE_MAX = 500000;
 const PRICE_STEP = 10000;
