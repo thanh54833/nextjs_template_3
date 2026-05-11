@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import { withThemeByClassName } from '@storybook/addon-theming';
 import '../src/styles/globals.css';
 
 const preview: Preview = {
@@ -10,11 +11,7 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: 'oklch(0.989 0.002 175)' },
-        { name: 'dark', value: 'oklch(0.039 0.02 175)' },
-      ],
+      disable: true,
     },
     docs: {
       toc: true,
@@ -31,6 +28,13 @@ const preview: Preview = {
         <Story />
       </div>
     ),
+    withThemeByClassName({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+    }),
   ],
   tags: ['autodocs'],
 };

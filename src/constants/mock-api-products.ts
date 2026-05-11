@@ -1,5 +1,11 @@
 import type { ProductFilters, ProductsResponse, ProductByIdResponse } from '@/features/products/api/types';
 
+export type ShippingObject = {
+  label_url: string;
+  district_ids: number[];
+  feeship_type_id: number;
+};
+
 export type Product = {
   product_search_staging_id: number;
   p_id: number;
@@ -56,6 +62,78 @@ export type Product = {
   promotion_end_date: string;
   id: string;
   description: string;
+  // Text overlays on product image
+  top_text: string;
+  middle_text: string;
+  bottom_text: string;
+  center_text: string;
+  // Combo
+  combo_id: string;
+  combo_name: string;
+  combo_image_icon_url: string;
+  combo_image_large_url: string;
+  type_combo: number;
+  // Promotion extended
+  is_promotion_vip: boolean;
+  promotion_id: number;
+  // Gifts
+  gift_list: null | unknown[];
+  // Shipping
+  shipping_object: ShippingObject[];
+  // Audit
+  created_user: number | null;
+  updated_user: number | null;
+  sync_status_date: string;
+  checksum: string;
+  created_unix_time: number;
+  updated_unix_time: number;
+  sync_note: string | null;
+  tranform_noted: string;
+  embedding_reason_of_failure: string;
+  // Image embedding sync
+  image_embedding_sync_status_id: number;
+  image_embedding_sync_status_date: string;
+  // Image frame / label
+  image_frame: string;
+  frame_expired: string;
+  label_type: number;
+  // Classification
+  membership_type_id: number;
+  quantity_per_pack: number;
+  digital_type_id: number;
+  event_uid: string | null;
+  // Content
+  link_video: string;
+  text_online: string;
+  description_content: string;
+  // Quick sale
+  date_start_quick_sale: string;
+  date_end_quick_sale: string;
+  // Extra status
+  is_only_online: boolean;
+  // Sync states
+  sync_not_sale_status_id: number;
+  sync_not_sale_status_date: string;
+  semantic_sync_status_id: number;
+  semantic_sync_status_date: string;
+  sync_public_state: number;
+  sync_internal_state: number;
+  sync_semantic_state: number;
+  sync_image_state: number;
+  is_syncing_public: boolean;
+  is_syncing_internal: boolean;
+  is_syncing_semantic: boolean;
+  is_syncing_image: boolean;
+  // Rankings & scores
+  sold_quantity_ranking: number;
+  product_score: number;
+  gp_ranking: number;
+  popularity_ranking: number;
+  promo_ranking: number;
+  gm_ranking: number;
+  // Typesense
+  deleted_typesense_ids: number[];
+  sync_stock_typesense_ids: number[];
 };
 
 export type ProductAttribute = {
