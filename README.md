@@ -69,6 +69,8 @@ _If you are looking for a Tanstack start dashboard template, here is the [repo](
 
 - ⚙️ Ready for **SaaS dashboards**, internal tools, and client admin panels
 
+- 📱 **Compact spacing design** optimized for data-dense admin interfaces (small padding, reduced gaps)
+
 ## Use Cases
 
 You can use this Next.js + Shadcn UI dashboard starter to build:

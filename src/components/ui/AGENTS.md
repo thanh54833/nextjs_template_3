@@ -38,6 +38,13 @@ import PageContainer from '@/components/layout/page-container';
 
 **NEVER** import `<Heading>` manually - PageContainer handles it.
 
+## PAGE CONTAINER SPACING
+
+PageContainer uses **compact spacing** by default for data-dense admin interfaces:
+- Page padding: `px-2 pt-1 pb-2 md:px-3 md:pt-2`
+- Header margin: `mb-2`
+- For generous spacing mode, override in page implementation
+
 ## DATA TABLE PATTERN
 
 ```tsx

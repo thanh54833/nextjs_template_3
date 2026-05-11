@@ -103,6 +103,29 @@ const { data } = useSuspenseQuery(productsQueryOptions(filters));
 - `src/features/<name>/constants/` - Options, config
 - `src/features/<name>/utils/` - Stores (Zustand)
 
+## SPACING CONVENTIONS
+
+For data-dense feature pages, use compact spacing to maximize information density:
+
+**Page-level components:**
+- Container padding: `px-2 pt-1 pb-2 md:px-3 md:pt-2`
+- Section gaps: `space-y-2` (not `space-y-4`)
+- Header margin: `mb-2` (not `mb-4`)
+
+**Card/Item components:**
+- Padding: `p-2` or `p-3` (not `p-4` or `p-6`)
+- Border radius: `rounded-md` or `rounded-lg` (not `rounded-xl`)
+- Internal gaps: `gap-2` or `gap-3` (not `gap-4`)
+
+**Lists and grids:**
+- Grid gaps: `gap-1.5` to `gap-3` (not `gap-4` or `gap-6`)
+- List item spacing: `space-y-1` to `space-y-1.5`
+
+**Skeleton loaders:**
+- Height: `h-8` instead of `h-10`, `h-80` instead of `h-96`
+
+See root AGENTS.md "Compact Spacing for Content-Dense Pages" for full table.
+
 ## ANTI-PATTERNS
 
 - **NEVER** import from `@/constants/mock-api*` in components - use service layer

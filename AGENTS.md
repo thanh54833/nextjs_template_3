@@ -849,6 +849,79 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 - **Cards are the lazy answer** - Use only when truly best affordance
 - **No nested cards** - Always wrong
 
+### Compact Spacing for Content-Dense Pages
+
+For admin dashboards and data-heavy pages, prioritize **compact spacing** to maximize information density:
+
+| Element | Standard | Compact |
+|---------|----------|---------|
+| Page padding | `p-4` / `px-6` | `p-2` / `px-3` |
+| Card padding | `p-6` | `p-3` |
+| Grid gap | `gap-4` | `gap-3` |
+| Section spacing | `space-y-4` | `space-y-2` |
+| List item padding | `p-3` | `p-2` |
+| Card border radius | `rounded-xl` | `rounded-lg` |
+
+**Key principles:**
+- Use `px-2 py-1` or `px-3 py-2` for content areas (not `px-4 py-4`)
+- Reduce `gap-4` to `gap-2` or `gap-3` in grids
+- Use `rounded-md` instead of `rounded-lg` for tighter elements
+- Reduce heading sizes: `text-2xl` → `text-xl` for page headers
+- Use `mt-2` / `mb-2` instead of `mt-4` / `mb-4` for internal spacing
+- Reduce skeleton sizes: `h-10` → `h-8`, `h-96` → `h-80`
+
+### Height Alignment in Toolbar/Action Rows
+
+When placing elements side-by-side (input + buttons, segmented control + search), **MUST match their heights explicitly**:
+
+```tsx
+// ❌ HEIGHT MISMATCH - common cause of visual misalignment
+// Segmented control: py-1.5 + text-xs = ~37px
+// Input: h-8 = 32px
+<div className="flex gap-2 items-center">
+  <div className="flex gap-1 rounded-lg border bg-muted p-1">
+    <button className="py-1.5 text-xs">All</button>
+  </div>
+  <Input className="h-8" />  // 32px - does NOT align!
+</div>
+
+// ✅ MATCHED HEIGHTS
+// Segmented control: py-1 + text-xs = ~32px
+// Input: h-8 = 32px
+<div className="flex gap-2 items-center">
+  <div className="flex gap-1 rounded-lg border bg-muted p-1">
+    <button className="py-1 text-xs">All</button>
+  </div>
+  <Input className="h-8" />  // 32px - aligned!
+</div>
+
+// OR if buttons need more vertical padding:
+<div className="flex gap-2 items-center">
+  <div className="flex gap-1 rounded-lg border bg-muted p-1">
+    <button className="py-1.5 text-xs">All</button>
+  </div>
+  <Input className="h-9" />  // 36px - aligns with taller buttons!
+</div>
+```
+
+**Rule: Before shipping toolbar rows, verify all elements have equal heights (check DOM or browser inspector).**
+
+**Anti-pattern (generous spacing):**
+```tsx
+// ❌ Too much whitespace
+<div className="p-6 space-y-4 gap-4">
+  <Card className="p-5 rounded-xl">...</Card>
+</div>
+```
+
+**Preferred (compact spacing):**
+```tsx
+// ✅ Tight, content-dense
+<div className="p-3 space-y-2 gap-3">
+  <Card className="p-3 rounded-lg">...</Card>
+</div>
+```
+
 ### Motion
 
 - **Don't animate CSS layout properties** - Use transform/opacity
