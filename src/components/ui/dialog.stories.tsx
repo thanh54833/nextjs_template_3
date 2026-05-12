@@ -299,21 +299,34 @@ export const ScheduleInterviewForm: Story = {
         <DialogTrigger asChild>
           <Button>Schedule Interview</Button>
         </DialogTrigger>
-        <DialogContent className="flex max-h-[90vh] flex-col sm:max-w-lg">
-          <DialogHeader className="shrink-0">
-            <DialogTitle>Schedule new interview</DialogTitle>
-            <DialogDescription>
+        <DialogContent className="flex max-h-[90vh] flex-col gap-0 p-0 sm:max-w-lg">
+          <DialogHeader className="shrink-0 border-b px-6 pb-4 pt-4 pr-10 text-left">
+            <DialogTitle className="text-xl font-semibold tracking-tight">
+              Schedule new interview
+            </DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">
               Fill in the correct information for this interview.
             </DialogDescription>
           </DialogHeader>
 
-          <div className="flex-1 overflow-y-auto py-1 pr-1">
+          <div className="flex-1 overflow-y-auto px-6 py-4">
             <ScheduleInterviewFormDialog onClose={() => setOpen(false)} />
           </div>
 
-          <DialogFooter className="shrink-0 pt-2">
-            <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button type="submit" form="schedule-interview-form">Schedule Interview</Button>
+          <DialogFooter className="shrink-0 flex-row items-center border-t px-6 py-4">
+            <Button
+              variant="outline"
+              onClick={() => setOpen(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              form="schedule-interview-form"
+              className="flex-1"
+            >
+              Schedule Interview
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
