@@ -121,24 +121,24 @@ function ScheduleInterviewFormDialog({ onClose }: { onClose: () => void }) {
   return (
     <form.AppForm>
       <form.Form id="schedule-interview-form" className="p-0">
-        <div className="space-y-4">
+        <div className="space-y-5">
 
           {/* ── Interview Details ── */}
           <section className="space-y-3">
             <p className="text-sm font-semibold text-foreground">Interview Details</p>
 
             {/* Candidate card */}
-            <div className="flex items-start gap-3 rounded-lg border bg-muted/40 px-3 py-2.5">
+            <div className="flex items-start gap-3 rounded-lg border bg-muted/40 px-3 py-3">
               <Avatar className="mt-0.5 h-9 w-9 shrink-0">
                 <AvatarImage src="https://github.com/shadcn.png" alt="Senior Frontend Angular Developer" />
                 <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">
                   SF
                 </AvatarFallback>
               </Avatar>
-              <div className="min-w-0 space-y-1">
+              <div className="min-w-0 space-y-1.5">
                 <p className="text-sm font-medium leading-tight">Senior Frontend Angular Developer</p>
                 <p className="text-xs text-muted-foreground">Offtoc LLC</p>
-                <div className="space-y-1 pt-0.5">
+                <div className="space-y-1.5">
                   <div className="flex items-center gap-1.5">
                     <span className="text-[11px] text-muted-foreground shrink-0">Skills</span>
                     <div className="flex gap-1 flex-wrap">
