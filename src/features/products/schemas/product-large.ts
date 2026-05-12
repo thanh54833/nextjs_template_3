@@ -33,7 +33,7 @@ export const productLargeSchema = z.object({
       '.jpg, .jpeg, .png and .webp files are accepted.'
     ),
   // Video
-  linkVideo: z.string().optional()
+  linkVideo: z.string().url('Enter a valid URL').optional().or(z.literal(''))
 });
 
 export type ProductLargeFormValues = {

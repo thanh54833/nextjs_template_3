@@ -124,10 +124,11 @@ export default function ProductFormLarge({
                 variant='outline'
                 size='sm'
                 onClick={() => {
+                  form.reset();
                   router.push('/dashboard/product/new');
                 }}
               >
-                Duplicate
+                Create New
               </Button>
             )}
             <Button
@@ -136,7 +137,7 @@ export default function ProductFormLarge({
               form='product-form-large'
               isLoading={createMutation.isPending || updateMutation.isPending}
             >
-              Save
+              {isEdit ? 'Update' : 'Save'}
             </Button>
           </div>
         </div>
@@ -204,7 +205,7 @@ export default function ProductFormLarge({
                           item.icon === 'separator' ? (
                             <div key={item.icon} className='mx-1 h-4 w-px bg-border' />
                           ) : (
-                            <ToolbarButton key={item.icon} icon={item.icon} label={item.label} />
+                            <ToolbarButton key={item.icon} node={item.node} label={item.label} />
                           )
                         )}
                       </div>
@@ -361,58 +362,38 @@ export default function ProductFormLarge({
 }
 
 const TOOLBAR_ITEMS = [
-  { icon: 'bold', label: 'Bold' },
-  { icon: 'italic', label: 'Italic' },
-  { icon: 'underline', label: 'Underline' },
-  { icon: 'strikethrough', label: 'Strikethrough' },
+  { icon: 'bold', label: 'Bold', node: Icons.bold },
+  { icon: 'italic', label: 'Italic', node: Icons.italic },
+  { icon: 'underline', label: 'Underline', node: Icons.underline },
+  { icon: 'strikethrough', label: 'Strikethrough', node: Icons.strikethrough },
   { icon: 'separator' },
-  { icon: 'quote', label: 'Quote' },
-  { icon: 'link', label: 'Link' },
-  { icon: 'code', label: 'Code' },
+  { icon: 'quote', label: 'Quote', node: Icons.quote },
+  { icon: 'link', label: 'Link', node: Icons.link },
+  { icon: 'code', label: 'Code', node: Icons.code },
   { icon: 'separator' },
-  { icon: 'h1', label: 'Heading 1' },
-  { icon: 'h2', label: 'Heading 2' },
+  { icon: 'h1', label: 'Heading 1', node: <span className='text-xs font-bold'>H1</span> },
+  { icon: 'h2', label: 'Heading 2', node: <span className='text-xs font-bold'>H2</span> },
   { icon: 'separator' },
-  { icon: 'list', label: 'Bullet list' },
-  { icon: 'listOrdered', label: 'Numbered list' },
-  { icon: 'alignLeft', label: 'Align left' },
-  { icon: 'alignCenter', label: 'Align center' },
-  { icon: 'alignRight', label: 'Align right' },
+  { icon: 'list', label: 'Bullet list', node: Icons.list },
+  { icon: 'listOrdered', label: 'Numbered list', node: Icons.listOrdered },
+  { icon: 'alignLeft', label: 'Align left', node: Icons.alignLeft },
+  { icon: 'alignCenter', label: 'Align center', node: Icons.alignCenter },
+  { icon: 'alignRight', label: 'Align right', node: Icons.alignRight },
   { icon: 'separator' },
-  { icon: 'text', label: 'Text style' },
-  { icon: 'font', label: 'Font family' },
-  { icon: 'palette', label: 'Text color' }
+  { icon: 'text', label: 'Text style', node: Icons.text },
+  { icon: 'font', label: 'Font family', node: Icons.font },
+  { icon: 'palette', label: 'Text color', node: Icons.palette }
 ] as const;
 
-function ToolbarButton({ icon, label }: { icon: string; label: string }) {
-  const iconMap: Record<string, React.ReactNode> = {
-    bold: <Icons.bold className='h-3.5 w-3.5' />,
-    italic: <Icons.italic className='h-3.5 w-3.5' />,
-    underline: <Icons.underline className='h-3.5 w-3.5' />,
-    strikethrough: <Icons.strikethrough className='h-3.5 w-3.5' />,
-    quote: <Icons.quote className='h-3.5 w-3.5' />,
-    link: <Icons.link className='h-3.5 w-3.5' />,
-    code: <Icons.code className='h-3.5 w-3.5' />,
-    h1: <span className='text-xs font-bold'>H1</span>,
-    h2: <span className='text-xs font-bold'>H2</span>,
-    list: <Icons.list className='h-3.5 w-3.5' />,
-    listOrdered: <Icons.listOrdered className='h-3.5 w-3.5' />,
-    alignLeft: <Icons.alignLeft className='h-3.5 w-3.5' />,
-    alignCenter: <Icons.alignCenter className='h-3.5 w-3.5' />,
-    alignRight: <Icons.alignRight className='h-3.5 w-3.5' />,
-    text: <Icons.text className='h-3.5 w-3.5' />,
-    font: <Icons.font className='h-3.5 w-3.5' />,
-    palette: <Icons.palette className='h-3.5 w-3.5' />
-  };
-
+function ToolbarButton({ node, label }: { node: React.ReactNode; label: string }) {
   return (
-    <button
-      type='button'
-      aria-label={label}
-      className='flex h-7 w-7 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground'
+    <div
+      role='presentation'
+      aria-hidden='true'
+      className='flex h-7 w-7 items-center justify-center rounded text-muted-foreground'
     >
-      {iconMap[icon] || <span className='text-xs'>{icon}</span>}
-    </button>
+      {node}
+    </div>
   );
 }
 

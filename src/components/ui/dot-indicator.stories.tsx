@@ -2,37 +2,23 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DotIndicator, PaginationDots } from './dot-indicator';
 
 const meta = {
-  component: DotIndicator,
+  title: 'UI/DotIndicator',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {
       description: {
         component:
-          'A small dot indicator for status, activity, or notification states. Supports color variants and optional pulse animation.',
+          'Dot indicators for status, activity, or pagination states. DotIndicator for single dots, PaginationDots for pagination rows.',
       },
     },
   },
-  argTypes: {
-    color: {
-      control: 'select',
-      options: ['default', 'success', 'warning', 'destructive', 'muted'],
-      description: 'Color variant of the dot',
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'md', 'lg'],
-      description: 'Size of the dot',
-    },
-    pulse: {
-      control: 'boolean',
-      description: 'Enable pulse animation',
-    },
-  },
-} satisfies Meta<typeof DotIndicator>;
+} as Meta<typeof DotIndicator>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Story = StoryObj<any>;
 
 export const Default: Story = {
   args: {
@@ -40,6 +26,7 @@ export const Default: Story = {
     size: 'md',
     pulse: false,
   },
+  render: (args) => <DotIndicator {...args} />,
 };
 
 export const Success: Story = {
@@ -48,6 +35,7 @@ export const Success: Story = {
     size: 'md',
     pulse: false,
   },
+  render: (args) => <DotIndicator {...args} />,
 };
 
 export const Warning: Story = {
@@ -56,6 +44,7 @@ export const Warning: Story = {
     size: 'md',
     pulse: false,
   },
+  render: (args) => <DotIndicator {...args} />,
 };
 
 export const Destructive: Story = {
@@ -64,6 +53,7 @@ export const Destructive: Story = {
     size: 'md',
     pulse: false,
   },
+  render: (args) => <DotIndicator {...args} />,
 };
 
 export const Muted: Story = {
@@ -72,6 +62,7 @@ export const Muted: Story = {
     size: 'md',
     pulse: false,
   },
+  render: (args) => <DotIndicator {...args} />,
 };
 
 export const WithPulse: Story = {
@@ -80,9 +71,10 @@ export const WithPulse: Story = {
     size: 'md',
     pulse: true,
   },
+  render: (args) => <DotIndicator {...args} />,
 };
 
-export const SizeComparison: Story = {
+export const DotSizeComparison: Story = {
   render: () => (
     <div className="flex items-center gap-4">
       <div className="flex flex-col items-center gap-2">
@@ -101,7 +93,7 @@ export const SizeComparison: Story = {
   ),
 };
 
-export const StatusGrid: Story = {
+export const DotStatusGrid: Story = {
   render: () => (
     <div className="grid grid-cols-3 gap-4">
       <div className="flex items-center gap-2">
@@ -128,7 +120,7 @@ export const StatusGrid: Story = {
   ),
 };
 
-export const NotificationBadge: Story = {
+export const DotNotificationBadge: Story = {
   render: () => (
     <div className="flex items-center gap-2 rounded-full border px-3 py-1.5">
       <DotIndicator color="destructive" size="sm" pulse />
@@ -137,91 +129,68 @@ export const NotificationBadge: Story = {
   ),
 };
 
-// ---------------------------------------------------------------------------
-// PaginationDots
-// ---------------------------------------------------------------------------
-
-const paginationMeta = {
-  component: PaginationDots,
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-    docs: {
-      description: {
-        component:
-          'A row of dots representing pagination state. Shows which page is active and supports size variants.',
-      },
-    },
-  },
-  argTypes: {
-    total: {
-      control: { type: 'number', min: 1, max: 20 },
-      description: 'Total number of dots',
-    },
-    active: {
-      control: { type: 'number', min: 0 },
-      description: 'Currently active dot index',
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'md', 'lg'],
-      description: 'Size of the dots',
-    },
-  },
-} satisfies Meta<typeof PaginationDots>;
-
-export default paginationMeta;
-type PaginationStory = StoryObj<typeof paginationMeta>;
-
-export const PaginationDefault: PaginationStory = {
+export const PaginationDefault: Story = {
+  name: 'PaginationDots/Default',
   args: {
     total: 5,
     active: 0,
     size: 'md',
   },
+  render: (args) => <PaginationDots {...args} />,
 };
 
-export const PaginationActive2: PaginationStory = {
+export const PaginationActive2: Story = {
+  name: 'PaginationDots/Active2',
   args: {
     total: 5,
     active: 2,
     size: 'md',
   },
+  render: (args) => <PaginationDots {...args} />,
 };
 
-export const PaginationActive4: PaginationStory = {
+export const PaginationActive4: Story = {
+  name: 'PaginationDots/Active4',
   args: {
     total: 5,
     active: 4,
     size: 'md',
   },
+  render: (args) => <PaginationDots {...args} />,
 };
 
-export const PaginationSmall: PaginationStory = {
+export const PaginationSmall: Story = {
+  name: 'PaginationDots/Small',
   args: {
     total: 4,
     active: 1,
     size: 'sm',
   },
+  render: (args) => <PaginationDots {...args} />,
 };
 
-export const PaginationLarge: PaginationStory = {
+export const PaginationLarge: Story = {
+  name: 'PaginationDots/Large',
   args: {
     total: 4,
     active: 1,
     size: 'lg',
   },
+  render: (args) => <PaginationDots {...args} />,
 };
 
-export const PaginationManyDots: PaginationStory = {
+export const PaginationManyDots: Story = {
+  name: 'PaginationDots/ManyDots',
   args: {
     total: 10,
     active: 5,
     size: 'md',
   },
+  render: (args) => <PaginationDots {...args} />,
 };
 
-export const PaginationSizes: PaginationStory = {
+export const PaginationSizes: Story = {
+  name: 'PaginationDots/Sizes',
   render: () => (
     <div className="flex flex-col items-center gap-6">
       <div className="flex flex-col items-center gap-2">

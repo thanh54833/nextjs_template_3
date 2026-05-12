@@ -2174,3 +2174,130 @@ If you are in a deployed Storybook, there may have been an issue deploying the f
 build.
     at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8597:11)
     at async ns2.onStoryIndexChanged (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8637:17)
+[15507188ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[15511831ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[15512078ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[15512079ms] [ERROR] Error loading story index: @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:4631
+[15512079ms] [ERROR] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/dot-indicator.stories.tsx:
+  MultipleMetaError: CSF: multiple meta objects /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/src/components/ui/dot-indicator.stories.tsx (line 144, col 23)
+
+More info: https://storybook.js.org/docs/writing-stories#default-export
+    at X._parseMeta (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:269:13)
+    at enter (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:345:45)
+    at Vge._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162000:17)
+    at Vge.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161989:17)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162027:34)
+    at p7.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161911:32)
+    at p7.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161895:19)
+    at p7.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161925:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161948:37)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162028:46)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at X._parseMeta (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:269:13)
+    at enter (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:345:45)
+    at Vge._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162000:17)
+    at Vge.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161989:17)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162027:34)
+    at p7.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161911:32)
+    at p7.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161895:19)
+    at p7.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161925:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161948:37)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162028:46)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8555:39) @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:4631
+[15512082ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/dot-indicator.stories.tsx:
+  MultipleMetaError: CSF: multiple meta objects /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/src/components/ui/dot-indicator.stories.tsx (line 144, col 23)
+
+More info: https://storybook.js.org/docs/writing-stories#default-export
+    at X._parseMeta (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:269:13)
+    at enter (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:345:45)
+    at Vge._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162000:17)
+    at Vge.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161989:17)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162027:34)
+    at p7.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161911:32)
+    at p7.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161895:19)
+    at p7.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161925:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161948:37)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162028:46)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at X._parseMeta (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:269:13)
+    at enter (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:345:45)
+    at Vge._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162000:17)
+    at Vge.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161989:17)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162027:34)
+    at p7.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161911:32)
+    at p7.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161895:19)
+    at p7.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161925:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161948:37)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162028:46)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8555:39)
+[15551553ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/dot-indicator.stories.tsx:
+  MultipleMetaError: CSF: multiple meta objects /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/src/components/ui/dot-indicator.stories.tsx (line 144, col 23)
+
+More info: https://storybook.js.org/docs/writing-stories#default-export
+    at X._parseMeta (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:269:13)
+    at enter (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:345:45)
+    at Vge._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162000:17)
+    at Vge.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161989:17)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162027:34)
+    at p7.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161911:32)
+    at p7.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161895:19)
+    at p7.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161925:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161948:37)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162028:46)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at X._parseMeta (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:269:13)
+    at enter (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:345:45)
+    at Vge._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162000:17)
+    at Vge.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161989:17)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162027:34)
+    at p7.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161911:32)
+    at p7.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161895:19)
+    at p7.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161925:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:161948:37)
+    at Vge.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:162028:46)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:8555:39)
