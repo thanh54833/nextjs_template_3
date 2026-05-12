@@ -1,9 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/test';
 import { useState } from 'react';
+import { z } from 'zod';
 
+import { Icons } from '@/components/icons';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Input } from './input';
+import { Separator } from '@/components/ui/separator';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { useAppForm, useFormFields } from '@/components/ui/tanstack-form';
 import {
   Dialog,
   DialogContent,
@@ -13,6 +19,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from './dialog';
+import { Input } from './input';
 
 /**
  * Dialog component for displaying overlay content that requires user attention or action.
@@ -106,11 +113,183 @@ export const FormDialog: Story = {
   }
 };
 
-/** Alert-style dialog for destructive actions with red accent */
-export const AlertDialog: Story = {
+// ---------------------------------------------------------------------------
+// ScheduleInterviewForm — rich sectioned form matching the design spec
+// ---------------------------------------------------------------------------
+
+const interviewSchema = z.object({
+  interviewTitle: z.string().min(1, 'Interview title is required'),
+  meetingUrl: z.url('Must be a valid URL').or(z.literal('')),
+  interviewDate: z.string().min(1, 'Please pick a date & time'),
+  duration: z.enum(['30', '60', '90']),
+  prospectName: z.string().min(1, 'Name is required'),
+  prospectEmail: z.email('Must be a valid email'),
+});
+
+type InterviewValues = z.infer<typeof interviewSchema>;
+
+const DURATION_OPTIONS = [
+  { value: '30', label: '30 min' },
+  { value: '60', label: '60 min' },
+  { value: '90', label: '90 min' },
+] as const;
+
+function ScheduleInterviewFormDialog({ onClose }: { onClose: () => void }) {
+  const form = useAppForm({
+    defaultValues: {
+      interviewTitle: 'UX Designer Interview - Jake and Aspect Team',
+      meetingUrl: 'https://us04web.zoom.us/j/75806772593?pwd=hb0098d8...',
+      interviewDate: '',
+      duration: '30' as '30' | '60' | '90',
+      prospectName: 'Jack Sparrow',
+      prospectEmail: 'jacksparrow@gmail.com',
+    } as InterviewValues,
+    validators: { onSubmit: interviewSchema },
+    onSubmit: async ({ value }) => {
+      await new Promise((r) => setTimeout(r, 800));
+      console.info('Interview scheduled:', value);
+      onClose();
+    },
+  });
+
+  const { FormTextField } = useFormFields<InterviewValues>();
+
+  return (
+    <form.AppForm>
+      <form.Form id="schedule-interview-form" className="p-0">
+        <div className="space-y-4">
+
+          {/* ── Interview Details ── */}
+          <section className="space-y-3">
+            <p className="text-sm font-semibold text-foreground">Interview Details</p>
+
+            {/* Candidate card */}
+            <div className="flex items-start gap-3 rounded-lg border bg-muted/40 px-3 py-2.5">
+              <Avatar className="mt-0.5 h-9 w-9 shrink-0">
+                <AvatarImage src="https://github.com/shadcn.png" alt="Senior Frontend Angular Developer" />
+                <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">
+                  SF
+                </AvatarFallback>
+              </Avatar>
+              <div className="min-w-0 space-y-1">
+                <p className="text-sm font-medium leading-tight">Senior Frontend Angular Developer</p>
+                <p className="text-xs text-muted-foreground">Offtoc LLC</p>
+                <div className="space-y-1 pt-0.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[11px] text-muted-foreground shrink-0">Skills</span>
+                    <div className="flex gap-1 flex-wrap">
+                      {['Angular', 'Javascript', 'Tailwind'].map((s) => (
+                        <Badge key={s} variant="secondary" className="h-4 rounded-full px-2 text-[10px]">{s}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[11px] text-muted-foreground shrink-0">Position type</span>
+                    <div className="flex gap-1">
+                      {['Remote', 'Full-time'].map((t) => (
+                        <Badge key={t} variant="outline" className="h-4 rounded-full px-2 text-[10px]">{t}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <FormTextField
+              name="interviewTitle"
+              label="Interview Title"
+              placeholder="e.g. UX Designer Interview"
+            />
+
+            <FormTextField
+              name="meetingUrl"
+              label="Meeting URL"
+              placeholder="https://..."
+              type="url"
+            />
+
+            {/* Date & Duration side by side */}
+            <div className="grid grid-cols-2 gap-3">
+              <form.AppField name="interviewDate">
+                {(field) => (
+                  <field.FieldSet>
+                    <field.Field>
+                      <field.FieldLabel>Interview date &amp; time</field.FieldLabel>
+                      <div className="relative">
+                        <Input
+                          placeholder="Pick a slot"
+                          value={field.state.value}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                          onBlur={field.handleBlur}
+                          className="pl-9"
+                        />
+                        <Icons.calendar className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                      </div>
+                    </field.Field>
+                    <field.FieldError />
+                  </field.FieldSet>
+                )}
+              </form.AppField>
+
+              <form.AppField name="duration">
+                {(field) => (
+                  <div className="space-y-1.5">
+                    <p className="text-sm font-medium leading-none">Duration</p>
+                    <ToggleGroup
+                      type="single"
+                      value={field.state.value}
+                      onValueChange={(v) => { if (v) field.handleChange(v as '30' | '60' | '90'); }}
+                      className="justify-start gap-1"
+                    >
+                      {DURATION_OPTIONS.map(({ value, label }) => (
+                        <ToggleGroupItem
+                          key={value}
+                          value={value}
+                          className="h-9 px-3 text-xs font-medium data-[state=on]:bg-foreground data-[state=on]:text-background data-[state=on]:border-foreground"
+                        >
+                          {label}
+                        </ToggleGroupItem>
+                      ))}
+                    </ToggleGroup>
+                  </div>
+                )}
+              </form.AppField>
+            </div>
+          </section>
+
+          <Separator />
+
+          {/* ── Prospect Details ── */}
+          <section className="space-y-3">
+            <p className="text-sm font-semibold text-foreground">Prospect Details</p>
+
+            <div className="grid grid-cols-2 gap-3">
+              <FormTextField name="prospectName" label="Name" placeholder="Jack Sparrow" />
+              <FormTextField name="prospectEmail" label="Email Address" type="email" placeholder="jack@example.com" />
+            </div>
+
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="h-auto gap-1.5 px-0 py-0 text-sm font-normal text-primary hover:bg-transparent hover:text-primary/80"
+            >
+              <Icons.plusCircle className="h-4 w-4" />
+              Add Prospect
+            </Button>
+          </section>
+
+        </div>
+      </form.Form>
+    </form.AppForm>
+  );
+}
+
+/** Rich sectioned dialog form: candidate card, date/duration grid, prospect list — mirrors the Schedule Interview design */
+export const ScheduleInterviewForm: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const trigger = canvas.getByRole('button', { name: /delete account/i });
+    const trigger = canvas.getByRole('button', { name: /schedule interview/i });
     await userEvent.click(trigger);
   },
   render: () => {
@@ -118,18 +297,23 @@ export const AlertDialog: Story = {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="destructive">Delete Account</Button>
+          <Button>Schedule Interview</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Delete report?</DialogTitle>
-            <DialogDescription className="text-destructive">
-              This will permanently delete the Q3 Engagement Report and all its data. This cannot be undone.
+        <DialogContent className="flex max-h-[90vh] flex-col sm:max-w-lg">
+          <DialogHeader className="shrink-0">
+            <DialogTitle>Schedule new interview</DialogTitle>
+            <DialogDescription>
+              Fill in the correct information for this interview.
             </DialogDescription>
           </DialogHeader>
-          <DialogFooter className="gap-2 sm:gap-0">
+
+          <div className="flex-1 overflow-y-auto py-1 pr-1">
+            <ScheduleInterviewFormDialog onClose={() => setOpen(false)} />
+          </div>
+
+          <DialogFooter className="shrink-0 pt-2">
             <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button variant="destructive" onClick={() => setOpen(false)}>Delete</Button>
+            <Button type="submit" form="schedule-interview-form">Schedule Interview</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

@@ -179,6 +179,7 @@ Components importing `next/image` or `next/navigation` work in Storybook via moc
 
 | Error | Cause | Fix |
 |-------|-------|-----|
+| `Cannot access 'Image' before initialization` | `next-image.tsx` mock re-imports from `next/image`, which Vite aliases back to itself — circular import TDZ crash | Mock must be a **self-contained** component; never `import X from 'next/image'` inside the mock file |
 | `Cannot find module 'next/image'` | Missing mock | Verify `.storybook/main.ts` has alias |
 | `Cannot find module 'vite'` | Missing dependency | `bun add -d vite@7` (v8 has native binding issues) |
 | `rolldown binding error` | Vite 8 native bindings | Downgrade to Vite 7 |

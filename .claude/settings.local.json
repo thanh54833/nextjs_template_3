@@ -11,7 +11,9 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(npx @playwright/mcp --version)",
-      "Bash(claude mcp *)"
+      "Bash(claude mcp *)",
+      "Skill(storybook)",
+      "Skill(storybook:*)"
     ]
   }
 }

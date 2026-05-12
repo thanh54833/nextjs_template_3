@@ -951,6 +951,39 @@ When placing elements side-by-side (input + buttons, segmented control + search)
 
 ## Notes for AI Agents
 
+### COMPONENT REUSE PRIORITY (CRITICAL - STRICTLY ENFORCED)
+
+**This is the #1 rule for all UI work. Violations will be rejected.**
+
+1. **FIRST**: Always check `src/components/` for existing components before creating new ones
+2. **SECOND**: Check `src/features/<name>/components/` for feature-specific components
+3. **ONLY IF MISSING**: Create new component with unique name (NEVER duplicate existing names with different designs)
+
+**ABSOLUTE PROHIBITION**: Never create 2 components with the same name but different designs.
+If a similar component exists with a different design, EXTEND it via props/variants, do NOT create a new component with a different name.
+
+```typescript
+// ✅ CORRECT: Reuse existing component
+import { Button } from '@/components/ui/button';
+<Button variant="outline" isLoading={isPending}>Save</Button>
+
+// ❌ WRONG: Creating duplicate with same name but different design
+// If Button doesn't support your variant, extend it or use a different approach
+
+// ❌ WRONG: Creating new component with different name for same purpose
+// function MyCustomButton() { ... }  ← NEVER do this if Button exists
+```
+
+**When a component doesn't exist and you need to create it:**
+- Use `src/components/ui/` for generic UI components (shadcn pattern)
+- Use `src/features/<name>/components/` for feature-specific components
+- Follow existing naming conventions
+- Document props and variants clearly
+
+### Design Tokens
+- Use existing theme tokens first: `bg-`, `text-`, `border-`, etc.
+- Only create custom CSS variables if no token exists
+
 1. **Always use `cn()` for className merging** - never concatenate strings manually
 2. **Respect the feature-based structure** - put new feature code in `src/features/`
 3. **Server components by default** - only add `'use client'` when using browser APIs or React hooks
