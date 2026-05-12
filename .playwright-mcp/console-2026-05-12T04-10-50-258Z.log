@@ -1577,3 +1577,8 @@ build.
 [11683394ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:6006/sb-common-assets/nunito-sans-bold.woff2:0
 [11715356ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
 [11733999ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[12040556ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[12120825ms] [ERROR] WebSocket connection to 'ws://localhost:6006/?token=M8XpoUnsNloP' failed:  @ http://localhost:6006/@vite/client:744
+[12120826ms] [ERROR] WebSocket connection to 'ws://localhost:6006/storybook-server-channel?token=da258cc1-27f5-49a5-a9a0-a061516d0ae4' failed:  @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=cfb68b18:5898
+[12120826ms] [ERROR] WebSocket connection to 'ws://localhost:6006/storybook-server-channel?token=da258cc1-27f5-49a5-a9a0-a061516d0ae4' failed:  @ http://localhost:6006/sb-manager/globals-runtime.js:27086
+[12120828ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
