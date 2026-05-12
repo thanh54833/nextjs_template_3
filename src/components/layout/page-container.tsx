@@ -25,7 +25,8 @@ export default function PageContainer({
   pageTitle,
   pageDescription,
   infoContent,
-  pageHeaderAction
+  pageHeaderAction,
+  pageMetrics
 }: {
   children: React.ReactNode;
   isLoading?: boolean;
@@ -35,6 +36,7 @@ export default function PageContainer({
   pageDescription?: string;
   infoContent?: InfobarContent;
   pageHeaderAction?: React.ReactNode;
+  pageMetrics?: string;
 }) {
   if (!access) {
     return (
@@ -55,13 +57,18 @@ export default function PageContainer({
   return (
     <div className='flex flex-1 flex-col px-2 pt-1 pb-2 md:px-3 md:pt-2'>
       {hasHeader && (
-        <div className='mb-2 flex items-start justify-between gap-3'>
-          <Heading
-            title={pageTitle ?? ''}
-            description={pageDescription ?? ''}
-            infoContent={infoContent}
-          />
-          {pageHeaderAction && <div className='shrink-0'>{pageHeaderAction}</div>}
+        <div className='mb-2 flex flex-col gap-1'>
+          <div className='flex items-start justify-between gap-3'>
+            <Heading
+              title={pageTitle ?? ''}
+              description={pageDescription ?? ''}
+              infoContent={infoContent}
+            />
+            {pageHeaderAction && <div className='shrink-0'>{pageHeaderAction}</div>}
+          </div>
+          {pageMetrics && (
+            <p className='text-xs text-muted-foreground'>{pageMetrics}</p>
+          )}
         </div>
       )}
       {content}

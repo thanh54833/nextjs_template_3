@@ -96,7 +96,7 @@ export function ProductGrid() {
 <div className='flex-1'>
         <div className='flex flex-wrap items-center gap-2'>
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'all' | 'active' | 'non-active')}>
-            <TabsList className='h-8 text-xs'>
+            <TabsList className='h-9'>
               <TabsTrigger value='all' className='px-3 text-xs'>All</TabsTrigger>
               <TabsTrigger value='active' className='px-3 text-xs'>Active</TabsTrigger>
               <TabsTrigger value='non-active' className='px-3 text-xs'>Non Active</TabsTrigger>

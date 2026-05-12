@@ -2,6 +2,7 @@ import PageContainer from '@/components/layout/page-container';
 import ProductListingPage from '@/features/products/components/product-listing';
 import { searchParamsCache } from '@/lib/searchparams';
 import { Icons } from '@/components/icons';
+import { Button } from '@/components/ui/button';
 import { SearchParams } from 'nuqs/server';
 
 export const metadata = {
@@ -18,12 +19,18 @@ export default async function Page(props: pageProps) {
 
   return (
     <PageContainer
-      pageTitle='Product list page'
+      pageTitle='Products'
+      pageMetrics='1,247 total · 1,180 in stock · 67 low stock'
       pageHeaderAction={
-        <div className='flex items-center gap-1.5 rounded-lg border border-border bg-background px-3 py-1.5 text-xs text-muted-foreground'>
-          <Icons.calendar className='h-3.5 w-3.5 shrink-0' />
-          <span>Last updated: Feb 28, 2024</span>
-          <Icons.refresh className='h-3.5 w-3.5 shrink-0' />
+        <div className='flex items-center gap-1.5'>
+          <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs'>
+            <Icons.refresh className='h-3.5 w-3.5' />
+            Sync
+          </Button>
+          <Button variant='outline' size='sm' className='h-8 gap-1.5 text-xs'>
+            <Icons.download className='h-3.5 w-3.5' />
+            Export
+          </Button>
         </div>
       }
     >
