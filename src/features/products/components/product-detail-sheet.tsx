@@ -183,12 +183,11 @@ export function ProductDetailSheet({
           <div className='flex-1 overflow-y-auto' />
 
           {/* ── Footer ── */}
-          <div className='flex flex-shrink-0 items-center gap-2 border-t px-5 py-3'>
-            <Button variant='outline' className='flex-1' onClick={handleCancelClick}>
+          <div className='flex flex-shrink-0 items-center justify-end gap-2 border-t px-5 py-3'>
+            <Button variant='outline' onClick={handleCancelClick}>
               Cancel
             </Button>
             <Button
-              className='flex-1'
               onClick={handleSaveClick}
               disabled={updateMutation.isPending}
             >

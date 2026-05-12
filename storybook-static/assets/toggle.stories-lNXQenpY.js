@@ -1,0 +1,13 @@
+import{j as r}from"./jsx-runtime-u17CrQMm.js";import{T as e}from"./toggle-6SXreFCI.js";import"./index-koxbFvze.js";import"./utils-Czy_q_oT.js";import"./index-DYby6Z_P.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-Dc_FVRD7.js";import"./index-BmEHjAU8.js";import"./index-D1sqivKo.js";import"./index-CraXK6NT.js";import"./index-B_GMK2QL.js";import"./index-BbSX8NXS.js";import"./index-DOER7VuF.js";const h={component:e,tags:["autodocs"],parameters:{docs:{description:{component:"A toggle component that can be pressed to switch between states. Supports default, outline variant, multiple sizes, and disabled state."}}}},s={render:()=>r.jsx(e,{children:"Toggle"})},o={render:()=>r.jsx(e,{variant:"outline",children:"Outline Toggle"})},t={render:()=>r.jsx(e,{size:"sm",children:"Small"})},a={render:()=>r.jsx(e,{size:"lg",children:"Large"})},i={render:()=>r.jsx(e,{defaultPressed:!0,children:"Pressed by Default"})},d={render:()=>r.jsx(e,{disabled:!0,children:"Disabled"})};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  render: () => <Toggle>Toggle</Toggle>
+}`,...s.parameters?.docs?.source},description:{story:"Default toggle button",...s.parameters?.docs?.description}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  render: () => <Toggle variant="outline">Outline Toggle</Toggle>
+}`,...o.parameters?.docs?.source},description:{story:"Outline variant toggle",...o.parameters?.docs?.description}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: () => <Toggle size="sm">Small</Toggle>
+}`,...t.parameters?.docs?.source},description:{story:"Small-sized toggle",...t.parameters?.docs?.description}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  render: () => <Toggle size="lg">Large</Toggle>
+}`,...a.parameters?.docs?.source},description:{story:"Large-sized toggle",...a.parameters?.docs?.description}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  render: () => <Toggle defaultPressed>Pressed by Default</Toggle>
+}`,...i.parameters?.docs?.source},description:{story:"Toggle pressed by default",...i.parameters?.docs?.description}}};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  render: () => <Toggle disabled>Disabled</Toggle>
+}`,...d.parameters?.docs?.source},description:{story:"Disabled toggle that prevents interaction",...d.parameters?.docs?.description}}};const y=["Default","Outline","Small","Large","Pressed","Disabled"];export{s as Default,d as Disabled,a as Large,o as Outline,i as Pressed,t as Small,y as __namedExportsOrder,h as default};

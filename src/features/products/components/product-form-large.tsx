@@ -23,11 +23,13 @@ import { categoryOptions, brandOptions, genderOptions, visibilityOptions } from 
 type ProductFormLargeProps = {
   initialData: Product | null;
   pageTitle: string;
+  isEmbedded?: boolean;
 };
 
 export default function ProductFormLarge({
   initialData,
-  pageTitle
+  pageTitle,
+  isEmbedded = false
 }: ProductFormLargeProps) {
   const router = useRouter();
   const isEdit = !!initialData;
@@ -110,42 +112,43 @@ export default function ProductFormLarge({
         id='product-form-large'
         className='flex flex-1 flex-col gap-4 px-2 pt-1 pb-2 md:px-3 md:pt-2'
       >
-        {/* Header */}
-        <div className='flex items-center justify-between'>
-          <div>
-            <h1 className='text-2xl font-bold tracking-tight'>{pageTitle}</h1>
-            <p className='text-muted-foreground text-sm'>
-              Products / {isEdit ? 'Edit Product' : 'Add Product'}
-            </p>
-          </div>
-          <div className='flex items-center gap-2'>
-            {isEdit && (
-              <Button
-                variant='outline'
-                size='sm'
-                onClick={() => {
-                  form.reset();
-                  router.push('/dashboard/product/new');
-                }}
-              >
-                Create New
-              </Button>
-            )}
-            <Button
-              size='sm'
-              type='submit'
-              form='product-form-large'
-              isLoading={createMutation.isPending || updateMutation.isPending}
-            >
-              {isEdit ? 'Update' : 'Save'}
-            </Button>
-          </div>
-        </div>
-
         {/* Two-column layout */}
-        <div className='grid grid-cols-1 gap-3 lg:grid-cols-3'>
+        {!isEmbedded && (
+          <div className='flex items-center justify-between'>
+            <div>
+              <h1 className='text-2xl font-bold tracking-tight'>{pageTitle}</h1>
+              <p className='text-muted-foreground text-sm'>
+                Products / {isEdit ? 'Edit Product' : 'Add Product'}
+              </p>
+            </div>
+            <div className='flex items-center gap-2'>
+              {isEdit && (
+                <Button
+                  variant='outline'
+                  size='sm'
+                  onClick={() => {
+                    form.reset();
+                    router.push('/dashboard/product/new');
+                  }}
+                >
+                  Create New
+                </Button>
+              )}
+              <Button
+                size='sm'
+                type='submit'
+                form='product-form-large'
+                isLoading={createMutation.isPending || updateMutation.isPending}
+              >
+                {isEdit ? 'Update' : 'Save'}
+              </Button>
+            </div>
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           {/* Left column - 2/3 width */}
-          <div className='space-y-3 lg:col-span-2'>
+          <div className="space-y-3 lg:col-span-2">
             {/* Basic Information */}
             <Frame>
               <FramePanel>

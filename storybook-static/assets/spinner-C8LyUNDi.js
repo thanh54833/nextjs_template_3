@@ -1,0 +1,1 @@
+import{j as i}from"./jsx-runtime-u17CrQMm.js";import{I as o}from"./icons-BdTSAv6R.js";import{c as r}from"./utils-Czy_q_oT.js";function a({className:n,...s}){return i.jsx(o.spinner,{role:"status","aria-label":"Loading",className:r("size-4 animate-spin",n),...s})}a.__docgenInfo={description:"",methods:[],displayName:"Spinner"};export{a as S};
