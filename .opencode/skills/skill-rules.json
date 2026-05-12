@@ -1,0 +1,194 @@
+{
+    "version": "1.0",
+    "description": "Skill activation triggers cho concung_ops — FastAPI/Python backend + Next.js frontend.",
+    "skills": {
+        "backend-dev-guidelines": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "FastAPI/Python backend development patterns cho concung_ops",
+            "promptTriggers": {
+                "keywords": [
+                    "backend",
+                    "FastAPI",
+                    "endpoint",
+                    "router",
+                    "route",
+                    "API",
+                    "schema",
+                    "model",
+                    "SQLModel",
+                    "SQLAlchemy",
+                    "Pydantic",
+                    "migration",
+                    "alembic",
+                    "async",
+                    "dependency",
+                    "SessionDep",
+                    "CurrentUserDep",
+                    "get_settings",
+                    "annotated-doc",
+                    "middleware",
+                    "auth",
+                    "JWT",
+                    "pytest",
+                    "test backend"
+                ],
+                "intentPatterns": [
+                    "(create|add|implement|build).*?(endpoint|route|router|API|schema|model)",
+                    "(fix|debug|handle).*?(error|exception|backend|FastAPI)",
+                    "(add|implement).*?(middleware|validation|auth|dependency)",
+                    "(organize|structure|refactor).*?(backend|service|API)",
+                    "(how to|best practice).*?(FastAPI|SQLModel|backend|endpoint|schema)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "apps/backend/app/**/*.py",
+                    "apps/backend/tests/**/*.py",
+                    "apps/backend/alembic/**/*.py"
+                ],
+                "pathExclusions": [
+                    "apps/backend/alembic/versions/**"
+                ],
+                "contentPatterns": [
+                    "from fastapi",
+                    "from sqlmodel",
+                    "from app\\.",
+                    "APIRouter",
+                    "SessionDep",
+                    "CurrentUserDep",
+                    "from alembic",
+                    "op\\.create_table",
+                    "op\\.add_column",
+                    "op\\.drop_column"
+                ]
+            }
+        },
+        "frontend-dev-guidelines": {
+            "type": "domain",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Next.js 16 App Router + Tailwind CSS v4 + TanStack Query v5 patterns cho concung_ops",
+            "promptTriggers": {
+                "keywords": [
+                    "frontend",
+                    "component",
+                    "React",
+                    "Next.js",
+                    "page",
+                    "UI",
+                    "form",
+                    "dialog",
+                    "modal",
+                    "Tailwind",
+                    "styling",
+                    "useQuery",
+                    "useMutation",
+                    "TanStack Query",
+                    "toast",
+                    "loading",
+                    "skeleton",
+                    "hooks",
+                    "routing",
+                    "App Router",
+                    "Server Component",
+                    "Client Component"
+                ],
+                "intentPatterns": [
+                    "(create|add|make|build|update|modify).*?(component|page|UI|form|dialog|modal|hook)",
+                    "(fetch|get|load).*?(data|API|backend).*?(frontend|component|hook)",
+                    "(style|design|layout).*?(component|UI|page)",
+                    "(how to|best practice).*?(React|Next.js|Tailwind|component|frontend)",
+                    "(add|implement).*?(query|mutation|cache|loading|error)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "apps/frontend/src/**/*.tsx",
+                    "apps/frontend/src/**/*.ts"
+                ],
+                "pathExclusions": [
+                    "apps/frontend/src/**/*.test.tsx",
+                    "apps/frontend/src/**/*.test.ts",
+                    "apps/frontend/src/**/*.spec.tsx",
+                    "apps/frontend/src/**/*.spec.ts",
+                    "**/tsconfig.json",
+                    "**/next.config.*",
+                    "**/biome.json"
+                ],
+                "contentPatterns": [
+                    "'use client'",
+                    "from 'react'",
+                    "from '@tanstack/react-query'",
+                    "from '@/components",
+                    "from '@/hooks",
+                    "from '@/lib"
+                ]
+            }
+        },
+        "tdd": {
+            "type": "workflow",
+            "enforcement": "suggest",
+            "priority": "high",
+            "description": "Test-driven development với red-green-refactor loop, tracer bullets, behavior-first tests",
+            "promptTriggers": {
+                "keywords": [
+                    "TDD",
+                    "test-driven",
+                    "red-green-refactor",
+                    "test first",
+                    "tracer bullet",
+                    "behavior test",
+                    "integration test",
+                    "unit test",
+                    "write test",
+                    "failing test",
+                    "mock",
+                    "stub",
+                    "test coverage",
+                    "pytest",
+                    "playwright test"
+                ],
+                "intentPatterns": [
+                    "(use|follow|apply).*?TDD",
+                    "(write|create|add).*?test.*?(first|before|driven)",
+                    "red.*green.*refactor",
+                    "(build|implement|fix).*?(with|using).*?test",
+                    "(how to|best practice).*?(test|TDD|testing)"
+                ]
+            },
+            "fileTriggers": {
+                "pathPatterns": [
+                    "apps/backend/tests/**/*.py",
+                    "apps/frontend/tests/**/*.spec.ts",
+                    "apps/frontend/tests/**/*.test.ts",
+                    "apps/frontend/tests/e2e/**/*.ts",
+                    "apps/frontend/tests/unit/**/*.ts",
+                    "apps/frontend/tests/unit/**/*.tsx"
+                ],
+                "contentPatterns": [
+                    "import pytest",
+                    "def test_",
+                    "describe(",
+                    "it(",
+                    "expect("
+                ]
+            }
+        }
+    },
+    "notes": {
+        "stack": {
+            "backend": "FastAPI 0.115 + SQLModel + asyncpg + Redis + Alembic + PyJWT + Argon2id",
+            "frontend": "Next.js 16.2.1 + React 19 + Tailwind CSS v4 + TanStack Query v5 + Sonner + bun + Biome"
+        },
+        "enforcement_types": {
+            "suggest": "Skill suggestion xuất hiện nhưng không block execution",
+            "block": "Phải dùng skill trước khi tiếp tục (guardrail)"
+        },
+        "customization": {
+            "pathPatterns": "Đã set đúng cho cấu trúc monorepo (apps/backend/, apps/frontend/)",
+            "keywords": "Bao gồm các term cụ thể cho FastAPI/Python và Next.js/React"
+        }
+    }
+}

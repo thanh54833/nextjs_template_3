@@ -519,3 +519,363 @@ act(() => {
 
 This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act Story2 @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/chunk-QYA6BBS6.js?v=02f845b1:13380
 [ 6803928ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[ 7486369ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[ 7486377ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[ 7486393ms] [ERROR] Error loading story index: @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:4631
+[ 7486394ms] [ERROR] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  TypeError: Duplicate declaration "productSchema"
+[0m [90m 173 |[39m [90m// ---------------------------------------------------------------------------[39m
+ [90m 174 |[39m
+[31m[1m>[22m[39m[90m 175 |[39m [36mimport[39m { productSchema[33m,[39m type [33mProductFormValues[39m } [36mfrom[39m [32m'@/features/products/schemas/product'[39m[33m;[39m
+ [90m     |[39m          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 176 |[39m
+ [90m 177 |[39m [36mfunction[39m [33mProductFormExample[39m() {
+ [90m 178 |[39m   [36mconst[39m form [33m=[39m useAppForm({[0m
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8597:11)
+    at async ns2.onStoryIndexChanged (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8637:17) @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:4631
+[ 7486545ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  TypeError: Duplicate declaration "productSchema"
+[0m [90m 173 |[39m [90m// ---------------------------------------------------------------------------[39m
+ [90m 174 |[39m
+[31m[1m>[22m[39m[90m 175 |[39m [36mimport[39m { productSchema[33m,[39m type [33mProductFormValues[39m } [36mfrom[39m [32m'@/features/products/schemas/product'[39m[33m;[39m
+ [90m     |[39m          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 176 |[39m
+ [90m 177 |[39m [36mfunction[39m [33mProductFormExample[39m() {
+ [90m 178 |[39m   [36mconst[39m form [33m=[39m useAppForm({[0m
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8597:11)
+    at async ns2.onStoryIndexChanged (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8637:17)
+[ 7486532ms] [ERROR] Error loading story index: @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:4631
+[ 7486532ms] [ERROR] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  TypeError: Duplicate declaration "productSchema"
+[0m [90m 173 |[39m [90m// ---------------------------------------------------------------------------[39m
+ [90m 174 |[39m
+[31m[1m>[22m[39m[90m 175 |[39m [36mimport[39m { productSchema[33m,[39m type [33mProductFormValues[39m } [36mfrom[39m [32m'@/features/products/schemas/product'[39m[33m;[39m
+ [90m     |[39m          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 176 |[39m
+ [90m 177 |[39m [36mfunction[39m [33mProductFormExample[39m() {
+ [90m 178 |[39m   [36mconst[39m form [33m=[39m useAppForm({[0m
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8597:11)
+    at async ns2.onStoryIndexChanged (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8637:17) @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:4631
+[ 7486548ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  TypeError: Duplicate declaration "productSchema"
+[0m [90m 173 |[39m [90m// ---------------------------------------------------------------------------[39m
+ [90m 174 |[39m
+[31m[1m>[22m[39m[90m 175 |[39m [36mimport[39m { productSchema[33m,[39m type [33mProductFormValues[39m } [36mfrom[39m [32m'@/features/products/schemas/product'[39m[33m;[39m
+ [90m     |[39m          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 176 |[39m
+ [90m 177 |[39m [36mfunction[39m [33mProductFormExample[39m() {
+ [90m 178 |[39m   [36mconst[39m form [33m=[39m useAppForm({[0m
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at em.buildCodeFrameError (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66792:14)
+    at t.checkBlockScopedCollisions (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29388:29)
+    at t.registerBinding (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29472:18)
+    at t.registerDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29439:16)
+    at Object.ImportDeclaration (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29241:32)
+    at vH._call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47231:17)
+    at vH.call (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47220:17)
+    at vH.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47258:34)
+    at AD.visitQueue (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47142:32)
+    at AD.visitMultiple (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47126:19)
+    at AD.visit (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47156:42)
+    at traverseNode (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47179:37)
+    at traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47439:58)
+    at vH.traverse (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:46926:23)
+    at t.crawl (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29597:9)
+    at t.init (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:29572:46)
+    at vH.setScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47287:66)
+    at vH.setContext (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:47292:17)
+    at new File (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:66704:10)
+    at babelParseFile (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:567:7)
+    at loadCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:568:37)
+    at readCsf (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/csf-tools/index.cjs:575:10)
+    at async Object.createIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/presets/common-preset.cjs:10145:51)
+    at async Mi.extractStories (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36254:13)
+    at async /Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36174:24
+    at async Promise.all (index 25)
+    at async Promise.all (index 1)
+    at async Mi.updateExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36162:5)
+    at async Mi.ensureExtracted (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36197:5)
+    at async Mi.getIndexAndStats (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36421:97)
+    at async Mi.getIndex (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36414:13)
+    at async Array.<anonymous> (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/core-server/index.cjs:36843:15)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8597:11)
+    at async ns2.onStoryIndexChanged (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8637:17)

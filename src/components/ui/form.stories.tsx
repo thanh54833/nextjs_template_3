@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/test';
 import { z } from 'zod';
 
-import { useAppForm } from './tanstack-form';
+import { useAppForm, useFormFields } from './tanstack-form';
+import { categoryOptions } from '@/features/products/constants/product-options';
+import { productSchema, type ProductFormValues } from '@/features/products/schemas/product';
 
 /**
  * TanStack Form integration — the project-standard form system.
@@ -163,4 +165,86 @@ export const ValidationErrors: Story = {
     await userEvent.clear(emailInput);
     await userEvent.type(emailInput, 'still-invalid');
   },
+};
+
+function ProductFormExample() {
+  const form = useAppForm({
+    defaultValues: {
+      image: undefined,
+      name: '',
+      category: '',
+      price: undefined,
+      description: ''
+    } as ProductFormValues,
+    validators: { onSubmit: productSchema },
+    onSubmit: async ({ value }) => {
+      await new Promise((r) => setTimeout(r, 800));
+      console.info('Product submitted:', value);
+    },
+  });
+
+  const { FormTextField, FormSelectField, FormTextareaField, FormFileUploadField } =
+    useFormFields<ProductFormValues>();
+
+  return (
+    <div className="flex flex-1 space-y-4 px-2 pt-1 pb-2 md:px-3 md:pt-2">
+      <form.AppForm>
+        <form.Form className="mx-auto w-full max-w-none flex-col gap-0 p-0">
+          <div className="space-y-8 px-5 py-4">
+            <FormFileUploadField
+              name="image"
+              label="Product Image"
+              description="Upload a product image"
+              maxSize={5 * 1024 * 1024}
+              maxFiles={4}
+            />
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <FormTextField
+                name="name"
+                label="Product Name"
+                required
+                placeholder="Enter product name"
+              />
+
+              <FormSelectField
+                name="category"
+                label="Category"
+                required
+                options={categoryOptions}
+                placeholder="Select category"
+              />
+
+              <FormTextField
+                name="price"
+                label="Price"
+                required
+                type="number"
+                min={0}
+                step={0.01}
+                placeholder="Enter price"
+              />
+            </div>
+
+            <FormTextareaField
+              name="description"
+              label="Description"
+              required
+              placeholder="Enter product description"
+              maxLength={500}
+              rows={4}
+            />
+          </div>
+
+          <div className="flex justify-end gap-2 pt-4 border-t">
+            <form.SubmitButton>Add Product</form.SubmitButton>
+          </div>
+        </form.Form>
+      </form.AppForm>
+    </div>
+  );
+}
+
+export const ProductForm: Story = {
+  render: () => <ProductFormExample />,
 };
