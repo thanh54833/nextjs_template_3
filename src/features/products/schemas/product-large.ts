@@ -7,7 +7,7 @@ export const productLargeSchema = z.object({
   // Basic Information
   brand: z.string().min(1, 'Please select a brand'),
   category: z.string().min(1, 'Please select a category'),
-  gender: z.string().optional(),
+  gender: z.string().default('unisex'),
   price: z.number({ message: 'Price is required' }),
   name: z.string().min(2, 'Product name must be at least 2 characters.'),
   description: z.string().min(10, 'Description must be at least 10 characters.'),
@@ -22,28 +22,32 @@ export const productLargeSchema = z.object({
   // Images
   images: z
     .any()
-    .refine((files) => files?.length >= 1, 'At least one image is required.')
+    .optional()
+    .refine((files) => !files || files.length >= 1, 'At least one image is required.')
     .refine(
-      (files) => files?.every((f: File) => f.size <= MAX_FILE_SIZE),
+      (files) => !files || files.every((f: File) => f.size <= MAX_FILE_SIZE),
       'Max file size is 5MB.'
     )
     .refine(
-      (files) => files?.every((f: File) => ACCEPTED_IMAGE_TYPES.includes(f.type)),
+      (files) => !files || files.every((f: File) => ACCEPTED_IMAGE_TYPES.includes(f.type)),
       '.jpg, .jpeg, .png and .webp files are accepted.'
-    )
+    ),
+  // Video
+  linkVideo: z.string().optional()
 });
 
 export type ProductLargeFormValues = {
   brand: string;
   category: string;
-  gender: string;
+  gender?: string;
   price: number | undefined;
   name: string;
   description: string;
-  pageTitle: string;
-  metaDescription: string;
-  visibility: 'published' | 'schedule' | 'hidden';
-  publishDate: string;
-  parentCategory: string;
-  images: File[] | undefined;
+  pageTitle?: string;
+  metaDescription?: string;
+  visibility?: 'published' | 'schedule' | 'hidden';
+  publishDate?: string;
+  parentCategory?: string;
+  images?: File[] | undefined;
+  linkVideo?: string;
 };

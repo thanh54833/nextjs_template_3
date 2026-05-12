@@ -3,7 +3,7 @@ import { TiptapEditor } from './tiptap-editor';
 
 const meta = {
   component: TiptapEditor,
-  title: 'tiptap-editor',
+  title: 'components-ui/TiptapEditor',
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
