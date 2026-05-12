@@ -1,21 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationPrevious,
-  PaginationNext,
-  PaginationEllipsis,
-} from './pagination';
+import { Pagination } from './pagination';
 
-/**
- * A set of pagination controls for navigating through large sets of content or data.
- *
- * @see https://ui.shadcn.com/docs/components/pagination
- * @see https://storybook.js.org/docs/writing-docs/autodocs
- */
 const meta = {
   component: Pagination,
   tags: ['autodocs'],
@@ -24,8 +10,48 @@ const meta = {
     docs: {
       description: {
         component:
-          'A set of pagination controls for navigating through large sets of content or data. Each pagination group is built using the pagination components.',
+          'A comprehensive pagination component with page numbers, ellipsis, prev/next buttons, and optional per-page selector. Controlled component supporting multiple variants.',
       },
+    },
+  },
+  argTypes: {
+    currentPage: {
+      control: { type: 'number', min: 1 },
+      description: 'Current active page',
+    },
+    totalPages: {
+      control: { type: 'number', min: 1 },
+      description: 'Total number of pages',
+    },
+    siblingCount: {
+      control: { type: 'number', min: 0, max: 3 },
+      description: 'Number of sibling pages on each side of current page',
+    },
+    perPage: {
+      control: { type: 'number', min: 1 },
+      description: 'Number of items per page (used with showPerPageSelect)',
+    },
+    perPageOptions: {
+      control: false,
+      description: 'Options for per-page selector',
+    },
+    showPrevNext: {
+      control: 'boolean',
+      description: 'Show previous/next buttons',
+    },
+    showPerPageSelect: {
+      control: 'boolean',
+      description: 'Show per-page selector on left side',
+    },
+    perPageLabel: {
+      control: 'text',
+      description: 'Label text after per-page selector',
+    },
+    onPageChange: {
+      action: 'page changed',
+    },
+    onPerPageChange: {
+      action: 'per page changed',
     },
   },
 } as Meta<typeof Pagination>;
@@ -34,123 +60,110 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  /** Default pagination with ellipsis showing intermediate pages */
-  render: () => (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href='#' />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#' isActive>
-            2
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>10</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href='#' />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  ),
+  args: {
+    currentPage: 2,
+    totalPages: 9,
+    onPageChange: () => {},
+  },
 };
 
-export const ManyPages: Story = {
-  /** Pagination showing many pages with ellipsis */
-  render: () => (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href='#' />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>2</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>4</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>5</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>20</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href='#' />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  ),
+export const WithPerPageSelect: Story = {
+  args: {
+    currentPage: 2,
+    totalPages: 9,
+    perPage: 12,
+    showPerPageSelect: true,
+    onPageChange: () => {},
+    onPerPageChange: () => {},
+  },
 };
 
 export const FirstPage: Story = {
-  /** Pagination on the first page with next button enabled */
-  render: () => (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href='#' />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#' isActive>
-            1
-          </PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>2</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href='#' />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  ),
+  args: {
+    currentPage: 1,
+    totalPages: 5,
+    onPageChange: () => {},
+  },
 };
 
 export const LastPage: Story = {
-  /** Pagination on the last page with previous button enabled */
-  render: () => (
-    <Pagination>
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href='#' />
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>1</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>2</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationLink href='#'>3</PaginationLink>
-        </PaginationItem>
-        <PaginationItem>
-          <PaginationNext href='#' />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
-  ),
+  args: {
+    currentPage: 10,
+    totalPages: 10,
+    onPageChange: () => {},
+  },
+};
+
+export const ManyPages: Story = {
+  args: {
+    currentPage: 5,
+    totalPages: 20,
+    siblingCount: 1,
+    onPageChange: () => {},
+  },
+};
+
+export const FewPages: Story = {
+  args: {
+    currentPage: 2,
+    totalPages: 3,
+    onPageChange: () => {},
+  },
+};
+
+export const WithAllControls: Story = {
+  args: {
+    currentPage: 3,
+    totalPages: 15,
+    perPage: 24,
+    showPerPageSelect: true,
+    showPrevNext: true,
+    onPageChange: () => {},
+    onPerPageChange: () => {},
+  },
+};
+
+export const PageOneOfMany: Story = {
+  args: {
+    currentPage: 1,
+    totalPages: 25,
+    perPage: 12,
+    showPerPageSelect: true,
+    onPageChange: () => {},
+    onPerPageChange: () => {},
+  },
+};
+
+export const MiddlePage: Story = {
+  args: {
+    currentPage: 13,
+    totalPages: 25,
+    siblingCount: 2,
+    perPage: 48,
+    showPerPageSelect: true,
+    showPrevNext: true,
+    onPageChange: () => {},
+    onPerPageChange: () => {},
+  },
+};
+
+export const WithoutPrevNext: Story = {
+  args: {
+    currentPage: 3,
+    totalPages: 7,
+    showPrevNext: false,
+    onPageChange: () => {},
+  },
+};
+
+export const CustomPerPageLabel: Story = {
+  args: {
+    currentPage: 2,
+    totalPages: 10,
+    perPage: 50,
+    showPerPageSelect: true,
+    perPageLabel: 'items per page',
+    onPageChange: () => {},
+    onPerPageChange: () => {},
+  },
 };

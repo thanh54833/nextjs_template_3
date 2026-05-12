@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
+import { Pagination } from '@/components/ui/pagination';
 import { cn } from '@/lib/utils';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
@@ -86,6 +87,11 @@ export function DataTablePagination<TData>({
           >
             <ChevronLeftIcon />
           </Button>
+          <Pagination
+            currentPage={table.getState().pagination.pageIndex + 1}
+            totalPages={table.getPageCount()}
+            onPageChange={(page) => table.setPageIndex(page - 1)}
+          />
           <Button
             aria-label='Go to next page'
             variant='outline'

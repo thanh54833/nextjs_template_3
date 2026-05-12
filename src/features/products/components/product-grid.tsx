@@ -10,14 +10,9 @@ import { ProductFilters } from './product-filters';
 import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from '@/components/ui/empty';
+import { Pagination } from '@/components/ui/pagination';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ActiveFilterChips } from './active-filter-chips';
 
@@ -100,21 +95,13 @@ export function ProductGrid() {
 
 <div className='flex-1'>
         <div className='flex flex-wrap items-center gap-2'>
-          <div className='flex gap-1 rounded-lg border bg-muted p-1'>
-            {(['all', 'active', 'non-active'] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
-                  activeTab === tab
-                    ? 'bg-background text-foreground shadow-sm'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {tab === 'all' ? 'All' : tab === 'active' ? 'Active' : 'Non Active'}
-              </button>
-            ))}
-          </div>
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'all' | 'active' | 'non-active')}>
+            <TabsList className='h-8 text-xs'>
+              <TabsTrigger value='all' className='px-3 text-xs'>All</TabsTrigger>
+              <TabsTrigger value='active' className='px-3 text-xs'>Active</TabsTrigger>
+              <TabsTrigger value='non-active' className='px-3 text-xs'>Non Active</TabsTrigger>
+            </TabsList>
+          </Tabs>
 
           {/* CENTER: Search input — dominant, takes available space */}
           <div className='relative min-w-[200px] flex-1'>
@@ -209,79 +196,15 @@ export function ProductGrid() {
         )}
 
         {hasProducts && (
-          <div className='mt-3 flex items-center justify-between border-t pt-2'>
-            <div className='flex items-center gap-2 text-xs text-muted-foreground'>
-              <Select
-                value={String(params.perPage)}
-                onValueChange={(value) => setParams({ perPage: parseInt(value), page: 1 })}
-              >
-                <SelectTrigger className='h-8 w-16 text-xs'>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value='8'>8</SelectItem>
-                  <SelectItem value='12'>12</SelectItem>
-                  <SelectItem value='24'>24</SelectItem>
-                  <SelectItem value='48'>48</SelectItem>
-                </SelectContent>
-              </Select>
-              <span className='text-xs text-muted-foreground'>per page</span>
-            </div>
-
-            <div className='flex items-center gap-1'>
-              <Button
-                variant='outline'
-                size='sm'
-                className='h-8 w-8 p-0'
-                disabled={params.page <= 1}
-                onClick={() => setParams({ page: params.page - 1 })}
-              >
-                <Icons.chevronLeft className='h-4 w-4' />
-              </Button>
-
-              {Array.from({ length: Math.min(5, pageCount) }, (_, i) => {
-                const pageNum = i + 1;
-                return (
-                  <Button
-                    key={pageNum}
-                    variant={params.page === pageNum ? 'default' : 'outline'}
-                    size='sm'
-                    className={`h-8 w-8 p-0 text-xs ${
-                      params.page === pageNum
-                        ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                        : ''
-                    }`}
-                    onClick={() => setParams({ page: pageNum })}
-                  >
-                    {pageNum}
-                  </Button>
-                );
-              })}
-
-              {pageCount > 5 && (
-                <>
-                  <span className='px-1 text-xs text-muted-foreground'>...</span>
-                  <Button
-                    variant='outline'
-                    size='sm'
-                    className='h-8 w-8 p-0 text-xs'
-                    onClick={() => setParams({ page: pageCount })}
-                  >
-                    {pageCount}
-                  </Button>
-                </>
-              )}
-
-              <Button
-                variant='outline'
-                size='sm'
-                className='h-8 w-8 p-0'
-                disabled={params.page >= pageCount}
-                onClick={() => setParams({ page: params.page + 1 })}
-              >
-                <Icons.chevronRight className='h-4 w-4' />
-              </Button>
-            </div>
+          <div className='mt-3 border-t pt-2'>
+            <Pagination
+              currentPage={params.page}
+              totalPages={pageCount}
+              onPageChange={(page) => setParams({ page })}
+              perPage={params.perPage}
+              showPerPageSelect={true}
+              onPerPageChange={(perPage) => setParams({ perPage, page: 1 })}
+            />
           </div>
         )}
       </div>
