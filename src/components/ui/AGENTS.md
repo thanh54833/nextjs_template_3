@@ -184,9 +184,39 @@ Components importing `next/image` or `next/navigation` work in Storybook via moc
 | `Cannot find module 'vite'` | Missing dependency | `bun add -d vite@7` (v8 has native binding issues) |
 | `rolldown binding error` | Vite 8 native bindings | Downgrade to Vite 7 |
 | Accessibility scan loop | Auto a11y scanning | Set `a11y: { manual: true }` in preview |
-| `Duplicate declaration` | Radix import collision | Use alias: `import { X as XPrimitive } from 'radix-ui'` |
+| `Duplicate declaration` | Story export name conflicts with imported component name (e.g., `export const ProductFormLarge` while importing `ProductFormLarge` component) | Rename the story export (e.g., `ProductFormLargeLayout`) — Storybook's Babel transform conflates top-level declarations |
+| `Export 'XxxProps' is not defined` | Exported a type via `export type { XxxProps }` but never declared the interface | Always declare the interface before exporting: `interface XxxProps { ... }` |
 | `Failed to fetch dynamically imported module` | Add `@tiptap/react` and `@tiptap/starter-kit` to `optimizeDeps.include` |
 | `Missing "." specifier in "@tiptap/pm"` | Do NOT include `@tiptap/pm` in optimizeDeps — has no root entry |
+
+### Story Export Naming
+
+**Never name a story export the same as an imported component.** Storybook's Babel transform treats top-level `export const` declarations as variable declarations and confuses them with imports of the same name.
+
+```tsx
+// ❌ WRONG — 'ProductFormLarge' declared twice (import + story export)
+import ProductFormLarge from '@/features/products/components/product-form-large';
+export const ProductFormLarge: Story = { ... }; // duplicate!
+
+// ✅ CORRECT — rename the story export
+export const ProductFormLargeLayout: Story = { ... };
+```
+
+### Component Props Type Declaration
+
+Every component with props must have a declared interface. When exporting types, always declare first:
+
+```tsx
+// ❌ WRONG — ToolbarDividerProps referenced but never declared
+const ToolbarDivider = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(...);
+export type { ToolbarDividerProps }; // undefined!
+
+// ✅ CORRECT — declare then export
+interface ToolbarDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
+const ToolbarDivider = React.forwardRef<HTMLDivElement, ToolbarDividerProps>(...);
+export { ToolbarDivider };
+export type { ToolbarDividerProps };
+```
 
 ### Story Organization
 
