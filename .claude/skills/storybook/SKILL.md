@@ -88,16 +88,12 @@ Add to `.storybook/main.ts` `viteFinal`:
 optimizeDeps: {
   include: [
     '@tiptap/react',
-    '@tiptap/pm',
     '@tiptap/starter-kit',
-    '@tiptap/extension-link',
-    '@tiptap/extension-image',
-    '@tiptap/extension-text-align',
-    '@tiptap/extension-underline',
-    '@tiptap/extension-placeholder',
   ],
 },
 ```
+
+**Note**: Do NOT include `@tiptap/pm` in optimizeDeps — it has no root entry point and will cause build failure.
 
 ### Tiptap Editor Stories Pattern
 

@@ -32,13 +32,7 @@ const config: StorybookConfig = {
         include: [
           ...(config.optimizeDeps?.include || []),
           '@tiptap/react',
-          '@tiptap/pm',
           '@tiptap/starter-kit',
-          '@tiptap/extension-link',
-          '@tiptap/extension-image',
-          '@tiptap/extension-text-align',
-          '@tiptap/extension-underline',
-          '@tiptap/extension-placeholder',
         ],
       },
     };

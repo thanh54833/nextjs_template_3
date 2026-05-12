@@ -883,3 +883,4 @@ build.
 [ 9299069ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
 [ 9938533ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
 [10083047ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[10298728ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
