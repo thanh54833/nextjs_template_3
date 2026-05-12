@@ -29,10 +29,19 @@ const config: StorybookConfig = {
       },
       optimizeDeps: {
         ...config.optimizeDeps,
+        exclude: ['@tiptap/pm'],
         include: [
           ...(config.optimizeDeps?.include || []),
           '@tiptap/react',
           '@tiptap/starter-kit',
+          '@tiptap/extension-link',
+          '@tiptap/extension-image',
+          '@tiptap/extension-text-align',
+          '@tiptap/extension-underline',
+          '@tiptap/extension-placeholder',
+          '@tiptap/core',
+          '@tiptap/state',
+          '@tiptap/view',
         ],
       },
     };
