@@ -12,6 +12,8 @@ import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
 import type { Product } from '../api/types';
 import { getUniqueCategories } from '@/constants/mock-api-products';
+import ProductFormLarge from './product-form-large';
+import type { ProductLargeFormValues } from '@/features/products/schemas/product-large';
 
 function formatPrice(price: number): string {
   return new Intl.NumberFormat('vi-VN').format(price) + 'đ';
@@ -180,7 +182,32 @@ export function ProductDetailSheet({
           </div>
 
           {/* ── Scrollable body ── */}
-          <div className='flex-1 overflow-y-auto' />
+          <div className='flex-1 overflow-y-auto'>
+            {isEditing && editedProduct ? (
+              <ProductFormLarge
+                isEmbedded
+                initialData={editedProduct}
+                pageTitle='Edit Product'
+                onExternalSubmit={(values) => {
+                  updateMutation.mutate({
+                    id: Number(editedProduct.id),
+                    values: {
+                      name: values.name,
+                      category: values.category,
+                      price: values.price!,
+                      description: values.description
+                    }
+                  });
+                }}
+                onExternalCancel={handleCancelClick}
+                isExternalSubmitting={updateMutation.isPending}
+              />
+            ) : (
+              <div className='flex items-center justify-center h-full text-muted-foreground'>
+                Click Edit to modify product
+              </div>
+            )}
+          </div>
 
           {/* ── Footer ── */}
           <div className='flex flex-shrink-0 items-center justify-end gap-2 border-t px-5 py-3'>

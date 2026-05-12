@@ -24,12 +24,22 @@ type ProductFormLargeProps = {
   initialData: Product | null;
   pageTitle: string;
   isEmbedded?: boolean;
+  externalEditedProduct?: Product | null;
+  onExternalUpdate?: (product: Product) => void;
+  onExternalSubmit?: (values: ProductLargeFormValues) => void;
+  onExternalCancel?: () => void;
+  isExternalSubmitting?: boolean;
 };
 
 export default function ProductFormLarge({
   initialData,
   pageTitle,
-  isEmbedded = false
+  isEmbedded = false,
+  externalEditedProduct,
+  onExternalUpdate,
+  onExternalSubmit,
+  onExternalCancel,
+  isExternalSubmitting = false
 }: ProductFormLargeProps) {
   const router = useRouter();
   const isEdit = !!initialData;
@@ -88,6 +98,11 @@ export default function ProductFormLarge({
         parentCategory: value.parentCategory,
         linkVideo: value.linkVideo
       };
+
+      if (isEmbedded && onExternalSubmit) {
+        onExternalSubmit(payload);
+        return;
+      }
 
       if (isEdit) {
         updateMutation.mutate({ id: Number(initialData.id), values: payload });
