@@ -77,44 +77,8 @@ export const Default: Story = {
   }
 };
 
-/** Dialog containing a form, the most common real-world pattern */
-export const FormDialog: Story = {
-  render: () => {
-    const [open, setOpen] = useState(false);
-    return (
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <Button variant="outline">Edit Profile</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit Profile</DialogTitle>
-            <DialogDescription>
-              Update your display name and email. Changes take effect immediately.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid gap-1.5">
-              <label htmlFor="name" className="text-sm font-medium">Name</label>
-              <Input id="name" defaultValue="Alex Johnson" />
-            </div>
-            <div className="grid gap-1.5">
-              <label htmlFor="email" className="text-sm font-medium">Email</label>
-              <Input id="email" type="email" defaultValue="alex@socialdash.io" />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button onClick={() => setOpen(false)}>Save changes</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    );
-  }
-};
-
 // ---------------------------------------------------------------------------
-// ScheduleInterviewForm — rich sectioned form matching the design spec
+// FormDialog — rich sectioned form matching the design spec
 // ---------------------------------------------------------------------------
 
 const interviewSchema = z.object({
@@ -212,40 +176,43 @@ function ScheduleInterviewFormDialog({ onClose }: { onClose: () => void }) {
             <div className="grid grid-cols-2 gap-3">
               <form.AppField name="interviewDate">
                 {(field) => (
-                  <field.FieldSet>
-                    <field.Field>
-                      <field.FieldLabel>Interview date &amp; time</field.FieldLabel>
-                      <div className="relative">
-                        <Input
-                          placeholder="Pick a slot"
-                          value={field.state.value}
-                          onChange={(e) => field.handleChange(e.target.value)}
-                          onBlur={field.handleBlur}
-                          className="pl-9"
-                        />
-                        <Icons.calendar className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                      </div>
-                    </field.Field>
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium leading-none">
+                      Interview date &amp; time
+                    </label>
+                    <div className="relative">
+                      <Input
+                        placeholder="Pick a slot"
+                        value={field.state.value}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        onBlur={field.handleBlur}
+                        className="pl-9"
+                      />
+                      <Icons.calendar className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    </div>
                     <field.FieldError />
-                  </field.FieldSet>
+                  </div>
                 )}
               </form.AppField>
 
               <form.AppField name="duration">
                 {(field) => (
                   <div className="space-y-1.5">
-                    <p className="text-sm font-medium leading-none">Duration</p>
+                    <label className="text-sm font-medium leading-none">
+                      Duration
+                    </label>
                     <ToggleGroup
                       type="single"
+                      variant="outline"
                       value={field.state.value}
                       onValueChange={(v) => { if (v) field.handleChange(v as '30' | '60' | '90'); }}
-                      className="justify-start gap-1"
+                      className="w-full"
                     >
                       {DURATION_OPTIONS.map(({ value, label }) => (
                         <ToggleGroupItem
                           key={value}
                           value={value}
-                          className="h-9 px-3 text-xs font-medium data-[state=on]:bg-foreground data-[state=on]:text-background data-[state=on]:border-foreground"
+                          className="flex-1 text-xs font-medium data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
                         >
                           {label}
                         </ToggleGroupItem>
@@ -285,8 +252,8 @@ function ScheduleInterviewFormDialog({ onClose }: { onClose: () => void }) {
   );
 }
 
-/** Rich sectioned dialog form: candidate card, date/duration grid, prospect list — mirrors the Schedule Interview design */
-export const ScheduleInterviewForm: Story = {
+/** Sectioned dialog form: candidate card, date/duration grid, prospect list */
+export const FormDialog: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const trigger = canvas.getByRole('button', { name: /schedule interview/i });
