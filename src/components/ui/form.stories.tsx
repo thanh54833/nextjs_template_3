@@ -48,15 +48,17 @@ function LoginFormExample() {
   });
   return (
     <div className="max-w-sm">
-      <form.Form>
-        <form.AppField name="email">
-          {(field) => <field.TextField label="Email" type="email" placeholder="you@socialdash.io" />}
-        </form.AppField>
-        <form.AppField name="password">
-          {(field) => <field.TextField label="Password" type="password" placeholder="Min 8 characters" />}
-        </form.AppField>
-        <form.SubmitButton>Sign in</form.SubmitButton>
-      </form.Form>
+      <form.AppForm>
+        <form.Form>
+          <form.AppField name="email">
+            {(field) => <field.TextField label="Email" type="email" placeholder="you@socialdash.io" />}
+          </form.AppField>
+          <form.AppField name="password">
+            {(field) => <field.TextField label="Password" type="password" placeholder="Min 8 characters" />}
+          </form.AppField>
+          <form.SubmitButton>Sign in</form.SubmitButton>
+        </form.Form>
+      </form.AppForm>
     </div>
   );
 }
@@ -97,18 +99,20 @@ function ProfileFormExample() {
   });
   return (
     <div className="max-w-sm">
-      <form.Form>
-        <form.AppField name="name">
-          {(field) => <field.TextField label="Display name" />}
-        </form.AppField>
-        <form.AppField name="email">
-          {(field) => <field.TextField label="Email" type="email" />}
-        </form.AppField>
-        <form.AppField name="bio">
-          {(field) => <field.TextField label="Bio" description="Max 160 characters" />}
-        </form.AppField>
-        <form.SubmitButton>Save changes</form.SubmitButton>
-      </form.Form>
+      <form.AppForm>
+        <form.Form>
+          <form.AppField name="name">
+            {(field) => <field.TextField label="Display name" />}
+          </form.AppField>
+          <form.AppField name="email">
+            {(field) => <field.TextField label="Email" type="email" />}
+          </form.AppField>
+          <form.AppField name="bio">
+            {(field) => <field.TextField label="Bio" description="Max 160 characters" />}
+          </form.AppField>
+          <form.SubmitButton>Save changes</form.SubmitButton>
+        </form.Form>
+      </form.AppForm>
     </div>
   );
 }
@@ -132,15 +136,17 @@ function ValidationExample() {
   });
   return (
     <div className="max-w-sm space-y-4">
-      <form.Form>
-        <form.AppField name="email">
-          {(field) => <field.TextField label="Email" type="email" />}
-        </form.AppField>
-        <form.AppField name="password">
-          {(field) => <field.TextField label="Password" type="password" />}
-        </form.AppField>
-        <form.SubmitButton>Submit</form.SubmitButton>
-      </form.Form>
+      <form.AppForm>
+        <form.Form>
+          <form.AppField name="email">
+            {(field) => <field.TextField label="Email" type="email" />}
+          </form.AppField>
+          <form.AppField name="password">
+            {(field) => <field.TextField label="Password" type="password" />}
+          </form.AppField>
+          <form.SubmitButton>Submit</form.SubmitButton>
+        </form.Form>
+      </form.AppForm>
       <p className="text-xs text-muted-foreground px-2">
         Form pre-seeded with invalid values. Type in either field to trigger validation.
       </p>

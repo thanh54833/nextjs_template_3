@@ -2,7 +2,13 @@
 
 import { useAppForm, useFormFields } from '@/components/ui/tanstack-form';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Frame,
+  FrameFooter,
+  FrameHeader,
+  FramePanel,
+  FrameTitle
+} from '@/components/ui/frame';
 import { createProductMutation, updateProductMutation } from '../api/mutations';
 import type { Product } from '../api/types';
 import { useMutation } from '@tanstack/react-query';
@@ -75,78 +81,82 @@ export default function ProductForm({
     useFormFields<ProductFormValues>();
 
   return (
-    <Card className='mx-auto w-full'>
-      <CardHeader>
-        <CardTitle className='text-left text-2xl font-bold'>{pageTitle}</CardTitle>
-      </CardHeader>
-      <CardContent>
+    <Frame className='mx-auto w-full'>
+      <FramePanel>
+        <FrameHeader>
+          <FrameTitle className='text-left text-2xl font-bold'>{pageTitle}</FrameTitle>
+        </FrameHeader>
         <form.AppForm>
-          <form.Form className='space-y-8'>
-            <FormFileUploadField
-              name='image'
-              label='Product Image'
-              description='Upload a product image'
-              maxSize={5 * 1024 * 1024}
-              maxFiles={4}
-            />
-
-            <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
-              <FormTextField
-                name='name'
-                label='Product Name'
-                required
-                placeholder='Enter product name'
-                validators={{
-                  onBlur: z.string().min(2, 'Product name must be at least 2 characters.')
-                }}
+          <form.Form className='mx-auto w-full max-w-none flex-col gap-0 p-0'>
+            <div className='space-y-8 px-5 py-4'>
+              <FormFileUploadField
+                name='image'
+                label='Product Image'
+                description='Upload a product image'
+                maxSize={5 * 1024 * 1024}
+                maxFiles={4}
               />
 
-              <FormSelectField
-                name='category'
-                label='Category'
-                required
-                options={categoryOptions}
-                placeholder='Select category'
-                validators={{
-                  onBlur: z.string().min(1, 'Please select a category')
-                }}
-              />
+              <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+                <FormTextField
+                  name='name'
+                  label='Product Name'
+                  required
+                  placeholder='Enter product name'
+                  validators={{
+                    onBlur: z.string().min(2, 'Product name must be at least 2 characters.')
+                  }}
+                />
 
-              <FormTextField
-                name='price'
-                label='Price'
+                <FormSelectField
+                  name='category'
+                  label='Category'
+                  required
+                  options={categoryOptions}
+                  placeholder='Select category'
+                  validators={{
+                    onBlur: z.string().min(1, 'Please select a category')
+                  }}
+                />
+
+                <FormTextField
+                  name='price'
+                  label='Price'
+                  required
+                  type='number'
+                  min={0}
+                  step={0.01}
+                  placeholder='Enter price'
+                  validators={{
+                    onBlur: z.number({ message: 'Price is required' })
+                  }}
+                />
+              </div>
+
+              <FormTextareaField
+                name='description'
+                label='Description'
                 required
-                type='number'
-                min={0}
-                step={0.01}
-                placeholder='Enter price'
+                placeholder='Enter product description'
+                maxLength={500}
+                rows={4}
                 validators={{
-                  onBlur: z.number({ message: 'Price is required' })
+                  onBlur: z.string().min(10, 'Description must be at least 10 characters.')
                 }}
               />
             </div>
 
-            <FormTextareaField
-              name='description'
-              label='Description'
-              required
-              placeholder='Enter product description'
-              maxLength={500}
-              rows={4}
-              validators={{
-                onBlur: z.string().min(10, 'Description must be at least 10 characters.')
-              }}
-            />
-
-            <div className='flex justify-end gap-2'>
-              <Button type='button' variant='outline' onClick={() => router.back()}>
-                Back
-              </Button>
-              <form.SubmitButton>{isEdit ? 'Update Product' : 'Add Product'}</form.SubmitButton>
-            </div>
+            <FrameFooter className='border-t border-border/60'>
+              <div className='flex justify-end gap-2'>
+                <Button type='button' variant='outline' onClick={() => router.back()}>
+                  Back
+                </Button>
+                <form.SubmitButton>{isEdit ? 'Update Product' : 'Add Product'}</form.SubmitButton>
+              </div>
+            </FrameFooter>
           </form.Form>
         </form.AppForm>
-      </CardContent>
-    </Card>
+      </FramePanel>
+    </Frame>
   );
 }
