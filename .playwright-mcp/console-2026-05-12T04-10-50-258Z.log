@@ -518,3 +518,4 @@ act(() => {
 /* assert on the output */
 
 This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act Story2 @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/chunk-QYA6BBS6.js?v=02f845b1:13380
+[ 6803928ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864

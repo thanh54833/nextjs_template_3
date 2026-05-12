@@ -1,4 +1,3 @@
-import PageContainer from '@/components/layout/page-container';
 import ProductForm from '@/features/products/components/product-form';
 
 export const metadata = {
@@ -7,10 +6,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <PageContainer>
-      <div className='flex-1 space-y-4'>
-        <ProductForm initialData={null} pageTitle='Create New Product' />
-      </div>
-    </PageContainer>
+    <div className='flex-1 space-y-4 px-2 pt-1 pb-2 md:px-3 md:pt-2'>
+      <ProductForm initialData={null} pageTitle='Create New Product' variant='compact' />
+    </div>
   );
 }

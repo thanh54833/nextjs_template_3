@@ -4,7 +4,6 @@ import { useAppForm, useFormFields } from '@/components/ui/tanstack-form';
 import { Button } from '@/components/ui/button';
 import {
   Frame,
-  FrameFooter,
   FrameHeader,
   FramePanel,
   FrameTitle
@@ -18,15 +17,20 @@ import * as z from 'zod';
 import { productSchema, type ProductFormValues } from '@/features/products/schemas/product';
 import { categoryOptions } from '@/features/products/constants/product-options';
 
-export default function ProductForm({
-  initialData,
-  pageTitle
-}: {
+type ProductFormProps = {
   initialData: Product | null;
   pageTitle: string;
-}) {
+  variant?: 'frame' | 'compact';
+};
+
+export default function ProductForm({
+  initialData,
+  pageTitle,
+  variant = 'frame'
+}: ProductFormProps) {
   const router = useRouter();
   const isEdit = !!initialData;
+  const isCompact = variant === 'compact';
 
   const createMutation = useMutation({
     ...createProductMutation,
@@ -80,82 +84,95 @@ export default function ProductForm({
   const { FormTextField, FormSelectField, FormTextareaField, FormFileUploadField } =
     useFormFields<ProductFormValues>();
 
+  const formContent = (
+    <form.AppForm>
+      <form.Form className={isCompact ? 'space-y-6' : 'mx-auto w-full max-w-none flex-col gap-0 p-0'}>
+        <div className={isCompact ? 'space-y-4' : 'space-y-8 px-5 py-4'}>
+          <FormFileUploadField
+            name='image'
+            label='Product Image'
+            description='Upload a product image'
+            maxSize={5 * 1024 * 1024}
+            maxFiles={4}
+          />
+
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+            <FormTextField
+              name='name'
+              label='Product Name'
+              required
+              placeholder='Enter product name'
+              validators={{
+                onBlur: z.string().min(2, 'Product name must be at least 2 characters.')
+              }}
+            />
+
+            <FormSelectField
+              name='category'
+              label='Category'
+              required
+              options={categoryOptions}
+              placeholder='Select category'
+              validators={{
+                onBlur: z.string().min(1, 'Please select a category')
+              }}
+            />
+
+            <FormTextField
+              name='price'
+              label='Price'
+              required
+              type='number'
+              min={0}
+              step={0.01}
+              placeholder='Enter price'
+              validators={{
+                onBlur: z.number({ message: 'Price is required' })
+              }}
+            />
+          </div>
+
+          <FormTextareaField
+            name='description'
+            label='Description'
+            required
+            placeholder='Enter product description'
+            maxLength={500}
+            rows={4}
+            validators={{
+              onBlur: z.string().min(10, 'Description must be at least 10 characters.')
+            }}
+          />
+        </div>
+
+        <div className={`flex justify-end gap-2 ${isCompact ? 'pt-4 border-t' : ''}`}>
+          <Button type='button' variant='outline' onClick={() => router.back()}>
+            Back
+          </Button>
+          <form.SubmitButton>{isEdit ? 'Update Product' : 'Add Product'}</form.SubmitButton>
+        </div>
+      </form.Form>
+    </form.AppForm>
+  );
+
+  if (isCompact) {
+    return (
+      <div className='mx-auto w-full max-w-2xl'>
+        <div className='mb-6'>
+          <h1 className='text-2xl font-bold'>{pageTitle}</h1>
+        </div>
+        {formContent}
+      </div>
+    );
+  }
+
   return (
     <Frame className='mx-auto w-full'>
       <FramePanel>
         <FrameHeader>
           <FrameTitle className='text-left text-2xl font-bold'>{pageTitle}</FrameTitle>
         </FrameHeader>
-        <form.AppForm>
-          <form.Form className='mx-auto w-full max-w-none flex-col gap-0 p-0'>
-            <div className='space-y-8 px-5 py-4'>
-              <FormFileUploadField
-                name='image'
-                label='Product Image'
-                description='Upload a product image'
-                maxSize={5 * 1024 * 1024}
-                maxFiles={4}
-              />
-
-              <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
-                <FormTextField
-                  name='name'
-                  label='Product Name'
-                  required
-                  placeholder='Enter product name'
-                  validators={{
-                    onBlur: z.string().min(2, 'Product name must be at least 2 characters.')
-                  }}
-                />
-
-                <FormSelectField
-                  name='category'
-                  label='Category'
-                  required
-                  options={categoryOptions}
-                  placeholder='Select category'
-                  validators={{
-                    onBlur: z.string().min(1, 'Please select a category')
-                  }}
-                />
-
-                <FormTextField
-                  name='price'
-                  label='Price'
-                  required
-                  type='number'
-                  min={0}
-                  step={0.01}
-                  placeholder='Enter price'
-                  validators={{
-                    onBlur: z.number({ message: 'Price is required' })
-                  }}
-                />
-              </div>
-
-              <FormTextareaField
-                name='description'
-                label='Description'
-                required
-                placeholder='Enter product description'
-                maxLength={500}
-                rows={4}
-                validators={{
-                  onBlur: z.string().min(10, 'Description must be at least 10 characters.')
-                }}
-              />
-            </div>
-
-            <FrameFooter className='border-t border-border/60'>
-              <div className='flex justify-end gap-2'>
-                <Button type='button' variant='outline' onClick={() => router.back()}>
-                  Back
-                </Button>
-                <form.SubmitButton>{isEdit ? 'Update Product' : 'Add Product'}</form.SubmitButton>
-              </div>
-            </FrameFooter>
-          </form.Form>
-        </form.AppForm>
+        {formContent}
       </FramePanel>
     </Frame>
   );
