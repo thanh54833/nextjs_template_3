@@ -78,59 +78,11 @@ const mockProducts = [
   },
 ];
 
-/** Default table with header, body, footer, and sample data */
+/**
+ * Default product table showcasing image, badges, and action patterns.
+ * This is the canonical example for admin dashboard tables.
+ */
 export const Default: Story = {
-  args: {
-    children: (
-      <>
-        <TableCaption>A list of your recent users.</TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Role</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {mockUsers.map((user) => (
-            <TableRow key={user.id}>
-              <TableCell>{user.name}</TableCell>
-              <TableCell>{user.email}</TableCell>
-              <TableCell>{user.role}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-        <TableFooter>
-          <TableRow>
-            <TableCell>Total</TableCell>
-            <TableCell colSpan={2}>{mockUsers.length} users</TableCell>
-          </TableRow>
-        </TableFooter>
-      </>
-    ),
-  },
-};
-
-/** Simple table with just body and rows */
-export const SimpleTable: Story = {
-  args: {
-    children: (
-      <TableBody>
-        <TableRow>
-          <TableCell>Cell 1</TableCell>
-          <TableCell>Cell 2</TableCell>
-        </TableRow>
-      </TableBody>
-    ),
-  },
-};
-
-/** Product table with image, badges, and action patterns */
-export const ProductTable: Story = {
-  name: 'Product Table',
-  parameters: {
-    layout: 'padded',
-  },
   args: {
     children: (
       <>
@@ -193,8 +145,24 @@ export const ProductTable: Story = {
   },
 };
 
+/** Simple table with just body and rows */
+export const SimpleTable: Story = {
+  name: 'Simple Table',
+  args: {
+    children: (
+      <TableBody>
+        <TableRow>
+          <TableCell>Cell 1</TableCell>
+          <TableCell>Cell 2</TableCell>
+        </TableRow>
+      </TableBody>
+    ),
+  },
+};
+
 /** Table with status badges in category column */
 export const WithBadges: Story = {
+  name: 'With Badges',
   args: {
     children: (
       <>
@@ -472,52 +440,6 @@ export const WithActions: Story = {
                   </button>
                 </div>
               </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </>
-    ),
-  },
-};
-
-/** Table with image thumbnails */
-export const WithImages: Story = {
-  name: 'With Images',
-  parameters: {
-    docs: {
-      description: {
-        story: 'Table with image thumbnails in the first column, commonly used for product catalogs.',
-      },
-    },
-  },
-  args: {
-    children: (
-      <>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-20">Image</TableHead>
-            <TableHead>Name</TableHead>
-            <TableHead>Price</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {[
-            { name: 'Wireless Headphones', price: '$99.99', img: 'https://picsum.photos/seed/1/80/80' },
-            { name: 'Smart Watch', price: '$199.99', img: 'https://picsum.photos/seed/2/80/80' },
-            { name: 'Bluetooth Speaker', price: '$49.99', img: 'https://picsum.photos/seed/3/80/80' },
-          ].map((product, i) => (
-            <TableRow key={i}>
-              <TableCell>
-                <div className="relative aspect-square w-16 overflow-hidden rounded-lg">
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </TableCell>
-              <TableCell className="font-medium">{product.name}</TableCell>
-              <TableCell>{product.price}</TableCell>
             </TableRow>
           ))}
         </TableBody>

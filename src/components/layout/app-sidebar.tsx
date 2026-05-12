@@ -40,15 +40,15 @@ export default function AppSidebar() {
             <SidebarMenu>
               {group.items.map((item) => {
                 const Icon = item.icon ? Icons[item.icon] : Icons.logo;
+                const isChildActive = item.items?.some((subItem) => pathname.startsWith(subItem.url));
                 return item?.items && item?.items?.length > 0 ? (
                   <Collapsible
                     key={item.title}
                     asChild
-                    defaultOpen={item.isActive}
+                    defaultOpen={item.isActive || isChildActive}
                     className='group/collapsible'
                   >
                     <SidebarMenuItem>
-                      const isChildActive = item.items?.some((subItem) => pathname.startsWith(subItem.url));
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton
                           tooltip={item.title}
