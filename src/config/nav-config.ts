@@ -61,12 +61,24 @@ export const navGroups: NavGroup[] = [
         access: { requireOrg: true }
       },
       {
-        title: 'Product',
+        title: 'Products',
         url: '/dashboard/product',
         icon: 'product',
         shortcut: ['p', 'p'],
         isActive: false,
-        items: []
+        items: [
+          {
+            title: 'All Products',
+            url: '/dashboard/product',
+            icon: 'product',
+            shortcut: ['p', 'p']
+          },
+          {
+            title: 'Add Product',
+            url: '/dashboard/product/new',
+            icon: 'product'
+          }
+        ]
       },
       {
         title: 'Returns',

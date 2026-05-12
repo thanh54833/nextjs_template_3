@@ -48,8 +48,12 @@ export default function AppSidebar() {
                     className='group/collapsible'
                   >
                     <SidebarMenuItem>
+                      const isChildActive = item.items?.some((subItem) => pathname.startsWith(subItem.url));
                       <CollapsibleTrigger asChild>
-                        <SidebarMenuButton tooltip={item.title} isActive={pathname === item.url}>
+                        <SidebarMenuButton
+                          tooltip={item.title}
+                          isActive={!isChildActive && pathname === item.url}
+                        >
                           {item.icon && <Icon />}
                           <span>{item.title}</span>
                           <Icons.chevronRight className='ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90' />
