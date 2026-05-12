@@ -42,7 +42,9 @@ const ToolbarButton = React.forwardRef<HTMLButtonElement, ToolbarButtonProps>(
 );
 ToolbarButton.displayName = 'ToolbarButton';
 
-const ToolbarDivider = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+interface ToolbarDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const ToolbarDivider = React.forwardRef<HTMLDivElement, ToolbarDividerProps>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}

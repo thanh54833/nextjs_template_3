@@ -68,6 +68,19 @@ export const ReadOnly: Story = {
   },
 };
 
+export const WithImage: Story = {
+  args: {
+    placeholder: 'Add an image to this editor...',
+    editable: true,
+    content: `
+      <h2>Image Example</h2>
+      <p>Below is an image embedded in the editor content:</p>
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Laptop with code" />
+      <p>You can add images via URL or upload them directly into the editor.</p>
+    `,
+  },
+};
+
 export const WithLinkAndImage: Story = {
   args: {
     placeholder: 'Add links and images...',
