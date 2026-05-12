@@ -76,3 +76,66 @@ const meta = {
 1. **No argument**: show the command table above, ask what they'd like to do.
 2. **First word matches a command**: load its reference file and follow its instructions. Everything after the command name is the target.
 3. **First word doesn't match**: infer the best-fit command from context (a `.stories.tsx` file → `stories`, a `.storybook/` path → `config`, a `play:` block → `play`, documentation request → `docs`), load that reference, proceed.
+
+## Tiptap Component Storybook
+
+When writing stories for Tiptap editor components:
+
+### Required Vite Config
+
+Add to `.storybook/main.ts` `viteFinal`:
+```typescript
+optimizeDeps: {
+  include: [
+    '@tiptap/react',
+    '@tiptap/pm',
+    '@tiptap/starter-kit',
+    '@tiptap/extension-link',
+    '@tiptap/extension-image',
+    '@tiptap/extension-text-align',
+    '@tiptap/extension-underline',
+    '@tiptap/extension-placeholder',
+  ],
+},
+```
+
+### Tiptap Editor Stories Pattern
+
+```tsx
+// tiptap-editor.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { TiptapEditor } from './tiptap-editor';
+
+const meta = {
+  component: TiptapEditor,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'padded',
+  },
+  argTypes: {
+    placeholder: { control: 'text' },
+    editable: { control: 'boolean' },
+    content: { control: 'text' },
+  },
+} satisfies Meta<typeof TiptapEditor>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    placeholder: 'Start writing...',
+    editable: true,
+    content: '',
+  },
+};
+```
+
+### Common Tiptap Errors
+
+| Error | Fix |
+|-------|-----|
+| `Failed to fetch dynamically imported module` | Add tiptap packages to `optimizeDeps.include` in viteFinal |
+| `Cannot find module '@tiptap/pm'` | Ensure `optimizeDeps.include` includes `@tiptap/pm` |
+| `Module level directives cause errors` | Pre-bundle tiptap packages via `optimizeDeps.include` |
+| Dynamic import failure in Storybook | Vite needs to pre-bundle ESM-only packages |

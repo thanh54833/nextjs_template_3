@@ -879,3 +879,7 @@ If you are in a deployed Storybook, there may have been an issue deploying the f
 build.
     at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8597:11)
     at async ns2.onStoryIndexChanged (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=02f845b1:8637:17)
+[ 8858487ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[ 9299069ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[ 9938533ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[10083047ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864

@@ -351,7 +351,7 @@ export const InteractiveTabs: Story = {
               <input
                 type='text'
                 placeholder='Enter your name'
-                className='h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50'
+                className='h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm outline-none focus-visible:border-ring focus-visible:ring-[1px] focus-visible:ring-ring/50'
               />
             </div>
             <div className='space-y-1.5'>
@@ -359,7 +359,7 @@ export const InteractiveTabs: Story = {
               <input
                 type='email'
                 placeholder='Enter your email'
-                className='h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50'
+                className='h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm outline-none focus-visible:border-ring focus-visible:ring-[1px] focus-visible:ring-ring/50'
               />
             </div>
             <Button className='w-full'>Submit Form</Button>

@@ -128,7 +128,7 @@ export const NotificationCard: FC<NotificationCardProps> = ({
               className={cn(
                 'rounded-lg p-1.5 transition-colors',
                 'text-muted-foreground hover:bg-accent hover:text-foreground',
-                'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50'
+                'focus-visible:outline-none focus-visible:ring-[1px] focus-visible:ring-ring/50'
               )}
               aria-label='Mark as read'
             >
@@ -161,7 +161,7 @@ export const NotificationCard: FC<NotificationCardProps> = ({
                           : 'bg-accent text-muted-foreground hover:bg-accent hover:text-foreground',
                       showLoading && 'opacity-50',
                       isExecuted && 'cursor-not-allowed opacity-60',
-                      'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50'
+                      'focus-visible:outline-none focus-visible:ring-[1px] focus-visible:ring-ring/50'
                     )}
                   >
                     {showLoading ? (

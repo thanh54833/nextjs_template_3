@@ -45,6 +45,7 @@ export function ThemeModeToggle() {
           onClick={handleThemeToggle}
           data-state={isDark ? 'dark' : 'light'}
           aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+          suppressHydrationWarning
         >
           <Icons.sun className="size-4 transition-transform duration-300 ease-out group-data-[state=dark]:-rotate-90 group-data-[state=dark]:scale-0" />
           <Icons.moon className="absolute size-4 transition-transform duration-300 ease-out rotate-90 scale-0 group-data-[state=dark]:rotate-0 group-data-[state=dark]:scale-100" />

@@ -14,6 +14,12 @@ export const brandOptions = [
   { value: '708', label: 'Quà tặng không bán' }
 ];
 
+export const genderOptions = [
+  { value: 'male', label: 'Male' },
+  { value: 'female', label: 'Female' },
+  { value: 'unisex', label: 'Unisex' }
+];
+
 export const sortOptions = [
   { value: 'sold_quantity:desc', label: 'Best Selling' },
   { value: 'created_date:desc', label: 'Newest First' },
@@ -26,4 +32,10 @@ export const sortOptions = [
 export const stockStatusOptions = [
   { value: 'in_stock', label: 'In Stock' },
   { value: 'out_stock', label: 'Out of Stock' }
+];
+
+export const visibilityOptions = [
+  { value: 'published', label: 'Published' },
+  { value: 'schedule', label: 'Schedule' },
+  { value: 'hidden', label: 'Hidden' }
 ];

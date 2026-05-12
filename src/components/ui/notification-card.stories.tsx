@@ -139,13 +139,13 @@ export const WithDangerActionConfirm: Story = {
             <p className="text-muted-foreground text-xs mb-3">This will log out all other sessions and send a security email.</p>
             <div className="flex gap-2">
               <button
-                className="rounded-md bg-destructive px-3 py-1.5 text-xs font-medium text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                className="rounded-md bg-destructive px-3 py-1.5 text-xs font-medium text-white focus-visible:outline-none focus-visible:ring-[1px] focus-visible:ring-ring/50"
                 onClick={() => { setConfirmed(true); setPending(null); }}
               >
                 Yes, secure it
               </button>
               <button
-                className="rounded-md border px-3 py-1.5 text-xs font-medium focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                className="rounded-md border px-3 py-1.5 text-xs font-medium focus-visible:outline-none focus-visible:ring-[1px] focus-visible:ring-ring/50"
                 onClick={() => setPending(null)}
               >
                 Cancel

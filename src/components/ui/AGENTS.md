@@ -185,6 +185,8 @@ Components importing `next/image` or `next/navigation` work in Storybook via moc
 | `rolldown binding error` | Vite 8 native bindings | Downgrade to Vite 7 |
 | Accessibility scan loop | Auto a11y scanning | Set `a11y: { manual: true }` in preview |
 | `Duplicate declaration` | Radix import collision | Use alias: `import { X as XPrimitive } from 'radix-ui'` |
+| `Failed to fetch dynamically imported module` | Tiptap/ESM-only packages not pre-bundled | Add tiptap packages to `optimizeDeps.include` in viteFinal |
+| `Cannot find module '@tiptap/pm'` | Tiptap packages not pre-bundled | Add tiptap packages to `optimizeDeps.include` in viteFinal |
 
 ### Story Organization
 

@@ -245,6 +245,7 @@ function ProductFormExample() {
   );
 }
 
+/** Product creation form — file upload, name, category, price, description. */
 export const ProductForm: Story = {
   render: () => <ProductFormExample />,
 };
