@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { useAppForm, useFormFields } from './tanstack-form';
 import { categoryOptions } from '@/features/products/constants/product-options';
 import { productSchema, type ProductFormValues } from '@/features/products/schemas/product';
+import ProductFormLarge from '@/features/products/components/product-form-large';
 
 /**
  * TanStack Form integration — the project-standard form system.
@@ -248,4 +249,13 @@ function ProductFormExample() {
 /** Product creation form — file upload, name, category, price, description. */
 export const ProductForm: Story = {
   render: () => <ProductFormExample />,
+};
+
+// ---------------------------------------------------------------------------
+// Story 4: ProductFormLarge — blank product form (two-column layout)
+// ---------------------------------------------------------------------------
+
+/** Product creation form with two-column layout — brand, category, gender, price, rich text description, SEO, visibility, and image upload. All fields empty. */
+export const ProductFormLargeLayout: Story = {
+  render: () => <ProductFormLarge initialData={null} pageTitle="Add Product" />,
 };

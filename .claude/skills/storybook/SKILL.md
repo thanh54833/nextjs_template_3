@@ -131,7 +131,7 @@ export const Default: Story = {
 
 | Error | Fix |
 |-------|-----|
-| `Failed to fetch dynamically imported module` | Add tiptap packages to `optimizeDeps.include` in viteFinal |
-| `Cannot find module '@tiptap/pm'` | Ensure `optimizeDeps.include` includes `@tiptap/pm` |
+| `Failed to fetch dynamically imported module` | Add `@tiptap/react` and `@tiptap/starter-kit` to `optimizeDeps.include` |
+| `Missing "." specifier in "@tiptap/pm"` | Do NOT include `@tiptap/pm` in optimizeDeps — it has no root entry |
 | `Module level directives cause errors` | Pre-bundle tiptap packages via `optimizeDeps.include` |
 | Dynamic import failure in Storybook | Vite needs to pre-bundle ESM-only packages |

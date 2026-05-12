@@ -47,13 +47,13 @@ export function ThemeModeToggle() {
           aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
           suppressHydrationWarning
         >
-          <Icons.sun className="size-4 transition-transform duration-300 ease-out group-data-[state=dark]:-rotate-90 group-data-[state=dark]:scale-0" />
-          <Icons.moon className="absolute size-4 transition-transform duration-300 ease-out rotate-90 scale-0 group-data-[state=dark]:rotate-0 group-data-[state=dark]:scale-100" />
+          <Icons.sun className="size-4 transition-transform duration-300 ease-out text-primary group-data-[state=dark]:-rotate-90 group-data-[state=dark]:scale-0 group-data-[state=dark]:text-secondary-foreground" />
+          <Icons.moon className="absolute size-4 transition-transform duration-300 ease-out text-primary rotate-90 scale-0 group-data-[state=dark]:rotate-0 group-data-[state=dark]:scale-100 group-data-[state=dark]:text-secondary-foreground" />
         </Button>
       </TooltipTrigger>
-      <TooltipContent>
-        {isDark ? 'Light mode' : 'Dark mode'} <Kbd>D D</Kbd>
-      </TooltipContent>
+<TooltipContent className="flex items-center gap-2">
+          {isDark ? 'Dark' : 'Light'} <Kbd>D D</Kbd>
+        </TooltipContent>
     </Tooltip>
   );
 }

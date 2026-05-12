@@ -884,3 +884,205 @@ build.
 [ 9938533ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
 [10083047ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
 [10298728ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[10605099ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[10611790ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[10611790ms] [ERROR] Error loading story index: @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:4631
+[10611790ms] [ERROR] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  SyntaxError: Identifier 'ProductFormLarge' has already been declared. (259:13)
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8555:39) @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:4631
+[10611819ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  SyntaxError: Identifier 'ProductFormLarge' has already been declared. (259:13)
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8555:39)
+[10615662ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:6006/@vite/client:864
+[10619318ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[10619851ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6006/index.json:0
+[10619851ms] [ERROR] Error loading story index: @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:4631
+[10619851ms] [ERROR] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  SyntaxError: Identifier 'ProductFormLarge' has already been declared. (259:13)
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8555:39) @ http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:4631
+[10619852ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  SyntaxError: Identifier 'ProductFormLarge' has already been declared. (259:13)
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8555:39)
+[10675025ms] SB_PREVIEW_API_0006 (StoryIndexFetchError): Error fetching `/index.json`:
+
+Unable to index ./src/components/ui/form.stories.tsx:
+  SyntaxError: Identifier 'ProductFormLarge' has already been declared. (259:13)
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at constructor (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:134900:15)
+    at Nv.raise (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:137217:54)
+    at pR.checkRedeclarationInScope (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135925:56)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:135911:14)
+    at pR.declareName (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:139760:13)
+    at Nv.declareNameFromIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140036:18)
+    at Nv.checkIdentifier (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140033:98)
+    at Nv.checkLVal (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:140002:14)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:143562:26)
+    at Nv.parseVarId (/Users/phamthanh/Desktop/full-stack/bmad/nextjs_template_3/node_modules/@storybook/core/dist/babel/index.cjs:141374:13)
+
+If you are in development, this likely indicates a problem with your Storybook process,
+check the terminal for errors.
+
+If you are in a deployed Storybook, there may have been an issue deploying the full Storybook
+build.
+    at ns2.getStoryIndexFromServer (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8597:11)
+    at async ns2.initializeWithProjectAnnotations (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8580:15)
+    at async ns2.initialize (http://localhost:6006/node_modules/.cache/storybook/1c3385a5d25e538d10b518b310c74d3ca2690b6aaffeadccd74da79736171f86/sb-vite/deps/storybook_internal_preview_runtime.js?v=3baaae9e:8555:39)

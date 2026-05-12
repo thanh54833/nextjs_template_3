@@ -19,10 +19,10 @@ export default function Header() {
         <div className='hidden md:flex'>
           <SearchInput />
         </div>
-        <div className='hidden sm:block'>
+        <div className='flex items-center gap-2'>
           <ThemeModeToggle />
+          <NotificationCenter />
         </div>
-        <NotificationCenter />
       </div>
     </header>
   );
